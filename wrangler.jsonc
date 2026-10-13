@@ -30,7 +30,7 @@
   ],
   "kv_namespaces": [
     {
-      "binding": "saas-config",
+      "binding": "CONFIG_KV",
       "id": "0cb06694728346bbbfa325c02105d241",
     },
   ],
