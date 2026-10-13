@@ -1,9 +1,6 @@
-// Plausible script — rendered as native <script> elements (not next/script)
-// so the tags land in the SSR HTML directly. next/script in App Router is a
-// Client Component; inside an async Server Component it only emits an RSC
-// reference and the real <script> is injected post-hydration — invisible in
-// View Source and to crawlers. Plain <script async defer> loads in parallel
-// with the HTML and is visible to everyone.
+// Keep the site-specific loader beside its initializer. React 19 otherwise
+// hoists an async external script into <head>, leaving plausible.init() at the
+// end of <body> and allowing the loader to win the race.
 export function Plausible({
   domain,
   src = 'https://plausible.io/js/script.js',
@@ -19,6 +16,7 @@ export function Plausible({
         data-domain={domain || undefined}
         src={src}
         async
+        onLoad={() => undefined}
       />
       <script
         id="plausible-init"

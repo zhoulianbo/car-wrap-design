@@ -7,8 +7,17 @@
  *   pnpm rbac:init
  *   pnpm rbac:init --admin-email=admin@example.com
  *   pnpm rbac:init --admin-email=admin@example.com --admin-password=your-password
+ *   pnpm rbac:init:remote --admin-email=admin@example.com
+ *   pnpm rbac:init --local --admin-email=admin@example.com
+ *
+ * D1 uses the DB binding in wrangler.jsonc (override with --database/--config).
+ * D1 admin accounts must already be registered on the selected database.
  */
 
+import { execFileSync } from 'node:child_process';
+import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { hashPassword } from 'better-auth/crypto';
 import { and, eq } from 'drizzle-orm';
 import { v4 as uuidv4 } from 'uuid';
@@ -335,10 +344,177 @@ const defaultRoles = [
   },
 ];
 
+function getCliArgument(name: string): string | undefined {
+  const prefix = `--${name}=`;
+  const argument = process.argv.slice(2).find((arg) => arg.startsWith(prefix));
+  if (!argument) return undefined;
+  const value = argument.slice(prefix.length);
+  if (!value.trim()) throw new Error(`--${name} requires a value.`);
+  return value;
+}
+
+function escapeSqlString(value: string): string {
+  return `'${value.replaceAll("'", "''")}'`;
+}
+
+function buildD1RbacSql(adminEmail?: string): string {
+  const statements: string[] = [];
+
+  for (const permission of defaultPermissions) {
+    statements.push(`
+INSERT INTO permission (id, code, resource, action, title, description)
+VALUES (${[
+      uuidv4(),
+      permission.code,
+      permission.resource,
+      permission.action,
+      permission.title,
+      permission.description,
+    ]
+      .map(escapeSqlString)
+      .join(', ')})
+ON CONFLICT(code) DO NOTHING;`);
+  }
+
+  for (const roleData of defaultRoles) {
+    statements.push(`
+INSERT INTO role (id, name, title, description, status, sort)
+VALUES (${[
+      uuidv4(),
+      roleData.name,
+      roleData.title,
+      roleData.description,
+      roleData.status,
+    ]
+      .map(escapeSqlString)
+      .join(', ')}, ${roleData.sort})
+ON CONFLICT(name) DO NOTHING;
+DELETE FROM role_permission
+WHERE role_id = (SELECT id FROM role WHERE name = ${escapeSqlString(roleData.name)});`);
+
+    const permissionCodes = roleData.permissions.flatMap((code) =>
+      code.endsWith('.*')
+        ? defaultPermissions
+            .map((permission) => permission.code)
+            .filter((permissionCode) =>
+              permissionCode.startsWith(code.slice(0, -1))
+            )
+        : [code]
+    );
+    for (const code of permissionCodes) {
+      statements.push(`
+INSERT INTO role_permission (id, role_id, permission_id)
+SELECT ${escapeSqlString(uuidv4())}, r.id, p.id
+FROM role r JOIN permission p ON p.code = ${escapeSqlString(code)}
+WHERE r.name = ${escapeSqlString(roleData.name)};`);
+    }
+  }
+
+  if (adminEmail) {
+    statements.push(`
+INSERT INTO user_role (id, user_id, role_id)
+SELECT ${escapeSqlString(uuidv4())}, u.id, r.id
+FROM "user" u JOIN role r ON r.name = 'super_admin'
+WHERE u.email = ${escapeSqlString(adminEmail)}
+AND NOT EXISTS (
+  SELECT 1 FROM user_role ur WHERE ur.user_id = u.id AND ur.role_id = r.id
+);`);
+  }
+
+  return statements.join('\n');
+}
+
+function initializeD1RBAC(target: 'local' | 'remote') {
+  const database = getCliArgument('database') || 'DB';
+  const config = getCliArgument('config') || 'wrangler.jsonc';
+  const adminEmail = getCliArgument('admin-email');
+  if (getCliArgument('admin-password')) {
+    throw new Error(
+      'D1 users must register first; --admin-password is not supported.'
+    );
+  }
+  const wranglerArgs = [
+    'exec',
+    'wrangler',
+    'd1',
+    'execute',
+    database,
+    `--${target}`,
+    '--config',
+    config,
+  ];
+  const query = (sql: string) => {
+    const output = execFileSync(
+      'pnpm',
+      [...wranglerArgs, '--command', sql, '--json'],
+      {
+        encoding: 'utf8',
+        stdio: ['ignore', 'pipe', 'inherit'],
+      }
+    );
+    const result = JSON.parse(output) as {
+      success: boolean;
+      results: Record<string, unknown>[];
+    }[];
+    if (!result.length || result.some((item) => !item.success)) {
+      throw new Error('D1 query failed.');
+    }
+    return result[0].results;
+  };
+
+  console.log(`Using ${target} D1 database: ${database} (${config})\n`);
+  if (adminEmail) {
+    const [user] = query(
+      `SELECT COUNT(*) AS count FROM "user" WHERE email = ${escapeSqlString(adminEmail)}`
+    );
+    if (user?.count !== 1) {
+      throw new Error(
+        `User not found or email is ambiguous: ${adminEmail}. Register the account first.`
+      );
+    }
+  }
+
+  const directory = mkdtempSync(join(tmpdir(), 'car-wrap-rbac-'));
+  try {
+    const sqlFile = join(directory, 'init-rbac.sql');
+    writeFileSync(sqlFile, buildD1RbacSql(adminEmail), { mode: 0o600 });
+    execFileSync('pnpm', [...wranglerArgs, '--file', sqlFile], {
+      stdio: 'inherit',
+    });
+  } finally {
+    rmSync(directory, { recursive: true, force: true });
+  }
+
+  if (adminEmail) {
+    const [assignment] = query(`
+SELECT COUNT(*) AS count FROM user_role ur
+JOIN "user" u ON u.id = ur.user_id JOIN role r ON r.id = ur.role_id
+WHERE u.email = ${escapeSqlString(adminEmail)} AND r.name = 'super_admin'`);
+    if (assignment?.count !== 1)
+      throw new Error('Super admin assignment verification failed.');
+    console.log(`Verified: ${adminEmail} is now super_admin.`);
+  }
+  console.log(
+    `\nRBAC initialization complete: ${defaultPermissions.length} permissions, ${defaultRoles.length} roles.`
+  );
+}
+
 async function initializeRBAC() {
   console.log('Starting RBAC initialization...\n');
 
   const provider = process.env.DATABASE_PROVIDER || 'sqlite';
+  const args = process.argv.slice(2);
+  if (args.includes('--remote') && args.includes('--local')) {
+    throw new Error('Use only one of --remote or --local.');
+  }
+  if (
+    args.includes('--remote') ||
+    args.includes('--local') ||
+    provider === 'd1'
+  ) {
+    initializeD1RBAC(args.includes('--remote') ? 'remote' : 'local');
+    return;
+  }
   console.log(`Database provider: ${provider}\n`);
 
   const { db, close } = await createScriptDb();
@@ -521,5 +697,8 @@ async function initializeRBAC() {
 }
 
 initializeRBAC()
-  .catch(console.error)
-  .finally(() => process.exit(0));
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });

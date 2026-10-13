@@ -22,6 +22,7 @@
     "library:import-tesla": "tsx scripts/with-env.ts tsx scripts/import-tesla-library.ts",
     "seo:audit": "tsx scripts/audit-seo.ts",
     "rbac:init": "tsx scripts/with-env.ts tsx scripts/init-rbac.ts",
+    "rbac:init:remote": "tsx scripts/with-env.ts tsx scripts/init-rbac.ts --remote",
     "rbac:assign": "tsx scripts/with-env.ts tsx scripts/assign-role.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

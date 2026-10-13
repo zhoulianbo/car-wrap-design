@@ -11,7 +11,7 @@
  *
  * Priority: ENV_FILE > .env.{NODE_ENV} > .env.local > .env
  */
-import { execSync } from 'child_process';
+import { execFileSync } from 'child_process';
 import { existsSync, readFileSync } from 'fs';
 import { resolve } from 'path';
 
@@ -67,11 +67,19 @@ if (args.length === 0) {
   process.exit(1);
 }
 
-const command = args.join(' ');
+const command = args
+  .map((arg) =>
+    arg.startsWith('--admin-password=') ? '--admin-password=***' : arg
+  )
+  .join(' ');
 console.log(`▶️  ${command}\n`);
 
 try {
-  execSync(command, { stdio: 'inherit', cwd: process.cwd(), env: process.env });
+  execFileSync(args[0], args.slice(1), {
+    stdio: 'inherit',
+    cwd: process.cwd(),
+    env: process.env,
+  });
 } catch {
   process.exit(1);
 }

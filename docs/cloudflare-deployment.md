@@ -54,8 +54,10 @@ pnpm exec wrangler d1 migrations apply car-wrap-design-db --remote --config wran
 线上注册管理员后，可按实际邮箱执行（替换示例邮箱并确认账号）：
 
 ```bash
-pnpm exec wrangler d1 execute car-wrap-design-db --remote --config wrangler.jsonc --command="INSERT INTO user_role (id,user_id,role_id,created_at,updated_at) SELECT lower(hex(randomblob(16))),u.id,r.id,unixepoch()*1000,unixepoch()*1000 FROM user u JOIN role r ON r.name='super_admin' WHERE u.email='YOUR_ADMIN_EMAIL' AND NOT EXISTS (SELECT 1 FROM user_role ur WHERE ur.user_id=u.id AND ur.role_id=r.id)"
+pnpm rbac:init:remote --admin-email=YOUR_ADMIN_EMAIL
 ```
+
+该命令通过 Wrangler 的 `DB` 绑定操作线上 D1，初始化默认角色与权限，并为已注册账号分配 `super_admin`。重复执行不会重复授权；账号不存在或执行失败时返回非零退出码。需要先登录 Wrangler（`pnpm exec wrangler login`）。`pnpm rbac:init` 保持按环境变量选择数据库；`DATABASE_PROVIDER=d1` 或显式传入 `--local` 时使用本地 D1。
 
 ## D1 业务兼容与验证
 
