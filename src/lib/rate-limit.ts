@@ -1,4 +1,5 @@
 import { md5 } from './hash';
+import { respErr } from './resp';
 
 type MinIntervalOptions = {
   intervalMs: number;
@@ -56,19 +57,13 @@ export function enforceMinIntervalRateLimit(
         1,
         Math.ceil((intervalMs - delta) / 1000)
       );
-      return Response.json(
-        {
-          error: 'too_many_requests',
-          message: `Please retry after ${retryAfterSeconds}s.`,
+      return respErr('RATE_LIMITED', {
+        status: 429,
+        headers: {
+          'cache-control': 'no-store',
+          'retry-after': String(retryAfterSeconds),
         },
-        {
-          status: 429,
-          headers: {
-            'cache-control': 'no-store',
-            'retry-after': String(retryAfterSeconds),
-          },
-        }
-      );
+      });
     }
   }
   store.set(key, now);

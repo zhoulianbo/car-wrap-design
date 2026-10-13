@@ -152,7 +152,7 @@ function AdminTicketsPage() {
       setReplyAttachments([]);
       setReplyUploaderKey((k) => k + 1);
     } catch (e: any) {
-      toast.error(e?.message || 'Failed');
+      toast.error(e?.message || m['common.state.failed']());
     }
   }
 
@@ -169,7 +169,7 @@ function AdminTicketsPage() {
       await openDetail(activeTicket);
       refreshList();
     } catch (e: any) {
-      toast.error(e?.message || 'Failed');
+      toast.error(e?.message || m['common.state.failed']());
     } finally {
       setReplying(false);
     }
@@ -183,7 +183,7 @@ function AdminTicketsPage() {
       setActiveTicket({ ...activeTicket, status });
       refreshList();
     } catch (e: any) {
-      toast.error(e?.message || 'Failed');
+      toast.error(e?.message || m['common.state.failed']());
     }
   }
 

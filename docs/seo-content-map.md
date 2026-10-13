@@ -1,0 +1,25 @@
+# SEO Content Map
+
+| Route                    | Primary query         | English content target    | Search intent                                                          |
+| ------------------------ | --------------------- | ------------------------- | ---------------------------------------------------------------------- |
+| `/`                      | Car Wrap Design       | More than 800 words, 1-3% | Design online, find inspiration and preview concepts                   |
+| `/ai-car-wrap-generator` | ai car wrap generator | More than 800 words, 1-3% | Generate a concept from text or a reference image and preview it in 3D |
+| `/tesla-wrap`            | tesla wrap            | More than 800 words, 1-3% | Compare models and design online                                       |
+| `/tesla-model-y-wrap`    | tesla model y wrap    | More than 800 words, 1-3% | Model Y ideas, finishes, visualizer                                    |
+| `/tesla-model-3-wrap`    | tesla model 3 wrap    | More than 800 words, 1-3% | Model 3 ideas, finishes, visualizer                                    |
+
+All listed pages require one H1, a unique 30-60 character English title, a unique 120-160 character English description, self-canonical, English/Chinese hreflang, OG/Twitter metadata, descriptive image alternatives, and at least three contextual internal links.
+
+Private editor and account routes, private/unlisted designs, and moderation-pending designs are `noindex`. The public AI generator landing page is indexable. Only approved public designs enter the sitemap. Use WebSite, Organization, WebApplication, BreadcrumbList, ItemList, and ImageObject where accurate. Do not emit Product, HowTo, or FAQPage markup for this MVP.
+
+Keyword checks run against rendered main content, including expandable FAQ answers, excluding scripts, navigation and footer text. Density follows the existing word-coverage formula: exact phrase occurrences × words in the keyword ÷ total words × 100. English matches respect word boundaries. For `/zh`, the localized primary keyword is `汽车车衣设计`; Chinese word counts use `Intl.Segmenter('zh')`, with the same more-than-800-word and 1-3% gates. These are editorial checks, not ranking guarantees. Chinese copy is written for native readers rather than translated word for word.
+
+Run `pnpm seo:audit --homepage http://localhost:3100` to check both homepages without auditing pages still awaiting their own copy pass. The English homepage title is `Car Wrap Design Online | Design Your Own Car Wrap Free`, its H1 is `Design Your Own Car Wrap Online`, and its badge is `Vehicle Wrap Designer`; the Chinese equivalents are localized in the marketing catalog.
+
+Homepage claims must distinguish editable manually created layers from flattened AI images. Embedded AI lettering, logos and graphics cannot be edited separately. Only currently available vehicles receive model links; mention planned brands without presenting them as supported. The inspiration section requests up to 24 actual approved public community designs, with fewer cards when the gallery contains fewer entries. These are design previews, not verified physical installation photos.
+
+The three style explanations belong on the generator page, below the interactive tool; the homepage gallery leads directly into community examples. The generator’s localized primary keyword is `AI 车衣生成器`. Run `pnpm seo:audit --homepage --generator http://localhost:3100` to check both locales of both pages. Generation produces one flattened PNG at 10 credits per image; embedded objects are not individually editable. Reference images are optional and limited to 5 MB. Unpaid accounts share to the gallery by default; accounts with a purchased credit pack can opt out before generating. Shared works require moderation approval before public display. Do not advertise free AI generation or a zero-price generator offer in structured data.
+
+The Tesla landing pages use localized primary phrases: `特斯拉车衣`, `特斯拉 Model Y 车衣`, and `特斯拉 Model 3 车衣`. Each English and Chinese page requires more than 800 words and 1-3% word coverage. Run `pnpm seo:audit --tesla http://localhost:3100` to check all six pages. The Tesla overview focuses on model choice and style discovery; Model Y focuses on side graphics, hatch continuity and version proportions; Model 3 focuses on sedan lines, stripes and front-to-rear composition.
+
+Titles, meta descriptions and hero introductions should invite visitors to explore and create. Lead with genuine benefits such as color choice, personal artwork and 3D preview, without credit costs or production caveats in this introductory copy. Explain costs, flattened AI images, temporary local preview images and physical production requirements in the relevant workflow text or FAQ. Do not imply official Tesla affiliation, verified vehicle-display compatibility, editable AI image internals, or print-ready output. Current version lists must match the actual page selector; Model Y FAQs must not include unrelated vehicle families.

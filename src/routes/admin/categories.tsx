@@ -11,6 +11,7 @@ import { Pencil, Plus, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
+import { tStatus } from '@/core/i18n/dynamic';
 import {
   apiDelete,
   apiGet,
@@ -168,7 +169,7 @@ function CategoriesPage() {
       header: m['admin.categories.status_col'](),
       cell: (c) => (
         <Badge variant={c.status === 'published' ? 'default' : 'secondary'}>
-          {c.status}
+          {tStatus(c.status)}
         </Badge>
       ),
     },

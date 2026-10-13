@@ -14,6 +14,7 @@ import {
   mysqlTable,
   text,
   timestamp,
+  uniqueIndex,
   varchar,
 } from 'drizzle-orm/mysql-core';
 
@@ -30,6 +31,7 @@ export const user = table(
     name: varchar191('name').notNull(),
     email: varchar191('email').notNull().unique(),
     emailVerified: boolean('email_verified').default(false).notNull(),
+    isPaid: boolean('is_paid').notNull().default(false),
     image: text('image'),
     createdAt: timestamp('created_at').defaultNow().notNull(),
     updatedAt: timestamp('updated_at').defaultNow().onUpdateNow().notNull(),
@@ -561,3 +563,241 @@ export type NewTicketMessage = typeof ticketMessage.$inferInsert;
 
 // ─── Custom tables ───────────────────────────────────────────────────────────
 // Add your own tables below this line.
+
+// ─── Car wrap creator ────────────────────────────────────────────────────────
+
+export const userWrap = table(
+  'user_wrap',
+  {
+    id: varchar191('id').primaryKey(),
+    userId: varchar191('user_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    name: varchar191('name').notNull().default(''),
+    vehicleSlug: varchar191('vehicle_slug').notNull(),
+    templateVersion: varchar191('template_version').notNull(),
+    canvasJson: longtext('canvas_json').notNull(),
+    textureKey: text('texture_key'),
+    textureUrl: text('texture_url'),
+    finish: varchar191('finish').notNull().default('gloss'),
+    sourceDesignId: varchar191('source_design_id'),
+    idempotencyKey: varchar191('idempotency_key').unique(),
+    usesAi: boolean('uses_ai').notNull().default(false),
+    openToGallery: boolean('open_to_gallery').notNull().default(true),
+    moderationStatus: varchar191('moderation_status')
+      .notNull()
+      .default('pending'),
+    shareToken: varchar191('share_token').unique(),
+    shareEnabled: boolean('share_enabled').notNull().default(false),
+    generationId: varchar191('generation_id').unique(),
+    version: int('version').notNull().default(1),
+    status: varchar('status', { length: 50 }).notNull().default('draft'),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+    updatedAt: timestamp('updated_at').defaultNow().onUpdateNow().notNull(),
+    deletedAt: timestamp('deleted_at'),
+  },
+  (t) => [
+    index('idx_user_wrap_user_status').on(t.userId, t.status),
+    index('idx_user_wrap_vehicle').on(t.vehicleSlug),
+  ]
+);
+
+export const userAsset = table(
+  'user_asset',
+  {
+    id: varchar191('id').primaryKey(),
+    ownerId: varchar191('owner_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    kind: varchar('kind', { length: 50 }).notNull(),
+    source: varchar('source', { length: 50 }).notNull(),
+    storageKey: varchar('storage_key', { length: 500 }).notNull(),
+    publicUrl: text('public_url'),
+    mimeType: varchar('mime_type', { length: 100 }).notNull(),
+    byteSize: int('byte_size').notNull(),
+    width: int('width'),
+    height: int('height'),
+    contentHash: varchar191('content_hash').notNull(),
+    visibility: varchar('visibility', { length: 30 })
+      .notNull()
+      .default('private'),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+    deletedAt: timestamp('deleted_at'),
+  },
+  (t) => [
+    index('idx_user_asset_owner_key').on(t.ownerId, t.storageKey),
+    index('idx_user_asset_owner').on(t.ownerId, t.deletedAt),
+  ]
+);
+
+export const aiGeneration = table(
+  'ai_generation',
+  {
+    id: varchar191('id').primaryKey(),
+    aiTaskId: varchar191('ai_task_id')
+      .notNull()
+      .unique()
+      .references(() => aiTask.id),
+    userId: varchar191('user_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    vehicleSlug: varchar191('vehicle_slug').notNull(),
+    templateVersion: varchar191('template_version').notNull(),
+    mode: varchar('mode', { length: 40 }).notNull(),
+    provider: varchar('provider', { length: 50 }).notNull(),
+    model: varchar191('model').notNull(),
+    prompt: longtext('prompt').notNull(),
+    style: varchar191('style'),
+    baseColor: varchar('base_color', { length: 20 }),
+    inputAssetsJson: longtext('input_assets_json').notNull(),
+    providerPredictionId: varchar191('provider_prediction_id').unique(),
+    idempotencyKey: varchar191('idempotency_key').notNull().unique(),
+    costCredits: int('cost_credits').notNull(),
+    status: varchar('status', { length: 50 }).notNull().default('queued'),
+    outputKey: text('output_key'),
+    outputUrl: text('output_url'),
+    completionClaim: varchar191('completion_claim'),
+    completionClaimedAt: timestamp('completion_claimed_at'),
+    errorSummary: text('error_summary'),
+    refundStatus: varchar('refund_status', { length: 30 })
+      .notNull()
+      .default('not-required'),
+    lastPolledAt: timestamp('last_polled_at'),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+    updatedAt: timestamp('updated_at').defaultNow().onUpdateNow().notNull(),
+  },
+  (t) => [index('idx_ai_generation_user_status').on(t.userId, t.status)]
+);
+
+export const design = table(
+  'design',
+  {
+    id: varchar191('id').primaryKey(),
+    ownerId: varchar191('owner_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    sourceWrapId: varchar191('source_wrap_id').references(() => userWrap.id, {
+      onDelete: 'set null',
+    }),
+    sourceVersion: int('source_version').notNull().default(1),
+    vehicleSlug: varchar191('vehicle_slug').notNull(),
+    slug: varchar191('slug').notNull().unique(),
+    title: varchar('title', { length: 255 }).notNull(),
+    description: text('description'),
+    snapshotJson: longtext('snapshot_json').notNull(),
+    textureKey: text('texture_key'),
+    textureUrl: text('texture_url'),
+    coverKey: text('cover_key'),
+    coverUrl: text('cover_url'),
+    finish: varchar191('finish').notNull().default('gloss'),
+    templateVersion: varchar191('template_version').notNull().default('legacy'),
+    visibility: varchar('visibility', { length: 30 })
+      .notNull()
+      .default('public'),
+    showInHero: boolean('show_in_hero').notNull().default(false),
+    usesAi: boolean('uses_ai').notNull().default(false),
+    publicPrompt: boolean('public_prompt').notNull().default(false),
+    prompt: longtext('prompt'),
+    moderationStatus: varchar('moderation_status', { length: 30 })
+      .notNull()
+      .default('pending'),
+    publishKey: varchar191('publish_key').notNull().unique(),
+    viewCount: int('view_count').notNull().default(0),
+    downloadCount: int('download_count').notNull().default(0),
+    likeCount: int('like_count').notNull().default(0),
+    remixCount: int('remix_count').notNull().default(0),
+    shareCount: int('share_count').notNull().default(0),
+    publishedAt: timestamp('published_at').defaultNow().notNull(),
+    updatedAt: timestamp('updated_at').defaultNow().onUpdateNow().notNull(),
+    deletedAt: timestamp('deleted_at'),
+  },
+  (t) => [
+    index('idx_design_public_feed').on(
+      t.visibility,
+      t.moderationStatus,
+      t.publishedAt
+    ),
+    index('idx_design_owner').on(t.ownerId, t.publishedAt),
+    index('idx_design_vehicle').on(t.vehicleSlug, t.publishedAt),
+  ]
+);
+
+export const designTag = table('design_tag', {
+  id: varchar191('id').primaryKey(),
+  slug: varchar191('slug').notNull().unique(),
+  name: varchar191('name').notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+});
+export const designTagLink = table(
+  'design_tag_link',
+  {
+    id: varchar191('id').primaryKey(),
+    designId: varchar191('design_id')
+      .notNull()
+      .references(() => design.id, { onDelete: 'cascade' }),
+    tagId: varchar191('tag_id')
+      .notNull()
+      .references(() => designTag.id, { onDelete: 'cascade' }),
+  },
+  (t) => [uniqueIndex('uq_design_tag_link').on(t.designId, t.tagId)]
+);
+export const designRemix = table(
+  'design_remix',
+  {
+    id: varchar191('id').primaryKey(),
+    sourceDesignId: varchar191('source_design_id')
+      .notNull()
+      .references(() => design.id),
+    targetWrapId: varchar191('target_wrap_id').references(() => userWrap.id, {
+      onDelete: 'set null',
+    }),
+    userId: varchar191('user_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    idempotencyKey: varchar191('idempotency_key').notNull().unique(),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+  },
+  (t) => [uniqueIndex('uq_design_remix_target').on(t.targetWrapId)]
+);
+export const designReport = table(
+  'design_report',
+  {
+    id: varchar191('id').primaryKey(),
+    designId: varchar191('design_id')
+      .notNull()
+      .references(() => design.id, { onDelete: 'cascade' }),
+    reporterId: varchar191('reporter_id')
+      .notNull()
+      .references(() => user.id, { onDelete: 'cascade' }),
+    reason: varchar('reason', { length: 50 }).notNull(),
+    details: text('details'),
+    status: varchar('status', { length: 50 }).notNull().default('open'),
+    idempotencyKey: varchar191('idempotency_key').notNull().unique(),
+    resolvedBy: varchar191('resolved_by').references(() => user.id),
+    resolvedAt: timestamp('resolved_at'),
+    resolutionNote: text('resolution_note'),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+    updatedAt: timestamp('updated_at').defaultNow().onUpdateNow().notNull(),
+  },
+  (t) => [
+    index('idx_design_report_status').on(t.status, t.createdAt),
+    index('idx_design_report_design').on(t.designId, t.status),
+  ]
+);
+
+export type UserWrap = typeof userWrap.$inferSelect;
+export type NewUserWrap = typeof userWrap.$inferInsert;
+export type UserAsset = typeof userAsset.$inferSelect;
+export type NewUserAsset = typeof userAsset.$inferInsert;
+export type AiGeneration = typeof aiGeneration.$inferSelect;
+export type NewAiGeneration = typeof aiGeneration.$inferInsert;
+export type Design = typeof design.$inferSelect;
+export type NewDesign = typeof design.$inferInsert;
+export type DesignTag = typeof designTag.$inferSelect;
+export type NewDesignTag = typeof designTag.$inferInsert;
+export type DesignTagLink = typeof designTagLink.$inferSelect;
+export type NewDesignTagLink = typeof designTagLink.$inferInsert;
+export type DesignRemix = typeof designRemix.$inferSelect;
+export type NewDesignRemix = typeof designRemix.$inferInsert;
+export type DesignReport = typeof designReport.$inferSelect;
+export type NewDesignReport = typeof designReport.$inferInsert;

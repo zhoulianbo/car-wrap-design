@@ -11,16 +11,20 @@ import { baseLocale } from '@/paraglide/runtime.js';
  * fetched through the server functions in ./server.ts and merged with the
  * local posts via the pure helpers below.
  */
-export const BLOG_POST_SLUGS = [
+export const BLOG_POST_SLUGS = ['tesla-wrap-complete-guide'] as const;
+
+export const RETIRED_POST_SLUGS = new Set([
   'what-is-shipany',
   'blocks-vs-components',
-] as const;
+]);
 
 export type BlogPostMeta = {
   title: string;
   description: string;
   created_at: string;
+  updated_at?: string;
   author_name?: string;
+  author_type?: 'Person' | 'Organization';
   author_image?: string;
   image?: string;
 };
@@ -37,7 +41,9 @@ export type BlogPost = {
   image?: string;
   /** ISO date string — serializable across loader/server-fn boundaries */
   createdAt: string;
+  updatedAt?: string;
   authorName?: string;
+  authorType?: 'Person' | 'Organization';
   authorImage?: string;
   source: 'local' | 'db';
 };
@@ -71,7 +77,11 @@ function localPostToItem(slug: string, meta: BlogPostMeta): BlogPost {
     description: meta.description,
     image: meta.image,
     createdAt: new Date(meta.created_at).toISOString(),
+    updatedAt: meta.updated_at
+      ? new Date(meta.updated_at).toISOString()
+      : undefined,
     authorName: meta.author_name,
+    authorType: meta.author_type,
     authorImage: meta.author_image,
     source: 'local',
   };
@@ -96,17 +106,17 @@ export function mergePosts(
   options: { limit?: number } = {}
 ): BlogPost[] {
   const dbSlugs = new Set(dbPosts.map((p) => p.slug));
-  const merged = [
-    ...dbPosts,
-    ...localPosts.filter((p) => !dbSlugs.has(p.slug)),
-  ].sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-  );
+  const merged = [...dbPosts, ...localPosts.filter((p) => !dbSlugs.has(p.slug))]
+    .filter((post) => !RETIRED_POST_SLUGS.has(post.slug))
+    .sort(
+      (a, b) =>
+        new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+    );
   return options.limit ? merged.slice(0, options.limit) : merged;
 }
 
 export function formatPostDate(dateIso: string, locale: string): string {
-  return new Intl.DateTimeFormat(locale === 'zh' ? 'zh-CN' : 'en-US', {
+  return new Intl.DateTimeFormat(locale, {
     year: 'numeric',
     month: locale === 'zh' ? 'long' : 'short',
     day: 'numeric',

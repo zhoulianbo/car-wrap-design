@@ -234,6 +234,12 @@ export function getAuth(configs?: Record<string, string>) {
     plugins: getAuthPlugins(configs),
     user: {
       additionalFields: {
+        isPaid: {
+          type: 'boolean',
+          input: false,
+          required: false,
+          defaultValue: false,
+        },
         utmSource: {
           type: 'string',
           input: false,

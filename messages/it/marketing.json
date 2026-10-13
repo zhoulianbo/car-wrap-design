@@ -1,0 +1,425 @@
+{
+  "landing": {
+    "nav": {
+      "features": "Funzioni",
+      "pricing": "Prezzi",
+      "home": "Home",
+      "cars": "Auto",
+      "tesla_model_y_wrap": "Wrapping Model Y",
+      "tesla_model_3_wrap": "Wrapping Model 3",
+      "blog": "Blog",
+      "tesla_wrap": "Wrapping Tesla",
+      "ai_generator": "Wrapping con IA",
+      "gallery": "Galleria"
+    },
+    "hero": {
+      "headline": "Configuratore wrapping auto: crea il tuo stile",
+      "subheadline": "Dai forma alle tue idee e guardale sull'auto in 3D. Scegli un veicolo, crea con l'editor gratuito nel browser oppure esplora nuovi stili usando i crediti IA.",
+      "cta": "Crea con l'IA",
+      "secondary": "Esplora i design",
+      "badge": "Progetta il tuo wrapping",
+      "variants": "12 versioni disponibili",
+      "templates": "Modelli UV ufficiali",
+      "chassis": "Carrozzeria",
+      "webgl_live": "Studio 3D WebGL in tempo reale",
+      "highlight_gallery": "Design creativi",
+      "highlight_models": "Modelli disponibili",
+      "highlight_preview": "Anteprima in tempo reale",
+      "wraps_title": "Scegli un wrapping",
+      "wraps_empty": "Non ci sono ancora design in evidenza per questo modello. Inizia con una tua idea.",
+      "wraps_error": "Impossibile caricare i design.",
+      "texture_loading": "Caricamento del wrapping…",
+      "texture_error": "Impossibile caricare questo design.",
+      "viewer_error": "Impossibile caricare l'anteprima 3D. Controlla la connessione e il supporto WebGL.",
+      "retry": "Riprova",
+      "rotate_hint": "Trascina per esplorare",
+      "highlight_gallery_value": "100+"
+    },
+    "chips": {
+      "auth": "Autenticazione",
+      "payment": "Pagamenti",
+      "subscription": "Abbonamenti",
+      "credits": "Crediti",
+      "rbac": "Accesso basato sui ruoli",
+      "i18n": "Multilingua",
+      "cms": "Gestione contenuti",
+      "apikeys": "Chiavi API"
+    },
+    "features": {
+      "eyebrow": "Gli strumenti per la tua idea",
+      "title": "Un unico studio per progettare il wrapping auto",
+      "description": "Trova ispirazione e passa dalla grafica piana al veicolo 3D senza installare software. Nell'editor controlli i livelli creati da te; con l'IA esplori nuove direzioni visive. Confronta le idee prima di dedicarti alla composizione definitiva.",
+      "viewer": {
+        "title": "Guarda il design sulla carrozzeria",
+        "description": "Ruota il veicolo 3D per vedere come la grafica si distribuisce sui pannelli e dove i bordi interrompono il motivo. L'anteprima aiuta a scegliere il design, ma non certifica automaticamente l'adattamento alla carrozzeria o l'idoneità alla posa."
+      },
+      "ai": {
+        "title": "Esplora un'idea con l'IA",
+        "description": "Descrivi palette, stile o atmosfera e aggiungi un riferimento se utile. La generazione usa crediti e produce un'unica immagine. Per cambiare un elemento al suo interno, genera un nuovo risultato o usa un programma esterno di fotoritocco."
+      },
+      "editor": {
+        "title": "Controlla i livelli che crei",
+        "description": "Aggiungi testi, immagini e forme e regola posizione e dimensione di ogni livello manuale mentre controlli l'anteprima. Un logo caricato resta un unico livello immagine: puoi spostarlo o ridimensionarlo interamente, senza modificarne i singoli segni interni."
+      },
+      "materials": {
+        "title": "Confronta cinque finiture",
+        "description": "Prova la stessa grafica con finitura lucida, satinata, opaca, metallizzata o perlata. I riflessi cambiano la percezione delle aree chiare e scure. L'anteprima illustra l'effetto, senza identificare una pellicola specifica o garantire il colore di stampa."
+      },
+      "remix": {
+        "title": "Lasciati ispirare dalla community",
+        "description": "Apri un design della galleria per vedere texture e anteprima sul veicolo. Parti da un esempio adatto e aggiungi i tuoi livelli. La grafica già unita rimane un'immagine unica. Controlla le condizioni dell'autore prima di riutilizzarla, soprattutto per scopi commerciali."
+      },
+      "export": {
+        "title": "Conserva un'immagine del progetto",
+        "description": "Scarica la texture PNG quadrata dall'editor e acquisisci un'immagine dall'anteprima del veicolo. Ti serviranno per confrontare proposte o spiegare lo stile a un centro wrapping. Non sono sagome misurate né un pacchetto completo di file pronti per la produzione."
+      },
+      "auth": {
+        "title": "Autenticazione",
+        "description": "Accesso con email e password, Google o GitHub OAuth, gestione delle sessioni e collegamento degli account."
+      },
+      "payment": {
+        "title": "Pagamenti",
+        "description": "Pagamenti, abbonamenti, webhook e gestione ordini con Stripe, PayPal, Alipay e WeChat Pay."
+      },
+      "rbac": {
+        "title": "Ruoli e permessi",
+        "description": "Permessi granulari per ruolo con corrispondenza tramite caratteri jolly e gestione di utenti, ruoli e autorizzazioni."
+      },
+      "i18n": {
+        "title": "Supporto multilingua",
+        "description": "Inglese e cinese integrati, con percorsi per lingua ed estensione ad altre lingue."
+      },
+      "cms": {
+        "title": "Gestione dei contenuti",
+        "description": "Crea, consulta, modifica ed elimina categorie e articoli, gestendone lo stato dal pannello per blog e documentazione."
+      },
+      "credits": {
+        "title": "Sistema di crediti",
+        "description": "Consumo in ordine di accredito, scadenze, assegnazione automatica alla registrazione e revoca per la fatturazione a consumo."
+      }
+    },
+    "pricing": {
+      "title": "Crediti per wrapping auto IA",
+      "description": "Acquista 100, 250 o 1.000 crediti con un pagamento unico. Non scadono e ogni pacchetto include 50 MB di spazio ed esportazioni illimitate.",
+      "monthly": "Mensile",
+      "yearly": "Annuale",
+      "lifetime": "A vita",
+      "popular": "Popolare",
+      "best_value": "Più conveniente",
+      "buy_lifetime": "Acquista una volta",
+      "starter": "Starter",
+      "starter_desc": "Per singoli utenti",
+      "pro": "Pro",
+      "pro_desc": "Per team in crescita",
+      "enterprise": "Enterprise",
+      "enterprise_desc": "Per grandi organizzazioni",
+      "feature_1_project": "1 design",
+      "feature_5k_credits": "5.000 crediti",
+      "feature_email_support": "Assistenza via email",
+      "feature_unlimited_projects": "Design illimitati",
+      "feature_50k_credits": "50.000 crediti",
+      "feature_priority_support": "Assistenza prioritaria",
+      "feature_api_access": "Accesso API",
+      "feature_everything_pro": "Tutte le funzioni Pro",
+      "feature_unlimited_credits": "Crediti illimitati",
+      "feature_dedicated_support": "Assistenza dedicata",
+      "feature_custom_integrations": "Integrazioni personalizzate",
+      "eyebrow": "Un solo pagamento, crei quando vuoi.",
+      "intro": "Ogni immagine IA usa 10 crediti. Scegli un pacchetto e crea con i tuoi tempi.",
+      "starter_pack": "Pacchetto Starter",
+      "creator_pack": "Pacchetto Creator",
+      "studio_pack": "Pacchetto Studio",
+      "trial_pack": "Pacchetto di prova",
+      "credits": "{credits} crediti",
+      "results": "{count} immagini IA",
+      "buy": "Acquista {credits} crediti",
+      "one_time": "Pagamento unico, senza abbonamento",
+      "never_expires": "I crediti non scadono",
+      "storage": "50 MB di spazio",
+      "exports": "Esportazioni illimitate",
+      "footer": "Tutti i prezzi sono in dollari USA (USD). I crediti restano disponibili finché non li usi.",
+      "checkout_error": "Impossibile aprire il pagamento. Riprova.",
+      "paywall_title": "Continua a creare con altri crediti",
+      "paywall_description": "Questa generazione richiede {cost} crediti. Scegli un pacchetto con pagamento unico per continuare.",
+      "trial_title": "Inizia con un pacchetto più piccolo",
+      "trial_description": "Prova 20 crediti a 2 USD. Un pagamento unico con gli stessi vantaggi di spazio ed esportazione.",
+      "offer_remaining": "L'offerta termina tra",
+      "offer_expired": "L'offerta è scaduta.",
+      "offer_unavailable": "Questa offerta non è più disponibile.",
+      "trial_dismiss": "No, grazie",
+      "loading": "Caricamento dei pacchetti…"
+    },
+    "faq": {
+      "title": "Domande sul design di wrapping auto",
+      "description": "Le risposte per iniziare gratis, scegliere il metodo di lavoro, usare le immagini IA e presentare il progetto a un centro wrapping.",
+      "stack": {
+        "question": "Quali modelli sono disponibili?",
+        "answer": "La libreria include Tesla Model 3 Legacy e 2024 Base e Performance; Model Y Legacy, 2025 Base, Premium e Performance, oltre a Model Y L; Cybertruck; Model S 2021 e 2025 Plaid; Model X 2021. Ogni versione ha la propria configurazione di carrozzeria e ruote. Sono previste altre marche: il selettore mostra quelle disponibili oggi."
+      },
+      "payment": {
+        "question": "Quanto costa una generazione IA?",
+        "answer": "Ogni immagine candidata costa 10 crediti. Prima dell'invio puoi scegliere da una a quattro immagini e vedere il totale. Le immagini non generate correttamente prevedono un riaccredito automatico una tantum."
+      },
+      "database": {
+        "question": "Posso usare le mie immagini?",
+        "answer": "Sì. La generazione da immagine accetta riferimenti JPEG, PNG e WebP fino a 5 MB. Puoi anche caricare la grafica direttamente nell'editor senza inviarla a un modello IA."
+      },
+      "customize": {
+        "question": "L'anteprima 3D certifica l'idoneità alla posa?",
+        "answer": "No, serve a visualizzare il progetto. Prima della produzione, un professionista deve verificare giunzioni, abbondanze, aree sicure, colori e misure reali."
+      },
+      "license": {
+        "question": "Il design scaricato è pronto per un wrapping reale?",
+        "answer": "Il file è un progetto visivo, non una sagoma pronta per stampa e posa. Un centro deve controllare misure reali, giunzioni, abbondanze, risoluzione e colori. Mostra grafica e anteprima 3D per spiegare il risultato desiderato, poi concorda layout finale e materiale. La simulazione non sostituisce il controllo sulla vettura."
+      },
+      "free": {
+        "question": "Posso progettare il mio wrapping auto gratis?",
+        "answer": "Sì. Editor nel browser e anteprima 3D sono gratuiti per comporre con i tuoi livelli. La generazione IA usa crediti separati: gratuito non significa immagini IA illimitate. Puoi esplorare l'editor prima di acquistare. Segui le indicazioni di accesso per caricare file, salvare progetti o pubblicare design."
+      },
+      "software": {
+        "question": "Quale software serve per progettare un wrapping?",
+        "answer": "Per il progetto hai un'area di lavoro piana, livelli manuali modificabili e il veicolo 3D corrispondente nel browser. Non devi installare un programma. Per produrre la pellicola, un centro può usare altri software di grafica, impaginazione e stampa. Il metodo cambia se vuoi confrontare idee o preparare file misurati per la posa."
+      },
+      "how": {
+        "question": "Come creo il mio wrapping auto?",
+        "answer": "Scegli un veicolo e una palette o cerca spunti in galleria. Componi testi, immagini e forme oppure genera un progetto con l'IA. Tieni le scritte importanti su un livello di testo separato. Controlla più angolazioni e scarica la texture. Per la pellicola reale, affida misure e preparazione di stampa a un professionista."
+      },
+      "where": {
+        "question": "Dove posso progettare il mio wrapping?",
+        "answer": "Apri il designer da questa pagina per lavorare nel browser. La galleria aiuta a scegliere uno stile, mentre il generatore esplora le idee che descrivi. Se hai già un logo o un'illustrazione, importalo come livello immagine. Parti da un veicolo disponibile e usa il suo modello per tutto il progetto."
+      },
+      "editing": {
+        "question": "Posso modificare testi e loghi dentro un'immagine IA?",
+        "answer": "No. Il risultato IA è un'immagine unica: scritte, loghi e grafica interni non sono modificabili separatamente. Puoi generare un'altra versione. Nell'editor, testi creati da te e immagini caricate a parte restano livelli indipendenti, spostabili e ridimensionabili. I nuovi livelli non cancellano né sostituiscono i pixel già presenti nell'immagine IA."
+      }
+    },
+    "cta": {
+      "eyebrow": "Crea, guarda, condividi.",
+      "headline": "Dai un punto di partenza al tuo prossimo wrapping",
+      "subheadline": "Hai uno stile in mente? Descrivilo al generatore IA e confronta il risultato sul veicolo. Se preferisci disporre ogni elemento, parti dall'editor gratuito. La generazione usa crediti; testi e immagini che aggiungi tu restano modificabili separatamente.",
+      "button": "Crea un wrapping",
+      "ai_button": "Genera con l'IA"
+    },
+    "footer": {
+      "tagline": "Progetta wrapping auto con l'IA e guardali in 3D in tempo reale.",
+      "feature": "Funzione",
+      "product": "Prodotto",
+      "popular_vehicles": "Auto più richieste",
+      "wrap_editor": "Editor wrapping",
+      "model_y_designer": "Designer Model Y",
+      "model_3_designer": "Designer Model 3",
+      "help": "Aiuto e domande",
+      "company_legal": "Informazioni e note legali",
+      "status": "Studio 3D WebGL online",
+      "resources": "Risorse",
+      "legal": "Note legali",
+      "privacy": "Informativa sulla privacy",
+      "terms": "Termini di servizio",
+      "settings": "I miei design",
+      "admin": "Galleria wrapping",
+      "docs": "Documentazione",
+      "github": "GitHub",
+      "copyright": "© {year} Car Wrap Design. Tutti i diritti riservati.",
+      "blog": "Blog",
+      "wraps": "I miei design"
+    },
+    "blog": {
+      "title": "Dal blog",
+      "description": "Guide per scegliere il modello del veicolo, creare la grafica e controllare il wrapping in 3D.",
+      "view_all": "Leggi tutti gli articoli"
+    },
+    "showcase": {
+      "eyebrow": "Il tuo studio wrapping",
+      "title": "Progetta il wrapping con la tua grafica",
+      "description": "Parti da un'area vuota e combina colore di base, immagini, testi e forme. I livelli manuali si selezionano, spostano e ridimensionano separatamente. Tieni nome aziendale e logo su livelli propri quando la posizione conta. Puoi usare un'immagine IA come grafica, ma scritte e disegni al suo interno non diventano oggetti indipendenti.",
+      "editor_label": "Editor a livelli",
+      "preview_label": "Anteprima materiali 3D",
+      "viewer_note": "Questo è un esempio statico dell'editor. Apri il designer per comporre i livelli e ruotare l'auto.",
+      "example_name": "Palette gelato",
+      "static_note": "Esempio dell'interfaccia dell'editor",
+      "texture_alt": "Esempio di grafica quadrata per wrapping a tema gelato",
+      "preview_alt": "Lo stesso wrapping a tema gelato su una Model 3",
+      "layer_artwork": "Grafica",
+      "layer_color": "Colore di base",
+      "layer_finish": "Finitura lucida",
+      "cta": "Apri il designer wrapping"
+    },
+    "ai": {
+      "eyebrow": "Generatore wrapping IA",
+      "title": "Una prima bozza rapida, poi i tuoi livelli",
+      "description": "Genera un progetto da una descrizione o un riferimento. Ogni risultato è un'immagine unica: scritte e grafica interne non sono modificabili separatamente. Aggiungi nell'editor i tuoi testi, immagini e forme su livelli indipendenti.",
+      "cta": "Genera un progetto",
+      "prompt_label": "Descrizione del progetto",
+      "square_texture": "texture quadrata",
+      "prompt_example": "Livrea tecnica ispirata alle orbite: base grafite profonda, linee smeraldo precise che attraversano i pannelli, numerazione discreta e finitura da motorsport di alta gamma.",
+      "tag_technical": "Tecnico",
+      "tag_minimal": "Essenziale",
+      "tag_graphite": "Grafite",
+      "tag_results": "2 immagini · 20 crediti"
+    },
+    "workflow": {
+      "eyebrow": "Come funziona",
+      "title": "Progetta il wrapping in tre passi",
+      "choose": {
+        "title": "1. Scegli veicolo e versione",
+        "description": "Scegli modello, anno e versione prima di creare. La selezione determina carrozzeria e modello piano nell'editor. Nomi simili non garantiscono la stessa disposizione dei pannelli. Se la tua auto manca, esplora le idee su un modello disponibile, ma aspetta quello corretto prima di valutarne l'adattamento."
+      },
+      "create": {
+        "title": "2. Crea colori e composizione",
+        "description": "Componi immagini, testi e forme oppure usa i crediti IA con una descrizione e un eventuale riferimento. Indica colori, motivi e atmosfera. Confronta finiture lucide, satinate, opache, metallizzate e perlate. Per scritte esatte e loghi ben posizionati, aggiungi livelli separati nell'editor."
+      },
+      "review": {
+        "title": "3. Controlla ogni angolazione",
+        "description": "Ruota l'auto e controlla frontale, fiancate e posteriore. Le linee spariscono nei passaruota? La grafica si interrompe sulle portiere? Le scritte sono leggibili? Regola i tuoi livelli o rigenera con un'altra descrizione. Scarica la texture quando è pronta; accedi per salvare il progetto o pubblicarlo in galleria."
+      }
+    },
+    "vehicles": {
+      "eyebrow": "Veicoli disponibili",
+      "title": "Personalizza il tuo wrapping auto gratis",
+      "description": "Inizia con un veicolo dotato di modello 3D e modello grafico corrispondente. Sono disponibili configurazioni Tesla Model 3, Model Y, Cybertruck, Model S e Model X. Sono previste altre marche; le schede mostrano quelle attuali. Scegli la versione corretta o confronta le opzioni nelle guide dei modelli.",
+      "preview_ready": "Anteprima 3D disponibile",
+      "model_3_link": "Esplora i wrapping Tesla Model 3",
+      "model_y_link": "Esplora i wrapping Tesla Model Y"
+    },
+    "materials": {
+      "title": "La finitura cambia il design",
+      "description": "La stessa grafica può apparire netta, morbida, tecnica o elegante secondo i riflessi. Confronta le cinque finiture dello studio prima di scegliere."
+    },
+    "gallery": {
+      "title": "Idee wrapping auto da fare tue",
+      "description": "Confronta la grafica completa con l'anteprima sul veicolo e osserva come lavorano insieme colori, motivi e spazi vuoti. Ogni design della community usa un modello specifico: prendilo come ispirazione e controlla la disposizione sull'auto scelta.",
+      "empty": "Non ci sono ancora design. Esplora un altro veicolo o crea il tuo.",
+      "cta": "Apri galleria",
+      "eyebrow": "Dalla community",
+      "page_title": "Idee wrapping auto: trova il tuo prossimo stile",
+      "page_description": "Esplora le creazioni della community, dalle palette essenziali alla grafica più audace. Filtra per veicolo, guarda i design in 3D e scarica quelli che ti ispirano.",
+      "showcase_label": "Vetrina dello studio",
+      "showcase_title": "Wrapping Cyber Emerald Performance",
+      "showcase_description": "Un rendering del veicolo nello stile visivo attuale di Car Wrap Design.",
+      "showcase_cta": "Progetta su questa auto",
+      "public_title": "Wrapping della community",
+      "loading": "Caricamento della galleria…",
+      "empty_title": "Non ci sono ancora design di wrapping.",
+      "empty_description": "Esplora colori e motivi oppure crea e condividi le tue idee.",
+      "create_cta": "Crea un wrapping",
+      "remixes": "{count} reinterpretazioni",
+      "error": "Impossibile caricare i design. Riprova.",
+      "download_error": "Download non riuscito. Riprova.",
+      "texture_alt": "Grafica completa del wrapping {title}",
+      "download_label": "Scarica {title}, {count} download",
+      "meta_title": "Idee wrapping auto | Design, colori e anteprime 3D",
+      "meta_description": "Trova idee wrapping auto nella galleria della community. Filtra per veicolo, confronta colori e motivi in 3D e scarica le tue grafiche preferite.",
+      "search_label": "Nome del design",
+      "search_placeholder": "Cerca design di wrapping",
+      "search_button": "Cerca design",
+      "vehicle_label": "Veicolo",
+      "all_vehicles": "Tutti i veicoli",
+      "sort_label": "Ordina per",
+      "sort_latest": "Più recenti",
+      "sort_downloads": "Più scaricati",
+      "sort_likes": "Più apprezzati",
+      "result_count": "{count} design",
+      "no_results": "Nessun design corrisponde ai filtri. Prova un altro nome o veicolo.",
+      "reset_filters": "Azzera filtri",
+      "pagination": "Pagine della galleria",
+      "previous": "Pagina precedente",
+      "next": "Pagina successiva",
+      "page_label": "Pagina {page}",
+      "page_summary": "Pagina {page} di {pages}",
+      "like_label": "Mi piace {title} ({count} Mi piace)",
+      "like_error": "Impossibile aggiornare il Mi piace. Riprova.",
+      "like_sign_in": "Accedi per mettere Mi piace a un design.",
+      "about_label": "Informazioni sulla galleria",
+      "about_browse_title": "Scopri i wrapping della community",
+      "about_browse_description": "Sfoglia i design per i modelli supportati di Tesla Model 3, Model Y, Cybertruck, Model S e Model X. Filtra per configurazione esatta e controlla la texture completa prima di scaricarla.",
+      "about_edit_title": "Porta un'idea nell'editor",
+      "about_edit_description": "Apri un design in 3D o usalo come base per una tua variante. Aggiungi immagini, testi e colori nell'editor oppure esplora un'altra direzione con l'IA. Il download contiene la texture nel suo formato immagine originale.",
+      "about_rights_title": "Rispetta l'autore originale",
+      "about_rights_description": "Riconosci il lavoro degli autori. Una pubblicazione o un download non trasferiscono la proprietà né concedono automaticamente l'uso commerciale. Leggi la descrizione e ottieni i permessi necessari prima del riutilizzo. Segnala eventuali violazioni dalla pagina del design."
+    },
+    "vehicle": {
+      "open_designer": "Crea con l'IA",
+      "see_ideas": "Sfoglia i design",
+      "design_this": "Progetta su questa auto",
+      "questions": "Domande sul processo di creazione",
+      "start": "Crea con l'IA",
+      "loading": "Caricamento del veicolo 3D…",
+      "image_error": "Scegli un'immagine JPEG, PNG o WebP valida fino a 5 MB.",
+      "image_loading": "Preparazione dell'immagine locale…",
+      "exit_fullscreen": "Esci da schermo intero",
+      "fullscreen_error": "Lo schermo intero non è disponibile in questo browser. Puoi continuare a usare l'anteprima qui.",
+      "custom_color": "Colore personalizzato",
+      "select_vehicle": "Veicolo in anteprima",
+      "choose_image": "Prova un wrapping o un'immagine locale",
+      "remove_image": "Rimuovi immagine dall'anteprima"
+    },
+    "meta": {
+      "title": "Configuratore wrapping auto | Editor gratuito e anteprima 3D",
+      "description": "Progetta il tuo stile con il configuratore wrapping auto: editor gratuito, immagini personali e anteprima 3D. Per nuove idee, genera una grafica con crediti IA."
+    },
+    "vehicle_pages": {
+      "tesla": {
+        "title": "Wrapping Tesla | Configuratore e anteprima 3D",
+        "description": "Progetta il tuo wrapping Tesla online. Confronta colori, finiture e grafiche su Model 3, Model Y e altri modelli, poi crea il design con l’editor gratuito."
+      },
+      "modelY": {
+        "title": "Wrapping Tesla Model Y | Design online e anteprima 3D",
+        "description": "Crea il wrapping Tesla Model Y con colori, strisce e grafiche personali. Scegli Legacy, le versioni 2025 o Model Y L e confronta il risultato in 3D."
+      },
+      "model3": {
+        "title": "Wrapping Tesla Model 3 | Crea il tuo design in 3D",
+        "description": "Progetta il wrapping Tesla Model 3 con colori, strisce racing o illustrazioni. Confronta Legacy e versioni 2024 in 3D e personalizza la grafica nell’editor."
+      }
+    }
+  },
+  "blog": {
+    "title": "Guide al wrapping auto",
+    "description": "Scopri come scegliere il modello del veicolo, creare la grafica e controllare il design in 3D.",
+    "no_posts": "Non ci sono ancora articoli. Torna presto.",
+    "back_to_blog": "Torna al blog",
+    "editorial_title": "Informazioni su questa guida",
+    "editorial_description": "Il team di {name} prepara queste guide usando l'editor e schermate del prodotto. Spiegano progettazione digitale e anteprime; per la pellicola reale servono comunque misure e verifiche di un professionista.",
+    "editorial_contact": "Segnala una correzione o chiedi chiarimenti",
+    "read_more": "Leggi di più"
+  },
+  "detail": {
+    "breadcrumb": "Percorso di navigazione",
+    "home": "Home",
+    "gallery": "Galleria",
+    "image": "Immagine del wrapping",
+    "preview": "Anteprima 3D",
+    "created_by": "Creato da",
+    "published": "Pubblicato",
+    "views": "{count} visualizzazioni",
+    "like": "Mi piace",
+    "unlike": "Rimuovi Mi piace",
+    "download": "Scarica wrapping",
+    "reference": "Reinterpreta con l'IA",
+    "edit": "Personalizza nell'editor",
+    "prompt": "Prompt IA usato per questa grafica",
+    "copy_prompt": "Copia prompt",
+    "prompt_copied": "Prompt copiato",
+    "prompt_copy_failed": "Copia non riuscita. Seleziona il prompt e copialo manualmente.",
+    "more": "Altri wrapping per {model}",
+    "more_description": "Gli ultimi design pubblici per lo stesso veicolo.",
+    "description": "{title} è un design di wrapping per {model} ({year}) creato da {author} e pubblicato il {date}. Esplora texture e anteprima 3D, scarica la grafica o usala come punto di partenza per i tuoi colori e motivi.",
+    "loading": "Caricamento del wrapping…",
+    "missing": "Wrapping non trovato",
+    "error": "Impossibile caricare questo design. Riprova.",
+    "image_error": "Impossibile caricare l'immagine. Riprova.",
+    "reference_loading": "Caricamento del riferimento…",
+    "reference_error": "Impossibile caricare l'immagine di riferimento. Riprova.",
+    "tesla_title": "Usa questo wrapping sul display Tesla",
+    "tesla_intro": "Paint Shop cambia l'auto visualizzata sul display, non la vernice reale. Controlla modello, anno e modello grafico prima dell'importazione.",
+    "tesla_steps_title": "Importa il design",
+    "tesla_step1": "Scarica la texture corretta: PNG, da 512 × 512 a 1024 × 1024 pixel, massimo 1 MB. Converti gli altri formati; cambiare solo l'estensione non basta.",
+    "tesla_step2": "Crea una cartella Wraps nella directory principale di una chiavetta USB e copiaci il PNG. Collegala a una porta USB dell'auto che supporti i dati.",
+    "tesla_step3": "Sul display apri Toybox → Paint Shop → Wraps e seleziona il design. I comandi disponibili dipendono dal software del veicolo.",
+    "tesla_usb_title": "Controlli su USB e file",
+    "tesla_usb": "Usa exFAT, FAT32 su Windows, MS-DOS FAT su Mac, ext3 o ext4. NTFS non è supportato. Fai un backup prima di formattare: la formattazione cancella i contenuti.",
+    "tesla_files": "I nomi possono contenere fino a 30 lettere, numeri, spazi, trattini bassi o trattini. Mantieni Wraps nella directory principale. Non mettere aggiornamenti di mappe o firmware sulla stessa chiavetta.",
+    "tesla_mobile": "In alternativa usa Creations → Wrap → Upload nell'app Tesla dalla versione 4.59.0. App e chiavetta supportano ciascuna fino a 10 wrapping.",
+    "tesla_source": "Modelli Tesla e requisiti completi",
+    "tesla_check": "Controlla che il file scaricato rispetti i requisiti. L'anteprima sul sito non garantisce la compatibilità in auto."
+  }
+}

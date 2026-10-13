@@ -1,0 +1,425 @@
+{
+  "landing": {
+    "nav": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "home": "Home",
+      "cars": "Cars",
+      "tesla_model_y_wrap": "Tesla Model Y Wrap",
+      "tesla_model_3_wrap": "Tesla Model 3 Wrap",
+      "blog": "Blog",
+      "tesla_wrap": "Tesla Wrap",
+      "ai_generator": "AI Car Wrap Generator",
+      "gallery": "Gallery"
+    },
+    "hero": {
+      "headline": "Design Your Own Car Wrap Online",
+      "subheadline": "Turn your car wrap design ideas into a look you can preview in 3D. Choose a vehicle, create with the free browser editor, or explore a new direction with AI credits.",
+      "cta": "Start AI Design",
+      "secondary": "Explore wraps",
+      "badge": "Vehicle Wrap Designer",
+      "variants": "12 supported variants",
+      "templates": "Official UV baselines",
+      "chassis": "Chassis",
+      "webgl_live": "WebGL 3D Studio Live",
+      "highlight_gallery": "Creative designs",
+      "highlight_models": "Supported models",
+      "highlight_preview": "Live preview",
+      "wraps_title": "Choose a wrap",
+      "wraps_empty": "No featured wraps for this model yet. Start with your own design.",
+      "wraps_error": "Unable to load wraps.",
+      "texture_loading": "Loading wrap…",
+      "texture_error": "Unable to load this wrap.",
+      "viewer_error": "Unable to load the 3D preview. Please check your connection and WebGL support.",
+      "retry": "Retry",
+      "rotate_hint": "Drag to explore",
+      "highlight_gallery_value": "100+"
+    },
+    "chips": {
+      "auth": "Authentication",
+      "payment": "Payments",
+      "subscription": "Subscriptions",
+      "credits": "Credits",
+      "rbac": "RBAC",
+      "i18n": "i18n",
+      "cms": "CMS",
+      "apikeys": "API Keys"
+    },
+    "features": {
+      "eyebrow": "Why use us",
+      "title": "Car Wrap Design Tools in One Browser Studio",
+      "description": "Move between inspiration, a flat artwork canvas and the 3D vehicle view without installing desktop software. Use the editor for precise work on your own layers and the AI generator for exploring visual directions. Both workflows help you compare ideas before spending time on a final layout.",
+      "viewer": {
+        "title": "Inspect the design on a vehicle",
+        "description": "The 3D preview lets you examine your car wrap design from different angles instead of judging only a flat image. See how the selected template maps artwork onto the body, and look for awkward transitions near panel edges. It is a visual aid for choosing a direction, with no automatic fit or installation approval."
+      },
+      "ai": {
+        "title": "Explore an idea with AI",
+        "description": "Describe a palette, an illustration style or the feeling you want the car to have. Add a reference image when it helps explain the idea. Generation uses credits and produces a single image, so changing a particular embedded graphic requires a new result or work on the image outside this editor."
+      },
+      "editor": {
+        "title": "Control the layers you create",
+        "description": "Add your own lettering, image assets and shapes to the canvas. Select each manual layer to change its position, size and arrangement while checking the preview. An uploaded logo remains one image layer; the editor moves or scales the image as a whole rather than editing individual marks inside it."
+      },
+      "materials": {
+        "title": "Compare five surface finishes",
+        "description": "View the same artwork with gloss, satin, matte, metallic or pearlescent appearance. Reflections can change how light and dark areas read, so compare a few finishes before settling on a look. The preview illustrates the effect; it does not identify a specific vinyl product or predict the exact printed color."
+      },
+      "remix": {
+        "title": "Learn from community designs",
+        "description": "Open a gallery design to inspect the full texture and vehicle preview. Use a suitable example as a starting point and add your own layers for a variation. Existing flattened artwork stays a single image. Check the original creator’s terms before reuse, especially if your project is for a business."
+      },
+      "export": {
+        "title": "Keep an image of your concept",
+        "description": "Download your artwork as a square PNG texture from the editor, and use the vehicle viewer to capture a preview. A saved image is useful for comparing concepts or explaining a direction to a wrap shop. It is not a measured installation pattern or a complete print production package."
+      },
+      "auth": {
+        "title": "Authentication",
+        "description": "Email/password, Google, and GitHub OAuth — ready out of the box with session management and account linking."
+      },
+      "payment": {
+        "title": "Payments",
+        "description": "Stripe, PayPal, Alipay, WeChat Pay — checkout, subscriptions, webhooks, and order management."
+      },
+      "rbac": {
+        "title": "Roles & Permissions",
+        "description": "Fine-grained RBAC with wildcard matching. Full admin panel for managing users, roles, and permissions."
+      },
+      "i18n": {
+        "title": "Internationalization",
+        "description": "English and Chinese built-in with locale-aware routing. Easy to extend with additional languages."
+      },
+      "cms": {
+        "title": "Content Management",
+        "description": "Categories and posts with full CRUD, status management, and admin panel — build your blog or docs."
+      },
+      "credits": {
+        "title": "Credit System",
+        "description": "FIFO consumption, expiration, auto-grant on signup, and revocation — ready for usage-based billing."
+      }
+    },
+    "pricing": {
+      "title": "Credits for your next idea",
+      "description": "Buy 100, 250, or 1,000 AI car wrap credits with a one-time payment. Credits never expire; every pack includes 50 MB storage and unlimited exports.",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "lifetime": "Lifetime",
+      "popular": "Popular",
+      "best_value": "Best value",
+      "buy_lifetime": "Buy once",
+      "starter": "Starter",
+      "starter_desc": "For individuals",
+      "pro": "Pro",
+      "pro_desc": "For growing teams",
+      "enterprise": "Enterprise",
+      "enterprise_desc": "For large organizations",
+      "feature_1_project": "1 wrap",
+      "feature_5k_credits": "5,000 credits",
+      "feature_email_support": "Email support",
+      "feature_unlimited_projects": "Unlimited wraps",
+      "feature_50k_credits": "50,000 credits",
+      "feature_priority_support": "Priority support",
+      "feature_api_access": "API access",
+      "feature_everything_pro": "Everything in Pro",
+      "feature_unlimited_credits": "Unlimited credits",
+      "feature_dedicated_support": "Dedicated support",
+      "feature_custom_integrations": "Custom integrations",
+      "eyebrow": "One payment. Yours to use.",
+      "intro": "Each AI result uses 10 credits. Choose a pack and create at your own pace.",
+      "starter_pack": "Starter pack",
+      "creator_pack": "Creator pack",
+      "studio_pack": "Studio pack",
+      "trial_pack": "Trial pack",
+      "credits": "{credits} credits",
+      "results": "{count} AI results",
+      "buy": "Buy {credits} credits",
+      "one_time": "One-time payment, no subscription",
+      "never_expires": "Credits never expire",
+      "storage": "50 MB storage",
+      "exports": "Unlimited exports",
+      "footer": "All prices are in USD. Your credits stay available until you use them.",
+      "checkout_error": "Unable to open checkout. Please try again.",
+      "paywall_title": "Keep creating with more credits",
+      "paywall_description": "This generation needs {cost} credits. Choose a one-time pack to continue.",
+      "trial_title": "Start with a smaller pack",
+      "trial_description": "Try 20 credits for $2. A one-time payment with the same storage and export benefits.",
+      "offer_remaining": "Offer ends in",
+      "offer_expired": "This offer has expired.",
+      "offer_unavailable": "This offer is no longer available.",
+      "trial_dismiss": "No thanks",
+      "loading": "Loading credit packs…"
+    },
+    "faq": {
+      "title": "Car Wrap Design FAQ",
+      "description": "Practical answers about starting for free, choosing an online workflow, working with AI images and taking a concept to a professional wrap shop.",
+      "stack": {
+        "question": "Which vehicle models are currently supported?",
+        "answer": "The current library contains Tesla Model 3 Legacy and 2024 Base and Performance; Model Y Legacy, 2025 Base, Premium and Performance, plus Model Y L; Cybertruck; Model S 2021 and 2025 Plaid; and Model X 2021. Each version has its own body and wheel configuration. More brands are planned, and the vehicle selector shows the models you can use today."
+      },
+      "payment": {
+        "question": "How much does an AI generation cost?",
+        "answer": "Each generated candidate costs 10 credits. You choose one to four candidates before submitting, and the interface shows the total first. Failed candidates are eligible for an automatic one-time credit reversal."
+      },
+      "database": {
+        "question": "Can I use my own image?",
+        "answer": "Yes. Image-to-image generation accepts JPEG, PNG, and WebP references up to 5 MB. You can also upload artwork directly into the editor without sending it to an AI model."
+      },
+      "customize": {
+        "question": "Is the 3D preview an installation proof?",
+        "answer": "No. It is a design visualization. Always have a professional installer check seams, bleed, safe zones, print color, and physical measurements before production."
+      },
+      "license": {
+        "question": "Is my downloaded design ready for a physical wrap?",
+        "answer": "The download is concept artwork, not a print-ready installation template. A professional shop needs to check the vehicle’s actual measurements, panel seams, bleed, image resolution and print color before production. Share your car wrap design and the 3D preview to explain the desired look, then let the installer confirm the final layout and material. Online visualization cannot replace checking the real vehicle."
+      },
+      "free": {
+        "question": "Can I design my own car wrap online for free?",
+        "answer": "Yes. The browser editor and 3D preview are free to use for composing a car wrap design with your own layers. AI image generation is a separate credit-based feature, so “free” does not mean unlimited AI results. You can explore the editor before purchasing credits. Follow the sign-in prompts when uploading assets, saving a project or publishing a design."
+      },
+      "software": {
+        "question": "What software can I use to design car wraps?",
+        "answer": "For an online concept, this studio provides a flat canvas, editable manual layers and a matching 3D vehicle preview in your browser. You do not need to install a desktop design application to begin. A wrap shop may use additional illustration, layout and production software to prepare physical film. The right workflow depends on whether you need an idea to compare or measured artwork for installation."
+      },
+      "how": {
+        "question": "How can I design my own vehicle wrap?",
+        "answer": "Choose a supported vehicle and start with a palette or a few gallery references. Build the layout with your own text, images and shapes, or generate an AI concept from a prompt. Keep important lettering on a manual text layer. Check the result from several angles, then download the texture. For a physical wrap, ask an installer to confirm measurements and prepare the artwork for printing."
+      },
+      "where": {
+        "question": "Where can I design my own car wrap?",
+        "answer": "Open the designer from this page to work in the browser. The gallery is useful when you are still choosing a style, while the AI generator is an option for exploring a written idea. If you already have a logo or illustration, bring it into the editor as an image layer. Start with an available vehicle and use its own template throughout the project."
+      },
+      "editing": {
+        "question": "Can I edit text and logos inside an AI-generated image?",
+        "answer": "No. AI-generated artwork is a single image, so its embedded lettering, logos and graphics cannot be selected or edited independently. You can change the prompt and generate a different image. In the manual editor, text you create with the text tool and images you upload as separate layers can be moved, resized and arranged. Adding a new layer does not replace or remove pixels already inside the AI image."
+      }
+    },
+    "cta": {
+      "eyebrow": "Create it. Preview it. Share it.",
+      "headline": "Give Your Next Car Wrap Design a Starting Point",
+      "subheadline": "Have a style in mind? Describe it to the AI generator and compare the resulting image on an available vehicle. Prefer to place every element yourself? Start with the free editor and build your own layers. AI generation uses credits; your own manually added text and images remain separately editable.",
+      "button": "Create a wrap",
+      "ai_button": "Generate a wrap with AI"
+    },
+    "footer": {
+      "tagline": "AI-assisted car wrap design with a real-time 3D preview.",
+      "feature": "Feature",
+      "product": "Product",
+      "popular_vehicles": "Popular Vehicles",
+      "wrap_editor": "Wrap Editor",
+      "model_y_designer": "Model Y Designer",
+      "model_3_designer": "Model 3 Designer",
+      "help": "Help & FAQ",
+      "company_legal": "Company & Legal",
+      "status": "Real-time WebGL 3D studio online",
+      "resources": "Resources",
+      "legal": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "settings": "My wraps",
+      "admin": "Wrap gallery",
+      "docs": "Documentation",
+      "github": "GitHub",
+      "copyright": "© {year} Car Wrap Design. All rights reserved.",
+      "blog": "Blog",
+      "wraps": "My Wraps"
+    },
+    "blog": {
+      "title": "From the blog",
+      "description": "Car wrap design guides for choosing vehicle templates, creating artwork, and checking your design in 3D.",
+      "view_all": "View all posts"
+    },
+    "showcase": {
+      "eyebrow": "Your wrap studio",
+      "title": "Build a Car Wrap Design with Your Own Artwork",
+      "description": "Start with a blank canvas in the browser editor and combine a base color, uploaded images, text and shapes. The layers you create manually can be selected, moved, resized and arranged separately. Keep a business name or logo on its own layer when positioning matters. An AI-generated picture can be used as artwork, but its internal text and graphics do not become separate editable objects.",
+      "editor_label": "Layer editor",
+      "preview_label": "3D material preview",
+      "viewer_note": "This is a static editor example. Open the designer to compose your own layers and rotate the vehicle preview.",
+      "example_name": "Ice cream palette",
+      "static_note": "Editor layout example",
+      "texture_alt": "Square ice cream wrap artwork example",
+      "preview_alt": "The same ice cream wrap applied to a Model 3",
+      "layer_artwork": "Artwork",
+      "layer_color": "Base color",
+      "layer_finish": "Gloss finish",
+      "cta": "Open the wrap designer"
+    },
+    "ai": {
+      "eyebrow": "AI wrap generator",
+      "title": "A faster first draft, with control after generation.",
+      "description": "Start from a detailed prompt or bring a reference image to generate a concept. Each result is a single image: its embedded text and graphics cannot be edited independently. Use the manual editor to add your own separate text, image and shape layers.",
+      "cta": "Generate a concept",
+      "prompt_label": "Wrap concept prompt",
+      "square_texture": "square texture",
+      "prompt_example": "A technical livery inspired by orbital flight paths, deep graphite base, precise emerald lines crossing panels continuously, understated numbering, premium motorsport finish.",
+      "tag_technical": "Technical",
+      "tag_minimal": "Minimal",
+      "tag_graphite": "Graphite",
+      "tag_results": "2 results · 20 credits"
+    },
+    "workflow": {
+      "eyebrow": "How it works",
+      "title": "Plan Your Car Wrap Design in Three Steps",
+      "choose": {
+        "title": "1. Match your vehicle and version",
+        "description": "Choose an available model, year and trim before creating the artwork. The vehicle selection determines the body shape and matching flat template used by the editor. Similar model names do not guarantee the same panel layout. If your vehicle is not listed, explore ideas on an available model, but wait for the correct template before treating the layout as a fit for your own car."
+      },
+      "create": {
+        "title": "2. Create the colors and composition",
+        "description": "Build your car wrap design manually with images, lettering and shapes, or use a prompt and optional reference image to generate a concept with AI credits. Describe the palette, pattern and mood you want. Choose from gloss, satin, matte, metallic and pearlescent finishes for the preview. For exact wording and logo placement, add your own text or image layers in the editor."
+      },
+      "review": {
+        "title": "3. Preview the result from every angle",
+        "description": "Rotate the vehicle and inspect the front, sides and rear. Check whether a line disappears around a wheel arch, a graphic breaks at a door, or important wording is difficult to read. Adjust the layers you created yourself, or change the prompt and generate another AI image. Download the texture when you are ready; sign in to save a project or publish your work to the gallery."
+      }
+    },
+    "vehicles": {
+      "eyebrow": "Supported at launch",
+      "title": "Customize Your Car Wrap Design for Free",
+      "description": "Start your car wrap design with a vehicle that has an available 3D model and matching template. The current library includes Tesla Model 3, Model Y, Cybertruck, Model S and Model X configurations. More brands are planned; the cards below show what is available now. Choose the version that matches your car, or visit a model guide to compare the supported options.",
+      "preview_ready": "3D preview ready",
+      "model_3_link": "Explore Tesla Model 3 wrap designs",
+      "model_y_link": "Explore Tesla Model Y wrap designs"
+    },
+    "materials": {
+      "title": "Finish changes the design",
+      "description": "The same artwork can feel sharp, soft, technical, or luxurious depending on surface response. Compare five calibrated presets in the studio before you commit."
+    },
+    "gallery": {
+      "title": "Car Wrap Design Ideas to Make Your Own",
+      "description": "Browse real designs shared in the community gallery and compare the complete artwork with its vehicle preview. Look at how colors, patterns and empty space work together before choosing a direction. Each example belongs to a specific vehicle template; use it for inspiration and check the fit on your selected model.",
+      "empty": "No wraps here yet. Explore another vehicle or start designing your own.",
+      "cta": "Open the gallery",
+      "eyebrow": "Created by the community",
+      "page_title": "Car Wraps Gallery: Find Your Next Look",
+      "page_description": "Explore community designs in the Car Wraps Gallery, from clean color schemes to bold graphics. Filter by your vehicle, open a design to see it in 3D, and download the artwork that inspires your next wrap.",
+      "showcase_label": "Studio showcase",
+      "showcase_title": "Cyber Emerald Performance Wrap",
+      "showcase_description": "A presentation-ready vehicle render derived from the current Car Wrap Design visual system.",
+      "showcase_cta": "Design this vehicle",
+      "public_title": "Community wrap designs",
+      "loading": "Loading gallery…",
+      "empty_title": "No wrap designs here yet.",
+      "empty_description": "Explore colors and patterns, or start designing and share your ideas.",
+      "create_cta": "Create a wrap",
+      "remixes": "{count} remixes",
+      "error": "Unable to load designs. Please try again.",
+      "download_error": "Download failed. Please try again.",
+      "texture_alt": "Complete wrap artwork for {title}",
+      "download_label": "Download {title}, {count} downloads",
+      "meta_title": "Car Wraps Gallery | Explore Colors, Patterns & Designs",
+      "meta_description": "Explore the Car Wraps Gallery for fresh colors, bold patterns and community designs. Filter by vehicle, preview wraps in 3D and download your favorite artwork.",
+      "search_label": "Design name",
+      "search_placeholder": "Search car wrap designs",
+      "search_button": "Search designs",
+      "vehicle_label": "Vehicle",
+      "all_vehicles": "All vehicles",
+      "sort_label": "Sort by",
+      "sort_latest": "Newest",
+      "sort_downloads": "Most downloaded",
+      "sort_likes": "Most liked",
+      "result_count": "{count} designs",
+      "no_results": "No designs match these filters. Try another name or vehicle.",
+      "reset_filters": "Clear filters",
+      "pagination": "Gallery pages",
+      "previous": "Previous page",
+      "next": "Next page",
+      "page_label": "Page {page}",
+      "page_summary": "Page {page} of {pages}",
+      "like_label": "Like {title} ({count} likes)",
+      "like_error": "Unable to update your like. Please try again.",
+      "like_sign_in": "Sign in to like a design.",
+      "about_label": "About the community gallery",
+      "about_browse_title": "Explore community car wraps",
+      "about_browse_description": "Browse designs shared by creators for the supported Tesla Model 3, Model Y, Cybertruck, Model S, and Model X templates. Filter by the exact vehicle configuration to find the right layout, then preview the complete wrap texture before downloading.",
+      "about_edit_title": "Take an idea into the editor",
+      "about_edit_description": "Open a design to preview it in 3D or use it as the starting point for your own variation. Add images, text and colors in the editor, or explore a new direction with AI. Downloads contain the wrap texture in its original image format.",
+      "about_rights_title": "Respect the original creator",
+      "about_rights_description": "Credit the people behind the designs. A public listing or download does not transfer ownership or automatically grant permission for commercial use. Check the creator’s description and obtain the necessary permission before reuse; report suspected infringement from the design page."
+    },
+    "vehicle": {
+      "open_designer": "Start AI Design",
+      "see_ideas": "Browse designs",
+      "design_this": "Design this vehicle",
+      "questions": "Questions about this wrap workflow",
+      "start": "Start AI Design",
+      "loading": "Loading 3D vehicle…",
+      "image_error": "Choose a valid JPEG, PNG, or WebP image no larger than 5 MB.",
+      "image_loading": "Preparing your local image…",
+      "exit_fullscreen": "Exit fullscreen",
+      "fullscreen_error": "Fullscreen is unavailable in this browser. You can continue using the preview here.",
+      "custom_color": "Custom color",
+      "select_vehicle": "Preview vehicle",
+      "choose_image": "Preview a local wrap or image",
+      "remove_image": "Remove preview image"
+    },
+    "meta": {
+      "title": "Car Wrap Design Online | Design Your Own Car Wrap Free",
+      "description": "Create your car wrap design online with a free editor and 3D preview. Explore wrap ideas, add your own artwork, or generate concepts with AI credits."
+    },
+    "vehicle_pages": {
+      "tesla": {
+        "title": "Tesla Wrap Design Online | Explore Colors & Styles",
+        "description": "Find your next Tesla wrap style. Explore colors, finishes and custom graphics on your model in 3D, then create a design of your own in the online editor."
+      },
+      "modelY": {
+        "title": "Tesla Model Y Wrap Design | Try Colors & 3D Preview",
+        "description": "Explore your Tesla Model Y wrap in satin, gloss or bold graphics. Choose your version, compare the look in 3D and create a design for your everyday drive."
+      },
+      "model3": {
+        "title": "Tesla Model 3 Wrap Design | Create & Preview Online",
+        "description": "Create a Tesla Model 3 wrap with subtle colors, racing stripes or custom artwork. Preview your version in 3D and build a look that follows every body line."
+      }
+    }
+  },
+  "blog": {
+    "title": "Blog",
+    "description": "Car wrap design guides for choosing vehicle templates, creating artwork, and checking your design in 3D.",
+    "no_posts": "No posts yet — check back soon.",
+    "back_to_blog": "Back to blog",
+    "editorial_title": "About this guide",
+    "editorial_description": "The {name} team prepares these guides using the editor and its own product screenshots. They explain digital wrap design and preview workflows; physical vinyl production still requires a professional installer’s measurements and checks.",
+    "editorial_contact": "Report a correction or ask about a step",
+    "read_more": "Read more"
+  },
+  "detail": {
+    "breadcrumb": "Breadcrumb",
+    "home": "Home",
+    "gallery": "Gallery",
+    "image": "Wrap image",
+    "preview": "3D preview",
+    "created_by": "Created by",
+    "published": "Published",
+    "views": "{count} views",
+    "like": "Like",
+    "unlike": "Undo this like",
+    "download": "Download wrap",
+    "reference": "Remix with AI",
+    "edit": "Customize in editor",
+    "prompt": "AI prompt used for this wrap",
+    "copy_prompt": "Copy prompt",
+    "prompt_copied": "Prompt copied",
+    "prompt_copy_failed": "Could not copy. Select the prompt and copy it manually.",
+    "more": "More {model} wraps",
+    "more_description": "The latest public designs for the same vehicle.",
+    "description": "{title} is a {model} ({year}) wrap design by {author}, published on {date}. Explore the texture and 3D preview, download the artwork, or use it as a starting point for your own colors and graphics.",
+    "loading": "Loading wrap…",
+    "missing": "Wrap not found",
+    "error": "Unable to load this wrap. Please try again.",
+    "image_error": "Unable to load the image. Please try again.",
+    "reference_loading": "Loading reference image…",
+    "reference_error": "Unable to load the reference image. Please try again.",
+    "tesla_title": "Use this wrap on your Tesla",
+    "tesla_intro": "Paint Shop changes the vehicle visualization on your screen, not the physical paintwork. Match the model, year and template before importing.",
+    "tesla_steps_title": "Import your design",
+    "tesla_step1": "Download the matching texture. Check that it is a PNG, 512 × 512 to 1024 × 1024 pixels and no larger than 1 MB. Convert other formats first; renaming the extension is not enough.",
+    "tesla_step2": "Create a Wraps folder at the root of a USB drive and copy the PNG into it. Connect the drive to a data-capable USB port in your car.",
+    "tesla_step3": "Open Toybox → Paint Shop → Wraps on the vehicle screen and select the design. Available controls depend on vehicle software.",
+    "tesla_usb_title": "USB and file checklist",
+    "tesla_usb": "Use exFAT, FAT32 on Windows, MS-DOS FAT on Mac, ext3 or ext4. NTFS is unsupported. Back up the drive before formatting, which erases its contents.",
+    "tesla_files": "Names allow up to 30 letters, numbers, spaces, underscores or dashes. Keep Wraps at the drive root. Do not include map or firmware updates on the same drive.",
+    "tesla_mobile": "Alternatively, use Creations → Wrap → Upload in Tesla app 4.59.0 or later. The app and USB drive each support up to 10 wraps.",
+    "tesla_source": "Tesla templates and full requirements",
+    "tesla_check": "Check the downloaded file against these requirements. A website preview does not confirm in-car compatibility."
+  }
+}

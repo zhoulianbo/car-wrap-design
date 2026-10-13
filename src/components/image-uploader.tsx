@@ -4,6 +4,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { ImageIcon, RefreshCw, Upload, X } from 'lucide-react';
 import { toast } from 'sonner';
 
+import { ApiError, apiUpload } from '@/lib/api-client';
+import { getErrorMessage } from '@/lib/error-message';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 
@@ -46,21 +48,12 @@ const uploadImageFile = async (file: File) => {
   const formData = new FormData();
   formData.append('files', file);
 
-  const response = await fetch('/api/storage/upload-image', {
-    method: 'POST',
-    body: formData,
-  });
-
-  if (!response.ok) {
-    throw new Error(`Upload failed with status ${response.status}`);
-  }
-
-  const result = await response.json();
-  if (result.code !== 0 || !result.data?.urls?.length) {
-    throw new Error(result.message || 'Upload failed');
-  }
-
-  return result.data.urls[0] as string;
+  const result = await apiUpload<{ urls: string[] }>(
+    '/api/storage/upload-image',
+    formData
+  );
+  if (!result?.urls?.length) throw new ApiError(-1, 'UPLOAD_FAILED');
+  return result.urls[0];
 };
 
 export function ImageUploader({
@@ -204,9 +197,7 @@ export function ImageUploader({
         })
         .catch((error: any) => {
           console.error('Upload failed:', error);
-          toast.error(
-            error?.message ? `Upload failed: ${error.message}` : 'Upload failed'
-          );
+          toast.error(getErrorMessage(error, 'UPLOAD_FAILED'));
           setItems((prev) =>
             prev.map((item) => {
               if (item.id !== id) return item;
@@ -325,9 +316,7 @@ export function ImageUploader({
           );
         } catch (error: any) {
           console.error('Upload failed:', error);
-          toast.error(
-            error?.message ? `Upload failed: ${error.message}` : 'Upload failed'
-          );
+          toast.error(getErrorMessage(error, 'UPLOAD_FAILED'));
           setItems((prev) =>
             prev.map((current) => {
               if (current.id !== item.id) return current;

@@ -1,0 +1,426 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5rem;
+  color: #f5f8fa;
+  background: #0a0a0a;
+}
+.upperShell {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.upper {
+  display: grid;
+  grid-template-areas: 'copy' 'vehicles' 'stage';
+  gap: 1.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
+}
+.copy {
+  grid-area: copy;
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+}
+.eyebrow {
+  margin-bottom: 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #60ebc2;
+  letter-spacing: 0.08em;
+}
+.headline {
+  font-family: var(--font-headline);
+  font-size: clamp(2rem, 3.5vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.13;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+.description {
+  margin-top: 1.4rem;
+  max-width: 28rem;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: #b6c4cd;
+  text-wrap: pretty;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+.primary,
+.secondary {
+  height: 3rem;
+  padding-inline: 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+.primary {
+  background: #52e6b7;
+  color: #06231b;
+}
+.primary:hover {
+  background: #85f0ce;
+}
+.secondary {
+  background: #ffffff05;
+  border-color: #ffffff25;
+  color: #e8eff3;
+}
+.secondary:hover {
+  background: #ffffff0e;
+}
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  color: #98afb9;
+}
+.highlights > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+.stage {
+  grid-area: stage;
+  position: relative;
+  min-width: 0;
+  height: clamp(19rem, 70vw, 30rem);
+}
+.orbitHint {
+  position: absolute;
+  bottom: 0.5rem;
+  inset-inline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4rem;
+  color: #8da6af;
+  font-size: 0.7rem;
+  pointer-events: none;
+}
+.vehicles {
+  grid-area: vehicles;
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+.vehicleHeading {
+  margin-bottom: 0.75rem;
+  color: #8da6af;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+.vehicleList {
+  display: flex;
+  gap: 0.6rem;
+  overflow-x: auto;
+  padding: 2px;
+}
+.vehicle {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.5rem;
+  width: 11rem;
+  min-height: 4.5rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #ffffff12;
+  border-radius: 0.65rem;
+  background: #0d171caa;
+  color: #b2c2c9;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: left;
+  transition:
+    border-color 0.18s,
+    background 0.18s;
+}
+.vehicle img {
+  flex-shrink: 0;
+  width: 4rem;
+  height: 3.25rem;
+  object-fit: contain;
+}
+.vehicle:hover {
+  border-color: #61edbc66;
+  background: #14282b;
+}
+.selectedVehicle {
+  border-color: #52e6b7;
+  background: #12312a;
+  color: #eafff8;
+  box-shadow: inset 0 0 0 1px #52e6b733;
+}
+.bottom {
+  flex-shrink: 0;
+  height: 11rem;
+  border-top: 1px solid #ffffff0a;
+  background: #080d12b3;
+}
+.stripContainer {
+  height: 100%;
+  padding-top: 0.85rem;
+  padding-bottom: 0.6rem;
+}
+.stripHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  color: #92aab5;
+  font-size: 0.7rem;
+}
+.stripHeading a {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #a9c3cb;
+}
+.strip {
+  display: flex;
+  gap: 0.75rem;
+  height: 8rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.2rem 0.1rem 0.6rem;
+  scrollbar-width: thin;
+  scrollbar-color: #507069 #0c161c;
+}
+.wrapCard {
+  position: relative;
+  flex: 0 0 10rem;
+  height: 6.9rem;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #ffffff10;
+  border-radius: 0.65rem;
+  background: linear-gradient(145deg, #1c292e, #111c23);
+  transition:
+    border-color 0.18s,
+    background 0.18s;
+}
+.wrapCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wrapCard span {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  overflow: hidden;
+  padding: 0.4rem 0.6rem;
+  background: linear-gradient(transparent, #060b10db);
+  font-size: 0.65rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #d4e0e4;
+}
+.wrapCard:hover {
+  border-color: #52e6b780;
+}
+.selectedWrap {
+  border-color: #52e6b7;
+  box-shadow: inset 0 0 0 1px #52e6b755;
+  background: #17342e;
+}
+.skeleton {
+  background: #142127;
+}
+.empty {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: #8da6af;
+}
+.empty button,
+.textureStatus button,
+.viewerMessage button {
+  color: #7fe9c6;
+  text-decoration: underline;
+}
+.viewerMessage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9cb3bf;
+}
+.textureStatus {
+  position: absolute;
+  top: 1.5rem;
+  inset-inline: 1rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #c7dbdc;
+}
+.vehicle:focus-visible,
+.wrapCard:focus-visible,
+.strip:focus-visible {
+  outline: 2px solid #9af7d8;
+  outline-offset: 2px;
+}
+@media (min-width: 768px) {
+  .hero {
+    --hero-strip-height: 10rem;
+  }
+  .upperShell {
+    height: clamp(400px, calc(100svh - 5rem - var(--hero-strip-height)), 640px);
+  }
+  .upper {
+    height: 100%;
+    grid-template-areas: 'copy stage vehicles';
+    grid-template-columns: minmax(14rem, 0.8fr) minmax(0, 1.5fr) 9rem;
+    align-items: center;
+    gap: 1rem;
+    padding-block: 1.5rem;
+  }
+  .stage {
+    height: 100%;
+    min-height: 0;
+  }
+  .vehicleList {
+    flex-direction: column;
+    min-height: 0;
+    max-height: 27rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .vehicles {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    max-height: 100%;
+  }
+  .vehicleHeading {
+    flex-shrink: 0;
+  }
+  .vehicle {
+    width: 100%;
+    min-height: 4.25rem;
+    padding-inline: 0.5rem;
+    gap: 0.25rem;
+  }
+  .vehicle img {
+    width: 3.5rem;
+  }
+  .highlights {
+    gap: 0.85rem;
+  }
+  .description {
+    font-size: 0.875rem;
+  }
+  .bottom {
+    height: var(--hero-strip-height);
+  }
+  .strip {
+    height: 7rem;
+  }
+  .wrapCard {
+    height: 6rem;
+  }
+}
+@media (min-width: 1200px) {
+  .hero {
+    --hero-strip-height: 11rem;
+  }
+  .upper {
+    grid-template-columns: clamp(20rem, 30vw, 28rem) minmax(0, 1fr) 11rem;
+    gap: 1.5rem;
+  }
+  .stage {
+    margin-left: calc(-6rem + 100px);
+  }
+  .stage > [data-hero-ready] {
+    position: absolute;
+    top: calc(-25% + 50px);
+    width: 100%;
+    height: calc(150% - 100px);
+  }
+  .headline {
+    width: min(38rem, calc(100% + 10rem));
+  }
+  .description {
+    max-width: min(100% + 100px, 30rem);
+    width: calc(100% + 100px);
+    font-size: 1rem;
+  }
+  .highlights {
+    gap: 2rem;
+  }
+  .vehicle {
+    min-height: 4.75rem;
+    padding-inline: 0.65rem;
+  }
+  .vehicle img {
+    width: 4rem;
+  }
+  .bottom {
+    height: var(--hero-strip-height);
+  }
+  .strip {
+    height: 8rem;
+  }
+  .wrapCard {
+    flex-basis: calc((100% - 5.25rem) / 8);
+    min-width: 9rem;
+    height: 6.9rem;
+  }
+}
+
+.stage [data-vehicle-render] {
+  opacity: 0;
+}
+.stage [data-hero-ready='true'] [data-vehicle-render] {
+  animation: modelEnter 700ms cubic-bezier(0.2, 0.65, 0.3, 1) both;
+}
+@keyframes modelEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stage [data-hero-ready='true'] [data-vehicle-render] {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.highlightLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+.highlights strong {
+  color: #eff6f4;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}

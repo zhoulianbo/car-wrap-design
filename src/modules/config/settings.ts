@@ -112,6 +112,12 @@ export function getSettingGroups(): SettingGroup[] {
       tab: 'payment',
     },
     {
+      name: 'waffo',
+      title: 'Waffo',
+      description: 'Waffo Pancake payment gateway',
+      tab: 'payment',
+    },
+    {
       name: 'alipay',
       title: 'Alipay',
       description: 'Alipay payment gateway (native)',
@@ -172,6 +178,19 @@ export function getSettingGroups(): SettingGroup[] {
       tab: 'ai',
     },
     { name: 'fal', title: 'Fal', description: 'Fal AI API', tab: 'ai' },
+    {
+      name: 'wrap_generation',
+      title: 'Wrap Generation',
+      description: 'Provider used by the car wrap generator',
+      tab: 'ai',
+    },
+    { name: 'kie', title: 'Kie', description: 'Kie AI API', tab: 'ai' },
+    {
+      name: 'grsai',
+      title: 'Grsai',
+      description: 'Grsai image generation API',
+      tab: 'ai',
+    },
 
     // Analytics
     {
@@ -264,30 +283,34 @@ export function getSettings(): Setting[] {
       type: 'switch',
       group: 'credit',
       tab: 'general',
+      defaultValue: 'true',
     },
     {
       name: 'initial_credits_amount',
       title: 'Credits amount',
       type: 'number',
-      placeholder: '100',
+      placeholder: '20',
       group: 'credit',
       tab: 'general',
+      defaultValue: '20',
     },
     {
       name: 'initial_credits_valid_days',
       title: 'Valid days',
       type: 'number',
-      placeholder: '365',
+      placeholder: '30',
       group: 'credit',
       tab: 'general',
+      defaultValue: '30',
     },
     {
       name: 'initial_credits_description',
       title: 'Description',
       type: 'text',
-      placeholder: 'Welcome bonus',
+      placeholder: 'Welcome wrap credits',
       group: 'credit',
       tab: 'general',
+      defaultValue: 'Welcome wrap credits',
     },
 
     // ─── Auth / Email ────────────────────────────────────────────────
@@ -398,6 +421,7 @@ export function getSettings(): Setting[] {
         { label: 'Stripe', value: 'stripe' },
         { label: 'Creem', value: 'creem' },
         { label: 'PayPal', value: 'paypal' },
+        { label: 'Waffo', value: 'waffo' },
         { label: 'Alipay', value: 'alipay' },
         { label: 'WeChat Pay', value: 'wechat' },
       ],
@@ -541,6 +565,52 @@ export function getSettings(): Setting[] {
       type: 'number',
       placeholder: '留空使用实际金额，填 1 则支付 $0.01',
       group: 'paypal',
+      tab: 'payment',
+    },
+
+    // ─── Payment / Waffo ────────────────────────────────────────────
+    {
+      name: 'waffo_enabled',
+      title: 'Enable Waffo',
+      type: 'switch',
+      group: 'waffo',
+      tab: 'payment',
+    },
+    {
+      name: 'waffo_merchant_id',
+      title: 'Merchant ID',
+      type: 'text',
+      placeholder: 'merchant_xxx',
+      group: 'waffo',
+      tab: 'payment',
+    },
+    {
+      name: 'waffo_private_key',
+      title: 'API Private Key',
+      type: 'textarea',
+      tip: 'Paste the downloaded private key or its Base64 body. Do not use a public key.',
+      group: 'waffo',
+      tab: 'payment',
+    },
+    {
+      name: 'waffo_environment',
+      title: 'Environment',
+      type: 'select',
+      options: [
+        { label: 'Test', value: 'test' },
+        { label: 'Production', value: 'prod' },
+      ],
+      defaultValue: 'test',
+      group: 'waffo',
+      tab: 'payment',
+    },
+    {
+      name: 'waffo_product_ids_mapping',
+      title: 'Product IDs Mapping',
+      type: 'textarea',
+      placeholder: '{"credits_100": "product_xxx"}',
+      tip: 'Map the pricing product ID to the product created in Waffo.',
+      group: 'waffo',
       tab: 'payment',
     },
 
@@ -747,7 +817,7 @@ export function getSettings(): Setting[] {
       title: 'Upload Path',
       type: 'text',
       placeholder: 'uploads',
-      tip: 'Path to upload files to; leave empty to use the default. Example: uploads/foo/bar',
+      tip: 'Optional legacy prefix. Product media uses the fixed design, cover, storage, and upload directories at the bucket root.',
       group: 'r2',
       tab: 'storage',
     },
@@ -812,6 +882,67 @@ export function getSettings(): Setting[] {
       type: 'password',
       placeholder: 'r8_xxx',
       group: 'replicate',
+      tab: 'ai',
+    },
+
+    // ─── AI / Wrap generation ───────────────────────────────────────
+    {
+      name: 'wrap_generation_provider',
+      title: 'Image provider',
+      type: 'select',
+      options: [
+        { label: 'Replicate', value: 'replicate' },
+        { label: 'Kie', value: 'kie' },
+        { label: 'Grsai', value: 'grsai' },
+      ],
+      defaultValue: 'replicate',
+      group: 'wrap_generation',
+      tab: 'ai',
+    },
+
+    // ─── AI / Kie ───────────────────────────────────────────────────
+    {
+      name: 'kie_api_key',
+      title: 'API Key',
+      type: 'password',
+      placeholder: 'xxx',
+      group: 'kie',
+      tab: 'ai',
+    },
+    {
+      name: 'kie_image_model',
+      title: 'Image model',
+      type: 'text',
+      placeholder: 'gpt-image-2-5-sunburst-image-to-image',
+      group: 'kie',
+      tab: 'ai',
+    },
+
+    // ─── AI / Grsai ─────────────────────────────────────────────────
+    {
+      name: 'grsai_api_key',
+      title: 'API Key',
+      type: 'password',
+      placeholder: 'xxx',
+      group: 'grsai',
+      tab: 'ai',
+    },
+    {
+      name: 'grsai_base_url',
+      title: 'Base URL',
+      type: 'text',
+      placeholder: 'https://grsaiapi.com',
+      defaultValue: 'https://grsaiapi.com',
+      group: 'grsai',
+      tab: 'ai',
+    },
+    {
+      name: 'grsai_image_model',
+      title: 'Image model',
+      type: 'text',
+      placeholder: 'gpt-image-2.5',
+      defaultValue: 'gpt-image-2.5',
+      group: 'grsai',
       tab: 'ai',
     },
 

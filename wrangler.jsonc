@@ -1,0 +1,37 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "car-wrap-design",
+  "account_id": "7f0d89e6aad68546cdf3a476f008d7be",
+  "compatibility_date": "2026-06-03",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+      "persist": true
+    }
+  },
+  "vars": {
+    "DATABASE_PROVIDER": "d1",
+    "VITE_APP_URL": "https://carwrapdesign.app",
+    "VITE_APP_NAME": "Car Wrap Design",
+    "VITE_ASSETS_URL": "https://assets.carwrapdesign.app",
+    "VITE_DEFAULT_LOCALE": "en",
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "car-wrap-design-db",
+      "database_id": "39f68986-736b-4f18-8f7e-65920836eaee",
+      "migrations_dir": "drizzle",
+    },
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "saas-config",
+      "id": "0cb06694728346bbbfa325c02105d241",
+    },
+  ],
+}

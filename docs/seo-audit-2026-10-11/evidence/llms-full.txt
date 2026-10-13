@@ -1,0 +1,19 @@
+# Car Wrap Design
+
+> Create AI car wrap concepts, edit Tesla UV templates, and preview every finish in realistic 3D.
+
+## Pages
+
+- [Home](http://localhost:3100): Landing page
+- [Pricing](http://localhost:3100/pricing): Pricing plans
+- [Blog](http://localhost:3100/blog): Blog posts and articles
+
+## Blog Posts
+
+### Tesla wrap design: from first preview to a finished project
+
+URL: http://localhost:3100/blog/tesla-wrap-complete-guide
+Description: A practical workflow for choosing a Model 3 or Model Y, trying local artwork, editing layers, reviewing a 3D wrap, and saving or sharing your design.
+
+---
+

@@ -99,7 +99,7 @@ function withMysqlCompat<T extends object>(dbInstance: T): T {
 /**
  * SQLite/Turso compatibility shim:
  * - `.for(...)` polyfilled as no-op
- * - D1 transaction workaround
+ * - D1 rejects interactive transactions; callers must use atomic batches
  */
 function withSqliteCompat<T extends object>(
   dbInstance: T,
@@ -134,7 +134,11 @@ function withSqliteCompat<T extends object>(
     get(target, prop, receiver) {
       if (prop === 'transaction') {
         if (provider === 'd1') {
-          return (fn: any) => fn(proxied);
+          return () => {
+            throw new Error(
+              'D1 requires an atomic batch; interactive transactions are unsupported'
+            );
+          };
         }
         const original = Reflect.get(target, prop, receiver);
         if (typeof original !== 'function') return original;

@@ -1,51 +1,155 @@
+import { Link } from '@/core/i18n/navigation';
+import { envConfigs } from '@/config';
+
 export const meta = {
   title: 'Terms of Service',
-  description: 'The terms and conditions for using our service.',
-  updated_at: '2026-05-21',
+  description:
+    'Terms for the wrap editor, AI generation, credits, public designs, and acceptable use.',
+  updated_at: '2026-10-10',
 };
 
-## Acceptance of Terms
+## Agreement and Service
 
-By accessing or using this service, you agree to be bound by these Terms of Service. If you do not agree, please do not use the service.
+These terms govern your use of {envConfigs.app_name} at carwrapdesign.app. “We,” “us,” and “our” refer to the operator of this service. By using the service, you agree to these terms. If you do not agree, do not use it. Our <Link href="/privacy-policy" className="text-primary font-medium underline underline-offset-4">Privacy Policy</Link> explains how we handle personal information.
 
-## Description of Service
+We provide an online vehicle-wrap editor, AI image generation, 3D previews, saved projects, and a design gallery. Purchases provide digital services and credits. They do not include physical vinyl, printing, delivery, installation, or a vehicle.
 
-We provide a software-as-a-service platform. We may modify, suspend, or discontinue any part of the service at any time, with reasonable notice where possible.
+Previews and exported textures are design aids. They do not guarantee accurate physical dimensions, colors, panel alignment, print readiness, or compatibility with a particular vehicle or software version. Check the manufacturer's requirements before importing a texture into a vehicle display. Consult a qualified installer before producing a physical wrap. Vehicle names identify compatible design templates; they do not imply a manufacturer partnership or endorsement.
 
-## User Accounts
+## Eligibility and Accounts
 
-You are responsible for maintaining the confidentiality of your account credentials and for all activities under your account. Notify us immediately of any unauthorized use or security breach.
+You must be at least 18 and legally able to enter into this agreement. Provide accurate account and billing information, protect your login credentials, and use only accounts and payment methods you are authorized to use. Contact us promptly if you suspect unauthorized access. You are responsible for content you submit and activities you authorize through your account.
 
-## Acceptable Use
+<h2
+  id="ai-models"
+  className="text-foreground mt-6 mb-2 scroll-mt-28 text-lg font-semibold tracking-tight md:text-xl"
+>
+  AI Models and API Providers
+</h2>
 
-You agree not to:
+As of the effective date above, production AI wrap generation uses the following model and API provider:
 
-- Violate any applicable laws or regulations.
-- Infringe on the intellectual property or other rights of any party.
-- Attempt to gain unauthorized access to our systems or data.
-- Interfere with or disrupt the integrity or performance of the service.
-- Use the service to send spam, malware, or other harmful content.
+<div className="border-border my-4 overflow-x-auto rounded-lg border">
+  <table className="w-full text-left text-sm">
+    <thead className="bg-muted">
+      <tr>
+        <th scope="col" className="px-4 py-3 font-semibold">
+          Feature
+        </th>
+        <th scope="col" className="px-4 py-3 font-semibold">
+          API provider
+        </th>
+        <th scope="col" className="px-4 py-3 font-semibold">
+          Model identifier
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr className="border-border border-t">
+        <td className="px-4 py-3">
+          AI wrap images from prompts and optional reference images
+        </td>
+        <td className="px-4 py-3">OpenAI API</td>
+        <td className="px-4 py-3 whitespace-nowrap">
+          <code>gpt-image-2.5</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-## Payment and Billing
+Image-generation requests use the OpenAI API. Inputs and outputs are also subject to [OpenAI's Usage Policies](https://openai.com/policies/usage-policies/) and applicable service terms. See [OpenAI's API data controls](https://developers.openai.com/api/docs/guides/your-data) for its published data-handling practices.
 
-Paid features are billed in advance for the selected billing period. You are responsible for providing accurate billing information. Refunds are handled on a case-by-case basis in line with our refund policy.
+AI generation sends your prompt, selected design settings, vehicle template, and any reference images to a third-party image-generation service. The model and API provider used for generation are recorded with the task. Using the local editor or viewing a 3D preview does not itself request AI generation.
 
-## Intellectual Property
+We may add, replace, or retire models or providers for quality, availability, safety, cost, or compliance. When the main image model or API provider for paid AI features changes materially, we will update this section and the effective date where reasonably practicable. Provider safety and acceptable-use requirements also apply to your inputs and generated content.
 
-The service and its original content, features, and functionality are owned by us and are protected by international copyright, trademark, and other intellectual property laws.
+## Credits, Payments, and Refund Requests
 
-## Termination
+Current offers are **one-time credit packs, without automatic renewal**. Prices, currency, included credits, and any applicable charges are shown before payment on the <Link href="/pricing" className="text-primary font-medium underline underline-offset-4">pricing and checkout pages</Link>. Purchased credits currently have no expiry date. Promotional credits may have separate conditions disclosed when offered. Credits are service units, not money, and cannot be transferred or redeemed for cash except as required by law or an approved refund.
 
-We may suspend or terminate your access to the service at any time if you violate these terms. You may close your account at any time through your account settings.
+Each AI generation currently costs **10 credits**. Credits are reserved when a task starts and charged when the result is successfully saved. When a task is marked failed, the reserved credits are released. A pending task may keep its reservation until its status is resolved. Contact support if the recorded result or credit balance appears wrong. A credit release reverses a generation charge; it is not a refund of the payment used to buy the credits.
 
-## Limitation of Liability
+AI results vary. A successfully delivered result may require further editing and does not guarantee a particular artistic outcome, originality, or suitability for commercial use.
 
-To the maximum extent permitted by law, we shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of or inability to use the service.
+For a payment error, duplicate charge, undelivered purchase, or other refund request, email [support@carwrapdesign.app](mailto:support@carwrapdesign.app) with your account email, order reference, and reason. We review requests against the payment record, credits delivered and used, the circumstances, and applicable consumer law. Do not send card numbers or security codes. Approved refunds are returned through the original payment method where available; processing time depends on the payment provider. Any associated unused credits may be withdrawn when a purchase is refunded.
 
-## Changes to These Terms
+Content removal or an account restriction for a policy violation does not by itself entitle you to a payment refund or restoration of credits already used. Failed-task credit releases still follow the rule above. Nothing in these terms limits mandatory rights to cancellation, refunds, or remedies under applicable law.
 
-We may modify these Terms at any time. We will notify users of any material changes by updating the date at the top of this page and, where appropriate, sending a notice through the service.
+## Your Content and Public Designs
 
-## Contact
+You retain any rights you hold in your uploads and designs. You must have permission to use submitted images, fonts, logos, likenesses, and other material. We do not guarantee that AI output is exclusive, copyrightable, or free of third-party rights. Review it before publishing, selling, printing, or using it commercially.
 
-If you have questions about these Terms, please contact us at the email address provided on our website.
+You grant us permission to store, process, reproduce, and display your content as needed to provide the features you use, handle support, and investigate abuse. This includes sending generation inputs to the AI provider. The service software, branding, and materials we provide remain subject to their respective owners' rights.
+
+For accounts that have not purchased a credit pack, AI generations are open to gallery review. Eligible paid accounts can turn off “Open to gallery” before generating. Designs submitted for gallery publication are reviewed before they appear publicly. When a design is open to the gallery, you authorize us to display its approved version in the gallery and site showcases and to make it available through the site's preview, download, and remix features. Publish only material you are entitled to share for those uses. Gallery availability does not grant ownership of another person's trademarks or other protected material.
+
+An enabled share link allows anyone who has it to view the shared preview. Disabling a link or removing a publication cannot recall copies that others have already saved. See the Privacy Policy for storage, visibility, and deletion details.
+
+## AI Content Acceptable Use Policy (AUP)
+
+This policy forms part of these terms and applies to prompts, reference images, uploads, projects, exports, shared designs, and generated results, including private projects.
+
+### Prohibited Content
+
+Do not use the service to create, upload, request, or distribute:
+
+- **Sexual or NSFW content:** pornography, explicit sexual imagery, or sexual exploitation.
+- **Violence or gore:** graphic injuries, mutilation, glorification of violence, or threats of harm.
+- **Hateful content:** attacks, dehumanization, or incitement against people based on protected characteristics.
+- **Child-unsafe content:** child sexual abuse material (CSAM), sexualization of minors, grooming, or exploitation.
+- **Deceptive deepfakes or impersonation:** fabricated likenesses or endorsements that mislead people about a real person, brand, or institution; nonconsensual intimate imagery is prohibited.
+- **Infringing content:** material that violates copyright, trademark, privacy, publicity, or other rights.
+
+### Zero-Tolerance Violations
+
+We will act on identified child sexual exploitation or any sexual content involving minors; promotion or assistance of terrorism, violent extremism, or mass violence; technical instructions for weapons of mass destruction; incitement to genocide or ethnic hatred; and nonconsensual sexual deepfakes of real people. Action may include content removal, immediate access restrictions, preservation of relevant records, and reports to competent authorities where required or appropriate under law.
+
+### Context Does Not Override These Restrictions
+
+The service is intended for vehicle-wrap design. An artistic, educational, political, or age-restricted context does not create an exception to the prohibited categories. We do not offer an age-verified adult-content service. Do not use outputs to mislead people about public events, elections, professional qualifications, or endorsements. The service does not provide medical, legal, or financial advice; do not present its outputs as qualified professional advice.
+
+### Other Prohibited Uses
+
+Do not spread deceptive information, impersonate others, violate intellectual property or privacy, falsely present AI content as human-created to deceive customers, generate spam or fraudulent material, or use jailbreak prompts to evade safety controls.
+
+## Reporting Violations and Requesting Review
+
+Report suspected violations to [support@carwrapdesign.app](mailto:support@carwrapdesign.app). You can also use the report control where available on a public design. Include:
+
+- Your account email, if you have an account.
+- The project name, generation task ID, page URL, or approximate date and time.
+- An explanation of the problem, including the rights affected if relevant.
+- Lawful screenshots or other supporting information, where useful.
+
+Do not attach illegal material when a description or identifying reference is sufficient. We may request clarification. If you believe a restriction was mistaken, contact the same address with the relevant reference and an explanation so we can review it.
+
+## Content Review and Enforcement
+
+Our safeguards include account and ownership checks, credit controls, task records, and safety filtering applied by the selected AI provider. Designs submitted to the public gallery have an administrative review process. We can investigate reports and suspicious activity, reject publication, restrict or remove content, and suspend or terminate access where warranted. This does not mean every private prompt or output is manually reviewed or that every violation will be detected.
+
+We may block or remove inputs or results that appear to violate these terms or provider rules before or after generation. Review can make mistakes; you remain responsible for your use of the service. Generation and security records may be retained for investigation and legal compliance as described in our <Link href="/privacy-policy" className="text-primary font-medium underline underline-offset-4">Privacy Policy</Link>. Credit and payment handling follows the rules above.
+
+## Prohibited Conduct
+
+You must not:
+
+- Break applicable law or violate the rights of others.
+- Upload malware or unlawful, confidential, or personal material without authorization.
+- Bypass credits, payments, access controls, usage limits, or safety mechanisms.
+- Scrape at abusive scale, attack, reverse engineer, or otherwise disrupt the service, except where such activity is expressly permitted by law.
+- Access another user's private projects, account, or nonpublic information without permission.
+- Make fraudulent payments, abuse refunds, impersonate others, or create repeat accounts to obtain benefits improperly.
+- Generate, distribute, or sell content in breach of the AUP or applicable provider restrictions.
+
+## Availability and Account Closure
+
+Features, supported vehicles, and service availability may change. We may limit access to address security, legal obligations, or violations, and provide notice and an opportunity to resolve issues where appropriate. Contact support to request account closure or personal-data deletion. Download files you wish to keep before closing your account. Closure, credit handling, and retained records remain subject to these terms, the Privacy Policy, and applicable law.
+
+## Disclaimers and Liability
+
+To the extent permitted by law, the service is provided on an “as available” basis without guarantees of uninterrupted operation, error-free output, or suitability for a particular purpose. You are responsible for checking designs and permissions before use. To the extent permitted by law, we are not liable for indirect or consequential losses arising from use of the service. These provisions do not exclude liability or consumer rights that cannot lawfully be excluded.
+
+## Changes and Contact
+
+The date at the top of this page is the effective date of this version. We will update it when these terms change and provide additional notice of material changes where appropriate or required. Questions about these terms, payments, safety, or account access can be sent to [support@carwrapdesign.app](mailto:support@carwrapdesign.app).

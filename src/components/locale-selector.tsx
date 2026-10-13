@@ -2,6 +2,7 @@ import { Check, ChevronDown, Globe, Languages } from 'lucide-react';
 
 import { localeNames } from '@/config/locale';
 import { cn } from '@/lib/utils';
+import { m } from '@/paraglide/messages.js';
 import { getLocale, locales, setLocale } from '@/paraglide/runtime.js';
 import {
   DropdownMenu,
@@ -38,7 +39,7 @@ export function LocaleSelector({
         {variant === 'icon' ? (
           <>
             <Languages className="size-4" />
-            <span className="sr-only">Switch language</span>
+            <span className="sr-only">{m['common.nav.switch_language']()}</span>
           </>
         ) : (
           <>

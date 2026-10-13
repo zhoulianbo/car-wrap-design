@@ -3,7 +3,9 @@ import {
   CreditCard,
   FolderOpen,
   Home,
+  Images,
   LayoutDashboard,
+  Orbit,
   Settings,
   Shield,
 } from 'lucide-react';
@@ -56,6 +58,16 @@ function AdminLayout() {
       items: [
         { href: '/admin/categories', label: m['admin.nav.categories']() },
         { href: '/admin/posts', label: m['admin.nav.posts']() },
+        {
+          href: '/admin/designs',
+          label: m['admin.nav.designs'](),
+          icon: Images,
+        },
+        {
+          href: '/admin/wrap-operations',
+          label: m['admin.nav.wrap_operations'](),
+          icon: Orbit,
+        },
         { href: '/admin/tickets', label: m['admin.nav.tickets']() },
       ],
     },
@@ -76,7 +88,7 @@ function AdminLayout() {
       footerNavItems={footerNavItems}
       brand={envConfigs.app_name}
       brandHref="/admin"
-      profileHref="/settings/profile"
+      profileHref="/dashboard/profile"
       requirePermission="admin.*"
     >
       <Outlet />

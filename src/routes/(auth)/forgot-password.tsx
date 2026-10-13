@@ -6,6 +6,7 @@ import { z } from 'zod';
 import { requestPasswordReset } from '@/core/auth/client';
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
+import { getErrorMessage } from '@/lib/error-message';
 import { m } from '@/paraglide/messages.js';
 import { localizeHref } from '@/paraglide/runtime.js';
 import { usePublicConfig } from '@/hooks/use-public-config';
@@ -48,13 +49,13 @@ function ForgotPasswordPage() {
           redirectTo,
         });
         if (result.error) {
-          setError(result.error.message || 'Request failed');
+          setError(getErrorMessage(result.error, 'PASSWORD_RESET_FAILED'));
         } else {
           setSentEmail(value.email);
           setSent(true);
         }
       } catch (err: any) {
-        setError(err.message || 'Request failed');
+        setError(getErrorMessage(err, 'PASSWORD_RESET_FAILED'));
       }
     },
   });

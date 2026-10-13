@@ -1,5 +1,7 @@
 # dependencies
 /node_modules
+/.pnpm-store/
+/tmp
 /.pnp
 .pnp.*
 .yarn/*
@@ -13,17 +15,25 @@
 /.output/
 /.nitro/
 /.tanstack/
+/.vite/
+/.cache/
 /dist/
 src/routeTree.gen.ts
 src/paraglide/
 
-# cloudflare — wrangler.jsonc is your working copy (real D1 id, URLs);
-# the committed template is wrangler.example.jsonc
+# generated tool files (keep Inlang settings and project Git hooks)
+/project.inlang/cache/
+/.husky/_/
+
+# Cloudflare local state and runtime secrets (wrangler.jsonc contains no secrets).
 /.wrangler/
-wrangler.jsonc
+.dev.vars
+.dev.vars.*
 
 # claude code local state
 .claude/scheduled_tasks.lock
+/.claude/settings.local.json
+/.claude/worktrees/
 
 # production
 /build
@@ -46,6 +56,12 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+*.log
+
+# generated test coverage and browser reports
+/coverage/
+/playwright-report/
+/test-results/
 
 # env — local files hold secrets, never commit (keep .env.example tracked)
 .env
@@ -57,7 +73,7 @@ yarn-error.log*
 
 # database
 /data/
-/drizzle/
+# Commit Drizzle migrations so Cloudflare/Git checkouts can apply the schema.
 src/config/db/schema.ts
 
 # npm (project uses pnpm)
@@ -65,3 +81,7 @@ package-lock.json
 
 # Runtime image uploads (no-storage local fallback)
 /public/uploads/
+/public/models/
+
+# SEO skill working cache (generated locally, never committed)
+/.seo-cache/

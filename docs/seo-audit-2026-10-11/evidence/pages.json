@@ -1,0 +1,5369 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/",
+    "bytes": 63253,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Car Wrap Design Online | Design Your Own Car Wrap Free"],
+    "h1": ["Design Your Own Car Wrap Online"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Create your car wrap design online with a free editor and 3D preview. Explore wrap ideas, add your own artwork, or generate concepts with AI credits."
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "Car Wrap Design Online | Design Your Own Car Wrap Free"
+      },
+      {
+        "property": "og:description",
+        "content": "Create your car wrap design online with a free editor and 3D preview. Explore wrap ideas, add your own artwork, or generate concepts with AI credits."
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Car Wrap Design Online | Design Your Own Car Wrap Free"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Create your car wrap design online with a free editor and 3D preview. Explore wrap ideas, add your own artwork, or generate concepts with AI credits."
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/imgs/vehicles/cards/model-y-legacy.webp"
+      },
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/imgs/vehicles/cards/model-3-legacy.webp"
+      },
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/imgs/vehicles/cards/cybertruck.webp"
+      },
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/imgs/vehicles/cards/model-s-2025-plaid.webp"
+      },
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/imgs/vehicles/cards/model-x-2021.webp"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2F",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-legacy.webp",
+        "alt": "",
+        "width": "96",
+        "height": "64"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-legacy.webp",
+        "alt": "",
+        "width": "96",
+        "height": "64"
+      },
+      {
+        "src": "/imgs/vehicles/cards/cybertruck.webp",
+        "alt": "",
+        "width": "96",
+        "height": "64"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-s-2025-plaid.webp",
+        "alt": "",
+        "width": "96",
+        "height": "64"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-x-2021.webp",
+        "alt": "",
+        "width": "96",
+        "height": "64"
+      },
+      {
+        "src": "/imgs/showcase/editor-texture.webp",
+        "alt": "Square ice cream wrap artwork example",
+        "width": "640",
+        "height": "640",
+        "loading": "lazy",
+        "class": "aspect-square w-full max-w-80 min-w-0 rounded-lg object-contain"
+      },
+      {
+        "src": "/imgs/showcase/editor-preview.webp",
+        "alt": "The same ice cream wrap applied to a Model 3",
+        "width": "800",
+        "height": "480",
+        "loading": "lazy",
+        "class": "aspect-[5/3] w-full object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-legacy.webp",
+        "alt": "Model 3 Legacy",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-2024-base.webp",
+        "alt": "Model 3 Base 2024",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-2024-performance.webp",
+        "alt": "Model 3 Performance 2024",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-legacy.webp",
+        "alt": "Model Y Legacy",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-base.webp",
+        "alt": "Model Y Base 2025",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-premium.webp",
+        "alt": "Model Y Premium 2025",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-performance.webp",
+        "alt": "Model Y Performance 2025",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-l.webp",
+        "alt": "Model Y L 2025",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/cybertruck.webp",
+        "alt": "Cybertruck 2023",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-s-2021.webp",
+        "alt": "Model S 2021",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-s-2025-plaid.webp",
+        "alt": "Model S Plaid 2025",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-x-2021.webp",
+        "alt": "Model X 2021",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://carwrapdesign.app/#organization",
+            "name": "Car Wrap Design",
+            "url": "https://carwrapdesign.app/",
+            "logo": "https://carwrapdesign.app/logo.png?v=20261007-3",
+            "image": "https://carwrapdesign.app/og-image.png?v=20261007-3"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://carwrapdesign.app/#website",
+            "name": "Car Wrap Design",
+            "url": "https://carwrapdesign.app/",
+            "publisher": {
+              "@id": "https://carwrapdesign.app/#organization"
+            },
+            "inLanguage": ["en", "zh"]
+          },
+          {
+            "@type": "WebApplication",
+            "name": "Car Wrap Design",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Web",
+            "url": "https://carwrapdesign.app/create",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "Free browser editor and 3D preview; AI generation uses credits."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/ai-car-wrap-generator",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/ai-car-wrap-generator",
+    "bytes": 45733,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["AI Car Wrap Generator Online | Create & Preview Wraps"],
+    "h1": ["AI Car Wrap Generator"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Bring your wrap ideas to life with the AI car wrap generator. Create unique designs from a prompt or reference image, preview in 3D, and download your artwork."
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "AI Car Wrap Generator Online | Create & Preview Wraps"
+      },
+      {
+        "property": "og:description",
+        "content": "Bring your wrap ideas to life with the AI car wrap generator. Create unique designs from a prompt or reference image, preview in 3D, and download your artwork."
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/ai-car-wrap-generator"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "AI Car Wrap Generator Online | Create & Preview Wraps"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Bring your wrap ideas to life with the AI car wrap generator. Create unique designs from a prompt or reference image, preview in 3D, and download your artwork."
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fai-car-wrap-generator",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/ai-car-wrap-generator"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/ai-car-wrap-generator"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/ai-car-wrap-generator"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/ai-car-wrap-generator"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "AI Car Wrap Generator",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Web",
+            "url": "http://localhost:3100/ai-car-wrap-generator",
+            "description": "Bring your wrap ideas to life with the AI car wrap generator. Create unique designs from a prompt or reference image, preview in 3D, and download your artwork."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/blog",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/blog",
+    "bytes": 14587,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Blog | Car Wrap Design"],
+    "h1": ["Blog"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Product updates, guides, and engineering notes from the team."
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fblog%2F",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/blog"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/blog"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/blog"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/imgs/blog/tesla-wrap-complete-guide.webp",
+        "alt": "Tesla wrap design: from first preview to a finished project",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-video w-full object-cover object-center"
+      },
+      {
+        "src": "/logo.png",
+        "alt": "Car Wrap Design Team",
+        "width": "20",
+        "height": "20",
+        "loading": "lazy",
+        "class": "size-5 rounded-full object-cover"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": []
+  },
+  {
+    "path": "/blog/tesla-wrap-complete-guide",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/blog/tesla-wrap-complete-guide",
+    "bytes": 31592,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": [
+      "Tesla wrap design: from first preview to a finished project | Car Wrap Design"
+    ],
+    "h1": ["Tesla wrap design: from first preview to a finished project"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "A practical workflow for choosing a Model 3 or Model Y, trying local artwork, editing layers, reviewing a 3D wrap, and saving or sharing your design."
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png"
+      },
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/imgs/blog/tesla-wrap-complete-guide.webp"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fblog%2F%24slug",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/blog/tesla-wrap-complete-guide"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png",
+        "alt": "Car Wrap Design Team",
+        "width": "20",
+        "height": "20",
+        "class": "size-5 rounded-full object-cover"
+      },
+      {
+        "src": "/imgs/blog/tesla-wrap-complete-guide.webp",
+        "alt": "Tesla wrap design: from first preview to a finished project",
+        "class": "border-border mb-8 w-full rounded-2xl border object-cover"
+      },
+      {
+        "src": "/imgs/blog/tesla-wrap-guide/3d-preview.webp",
+        "alt": "Blue Model 3 Performance in the 3D viewer, with vehicle, finish, and color controls",
+        "width": "1512",
+        "height": "949",
+        "loading": "lazy",
+        "class": "border-border w-full rounded-xl border"
+      },
+      {
+        "src": "/imgs/blog/tesla-wrap-guide/ai-design.webp",
+        "alt": "AI wrap generator with a Model 3 selected, a design prompt, an optional reference image, and generation controls",
+        "width": "1216",
+        "height": "668",
+        "loading": "lazy",
+        "class": "border-border w-full rounded-xl border"
+      },
+      {
+        "src": "/imgs/blog/tesla-wrap-guide/editor.webp",
+        "alt": "Wrap editor showing the vehicle template, a selected text layer, editing tools, and a 3D preview",
+        "width": "1280",
+        "height": "720",
+        "loading": "lazy",
+        "class": "border-border w-full rounded-xl border"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": []
+  },
+  {
+    "path": "/gallery",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/gallery?search=&vehicle=&sort=latest&page=1",
+    "bytes": 20002,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Car Wraps Gallery | Tesla Model 3 & Model Y Designs"],
+    "h1": ["Car Wraps Gallery"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Discover community car wraps for Tesla Model 3, Model Y, Cybertruck, Model S, and Model X. Find a design for your vehicle, explore the full texture, and download or make it your own in the editor."
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "Car Wraps Gallery | Tesla Model 3 & Model Y Designs"
+      },
+      {
+        "property": "og:description",
+        "content": "Discover community car wraps for Tesla Model 3, Model Y, Cybertruck, Model S, and Model X. Find a design for your vehicle, explore the full texture, and download or make it your own in the editor."
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/gallery"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Car Wraps Gallery | Tesla Model 3 & Model Y Designs"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Discover community car wraps for Tesla Model 3, Model Y, Cybertruck, Model S, and Model X. Find a design for your vehicle, explore the full texture, and download or make it your own in the editor."
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fgallery%2F",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/gallery"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/gallery"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/gallery"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/gallery"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": []
+  },
+  {
+    "path": "/gallery/ani-07f0c209",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/gallery/ani-07f0c209",
+    "bytes": 29025,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Ani | Car Wrap Design"],
+    "h1": ["Ani"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Ani is a Tesla Model Y (Legacy) wrap design by Tesla, published on Oct 9, 2026. Explore the texture and 3D preview, download the artwork, or use it as a starting point for your own colors and graphics."
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "Ani | Car Wrap Design"
+      },
+      {
+        "property": "og:description",
+        "content": "Ani is a Tesla Model Y (Legacy) wrap design by Tesla, published on Oct 9, 2026. Explore the texture and 3D preview, download the artwork, or use it as a starting point for your own colors and graphics."
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/gallery/ani-07f0c209"
+      },
+      {
+        "property": "og:image",
+        "content": "https://pub-4ef94927e2f34411937719978b9b9de2.r2.dev/cover/202610/5303cf0b-2cc3-4a8c-9000-e91ae48ec13e.webp"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Ani | Car Wrap Design"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Ani is a Tesla Model Y (Legacy) wrap design by Tesla, published on Oct 9, 2026. Explore the texture and 3D preview, download the artwork, or use it as a starting point for your own colors and graphics."
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://pub-4ef94927e2f34411937719978b9b9de2.r2.dev/cover/202610/5303cf0b-2cc3-4a8c-9000-e91ae48ec13e.webp"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fgallery%2F%24designSlug",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/gallery/ani-07f0c209"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/gallery/ani-07f0c209"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/gallery/ani-07f0c209"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/gallery/ani-07f0c209"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        "name": "Ani",
+        "description": "Ani is a Tesla Model Y (Legacy) wrap design by Tesla, published on Oct 9, 2026. Explore the texture and 3D preview, download the artwork, or use it as a starting point for your own colors and graphics.",
+        "contentUrl": "https://pub-4ef94927e2f34411937719978b9b9de2.r2.dev/design/202610/7bec24d6-466d-4947-bf17-6a5bd5a75cd7.webp",
+        "url": "http://localhost:3100/gallery/ani-07f0c209",
+        "author": {
+          "@type": "Person",
+          "name": "Tesla"
+        },
+        "datePublished": "2026-10-09T02:38:55.862Z"
+      }
+    ]
+  },
+  {
+    "path": "/gallery/ice-cream-89aca79e",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/gallery/ice-cream-89aca79e",
+    "bytes": 29161,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Ice Cream | Car Wrap Design"],
+    "h1": ["Ice Cream"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Ice Cream is a Tesla Model 3 (Legacy) wrap design by Tesla, published on Oct 9, 2026. Explore the texture and 3D preview, download the artwork, or use it as a starting point for your own colors and graphics."
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "Ice Cream | Car Wrap Design"
+      },
+      {
+        "property": "og:description",
+        "content": "Ice Cream is a Tesla Model 3 (Legacy) wrap design by Tesla, published on Oct 9, 2026. Explore the texture and 3D preview, download the artwork, or use it as a starting point for your own colors and graphics."
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/gallery/ice-cream-89aca79e"
+      },
+      {
+        "property": "og:image",
+        "content": "https://pub-4ef94927e2f34411937719978b9b9de2.r2.dev/cover/202610/e05f3d9f-2b11-4cf7-9a76-3b4fffeb13e6.webp"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Ice Cream | Car Wrap Design"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Ice Cream is a Tesla Model 3 (Legacy) wrap design by Tesla, published on Oct 9, 2026. Explore the texture and 3D preview, download the artwork, or use it as a starting point for your own colors and graphics."
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://pub-4ef94927e2f34411937719978b9b9de2.r2.dev/cover/202610/e05f3d9f-2b11-4cf7-9a76-3b4fffeb13e6.webp"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fgallery%2F%24designSlug",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/gallery/ice-cream-89aca79e"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/gallery/ice-cream-89aca79e"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/gallery/ice-cream-89aca79e"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/gallery/ice-cream-89aca79e"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        "name": "Ice Cream",
+        "description": "Ice Cream is a Tesla Model 3 (Legacy) wrap design by Tesla, published on Oct 9, 2026. Explore the texture and 3D preview, download the artwork, or use it as a starting point for your own colors and graphics.",
+        "contentUrl": "https://pub-4ef94927e2f34411937719978b9b9de2.r2.dev/design/202610/256849c3-131a-4eb0-a639-4499dee21435.webp",
+        "url": "http://localhost:3100/gallery/ice-cream-89aca79e",
+        "author": {
+          "@type": "Person",
+          "name": "Tesla"
+        },
+        "datePublished": "2026-10-09T01:22:16.788Z"
+      }
+    ]
+  },
+  {
+    "path": "/pricing",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/pricing",
+    "bytes": 24686,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Credits for your next idea | Car Wrap Design"],
+    "h1": ["Credits for your next idea"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Buy 100, 250, or 1,000 AI car wrap credits with a one-time payment. Credits never expire; every pack includes 50 MB storage and unlimited exports."
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "Credits for your next idea | Car Wrap Design"
+      },
+      {
+        "property": "og:description",
+        "content": "Buy 100, 250, or 1,000 AI car wrap credits with a one-time payment. Credits never expire; every pack includes 50 MB storage and unlimited exports."
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/pricing"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Credits for your next idea | Car Wrap Design"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Buy 100, 250, or 1,000 AI car wrap credits with a one-time payment. Credits never expire; every pack includes 50 MB storage and unlimited exports."
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fpricing",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/pricing"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/pricing"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/pricing"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/pricing"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": []
+  },
+  {
+    "path": "/privacy-policy",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/privacy-policy",
+    "bytes": 26721,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Privacy Policy"],
+    "h1": ["Privacy Policy"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "How account information, design files, AI inputs, payments, and shared projects are handled."
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2F(pages)%2C%2F(pages)%2Fprivacy-policy",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/privacy-policy"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": []
+  },
+  {
+    "path": "/terms-of-service",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/terms-of-service",
+    "bytes": 31465,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Terms of Service"],
+    "h1": ["Terms of Service"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Terms for the wrap editor, AI generation, credits, public designs, and acceptable use."
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2F(pages)%2C%2F(pages)%2Fterms-of-service",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/terms-of-service"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": []
+  },
+  {
+    "path": "/tesla-model-3-wrap",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/tesla-model-3-wrap",
+    "bytes": 49254,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Tesla Model 3 Wrap Design | Create & Preview Online"],
+    "h1": ["Create Your Tesla Model 3 Wrap Online"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Create a Tesla Model 3 wrap with subtle colors, racing stripes or custom artwork. Preview your version in 3D and build a look that follows every body line."
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "Tesla Model 3 Wrap Design | Create & Preview Online"
+      },
+      {
+        "property": "og:description",
+        "content": "Create a Tesla Model 3 wrap with subtle colors, racing stripes or custom artwork. Preview your version in 3D and build a look that follows every body line."
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/tesla-model-3-wrap"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Tesla Model 3 Wrap Design | Create & Preview Online"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Create a Tesla Model 3 wrap with subtle colors, racing stripes or custom artwork. Preview your version in 3D and build a look that follows every body line."
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Ftesla-model-3-wrap",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/tesla-model-3-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/tesla-model-3-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/tesla-model-3-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/tesla-model-3-wrap"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-legacy.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-2024-base.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-2024-performance.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "Create Your Tesla Model 3 Wrap Online",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Web",
+            "url": "https://carwrapdesign.app/tesla-model-3-wrap",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "Free 3D preview and browser editor; AI generation uses credits."
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carwrapdesign.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Create Your Tesla Model 3 Wrap Online",
+                "item": "https://carwrapdesign.app/tesla-model-3-wrap"
+              }
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "name": "Create Your Tesla Model 3 Wrap Online supported vehicles",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Model 3 · Legacy",
+                "url": "https://carwrapdesign.app/create/model-3-legacy"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Model 3 Base · 2024",
+                "url": "https://carwrapdesign.app/create/model-3-2024-base"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Model 3 Performance · 2024",
+                "url": "https://carwrapdesign.app/create/model-3-2024-performance"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/tesla-model-y-wrap",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/tesla-model-y-wrap",
+    "bytes": 50911,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Tesla Model Y Wrap Design | Try Colors & 3D Preview"],
+    "h1": ["Design Your Tesla Model Y Wrap in 3D"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Explore your Tesla Model Y wrap in satin, gloss or bold graphics. Choose your version, compare the look in 3D and create a design for your everyday drive."
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "Tesla Model Y Wrap Design | Try Colors & 3D Preview"
+      },
+      {
+        "property": "og:description",
+        "content": "Explore your Tesla Model Y wrap in satin, gloss or bold graphics. Choose your version, compare the look in 3D and create a design for your everyday drive."
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/tesla-model-y-wrap"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Tesla Model Y Wrap Design | Try Colors & 3D Preview"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Explore your Tesla Model Y wrap in satin, gloss or bold graphics. Choose your version, compare the look in 3D and create a design for your everyday drive."
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Ftesla-model-y-wrap",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/tesla-model-y-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/tesla-model-y-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/tesla-model-y-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/tesla-model-y-wrap"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-legacy.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-base.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-premium.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-performance.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-l.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "Design Your Tesla Model Y Wrap in 3D",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Web",
+            "url": "https://carwrapdesign.app/tesla-model-y-wrap",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "Free 3D preview and browser editor; AI generation uses credits."
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carwrapdesign.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Design Your Tesla Model Y Wrap in 3D",
+                "item": "https://carwrapdesign.app/tesla-model-y-wrap"
+              }
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "name": "Design Your Tesla Model Y Wrap in 3D supported vehicles",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Model Y · Legacy",
+                "url": "https://carwrapdesign.app/create/model-y-legacy"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Model Y Base · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-2025-base"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Model Y Premium · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-2025-premium"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Model Y Performance · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-2025-performance"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Model Y L · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-l"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/tesla-wrap",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/tesla-wrap",
+    "bytes": 52644,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Tesla Wrap Design Online | Explore Colors & Styles"],
+    "h1": ["Design Your Tesla Wrap Online"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Find your next Tesla wrap style. Explore colors, finishes and custom graphics on your model in 3D, then create a design of your own in the online editor."
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "Tesla Wrap Design Online | Explore Colors & Styles"
+      },
+      {
+        "property": "og:description",
+        "content": "Find your next Tesla wrap style. Explore colors, finishes and custom graphics on your model in 3D, then create a design of your own in the online editor."
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/tesla-wrap"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Tesla Wrap Design Online | Explore Colors & Styles"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Find your next Tesla wrap style. Explore colors, finishes and custom graphics on your model in 3D, then create a design of your own in the online editor."
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Ftesla-wrap",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/tesla-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/tesla-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/tesla-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/tesla-wrap"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-legacy.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-2024-base.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-2024-performance.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-legacy.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-base.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-premium.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-performance.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-l.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/cybertruck.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-s-2021.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-s-2025-plaid.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-x-2021.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "Design Your Tesla Wrap Online",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Web",
+            "url": "https://carwrapdesign.app/tesla-wrap",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "Free 3D preview and browser editor; AI generation uses credits."
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carwrapdesign.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Design Your Tesla Wrap Online",
+                "item": "https://carwrapdesign.app/tesla-wrap"
+              }
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "name": "Design Your Tesla Wrap Online supported vehicles",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Model 3 · Legacy",
+                "url": "https://carwrapdesign.app/create/model-3-legacy"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Model 3 Base · 2024",
+                "url": "https://carwrapdesign.app/create/model-3-2024-base"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Model 3 Performance · 2024",
+                "url": "https://carwrapdesign.app/create/model-3-2024-performance"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Model Y · Legacy",
+                "url": "https://carwrapdesign.app/create/model-y-legacy"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Model Y Base · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-2025-base"
+              },
+              {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "Model Y Premium · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-2025-premium"
+              },
+              {
+                "@type": "ListItem",
+                "position": 7,
+                "name": "Model Y Performance · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-2025-performance"
+              },
+              {
+                "@type": "ListItem",
+                "position": 8,
+                "name": "Model Y L · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-l"
+              },
+              {
+                "@type": "ListItem",
+                "position": 9,
+                "name": "Cybertruck · 2023",
+                "url": "https://carwrapdesign.app/create/cybertruck"
+              },
+              {
+                "@type": "ListItem",
+                "position": 10,
+                "name": "Model S · 2021",
+                "url": "https://carwrapdesign.app/create/model-s-2021"
+              },
+              {
+                "@type": "ListItem",
+                "position": 11,
+                "name": "Model S Plaid · 2025",
+                "url": "https://carwrapdesign.app/create/model-s-2025-plaid"
+              },
+              {
+                "@type": "ListItem",
+                "position": 12,
+                "name": "Model X · 2021",
+                "url": "https://carwrapdesign.app/create/model-x-2021"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/zh",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh",
+    "bytes": 63898,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["在线汽车车衣设计 | 免费设计你的专属车衣"],
+    "h1": ["在线设计你的专属汽车车衣"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "使用免费在线编辑器进行汽车车衣设计，上传图片、添加文字，搭配不同颜色和材质，实时查看 3D 车身效果。浏览社区作品寻找灵感，也可使用积分生成 AI 创意图案。"
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "在线汽车车衣设计 | 免费设计你的专属车衣"
+      },
+      {
+        "property": "og:description",
+        "content": "使用免费在线编辑器进行汽车车衣设计，上传图片、添加文字，搭配不同颜色和材质，实时查看 3D 车身效果。浏览社区作品寻找灵感，也可使用积分生成 AI 创意图案。"
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/zh"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "在线汽车车衣设计 | 免费设计你的专属车衣"
+      },
+      {
+        "name": "twitter:description",
+        "content": "使用免费在线编辑器进行汽车车衣设计，上传图片、添加文字，搭配不同颜色和材质，实时查看 3D 车身效果。浏览社区作品寻找灵感，也可使用积分生成 AI 创意图案。"
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/imgs/vehicles/cards/model-y-legacy.webp"
+      },
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/imgs/vehicles/cards/model-3-legacy.webp"
+      },
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/imgs/vehicles/cards/cybertruck.webp"
+      },
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/imgs/vehicles/cards/model-s-2025-plaid.webp"
+      },
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/imgs/vehicles/cards/model-x-2021.webp"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2F",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/zh"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-legacy.webp",
+        "alt": "",
+        "width": "96",
+        "height": "64"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-legacy.webp",
+        "alt": "",
+        "width": "96",
+        "height": "64"
+      },
+      {
+        "src": "/imgs/vehicles/cards/cybertruck.webp",
+        "alt": "",
+        "width": "96",
+        "height": "64"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-s-2025-plaid.webp",
+        "alt": "",
+        "width": "96",
+        "height": "64"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-x-2021.webp",
+        "alt": "",
+        "width": "96",
+        "height": "64"
+      },
+      {
+        "src": "/imgs/showcase/editor-texture.webp",
+        "alt": "冰淇淋配色的方形车衣图案示例",
+        "width": "640",
+        "height": "640",
+        "loading": "lazy",
+        "class": "aspect-square w-full max-w-80 min-w-0 rounded-lg object-contain"
+      },
+      {
+        "src": "/imgs/showcase/editor-preview.webp",
+        "alt": "同款冰淇淋车衣贴在 Model 3 上的效果",
+        "width": "800",
+        "height": "480",
+        "loading": "lazy",
+        "class": "aspect-[5/3] w-full object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-legacy.webp",
+        "alt": "Model 3 Legacy",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-2024-base.webp",
+        "alt": "Model 3 Base 2024",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-2024-performance.webp",
+        "alt": "Model 3 Performance 2024",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-legacy.webp",
+        "alt": "Model Y Legacy",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-base.webp",
+        "alt": "Model Y Base 2025",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-premium.webp",
+        "alt": "Model Y Premium 2025",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-performance.webp",
+        "alt": "Model Y Performance 2025",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-l.webp",
+        "alt": "Model Y L 2025",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/cybertruck.webp",
+        "alt": "Cybertruck 2023",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-s-2021.webp",
+        "alt": "Model S 2021",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-s-2025-plaid.webp",
+        "alt": "Model S Plaid 2025",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-x-2021.webp",
+        "alt": "Model X 2021",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-[2/1] w-full object-contain px-2 pt-2 transition-transform duration-300 group-hover:scale-105"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://carwrapdesign.app/#organization",
+            "name": "Car Wrap Design",
+            "url": "https://carwrapdesign.app/",
+            "logo": "https://carwrapdesign.app/logo.png?v=20261007-3",
+            "image": "https://carwrapdesign.app/og-image.png?v=20261007-3"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://carwrapdesign.app/#website",
+            "name": "Car Wrap Design",
+            "url": "https://carwrapdesign.app/",
+            "publisher": {
+              "@id": "https://carwrapdesign.app/#organization"
+            },
+            "inLanguage": ["en", "zh"]
+          },
+          {
+            "@type": "WebApplication",
+            "name": "Car Wrap Design",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Web",
+            "url": "https://carwrapdesign.app/create",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "Free browser editor and 3D preview; AI generation uses credits."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/zh/ai-car-wrap-generator",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/ai-car-wrap-generator",
+    "bytes": 45408,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["AI 车衣生成器 | 在线生成图案并预览车身效果"],
+    "h1": ["AI 车衣生成器"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "用 AI 车衣生成器，把喜欢的配色、图案和灵感变成专属车衣设计。输入想法或上传参考图片，探索不同风格，在 3D 车身上预览效果，找到心仪方案后下载 PNG 图案，让下一款车衣从灵感走向成形。"
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "AI 车衣生成器 | 在线生成图案并预览车身效果"
+      },
+      {
+        "property": "og:description",
+        "content": "用 AI 车衣生成器，把喜欢的配色、图案和灵感变成专属车衣设计。输入想法或上传参考图片，探索不同风格，在 3D 车身上预览效果，找到心仪方案后下载 PNG 图案，让下一款车衣从灵感走向成形。"
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/zh/ai-car-wrap-generator"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "AI 车衣生成器 | 在线生成图案并预览车身效果"
+      },
+      {
+        "name": "twitter:description",
+        "content": "用 AI 车衣生成器，把喜欢的配色、图案和灵感变成专属车衣设计。输入想法或上传参考图片，探索不同风格，在 3D 车身上预览效果，找到心仪方案后下载 PNG 图案，让下一款车衣从灵感走向成形。"
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fai-car-wrap-generator",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/zh/ai-car-wrap-generator"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/ai-car-wrap-generator"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/ai-car-wrap-generator"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/ai-car-wrap-generator"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "AI 车衣生成器",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Web",
+            "url": "http://localhost:3100/zh/ai-car-wrap-generator",
+            "description": "用 AI 车衣生成器，把喜欢的配色、图案和灵感变成专属车衣设计。输入想法或上传参考图片，探索不同风格，在 3D 车身上预览效果，找到心仪方案后下载 PNG 图案，让下一款车衣从灵感走向成形。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/zh/blog",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/blog",
+    "bytes": 14634,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["博客 | Car Wrap Design"],
+    "h1": ["博客"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "来自团队的产品动态、使用指南与工程笔记。"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fblog%2F",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/zh/blog"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/blog"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/blog"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/imgs/blog/tesla-wrap-complete-guide.webp",
+        "alt": "Tesla 车衣设计完整指南：从快速预览到保存作品",
+        "width": "640",
+        "height": "360",
+        "loading": "lazy",
+        "class": "aspect-video w-full object-cover object-center"
+      },
+      {
+        "src": "/logo.png",
+        "alt": "Car Wrap Design 团队",
+        "width": "20",
+        "height": "20",
+        "loading": "lazy",
+        "class": "size-5 rounded-full object-cover"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": []
+  },
+  {
+    "path": "/zh/blog/tesla-wrap-complete-guide",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/blog/tesla-wrap-complete-guide",
+    "bytes": 30968,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": [
+      "Tesla 车衣设计完整指南：从快速预览到保存作品 | Car Wrap Design"
+    ],
+    "h1": ["Tesla 车衣设计完整指南：从快速预览到保存作品"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "按步骤了解 Model 3 与 Model Y 车型选择、本地图片预览、图层编辑、3D 检查，以及保存、下载和分享作品的方法。"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png"
+      },
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/imgs/blog/tesla-wrap-complete-guide.webp"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fblog%2F%24slug",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/zh/blog/tesla-wrap-complete-guide"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png",
+        "alt": "Car Wrap Design 团队",
+        "width": "20",
+        "height": "20",
+        "class": "size-5 rounded-full object-cover"
+      },
+      {
+        "src": "/imgs/blog/tesla-wrap-complete-guide.webp",
+        "alt": "Tesla 车衣设计完整指南：从快速预览到保存作品",
+        "class": "border-border mb-8 w-full rounded-2xl border object-cover"
+      },
+      {
+        "src": "/imgs/blog/tesla-wrap-guide/3d-preview.webp",
+        "alt": "蓝色 Model 3 性能版的 3D 预览，界面包含车型、材质和颜色选项",
+        "width": "1512",
+        "height": "949",
+        "loading": "lazy",
+        "class": "border-border w-full rounded-xl border"
+      },
+      {
+        "src": "/imgs/blog/tesla-wrap-guide/ai-design.webp",
+        "alt": "AI 车衣生成界面，展示 Model 3 车型选择、设计提示词、参考图入口和生成选项",
+        "width": "1216",
+        "height": "668",
+        "loading": "lazy",
+        "class": "border-border w-full rounded-xl border"
+      },
+      {
+        "src": "/imgs/blog/tesla-wrap-guide/editor.webp",
+        "alt": "车衣编辑器中的车型模板、选中的文字图层、编辑工具和 3D 预览",
+        "width": "1280",
+        "height": "720",
+        "loading": "lazy",
+        "class": "border-border w-full rounded-xl border"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": []
+  },
+  {
+    "path": "/zh/gallery",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/gallery?search=&vehicle=&sort=latest&page=1",
+    "bytes": 20016,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["Car Wraps Gallery 车衣作品库 | Tesla Model 3 与 Model Y"],
+    "h1": ["Car Wraps Gallery · 车衣作品库"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "发现社区创作者为 Tesla Model 3、Model Y、Cybertruck、Model S 和 Model X 制作的车衣。按车型寻找灵感，查看完整贴图，下载喜欢的设计，或进入编辑器继续创作。"
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "Car Wraps Gallery 车衣作品库 | Tesla Model 3 与 Model Y"
+      },
+      {
+        "property": "og:description",
+        "content": "发现社区创作者为 Tesla Model 3、Model Y、Cybertruck、Model S 和 Model X 制作的车衣。按车型寻找灵感，查看完整贴图，下载喜欢的设计，或进入编辑器继续创作。"
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/zh/gallery"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Car Wraps Gallery 车衣作品库 | Tesla Model 3 与 Model Y"
+      },
+      {
+        "name": "twitter:description",
+        "content": "发现社区创作者为 Tesla Model 3、Model Y、Cybertruck、Model S 和 Model X 制作的车衣。按车型寻找灵感，查看完整贴图，下载喜欢的设计，或进入编辑器继续创作。"
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fgallery%2F",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/zh/gallery"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/gallery"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/gallery"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/gallery"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": []
+  },
+  {
+    "path": "/zh/gallery/ani-07f0c209",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/gallery/ani-07f0c209",
+    "bytes": 29110,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["Ani | Car Wrap Design"],
+    "h1": ["Ani"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "《Ani》是由 Tesla 创作的 Tesla Model Y（Legacy）车衣设计，发布于 2026年10月9日。查看车衣纹理和 3D 效果，下载图片，或以此为参考创作自己的配色与图案。"
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "Ani | Car Wrap Design"
+      },
+      {
+        "property": "og:description",
+        "content": "《Ani》是由 Tesla 创作的 Tesla Model Y（Legacy）车衣设计，发布于 2026年10月9日。查看车衣纹理和 3D 效果，下载图片，或以此为参考创作自己的配色与图案。"
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/zh/gallery/ani-07f0c209"
+      },
+      {
+        "property": "og:image",
+        "content": "https://pub-4ef94927e2f34411937719978b9b9de2.r2.dev/cover/202610/5303cf0b-2cc3-4a8c-9000-e91ae48ec13e.webp"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Ani | Car Wrap Design"
+      },
+      {
+        "name": "twitter:description",
+        "content": "《Ani》是由 Tesla 创作的 Tesla Model Y（Legacy）车衣设计，发布于 2026年10月9日。查看车衣纹理和 3D 效果，下载图片，或以此为参考创作自己的配色与图案。"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://pub-4ef94927e2f34411937719978b9b9de2.r2.dev/cover/202610/5303cf0b-2cc3-4a8c-9000-e91ae48ec13e.webp"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fgallery%2F%24designSlug",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/zh/gallery/ani-07f0c209"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/gallery/ani-07f0c209"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/gallery/ani-07f0c209"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/gallery/ani-07f0c209"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        "name": "Ani",
+        "description": "《Ani》是由 Tesla 创作的 Tesla Model Y（Legacy）车衣设计，发布于 2026年10月9日。查看车衣纹理和 3D 效果，下载图片，或以此为参考创作自己的配色与图案。",
+        "contentUrl": "https://pub-4ef94927e2f34411937719978b9b9de2.r2.dev/design/202610/7bec24d6-466d-4947-bf17-6a5bd5a75cd7.webp",
+        "url": "http://localhost:3100/zh/gallery/ani-07f0c209",
+        "author": {
+          "@type": "Person",
+          "name": "Tesla"
+        },
+        "datePublished": "2026-10-09T02:38:55.862Z"
+      }
+    ]
+  },
+  {
+    "path": "/zh/gallery/ice-cream-89aca79e",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/gallery/ice-cream-89aca79e",
+    "bytes": 29246,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["Ice Cream | Car Wrap Design"],
+    "h1": ["Ice Cream"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "《Ice Cream》是由 Tesla 创作的 Tesla Model 3（Legacy）车衣设计，发布于 2026年10月9日。查看车衣纹理和 3D 效果，下载图片，或以此为参考创作自己的配色与图案。"
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "Ice Cream | Car Wrap Design"
+      },
+      {
+        "property": "og:description",
+        "content": "《Ice Cream》是由 Tesla 创作的 Tesla Model 3（Legacy）车衣设计，发布于 2026年10月9日。查看车衣纹理和 3D 效果，下载图片，或以此为参考创作自己的配色与图案。"
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/zh/gallery/ice-cream-89aca79e"
+      },
+      {
+        "property": "og:image",
+        "content": "https://pub-4ef94927e2f34411937719978b9b9de2.r2.dev/cover/202610/e05f3d9f-2b11-4cf7-9a76-3b4fffeb13e6.webp"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Ice Cream | Car Wrap Design"
+      },
+      {
+        "name": "twitter:description",
+        "content": "《Ice Cream》是由 Tesla 创作的 Tesla Model 3（Legacy）车衣设计，发布于 2026年10月9日。查看车衣纹理和 3D 效果，下载图片，或以此为参考创作自己的配色与图案。"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://pub-4ef94927e2f34411937719978b9b9de2.r2.dev/cover/202610/e05f3d9f-2b11-4cf7-9a76-3b4fffeb13e6.webp"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fgallery%2F%24designSlug",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/zh/gallery/ice-cream-89aca79e"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/gallery/ice-cream-89aca79e"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/gallery/ice-cream-89aca79e"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/gallery/ice-cream-89aca79e"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        "name": "Ice Cream",
+        "description": "《Ice Cream》是由 Tesla 创作的 Tesla Model 3（Legacy）车衣设计，发布于 2026年10月9日。查看车衣纹理和 3D 效果，下载图片，或以此为参考创作自己的配色与图案。",
+        "contentUrl": "https://pub-4ef94927e2f34411937719978b9b9de2.r2.dev/design/202610/256849c3-131a-4eb0-a639-4499dee21435.webp",
+        "url": "http://localhost:3100/zh/gallery/ice-cream-89aca79e",
+        "author": {
+          "@type": "Person",
+          "name": "Tesla"
+        },
+        "datePublished": "2026-10-09T01:22:16.788Z"
+      }
+    ]
+  },
+  {
+    "path": "/zh/pricing",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/pricing",
+    "bytes": 24675,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["为下一次灵感补充积分 | Car Wrap Design"],
+    "h1": ["为下一次灵感补充积分"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "一次性购买 100、250 或 1000 积分，无需订阅。积分永不过期，所有套餐均享 50MB 存储和无限导出。"
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "为下一次灵感补充积分 | Car Wrap Design"
+      },
+      {
+        "property": "og:description",
+        "content": "一次性购买 100、250 或 1000 积分，无需订阅。积分永不过期，所有套餐均享 50MB 存储和无限导出。"
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/zh/pricing"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "为下一次灵感补充积分 | Car Wrap Design"
+      },
+      {
+        "name": "twitter:description",
+        "content": "一次性购买 100、250 或 1000 积分，无需订阅。积分永不过期，所有套餐均享 50MB 存储和无限导出。"
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fpricing",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/zh/pricing"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/pricing"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/pricing"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/pricing"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": []
+  },
+  {
+    "path": "/zh/privacy-policy",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/privacy-policy",
+    "bytes": 25330,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["隐私政策"],
+    "h1": ["隐私政策"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "账户信息、设计文件、AI 输入、支付记录和分享项目的处理方式。"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2F(pages)%2C%2F(pages)%2Fprivacy-policy",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/zh/privacy-policy"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": []
+  },
+  {
+    "path": "/zh/terms-of-service",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/terms-of-service",
+    "bytes": 29864,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["服务条款"],
+    "h1": ["服务条款"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "车衣编辑器、AI 生成、积分、公开作品及可接受使用规则。"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2F(pages)%2C%2F(pages)%2Fterms-of-service",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/zh/terms-of-service"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": []
+  },
+  {
+    "path": "/zh/tesla-model-3-wrap",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/tesla-model-3-wrap",
+    "bytes": 49170,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["特斯拉 Model 3 车衣设计 | 在线创作与 3D 预览"],
+    "h1": ["在线创作特斯拉 Model 3 车衣"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "让简洁车身更有个性。在线探索特斯拉 Model 3 车衣配色、赛车条纹与插画风格，在初代或 2024 款车身上预览 3D 效果，再添加自己的图片和文字，完成专属设计。"
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "特斯拉 Model 3 车衣设计 | 在线创作与 3D 预览"
+      },
+      {
+        "property": "og:description",
+        "content": "让简洁车身更有个性。在线探索特斯拉 Model 3 车衣配色、赛车条纹与插画风格，在初代或 2024 款车身上预览 3D 效果，再添加自己的图片和文字，完成专属设计。"
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/zh/tesla-model-3-wrap"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "特斯拉 Model 3 车衣设计 | 在线创作与 3D 预览"
+      },
+      {
+        "name": "twitter:description",
+        "content": "让简洁车身更有个性。在线探索特斯拉 Model 3 车衣配色、赛车条纹与插画风格，在初代或 2024 款车身上预览 3D 效果，再添加自己的图片和文字，完成专属设计。"
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Ftesla-model-3-wrap",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/zh/tesla-model-3-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/tesla-model-3-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/tesla-model-3-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/tesla-model-3-wrap"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-legacy.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-2024-base.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-2024-performance.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "在线创作特斯拉 Model 3 车衣",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Web",
+            "url": "https://carwrapdesign.app/tesla-model-3-wrap",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "Free 3D preview and browser editor; AI generation uses credits."
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carwrapdesign.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "在线创作特斯拉 Model 3 车衣",
+                "item": "https://carwrapdesign.app/tesla-model-3-wrap"
+              }
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "name": "在线创作特斯拉 Model 3 车衣 supported vehicles",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Model 3 · Legacy",
+                "url": "https://carwrapdesign.app/create/model-3-legacy"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Model 3 Base · 2024",
+                "url": "https://carwrapdesign.app/create/model-3-2024-base"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Model 3 Performance · 2024",
+                "url": "https://carwrapdesign.app/create/model-3-2024-performance"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/zh/tesla-model-y-wrap",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/tesla-model-y-wrap",
+    "bytes": 50901,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["特斯拉 Model Y 车衣设计 | 在线配色与 3D 预览"],
+    "h1": ["在线设计特斯拉 Model Y 车衣"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "为日常座驾换个新模样。探索特斯拉 Model Y 车衣配色、条纹和个性图案，选择对应版本，在 3D 中比较整车效果，再用自己的素材创作从车头到尾门都呼应的设计。"
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "特斯拉 Model Y 车衣设计 | 在线配色与 3D 预览"
+      },
+      {
+        "property": "og:description",
+        "content": "为日常座驾换个新模样。探索特斯拉 Model Y 车衣配色、条纹和个性图案，选择对应版本，在 3D 中比较整车效果，再用自己的素材创作从车头到尾门都呼应的设计。"
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/zh/tesla-model-y-wrap"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "特斯拉 Model Y 车衣设计 | 在线配色与 3D 预览"
+      },
+      {
+        "name": "twitter:description",
+        "content": "为日常座驾换个新模样。探索特斯拉 Model Y 车衣配色、条纹和个性图案，选择对应版本，在 3D 中比较整车效果，再用自己的素材创作从车头到尾门都呼应的设计。"
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Ftesla-model-y-wrap",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/zh/tesla-model-y-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/tesla-model-y-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/tesla-model-y-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/tesla-model-y-wrap"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-legacy.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-base.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-premium.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-performance.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-l.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "在线设计特斯拉 Model Y 车衣",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Web",
+            "url": "https://carwrapdesign.app/tesla-model-y-wrap",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "Free 3D preview and browser editor; AI generation uses credits."
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carwrapdesign.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "在线设计特斯拉 Model Y 车衣",
+                "item": "https://carwrapdesign.app/tesla-model-y-wrap"
+              }
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "name": "在线设计特斯拉 Model Y 车衣 supported vehicles",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Model Y · Legacy",
+                "url": "https://carwrapdesign.app/create/model-y-legacy"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Model Y Base · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-2025-base"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Model Y Premium · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-2025-premium"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Model Y Performance · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-2025-performance"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Model Y L · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-l"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/zh/tesla-wrap",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/tesla-wrap",
+    "bytes": 52928,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["特斯拉车衣设计 | 在线探索配色、图案与 3D 效果"],
+    "h1": ["在线设计你的专属特斯拉车衣"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "为爱车寻找新风格。在线探索特斯拉车衣配色、材质与图案，在 Model 3、Model Y 等车型上查看 3D 效果。浏览设计灵感，添加自己的文字和图片，创作专属车衣。"
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "特斯拉车衣设计 | 在线探索配色、图案与 3D 效果"
+      },
+      {
+        "property": "og:description",
+        "content": "为爱车寻找新风格。在线探索特斯拉车衣配色、材质与图案，在 Model 3、Model Y 等车型上查看 3D 效果。浏览设计灵感，添加自己的文字和图片，创作专属车衣。"
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/zh/tesla-wrap"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "特斯拉车衣设计 | 在线探索配色、图案与 3D 效果"
+      },
+      {
+        "name": "twitter:description",
+        "content": "为爱车寻找新风格。在线探索特斯拉车衣配色、材质与图案，在 Model 3、Model Y 等车型上查看 3D 效果。浏览设计灵感，添加自己的文字和图片，创作专属车衣。"
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Ftesla-wrap",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/zh/tesla-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/tesla-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/tesla-wrap"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/tesla-wrap"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-legacy.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-2024-base.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-3-2024-performance.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-legacy.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-base.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-premium.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-2025-performance.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-y-l.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/cybertruck.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-s-2021.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-s-2025-plaid.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/imgs/vehicles/cards/model-x-2021.webp",
+        "alt": "",
+        "width": "800",
+        "height": "450",
+        "loading": "lazy",
+        "class": "pointer-events-none absolute top-1/2 right-3 h-auto w-36 max-w-[60%] -translate-y-1/2 object-contain"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "在线设计你的专属特斯拉车衣",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Web",
+            "url": "https://carwrapdesign.app/tesla-wrap",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "Free 3D preview and browser editor; AI generation uses credits."
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://carwrapdesign.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "在线设计你的专属特斯拉车衣",
+                "item": "https://carwrapdesign.app/tesla-wrap"
+              }
+            ]
+          },
+          {
+            "@type": "ItemList",
+            "name": "在线设计你的专属特斯拉车衣 supported vehicles",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Model 3 · Legacy",
+                "url": "https://carwrapdesign.app/create/model-3-legacy"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Model 3 Base · 2024",
+                "url": "https://carwrapdesign.app/create/model-3-2024-base"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Model 3 Performance · 2024",
+                "url": "https://carwrapdesign.app/create/model-3-2024-performance"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Model Y · Legacy",
+                "url": "https://carwrapdesign.app/create/model-y-legacy"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Model Y Base · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-2025-base"
+              },
+              {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "Model Y Premium · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-2025-premium"
+              },
+              {
+                "@type": "ListItem",
+                "position": 7,
+                "name": "Model Y Performance · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-2025-performance"
+              },
+              {
+                "@type": "ListItem",
+                "position": 8,
+                "name": "Model Y L · 2025",
+                "url": "https://carwrapdesign.app/create/model-y-l"
+              },
+              {
+                "@type": "ListItem",
+                "position": 9,
+                "name": "Cybertruck · 2023",
+                "url": "https://carwrapdesign.app/create/cybertruck"
+              },
+              {
+                "@type": "ListItem",
+                "position": 10,
+                "name": "Model S · 2021",
+                "url": "https://carwrapdesign.app/create/model-s-2021"
+              },
+              {
+                "@type": "ListItem",
+                "position": 11,
+                "name": "Model S Plaid · 2025",
+                "url": "https://carwrapdesign.app/create/model-s-2025-plaid"
+              },
+              {
+                "@type": "ListItem",
+                "position": 12,
+                "name": "Model X · 2021",
+                "url": "https://carwrapdesign.app/create/model-x-2021"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/sign-in",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/sign-in",
+    "bytes": 10245,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Car Wrap Design"],
+    "h1": [],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Create AI car wrap concepts, edit Tesla UV templates, and preview every finish in realistic 3D."
+      }
+    ],
+    "links": [
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2F(auth)%2Fsign-in",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      }
+    ],
+    "images": [],
+    "schemas": []
+  },
+  {
+    "path": "/zh/sign-in",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/sign-in",
+    "bytes": 10243,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["Car Wrap Design"],
+    "h1": [],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Create AI car wrap concepts, edit Tesla UV templates, and preview every finish in realistic 3D."
+      }
+    ],
+    "links": [
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2F(auth)%2Fsign-in",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      }
+    ],
+    "images": [],
+    "schemas": []
+  },
+  {
+    "path": "/zh/admin",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/admin",
+    "bytes": 3887,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["Car Wrap Design"],
+    "h1": [],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Create AI car wrap concepts, edit Tesla UV templates, and preview every finish in realistic 3D."
+      }
+    ],
+    "links": [
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fadmin%2C%2Fadmin%2F",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      }
+    ],
+    "images": [],
+    "schemas": []
+  },
+  {
+    "path": "/zh/dashboard",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/dashboard",
+    "bytes": 3927,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["Car Wrap Design"],
+    "h1": [],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Create AI car wrap concepts, edit Tesla UV templates, and preview every finish in realistic 3D."
+      }
+    ],
+    "links": [
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fdashboard%2C%2Fdashboard%2F",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      }
+    ],
+    "images": [],
+    "schemas": []
+  },
+  {
+    "path": "/cover-preview",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/cover-preview",
+    "bytes": 3657,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Car Wrap Design"],
+    "h1": [],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Create AI car wrap concepts, edit Tesla UV templates, and preview every finish in realistic 3D."
+      }
+    ],
+    "links": [
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fcover-preview",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      }
+    ],
+    "images": [],
+    "schemas": []
+  },
+  {
+    "path": "/ai-wrap-generator",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/ai-car-wrap-generator",
+    "bytes": 45733,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["AI Car Wrap Generator Online | Create & Preview Wraps"],
+    "h1": ["AI Car Wrap Generator"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Bring your wrap ideas to life with the AI car wrap generator. Create unique designs from a prompt or reference image, preview in 3D, and download your artwork."
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "AI Car Wrap Generator Online | Create & Preview Wraps"
+      },
+      {
+        "property": "og:description",
+        "content": "Bring your wrap ideas to life with the AI car wrap generator. Create unique designs from a prompt or reference image, preview in 3D, and download your artwork."
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/ai-car-wrap-generator"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "AI Car Wrap Generator Online | Create & Preview Wraps"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Bring your wrap ideas to life with the AI car wrap generator. Create unique designs from a prompt or reference image, preview in 3D, and download your artwork."
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fai-car-wrap-generator",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/ai-car-wrap-generator"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/ai-car-wrap-generator"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/ai-car-wrap-generator"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/ai-car-wrap-generator"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "AI Car Wrap Generator",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Web",
+            "url": "http://localhost:3100/ai-car-wrap-generator",
+            "description": "Bring your wrap ideas to life with the AI car wrap generator. Create unique designs from a prompt or reference image, preview in 3D, and download your artwork."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/zh/ai-wrap-generator",
+    "status": 200,
+    "finalUrl": "http://localhost:3000/zh/ai-car-wrap-generator",
+    "bytes": 45408,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["AI 车衣生成器 | 在线生成图案并预览车身效果"],
+    "h1": ["AI 车衣生成器"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "用 AI 车衣生成器，把喜欢的配色、图案和灵感变成专属车衣设计。输入想法或上传参考图片，探索不同风格，在 3D 车身上预览效果，找到心仪方案后下载 PNG 图案，让下一款车衣从灵感走向成形。"
+      },
+      {
+        "name": "robots",
+        "content": "index,follow,max-image-preview:large"
+      },
+      {
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "property": "og:site_name",
+        "content": "Car Wrap Design"
+      },
+      {
+        "property": "og:title",
+        "content": "AI 车衣生成器 | 在线生成图案并预览车身效果"
+      },
+      {
+        "property": "og:description",
+        "content": "用 AI 车衣生成器，把喜欢的配色、图案和灵感变成专属车衣设计。输入想法或上传参考图片，探索不同风格，在 3D 车身上预览效果，找到心仪方案后下载 PNG 图案，让下一款车衣从灵感走向成形。"
+      },
+      {
+        "property": "og:url",
+        "content": "http://localhost:3100/zh/ai-car-wrap-generator"
+      },
+      {
+        "property": "og:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "AI 车衣生成器 | 在线生成图案并预览车身效果"
+      },
+      {
+        "name": "twitter:description",
+        "content": "用 AI 车衣生成器，把喜欢的配色、图案和灵感变成专属车衣设计。输入想法或上传参考图片，探索不同风格，在 3D 车身上预览效果，找到心仪方案后下载 PNG 图案，让下一款车衣从灵感走向成形。"
+      },
+      {
+        "name": "twitter:image",
+        "content": "http://localhost:3100/og-image.png?v=20261007-3"
+      }
+    ],
+    "links": [
+      {
+        "rel": "preload",
+        "as": "image",
+        "href": "/logo.png?v=20261007-3"
+      },
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fai-car-wrap-generator",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      },
+      {
+        "rel": "canonical",
+        "href": "http://localhost:3100/zh/ai-car-wrap-generator"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "en",
+        "href": "http://localhost:3100/ai-car-wrap-generator"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "zh",
+        "href": "http://localhost:3100/zh/ai-car-wrap-generator"
+      },
+      {
+        "rel": "alternate",
+        "hreflang": "x-default",
+        "href": "http://localhost:3100/ai-car-wrap-generator"
+      }
+    ],
+    "images": [
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "36",
+        "height": "36",
+        "class": "size-9 shrink-0 rounded-[10px]"
+      },
+      {
+        "src": "/logo.png?v=20261007-3",
+        "alt": "",
+        "width": "40",
+        "height": "40",
+        "class": "size-10 rounded-[10px]"
+      }
+    ],
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "AI 车衣生成器",
+            "applicationCategory": "DesignApplication",
+            "operatingSystem": "Web",
+            "url": "http://localhost:3100/zh/ai-car-wrap-generator",
+            "description": "用 AI 车衣生成器，把喜欢的配色、图案和灵感变成专属车衣设计。输入想法或上传参考图片，探索不同风格，在 3D 车身上预览效果，找到心仪方案后下载 PNG 图案，让下一款车衣从灵感走向成形。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/seo-audit-nonexistent",
+    "status": 404,
+    "finalUrl": "http://localhost:3000/seo-audit-nonexistent",
+    "bytes": 3045,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Car Wrap Design"],
+    "h1": ["404"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Create AI car wrap concepts, edit Tesla UV templates, and preview every finish in realistic 3D."
+      }
+    ],
+    "links": [
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      }
+    ],
+    "images": [],
+    "schemas": []
+  },
+  {
+    "path": "/zh/seo-audit-nonexistent",
+    "status": 404,
+    "finalUrl": "http://localhost:3000/zh/seo-audit-nonexistent",
+    "bytes": 3045,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "zh",
+    "titles": ["Car Wrap Design"],
+    "h1": ["404"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Create AI car wrap concepts, edit Tesla UV templates, and preview every finish in realistic 3D."
+      }
+    ],
+    "links": [
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      }
+    ],
+    "images": [],
+    "schemas": []
+  },
+  {
+    "path": "/blog/seo-audit-nonexistent",
+    "status": 404,
+    "finalUrl": "http://localhost:3000/blog/seo-audit-nonexistent",
+    "bytes": 3246,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Car Wrap Design"],
+    "h1": ["404"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Create AI car wrap concepts, edit Tesla UV templates, and preview every finish in realistic 3D."
+      }
+    ],
+    "links": [
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fblog%2F%24slug",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      }
+    ],
+    "images": [],
+    "schemas": []
+  },
+  {
+    "path": "/gallery/seo-audit-nonexistent",
+    "status": 404,
+    "finalUrl": "http://localhost:3000/gallery/seo-audit-nonexistent",
+    "bytes": 3288,
+    "headers": {
+      "content-type": "text/html; charset=utf-8"
+    },
+    "lang": "en",
+    "titles": ["Car Wrap Design"],
+    "h1": ["404"],
+    "meta": [
+      {
+        "charset": "utf-8"
+      },
+      {
+        "name": "viewport",
+        "content": "width=device-width, initial-scale=1"
+      },
+      {
+        "name": "description",
+        "content": "Create AI car wrap concepts, edit Tesla UV templates, and preview every finish in realistic 3D."
+      }
+    ],
+    "links": [
+      {
+        "rel": "stylesheet",
+        "href": "/@tanstack-start/styles.css?routes=__root__%2C%2Fgallery%2F%24designSlug",
+        "data-tanstack-router-dev-styles": "true",
+        "data-precedence": "default"
+      },
+      {
+        "rel": "modulepreload",
+        "href": "/@id/virtual:tanstack-start-dev-client-entry"
+      },
+      {
+        "rel": "icon",
+        "href": "/favicon-32x32.png?v=20261007-4",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "rel": "shortcut icon",
+        "href": "/favicon.ico?v=20261007-4",
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-touch-icon.png?v=20261007-4",
+        "sizes": "180x180"
+      }
+    ],
+    "images": [],
+    "schemas": []
+  }
+]

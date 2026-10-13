@@ -59,6 +59,8 @@ export interface StorageProvider {
   // get public url for key (optional)
   getPublicUrl?: (options: { key: string; bucket?: string }) => string;
 
+  deleteFile?: (options: { key: string; bucket?: string }) => Promise<void>;
+
   // upload file
   uploadFile(options: StorageUploadOptions): Promise<StorageUploadResult>;
 
@@ -126,6 +128,14 @@ export class StorageManager {
     options: StorageDownloadUploadOptions
   ): Promise<StorageUploadResult> {
     return this.ensureDefaultProvider().downloadAndUpload(options);
+  }
+
+  // Delete using the configured provider; unsupported providers must fail closed.
+  async deleteFile(options: { key: string; bucket?: string }): Promise<void> {
+    const provider = this.ensureDefaultProvider();
+    if (!provider.deleteFile)
+      throw new Error('Storage deletion is not supported');
+    await provider.deleteFile(options);
   }
 
   // check if object exists using default provider (if supported)

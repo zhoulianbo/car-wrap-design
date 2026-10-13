@@ -12,7 +12,10 @@ function isConfigured(configs: ConfigMap): boolean {
   );
 }
 
-function buildManager(configs: ConfigMap): StorageManager {
+function buildManager(
+  configs: ConfigMap,
+  uploadPath = configs.r2_upload_path
+): StorageManager {
   const manager = new StorageManager();
   manager.addProvider(
     new R2Provider({
@@ -20,7 +23,7 @@ function buildManager(configs: ConfigMap): StorageManager {
       accessKeyId: configs.r2_access_key as string,
       secretAccessKey: configs.r2_secret_key as string,
       bucket: configs.r2_bucket_name as string,
-      uploadPath: configs.r2_upload_path,
+      uploadPath,
       region: 'auto',
       endpoint: configs.r2_endpoint, // optional custom endpoint
       publicDomain: configs.r2_domain,
@@ -38,8 +41,10 @@ export async function isStorageConfigured(): Promise<boolean> {
  * Returns a configured StorageManager, or null when storage is not configured
  * (caller should fall back to local/inline handling).
  */
-export async function getStorage(): Promise<StorageManager | null> {
+export async function getStorage(options?: {
+  root?: boolean;
+}): Promise<StorageManager | null> {
   const configs = await getAllConfigs();
   if (!isConfigured(configs)) return null;
-  return buildManager(configs);
+  return buildManager(configs, options?.root ? '' : configs.r2_upload_path);
 }

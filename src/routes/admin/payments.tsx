@@ -10,7 +10,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { Pencil } from 'lucide-react';
 import { toast } from 'sonner';
 
-import { tDynamic } from '@/core/i18n/dynamic';
+import { tDynamic, tStatus } from '@/core/i18n/dynamic';
 import { apiGet, apiPatch, type PageResult } from '@/lib/api-client';
 import { formatDateTime } from '@/lib/time';
 import { cn } from '@/lib/utils';
@@ -185,7 +185,7 @@ function PaymentsPage() {
     },
     {
       header: m['admin.payments.type'](),
-      cell: (o) => o.paymentType || '—',
+      cell: (o) => tStatus(o.paymentType),
     },
     {
       header: m['admin.payments.provider'](),

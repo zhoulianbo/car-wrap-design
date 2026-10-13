@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Logo">
-  <rect width="512" height="512" rx="112" fill="#0a0a0a"/>
-  <text x="50%" y="50%" dy="0.04em" text-anchor="middle" dominant-baseline="central" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="300" font-weight="700" fill="#ffffff">S</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
+  <title id="title">Car Wrap Design</title>
+  <desc id="desc">The Car Wrap Design folded W ribbon mark with a signal-orange accent.</desc>
+  <image href="logo.png" width="800" height="800" />
 </svg>

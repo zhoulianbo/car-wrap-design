@@ -1,8 +1,14 @@
 import { and, desc, eq, isNull } from 'drizzle-orm';
 
 import { db } from '@/core/db';
+import { atomicOperation, isD1, withD1Retry } from '@/core/db/atomic';
 import { aiTask } from '@/config/db/schema';
-import { consume, revoke } from '@/modules/credits/service';
+import {
+  consume,
+  prepareD1Consumption,
+  prepareD1Revocation,
+  revoke,
+} from '@/modules/credits/service';
 import { getUuid } from '@/lib/hash';
 
 export enum AITaskStatus {
@@ -24,9 +30,61 @@ export async function createTask(params: {
   prompt: string;
   costCredits?: number;
   options?: any;
+  scene?: string;
 }): Promise<any> {
-  const { userId, mediaType, provider, model, prompt, costCredits, options } =
-    params;
+  const {
+    userId,
+    mediaType,
+    provider,
+    model,
+    prompt,
+    costCredits,
+    options,
+    scene = 'ai_task',
+  } = params;
+
+  if (isD1()) {
+    return withD1Retry(async (plan) => {
+      const id = getUuid();
+      const charged =
+        costCredits && costCredits > 0
+          ? await prepareD1Consumption(
+              {
+                userId,
+                credits: costCredits,
+                scene,
+                description: `AI ${mediaType} generation`,
+                metadata: JSON.stringify({ taskId: id }),
+              },
+              plan
+            )
+          : null;
+      if (charged && !charged.success) throw new Error('Insufficient credits');
+      const results = await plan.commit([
+        ...(charged?.queries || []),
+        db()
+          .insert(aiTask)
+          .values({
+            id,
+            userId,
+            mediaType,
+            provider,
+            model,
+            prompt,
+            status: AITaskStatus.PENDING,
+            costCredits: costCredits || 0,
+            options: options ? JSON.stringify(options) : null,
+            scene,
+            creditId: charged?.consumedCredit?.id,
+            taskInfo: charged?.consumedCredit
+              ? JSON.stringify({ creditId: charged.consumedCredit.id })
+              : null,
+          })
+          .returning(),
+      ]);
+      return results.at(-1)[0];
+    });
+  }
 
   return db().transaction(async (tx: any) => {
     // 1. Insert task
@@ -39,6 +97,8 @@ export async function createTask(params: {
       prompt,
       status: AITaskStatus.PENDING,
       costCredits: costCredits || 0,
+      options: options ? JSON.stringify(options) : null,
+      scene,
     };
 
     const [task] = await tx.insert(aiTask).values(taskData).returning();
@@ -48,7 +108,7 @@ export async function createTask(params: {
       const result = await consume({
         userId,
         credits: costCredits,
-        scene: 'ai_task',
+        scene,
         description: `AI ${mediaType} generation`,
         metadata: JSON.stringify({ taskId: task.id }),
         tx,
@@ -64,6 +124,7 @@ export async function createTask(params: {
           .update(aiTask)
           .set({
             taskInfo: JSON.stringify({ creditId: result.consumedCredit.id }),
+            creditId: result.consumedCredit.id,
           })
           .where(eq(aiTask.id, task.id));
       }
@@ -83,6 +144,37 @@ export async function updateTask(params: {
 }) {
   const { taskId, status, taskResult } = params;
 
+  if (isD1())
+    return atomicOperation(async (tx, read, commit) => {
+      const [task] = await read(
+        tx.select().from(aiTask).where(eq(aiTask.id, taskId)).limit(1)
+      );
+      if (!task) throw new Error('Task not found');
+      let creditId = task.creditId;
+      if (!creditId && status === AITaskStatus.FAILED && task.taskInfo) {
+        try {
+          creditId = JSON.parse(task.taskInfo).creditId;
+        } catch {
+          /* Legacy invalid metadata has no recoverable debit ID. */
+        }
+      }
+      const refunds =
+        status === AITaskStatus.FAILED && creditId
+          ? await prepareD1Revocation(creditId, { read })
+          : [];
+      await commit([
+        ...refunds,
+        tx
+          .update(aiTask)
+          .set({
+            status,
+            ...(taskResult ? { taskResult: JSON.stringify(taskResult) } : {}),
+          })
+          .where(eq(aiTask.id, taskId)),
+      ]);
+      return { refunded: refunds.length > 0 };
+    });
+
   const [task] = await db()
     .select()
     .from(aiTask)
@@ -100,16 +192,21 @@ export async function updateTask(params: {
   await db().update(aiTask).set(updateData).where(eq(aiTask.id, taskId));
 
   // Revoke credits on failure
-  if (status === AITaskStatus.FAILED && task.taskInfo) {
+  let refunded = false;
+  if (status === AITaskStatus.FAILED) {
     try {
-      const info = JSON.parse(task.taskInfo as string);
-      if (info.creditId) {
-        await revoke(info.creditId);
+      const info = task.taskInfo
+        ? JSON.parse(task.taskInfo as string)
+        : undefined;
+      const creditId = task.creditId || info?.creditId;
+      if (creditId) {
+        refunded = Boolean(await revoke(creditId));
       }
     } catch {
       // Ignore parse errors
     }
   }
+  return { refunded };
 }
 
 /**

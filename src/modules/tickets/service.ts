@@ -11,6 +11,7 @@ import {
 } from 'drizzle-orm';
 
 import { db } from '@/core/db';
+import { atomicBatch } from '@/core/db/atomic';
 import {
   ticket,
   ticketMessage,
@@ -99,32 +100,31 @@ export async function createTicket(params: {
   content: string;
   attachments?: string[];
 }): Promise<Ticket> {
-  return db().transaction(async (tx: any) => {
-    const now = new Date();
-    const [row] = await tx
+  const now = new Date();
+  const id = getUuid();
+  const [rows] = await atomicBatch((tx) => [
+    tx
       .insert(ticket)
       .values({
-        id: getUuid(),
+        id,
         userId: params.userId,
         title: params.title,
         status: 'open',
         createdAt: now,
         updatedAt: now,
       })
-      .returning();
-
-    await tx.insert(ticketMessage).values({
+      .returning(),
+    tx.insert(ticketMessage).values({
       id: getUuid(),
-      ticketId: row.id,
+      ticketId: id,
       userId: params.userId,
       role: 'user',
       content: params.content,
       attachments: JSON.stringify(params.attachments ?? []),
       createdAt: now,
-    });
-
-    return row;
-  });
+    }),
+  ]);
+  return rows[0];
 }
 
 /**
@@ -294,9 +294,9 @@ export async function addMessage(params: {
   content: string;
   attachments?: string[];
 }): Promise<TicketMessage> {
-  return db().transaction(async (tx: any) => {
-    const now = new Date();
-    const [row] = await tx
+  const now = new Date();
+  const [rows] = await atomicBatch((tx) => [
+    tx
       .insert(ticketMessage)
       .values({
         id: getUuid(),
@@ -307,18 +307,16 @@ export async function addMessage(params: {
         attachments: JSON.stringify(params.attachments ?? []),
         createdAt: now,
       })
-      .returning();
-
-    await tx
+      .returning(),
+    tx
       .update(ticket)
       .set({
         status: params.role === 'admin' ? 'replied' : 'open',
         updatedAt: now,
       })
-      .where(eq(ticket.id, params.ticketId));
-
-    return row;
-  });
+      .where(eq(ticket.id, params.ticketId)),
+  ]);
+  return rows[0];
 }
 
 /**

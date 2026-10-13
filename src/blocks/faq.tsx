@@ -1,44 +1,31 @@
-import { tDynamic } from '@/core/i18n/dynamic';
 import { m } from '@/paraglide/messages.js';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
+import { FAQList } from '@/components/marketing/faq-list';
+import { SectionHeading } from '@/components/marketing/section-heading';
 
-const FAQ_KEYS = [
-  'stack',
-  'payment',
-  'database',
-  'customize',
-  'license',
+const questions = [
+  ['landing.faq.free.question', 'landing.faq.free.answer'],
+  ['landing.faq.software.question', 'landing.faq.software.answer'],
+  ['landing.faq.how.question', 'landing.faq.how.answer'],
+  ['landing.faq.where.question', 'landing.faq.where.answer'],
+  ['landing.faq.stack.question', 'landing.faq.stack.answer'],
+  ['landing.faq.editing.question', 'landing.faq.editing.answer'],
+  ['landing.faq.license.question', 'landing.faq.license.answer'],
 ] as const;
 
 export function FAQ() {
   return (
-    <section id="faq" className="px-4 py-24 sm:py-32">
-      <div className="mx-auto max-w-3xl">
-        <div className="mb-16 text-center">
-          <h2 className="font-serif text-4xl font-medium tracking-tight sm:text-5xl">
-            {m['landing.faq.title']()}
-          </h2>
-          <p className="text-muted-foreground mt-5">
-            {m['landing.faq.description']()}
-          </p>
-        </div>
-        <Accordion className="w-full">
-          {FAQ_KEYS.map((key) => (
-            <AccordionItem key={key} value={key}>
-              <AccordionTrigger className="cursor-pointer py-6 text-left text-base font-medium hover:no-underline">
-                {tDynamic(`landing.faq.${key}.question`)}
-              </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
-                {tDynamic(`landing.faq.${key}.answer`)}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+    <section id="faq" className="border-t border-white/5 px-4 py-16 sm:px-8">
+      <div className="mx-auto max-w-5xl">
+        <SectionHeading
+          title={m['landing.faq.title']()}
+          description={m['landing.faq.description']()}
+        />
+        <FAQList
+          items={questions.map(([question, answer]) => ({
+            question: m[question](),
+            answer: m[answer](),
+          }))}
+        />
       </div>
     </section>
   );

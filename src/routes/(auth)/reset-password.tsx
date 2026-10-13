@@ -6,6 +6,7 @@ import { z } from 'zod';
 import { resetPassword } from '@/core/auth/client';
 import { Link, useRouter } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
+import { getErrorMessage } from '@/lib/error-message';
 import { m } from '@/paraglide/messages.js';
 import { TextField } from '@/components/form-field';
 import { Button } from '@/components/ui/button';
@@ -58,13 +59,13 @@ function ResetPasswordPage() {
           token,
         });
         if (result.error) {
-          setError(result.error.message || 'Reset failed');
+          setError(getErrorMessage(result.error, 'PASSWORD_RESET_FAILED'));
         } else {
           setSuccess(true);
           setTimeout(() => router.push('/sign-in'), 1500);
         }
       } catch (err: any) {
-        setError(err.message || 'Reset failed');
+        setError(getErrorMessage(err, 'PASSWORD_RESET_FAILED'));
       }
     },
   });

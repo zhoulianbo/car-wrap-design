@@ -3,9 +3,12 @@ import { createFileRoute } from '@tanstack/react-router';
 import { getAuth } from '@/core/auth';
 import { getPricingProduct } from '@/config/pricing';
 import { getAllConfigs } from '@/modules/config/service';
-import { createCheckout } from '@/modules/payment/service';
+import { createCheckout, hasUserPaid } from '@/modules/payment/service';
+import { isTrialCheckoutAllowed } from '@/lib/credit-offer';
+import { resolveErrorCode } from '@/lib/error-codes';
 import { enforceMinIntervalRateLimit } from '@/lib/rate-limit';
 import { respData, respErr } from '@/lib/resp';
+import { getLocale, isLocale, localizeUrl } from '@/paraglide/runtime.js';
 
 function safeSameOriginPath(
   input: string | undefined | null,
@@ -52,6 +55,18 @@ async function POST({ request }: { request: Request }) {
       return respErr('Unknown product');
     }
 
+    if (
+      product.paywallOnly &&
+      !isTrialCheckoutAllowed(
+        await hasUserPaid(session.user.id),
+        body.offer_expires_at
+      )
+    ) {
+      return respErr('This trial offer is no longer available.', {
+        status: 403,
+      });
+    }
+
     // Optional per-provider "test amount" override (admin-configured).
     // Only the charged amount is overridden — credits granted and order
     // amount stored both come from the authoritative catalog.
@@ -65,18 +80,23 @@ async function POST({ request }: { request: Request }) {
 
     // Build success/cancel URLs — only accept same-origin redirects.
     const baseUrl = configs.app_url || 'http://localhost:3000';
+    const locale = isLocale(body.locale) ? body.locale : getLocale();
     const safeRedirectPath = safeSameOriginPath(
       redirect,
-      '/settings/billing',
+      '/dashboard/billing',
       baseUrl
     );
     // Straight to the destination: safeSameOriginPath has already reduced it
     // to a path on this site. The old detour through /auth-callback exists to
     // hand a session token to a desktop client — a browser coming back from
     // checkout is already signed in, and that page isn't part of this app.
-    const finalRedirect = `${baseUrl}${safeRedirectPath}`;
-    const successUrl = `${baseUrl}/api/payment/callback?redirect=${encodeURIComponent(finalRedirect)}`;
-    const cancelUrl = `${baseUrl}/pricing`;
+    // createCheckout wraps this destination in the payment callback once.
+    const successUrl = localizeUrl(new URL(safeRedirectPath, baseUrl), {
+      locale,
+    }).href;
+    const cancelUrl = localizeUrl(new URL('/pricing', baseUrl), {
+      locale,
+    }).href;
 
     const checkout = await createCheckout({
       userId: session.user.id,
@@ -110,7 +130,7 @@ async function POST({ request }: { request: Request }) {
     return respData({ checkout_url: checkout.checkoutInfo.checkoutUrl });
   } catch (error: any) {
     console.error('checkout error:', error);
-    return respErr(error.message || 'Checkout failed');
+    return respErr(resolveErrorCode(error, 'PAYMENT_FAILED'));
   }
 }
 

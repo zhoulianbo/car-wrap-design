@@ -30,6 +30,7 @@ export type PublishedArticleItem = Pick<
   | 'authorName'
   | 'authorImage'
   | 'createdAt'
+  | 'updatedAt'
 >;
 
 export async function list(params: {
@@ -82,10 +83,13 @@ export async function list(params: {
 }
 
 export async function listPublishedArticles(
-  params: { limit?: number } = {}
+  params: { all: true; limit?: never } | { all?: false; limit?: number } = {}
 ): Promise<PublishedArticleItem[]> {
   const { limit = 100 } = params;
-  return db()
+  if (!Number.isInteger(limit) || limit < 1 || limit > 1000) {
+    throw new Error('Article limit must be an integer between 1 and 1000');
+  }
+  const query = db()
     .select({
       id: post.id,
       slug: post.slug,
@@ -95,6 +99,7 @@ export async function listPublishedArticles(
       authorName: post.authorName,
       authorImage: post.authorImage,
       createdAt: post.createdAt,
+      updatedAt: post.updatedAt,
     })
     .from(post)
     .where(
@@ -103,8 +108,8 @@ export async function listPublishedArticles(
         eq(post.status, PostStatus.PUBLISHED)
       )
     )
-    .orderBy(desc(post.createdAt))
-    .limit(limit);
+    .orderBy(desc(post.createdAt));
+  return params.all ? query : query.limit(limit);
 }
 
 export async function findPublishedBySlug(

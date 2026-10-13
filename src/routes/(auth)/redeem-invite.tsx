@@ -4,6 +4,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { signOut, useSession } from '@/core/auth/client';
 import { useRouter } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
+import { getErrorMessage } from '@/lib/error-message';
 import { m } from '@/paraglide/messages.js';
 import { localizeHref } from '@/paraglide/runtime.js';
 import { Button } from '@/components/ui/button';
@@ -37,7 +38,7 @@ function RedeemInvitePage() {
       .then((res) => {
         if (cancelled) return;
         if (res.code === 0 && !res.data?.needsInvite) {
-          router.push('/settings');
+          router.push('/dashboard');
         } else {
           setChecking(false);
         }
@@ -64,7 +65,7 @@ function RedeemInvitePage() {
         body: JSON.stringify({ code: trimmed }),
       }).then((r) => r.json());
       if (validate.code !== 0) {
-        setError(validate.message || m['common.sign.invite_code_invalid']());
+        setError(getErrorMessage(validate, 'INVITE_INVALID'));
         setLoading(false);
         return;
       }
@@ -75,15 +76,15 @@ function RedeemInvitePage() {
         body: JSON.stringify({ code: trimmed }),
       }).then((r) => r.json());
       if (redeem.code !== 0) {
-        setError(redeem.message || m['common.sign.invite_code_invalid']());
+        setError(getErrorMessage(redeem, 'INVITE_INVALID'));
         setLoading(false);
         return;
       }
 
       // Hard navigation so the new plan/membership is reflected everywhere.
-      window.location.assign(localizeHref('/settings'));
+      window.location.assign(localizeHref('/dashboard'));
     } catch (err: any) {
-      setError(err?.message || m['common.sign.invite_code_invalid']());
+      setError(getErrorMessage(err, 'INVITE_INVALID'));
       setLoading(false);
     }
   }

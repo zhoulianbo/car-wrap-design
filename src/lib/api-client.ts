@@ -1,13 +1,25 @@
 // Typed client for the app's REST endpoints (src/routes/api/**).
-// Unwraps the resp.ts envelope: { code: 0 | -1, message, data? }.
+// Unwraps the resp.ts envelope; errorCode is stable across locales.
+
+import { resolveErrorCode, type ErrorCode } from './error-codes';
+import { getErrorMessage } from './error-message';
 
 export class ApiError extends Error {
+  public errorCode: ErrorCode;
   constructor(
     public code: number,
     message: string,
-    public data?: unknown
+    public data?: unknown,
+    errorCode?: unknown,
+    public status?: number
   ) {
-    super(message);
+    const resolved = resolveErrorCode(
+      { errorCode, message },
+      'REQUEST_FAILED',
+      status
+    );
+    super(getErrorMessage(resolved));
+    this.errorCode = resolved;
     this.name = 'ApiError';
   }
 }
@@ -30,15 +42,20 @@ async function request<T>(url: string, init?: RequestInit): Promise<T> {
       ...(init?.body ? { 'Content-Type': 'application/json' } : {}),
       ...init?.headers,
     },
+  }).catch((error: unknown) => {
+    if (init?.signal?.aborted) throw error;
+    throw new ApiError(-1, resolveErrorCode(error, 'NETWORK_ERROR'));
   });
   const json = await res
     .json()
     .catch(() => ({ code: -1, message: res.statusText || 'Request failed' }));
-  if (json.code !== 0) {
+  if (!res.ok || !json || json.code !== 0) {
     throw new ApiError(
-      json.code ?? -1,
-      json.message || 'Request failed',
-      json.data
+      json?.code ?? -1,
+      json?.message || 'Request failed',
+      json?.data,
+      json?.errorCode,
+      res.status
     );
   }
   // respOk() omits data entirely — callers expecting void get undefined.
@@ -47,6 +64,27 @@ async function request<T>(url: string, init?: RequestInit): Promise<T> {
 
 export const apiGet = <T>(url: string, init?: RequestInit) =>
   request<T>(url, init);
+
+/** Binary API responses, such as same-origin canvas textures. */
+export async function apiGetBlob(url: string): Promise<Blob> {
+  const response = await fetch(url).catch((error: unknown) => {
+    throw new ApiError(-1, resolveErrorCode(error, 'NETWORK_ERROR'));
+  });
+  if (
+    !response.ok ||
+    response.headers.get('content-type')?.includes('application/json')
+  ) {
+    const error = await response.json().catch(() => null);
+    throw new ApiError(
+      error?.code ?? response.status,
+      error?.message || 'Unable to load image',
+      error?.data,
+      resolveErrorCode(error, 'IMAGE_UNAVAILABLE', response.status),
+      response.status
+    );
+  }
+  return response.blob();
+}
 
 export const apiPost = <T = void>(url: string, body?: unknown) =>
   request<T>(url, {
@@ -62,6 +100,44 @@ export const apiPatch = <T = void>(url: string, body?: unknown) =>
 
 export const apiDelete = <T = void>(url: string) =>
   request<T>(url, { method: 'DELETE' });
+
+export function apiUpload<T>(
+  url: string,
+  formData: FormData,
+  onProgress?: (percent: number) => void,
+  method: 'POST' | 'PATCH' = 'POST'
+): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.responseType = 'json';
+    xhr.upload.onprogress = (event) => {
+      if (event.lengthComputable) {
+        onProgress?.(Math.round((event.loaded / event.total) * 100));
+      }
+    };
+    xhr.onerror = () => reject(new ApiError(-1, 'NETWORK_ERROR'));
+    xhr.onabort = () => reject(new ApiError(-1, 'REQUEST_FAILED'));
+    xhr.ontimeout = () => reject(new ApiError(-1, 'REQUEST_TIMEOUT'));
+    xhr.onload = () => {
+      const payload = xhr.response ?? {};
+      if (xhr.status < 200 || xhr.status >= 300 || payload.code !== 0) {
+        reject(
+          new ApiError(
+            payload.code ?? -1,
+            payload.message || xhr.statusText || 'Upload failed',
+            payload.data,
+            resolveErrorCode(payload, 'UPLOAD_FAILED', xhr.status),
+            xhr.status
+          )
+        );
+        return;
+      }
+      resolve(payload.data as T);
+    };
+    xhr.send(formData);
+  });
+}
 
 // Query-string builder for paginated list endpoints.
 export function pageQuery(base: string, p: PageParams) {

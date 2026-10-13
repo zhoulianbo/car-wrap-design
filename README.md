@@ -26,7 +26,7 @@ pnpm dev
 - **Invite Codes** — Trial activation, batch generation, usage tracking
 - **CMS** — Categories and posts with full CRUD
 - **Image Upload** — Drop / paste / click uploader; uses S3/R2 if configured, falls back to inline base64 (size-capped) stored in DB
-- **i18n** — English + Chinese via Paraglide JS (compiled messages, dot-keyed JSON), locale-aware routing
+- **i18n** — English + Chinese via Paraglide JS (nested domain files compiled to tree-shakeable message modules), locale-aware routing
 - **Admin Panel** — Full-featured admin with grouped sidebar navigation:
   - **RBAC** — Users (role assignment), Roles (permission management), Permissions
   - **Content** — Categories, Posts (with status tabs, category selector)
@@ -61,7 +61,7 @@ src/
 ├── components/     # Shared UI (app-layout, app-sidebar, data-table, form-field, user-menu, shadcn)
 └── lib/            # Utilities (api-client, query-client, hash, resp, cookie, cache, rate-limit)
 
-messages/{en,zh}.json    # Translation source (flat dot-keyed)
+messages/{en,zh}/*.json  # Five nested domains: common, marketing, dashboard, admin, studio
 project.inlang/          # Inlang project config
 src/paraglide/           # Compiled messages + runtime (gitignored, generated)
 ```

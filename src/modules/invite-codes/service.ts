@@ -2,6 +2,7 @@ import { randomBytes } from 'crypto';
 import { and, eq, sql } from 'drizzle-orm';
 
 import { db } from '@/core/db';
+import { atomicOperation } from '@/core/db/atomic';
 import { inviteCode, subscription, userInvite } from '@/config/db/schema';
 import { getUuid } from '@/lib/hash';
 
@@ -106,13 +107,15 @@ export async function redeemInviteCode(params: {
   error?: string;
   trialEndsAt?: Date;
 }> {
-  return db().transaction(async (tx: any) => {
+  return atomicOperation(async (tx, read, commit) => {
     // 1. Idempotency: user already has an invite record → return it
-    const [existing] = await tx
-      .select()
-      .from(userInvite)
-      .where(eq(userInvite.userId, params.userId))
-      .limit(1);
+    const [existing] = await read(
+      tx
+        .select()
+        .from(userInvite)
+        .where(eq(userInvite.userId, params.userId))
+        .limit(1)
+    );
     if (existing) {
       return { ok: true, trialEndsAt: existing.trialEndsAt };
     }
@@ -124,9 +127,9 @@ export async function redeemInviteCode(params: {
       .from(inviteCode)
       .where(eq(inviteCode.code, params.code))
       .limit(1);
-    const [row] = await (lockedQuery.for
-      ? lockedQuery.for('update')
-      : lockedQuery);
+    const [row] = await read(
+      lockedQuery.for ? lockedQuery.for('update') : lockedQuery
+    );
     if (!row) {
       return { ok: false, error: 'Invalid invite code' };
     }
@@ -144,17 +147,19 @@ export async function redeemInviteCode(params: {
       now.getTime() + row.trialDays * 24 * 60 * 60 * 1000
     );
 
-    await tx.insert(userInvite).values({
-      id,
-      userId: params.userId,
-      inviteCodeId: row.id,
-      activatedAt: now,
-      trialEndsAt,
-    });
-    await tx
-      .update(inviteCode)
-      .set({ usedCount: sql`${inviteCode.usedCount} + 1` })
-      .where(eq(inviteCode.id, row.id));
+    await commit([
+      tx.insert(userInvite).values({
+        id,
+        userId: params.userId,
+        inviteCodeId: row.id,
+        activatedAt: now,
+        trialEndsAt,
+      }),
+      tx
+        .update(inviteCode)
+        .set({ usedCount: sql`${inviteCode.usedCount} + 1` })
+        .where(eq(inviteCode.id, row.id)),
+    ]);
 
     return { ok: true, trialEndsAt };
   });

@@ -1,3 +1,5 @@
+import { resolveErrorCode } from './error-codes';
+
 export function respData(data: any, init?: ResponseInit) {
   return respJson(0, 'ok', data ?? [], init);
 }
@@ -6,8 +8,9 @@ export function respOk(init?: ResponseInit) {
   return respJson(0, 'ok', undefined, init);
 }
 
-export function respErr(message: string, init?: ResponseInit) {
-  return respJson(-1, message, undefined, init);
+export function respErr(error: unknown, init?: ResponseInit) {
+  const errorCode = resolveErrorCode(error, 'REQUEST_FAILED', init?.status);
+  return Response.json({ code: -1, message: errorCode, errorCode }, init);
 }
 
 export function respPage(items: any[], total: number) {

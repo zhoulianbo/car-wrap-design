@@ -1,0 +1,181 @@
+import { Link } from '@/core/i18n/navigation';
+import { envConfigs } from '@/config';
+
+export const meta = {
+  title: 'Creare un wrapping Tesla: dal progetto 3D al display dell’auto',
+  description:
+    'Scegli il modello, crea con IA o livelli manuali, controlla in 3D e salva il progetto. Una guida pratica al download e all’importazione tramite app Tesla o USB.',
+  created_at: '2026-10-09',
+  author_name: 'Team ' + envConfigs.app_name,
+  author_type: 'Organization',
+  author_image: '/favicon-32x32.png?v=20261007-4',
+  image: '/imgs/blog/tesla-wrap-complete-guide.webp',
+};
+
+Puoi creare un wrapping Tesla con la tua grafica oppure usare l'IA per esplorare un'idea. Entrambi i percorsi partono dal modello del veicolo e dall'anteprima 3D. Quando il design è pronto, salva il progetto, scarica la texture e trasferiscila alla visualizzazione dell'auto tramite l'app Tesla o una chiavetta USB.
+
+## Trova ispirazione o inizia a creare
+
+- Sfoglia la <Link href="/gallery">galleria wrapping</Link> per confrontare design e scegliere colori o motivi.
+- Apri il <Link href="/ai-car-wrap-generator">generatore wrapping IA</Link>, scegli il veicolo e descrivi il risultato. Puoi aggiungere un riferimento.
+- Usa l'<Link href="/create/model-3-legacy">editor Model 3 Legacy</Link> per disporre immagini, testi e forme. Cambia veicolo nell'editor se ti serve un altro modello grafico.
+
+## Prima scegli la tua Tesla
+
+Nella <Link href="/tesla-wrap">pagina wrapping Tesla</Link>, confronta modello, anno e carrozzeria con la tua auto. Lo studio include attualmente dodici configurazioni in cinque famiglie:
+
+- Model 3: Legacy, 2024 Base e 2024 Performance.
+- Model Y: Legacy, 2025 Base, 2025 Premium, 2025 Performance e Model Y L.
+- Cybertruck: configurazione 2023.
+- Model S: 2021 e 2025 Plaid.
+- Model X: configurazione 2021.
+
+Le pagine <Link href="/tesla-model-3-wrap">Model 3</Link> e <Link href="/tesla-model-y-wrap">Model Y</Link> permettono di confrontare le versioni. I nomi identificano le anteprime dello studio; denominazioni e allestimenti reali possono variare secondo il mercato.
+
+Ruota il modello prima di aggiungere grafica. Controlla sagoma, paraurti anteriore e dettagli posteriori. Una striscia per Legacy può cadere nel punto sbagliato su un paraurti recente; una fiancata più lunga cambia gli spazi di un motivo ripetuto. Scegliere ora il modello corretto evita correzioni successive.
+
+Se cerchi idee, visita la <Link href="/gallery">galleria</Link>. Le pagine dei veicoli mostrano fino a dieci design pubblici pertinenti. Osserva dimensione del motivo principale, spazi vuoti e punti in cui terminano le linee. Verifica le condizioni dell'autore prima di riutilizzare un'immagine, soprattutto commercialmente.
+
+## Prova colori e finiture in 3D
+
+Trascina per ruotare e ingrandisci per esaminare un pannello. Confronta lucido, satinato, opaco, metallizzato e perlato con lo stesso colore e la stessa angolazione. Se la palette non contiene la tinta desiderata, puoi inserirne una personalizzata.
+
+<figure className="my-6">
+  <img
+    src="/imgs/blog/tesla-wrap-guide/3d-preview.webp"
+    alt="Model 3 Performance blu nel visualizzatore 3D con selezione di veicolo, finitura e colore"
+    width="1512"
+    height="949"
+    loading="lazy"
+    className="border-border w-full rounded-xl border"
+  />
+  <figcaption className="text-muted-foreground mt-2 text-sm">
+    Confronta colore e finitura dalla stessa angolazione prima di creare la
+    grafica.
+  </figcaption>
+</figure>
+
+Per provare un'immagine esistente usa il pulsante nell'anteprima. Accetta JPEG, PNG e WebP fino a 5 MB. Il browser la legge localmente: questa azione non carica il file sul server e non crea un progetto salvato. Rimuovila per tornare alla tinta unita; anche ricaricare la pagina la cancella.
+
+Una fotografia normale può apparire suddivisa sulla carrozzeria. Il modello UV assegna parti diverse dell'immagine a pannelli diversi: una texture preparata per il veicolo è quindi più facile da valutare. Trovata la direzione, apri il designer. Conserva il file originale: l'immagine temporanea non viene trasferita all'editor.
+
+## Crea con l'IA
+
+Apri il <Link href="/ai-car-wrap-generator">generatore wrapping auto IA</Link> e seleziona il veicolo scelto. Descrivi ciò che vuoi vedere: colore principale, scala e direzione del motivo, aree da lasciare libere. Per esempio:
+
+> Base verde scuro, una sottile diagonale bianco caldo sulle portiere, ampi spazi liberi sul cofano, senza scritte.
+
+Puoi aggiungere un'immagine per comunicare palette o texture. Usa solo materiale che puoi caricare e specifica quali elementi vuoi riprendere. Il riferimento non garantisce un adattamento perfetto a ogni pannello.
+
+<figure className="my-6">
+  <img
+    src="/imgs/blog/tesla-wrap-guide/ai-design.webp"
+    alt="Generatore IA con Model 3 selezionata, descrizione, riferimento facoltativo e comandi di generazione"
+    width="1216"
+    height="668"
+    loading="lazy"
+    className="border-border w-full rounded-xl border"
+  />
+  <figcaption className="text-muted-foreground mt-2 text-sm">
+    Scegli veicolo e descrizione, poi controlla costo e condivisione prima di
+    generare.
+  </figcaption>
+</figure>
+
+Accedi quando richiesto, controlla i crediti e l'opzione «Condividi in galleria». Quando il risultato è pronto, passa dalla grafica piana all'anteprima 3D. Osserva scritte, simmetrie e passaggi tra pannelli.
+
+Il risultato IA è un'immagine unica: un testo o logo al suo interno non può essere selezionato e spostato da solo. Per cambiarlo modifica la descrizione e rigenera, oppure usa un editor esterno. Puoi anche aprire il risultato nell'editor e sovrapporre nuovi livelli di testo, immagini o forme.
+
+## Lavora nell'editor
+
+Se hai già la grafica o vuoi posizionare ogni elemento, apri l'editor del veicolo. Per esempio, l'<Link href="/create/model-3-legacy">editor Model 3 Legacy</Link> mostra il suo modello dedicato. Usa il selettore per altre versioni e segui le indicazioni di accesso quando carichi o salvi.
+
+Importa un'immagine nitida, con dettaglio sufficiente per l'uso previsto. Le immagini trasparenti sono utili per combinare loghi o illustrazioni con uno sfondo. Controlla i diritti su immagini, caratteri e marchi di terzi.
+
+Imposta prima lo sfondo, poi il motivo principale. Potresti partire da una base antracite e una diagonale chiara, aggiungendo solo dopo un accento sul parafango posteriore. Sposta, ridimensiona, ruota o rifletti gli elementi. L'ordine dei livelli decide cosa sta davanti; l'opacità regola l'intensità di una sovrapposizione.
+
+<figure className="my-6">
+  <img
+    src="/imgs/blog/tesla-wrap-guide/editor.webp"
+    alt="Editor wrapping con modello del veicolo, livello di testo selezionato, strumenti e anteprima 3D"
+    width="1280"
+    height="720"
+    loading="lazy"
+    className="border-border w-full rounded-xl border"
+  />
+  <figcaption className="text-muted-foreground mt-2 text-sm">
+    Tieni testi e grafiche aggiunti su livelli separati per regolarli
+    singolarmente.
+  </figcaption>
+</figure>
+
+Usa lo strumento testo per le parole che potresti correggere in seguito. Forme e disegno permettono di aggiungere segni senza ricostruire l'immagine originale. Annulla e Ripristina aiutano a confrontare posizione e scala. Ogni tanto allontana la vista: se il punto focale sparisce alle dimensioni di una scheda della galleria, riduci i dettagli in competizione prima di aggiungerne altri.
+
+## Controlla l'intera auto prima del download
+
+Torna spesso alla vista 3D. Una linea dritta sul piano può curvarsi sul paraurti o sparire dietro un passaruota. Dopo ogni modifica importante controlla le stesse viste:
+
+- Davanti: cofano, bordi dei fari e angoli dei paraurti.
+- Su entrambi i lati: giunzioni delle portiere, maniglie, passaruota e direzione degli elementi ripetuti.
+- Dietro: punto finale della grafica e passaggi su bagagliaio o portellone e paraurti.
+- Dall'alto: transizioni tra tetto e carrozzeria ed eventuali aree vuote inattese.
+
+Controlla anche la finitura: i riflessi possono ridurre la leggibilità. Se una linea si interrompe su una giunzione, regola il livello o falla terminare sul bordo. Per testi specchiati verifica prima area UV e orientamento. Se l'immagine appare troppo tagliata, controlla versione del veicolo e posizione sul modello.
+
+Confronta la versione modificata con la precedente dalle stesse angolazioni e conserva quella più chiara.
+
+## Salva il progetto e scarica la texture
+
+Salva conserva un progetto modificabile nell'account. Aspetta la conferma prima di chiudere la scheda. Se il salvataggio fallisce o appare un conflitto di versione, risolvilo prima. Modificare lo stesso progetto in più schede può rendere difficile riconoscere l'ultima versione.
+
+Scarica fornisce la texture piana applicata al modello. Apri il file e controllane il contenuto: uno screenshot dell'auto ha uno scopo diverso. Conserva il progetto modificabile per eventuali correzioni ai pannelli.
+
+Prima di condividere o pubblicare, salva e controlla che titolo e grafica non contengano materiale privato. Un link è utile per ricevere pareri dagli amici o discutere modifiche con un installatore.
+
+## Importa il wrapping sulla Tesla
+
+Il wrapping personalizzato cambia l'auto mostrata nella visualizzazione del veicolo. Controlla che vettura e software supportino la funzione. Il <a href="https://github.com/teslamotors/custom-wraps" target="_blank" rel="noreferrer">repository ufficiale Tesla</a> contiene modelli e requisiti aggiornati.
+
+### Controlla il file
+
+Usa PNG da 512 × 512 a 1024 × 1024 pixel, massimo 1 MB. I nomi possono contenere fino a 30 lettere, numeri, spazi, trattini bassi o trattini. Converti correttamente gli altri formati: cambiare estensione non converte il file. Controlla il download effettivo, perché l'anteprima non verifica l'accettazione da parte dell'auto.
+
+### Trasferisci con l'app Tesla
+
+Con l'app Tesla 4.59.0 o successiva, apri Creations → Wrap → Upload e seleziona il PNG.
+
+### Trasferisci con USB
+
+Usa exFAT, FAT32 (MS-DOS FAT su Mac), ext3 o ext4. NTFS non è supportato. Fai un backup prima di formattare: la formattazione cancella i contenuti.
+
+Crea `Wraps` nella directory principale della chiavetta, copiaci il PNG e collegala a una porta USB dell'auto abilitata ai dati. Non inserire aggiornamenti di mappe o firmware sulla stessa chiavetta.
+
+### Applica sul display
+
+Apri Toybox → Paint Shop → Wraps e scegli il design. App e chiavetta supportano ciascuna fino a dieci wrapping. I nomi dei menu possono variare con lingua e software.
+
+## Se qualcosa non funziona
+
+### L'auto non mostra il wrapping
+
+Ricontrolla formato PNG, dimensioni, peso e nome. Per USB verifica che `Wraps` sia nella directory principale, il file system sia supportato e non ci siano aggiornamenti di mappe o firmware. Se manca il menu, consulta le istruzioni Tesla per il tuo veicolo.
+
+### L'immagine è spezzata sulla carrozzeria
+
+Controlla versione e disposizione UV. Una foto richiede un posizionamento diverso da una texture già preparata. Sposta la grafica nell'editor osservando in 3D il pannello interessato.
+
+### Il colore della carrozzeria non ricolora l'immagine
+
+Una texture attiva fornisce la grafica del veicolo. Rimuovila per confrontare tinte unite. Le finiture continuano a cambiare il modo in cui la luce interagisce con l'immagine.
+
+### L'anteprima è sparita dopo un aggiornamento
+
+L'anteprima nella pagina del veicolo è temporanea. Conserva l'originale sul dispositivo e usa Salva nell'editor per un progetto da riprendere.
+
+### Su un altro schermo il colore cambia
+
+Luminosità, calibrazione e luce della stanza influenzano la percezione. L'anteprima aiuta a confrontare opzioni: verifica campioni reali prima di acquistare pellicole.
+
+## Se vuoi rivestire l'auto reale
+
+Porta grafica e viste di riferimento a un professionista. Dovrà controllare misure, risoluzione di stampa, abbondanze, margini dei pannelli, allungamento, comportamento del materiale e prove colore. La texture digitale comunica il design; serve comunque un'impaginazione di produzione per la vettura reale.

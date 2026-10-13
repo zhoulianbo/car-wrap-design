@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { createFileRoute } from '@tanstack/react-router';
 
-import { tDynamic } from '@/core/i18n/dynamic';
+import { tDynamic, tStatus } from '@/core/i18n/dynamic';
 import { apiGet, type PageResult } from '@/lib/api-client';
 import { formatDateTime } from '@/lib/time';
 import { cn } from '@/lib/utils';
@@ -108,11 +108,13 @@ function SubscriptionsPage() {
     },
     {
       header: m['admin.subscriptions.interval'](),
-      cell: (s) => s.interval || '—',
+      cell: (s) => tStatus(s.interval),
     },
     {
       header: m['admin.subscriptions.status'](),
-      cell: (s) => <Badge variant={statusVariant(s.status)}>{s.status}</Badge>,
+      cell: (s) => (
+        <Badge variant={statusVariant(s.status)}>{tStatus(s.status)}</Badge>
+      ),
     },
     {
       header: m['admin.subscriptions.provider'](),

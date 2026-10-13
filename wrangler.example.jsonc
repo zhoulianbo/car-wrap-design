@@ -1,6 +1,6 @@
 // Cloudflare Workers deploy config — TEMPLATE.
-// The /deploy-cloudflare skill copies this to wrangler.jsonc (gitignored, your
-// working copy) and fills in the real values (D1 database_id, production URL).
+// Copy this to wrangler.jsonc and fill in resource IDs and public production vars.
+// Commit wrangler.jsonc for Git builds. Put credentials in Worker Secrets.
 // `pnpm cf:build` (NITRO_PRESET=cloudflare_module) merges wrangler.jsonc into
 // the generated .output/server/wrangler.json; deploy with `pnpm cf:deploy`.
 {
@@ -25,6 +25,12 @@
       "migrations_dir": "drizzle",
     },
   ],
+  "kv_namespaces": [
+    {
+      "binding": "CONFIG_KV",
+      "id": "REPLACE_WITH_OUTPUT_OF_WRANGLER_KV_CREATE",
+    },
+  ],
   // ── Postgres via Hyperdrive (instead of D1) ────────────────────────────────
   // 1. npx wrangler hyperdrive create <name> --connection-string="postgres://..." (your direct PG url)
   // 2. Set vars.DATABASE_PROVIDER to "postgresql" and remove the d1_databases block
@@ -35,6 +41,5 @@
   // ]
   //
   // Other optional bindings — uncomment when needed:
-  // "kv_namespaces":  [{ "binding": "CACHE",  "id": "..." }],
   // "r2_buckets":     [{ "binding": "BUCKET", "bucket_name": "..." }]
 }

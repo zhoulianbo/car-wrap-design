@@ -15,6 +15,10 @@ import {
 
 const defaultUuid: UuidFunction = () => crypto.randomUUID();
 
+export function isKieGptImage25Model(model: string) {
+  return /^gpt-image-2-5-(flare|sunburst)-(image|text)-to-image$/.test(model);
+}
+
 /**
  * Kie configs
  * @docs https://kie.ai/
@@ -145,8 +149,11 @@ export class KieProvider implements AIProvider {
 
     if (params.options) {
       const options = params.options;
+      const isGptImage25 = isKieGptImage25Model(params.model);
       if (options.image_input && Array.isArray(options.image_input)) {
-        payload.input.image_input = options.image_input;
+        // GPT Image 2.5 uses a different reference-image field from older models.
+        payload.input[isGptImage25 ? 'input_urls' : 'image_input'] =
+          options.image_input;
       }
       if (options.aspect_ratio) {
         payload.input.aspect_ratio = options.aspect_ratio;
@@ -154,7 +161,10 @@ export class KieProvider implements AIProvider {
       if (options.resolution) {
         payload.input.resolution = options.resolution;
       }
-      if (options.output_format) {
+      if (isGptImage25 && options.background) {
+        payload.input.background = options.background;
+      }
+      if (!isGptImage25 && options.output_format) {
         payload.input.output_format = options.output_format;
       }
     }

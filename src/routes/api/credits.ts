@@ -1,7 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { getAuth } from '@/core/auth';
-import { getBalance, getHistory } from '@/modules/credits/service';
+import {
+  getBalance,
+  getFrozenBalance,
+  getHistory,
+} from '@/modules/credits/service';
 import { respData, respErr } from '@/lib/resp';
 
 async function GET({ request }: { request: Request }) {
@@ -13,12 +17,13 @@ async function GET({ request }: { request: Request }) {
       return respErr('Unauthorized');
     }
 
-    const [balance, history] = await Promise.all([
+    const [balance, frozen, history] = await Promise.all([
       getBalance(session.user.id),
+      getFrozenBalance(session.user.id),
       getHistory(session.user.id),
     ]);
 
-    return respData({ balance, history });
+    return respData({ balance, frozen, total: balance + frozen, history });
   } catch (error: any) {
     return respErr(error.message || 'Failed to get credits');
   }

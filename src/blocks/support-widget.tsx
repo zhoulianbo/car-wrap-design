@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LifeBuoy, X } from 'lucide-react';
+import { Headset, X } from 'lucide-react';
 import { toast } from 'sonner';
 
 import { useSession } from '@/core/auth/client';
@@ -71,7 +71,7 @@ export function SupportWidget() {
           'transition-all hover:scale-105 hover:shadow-xl'
         )}
       >
-        {open ? <X className="size-5" /> : <LifeBuoy className="size-5" />}
+        {open ? <X className="size-5" /> : <Headset className="size-5" />}
       </button>
 
       <Dialog open={open} onOpenChange={setOpen}>
@@ -147,7 +147,7 @@ export function SupportWidget() {
                 <p className="text-muted-foreground text-xs">
                   {m['common.support.track_hint_prefix']()}{' '}
                   <Link
-                    href="/settings/tickets"
+                    href="/dashboard/tickets"
                     className="hover:text-foreground underline"
                   >
                     {m['common.support.track_hint_link']()}

@@ -6,6 +6,7 @@ import { toast } from 'sonner';
 import { authClient, useSession } from '@/core/auth/client';
 import { Link, useRouter } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
+import { getErrorMessage } from '@/lib/error-message';
 import { m } from '@/paraglide/messages.js';
 import { deLocalizeHref, localizeHref } from '@/paraglide/runtime.js';
 import { Button } from '@/components/ui/button';
@@ -197,15 +198,13 @@ function VerifyEmailPage() {
         callbackURL: localizeHref(nextUrl || '/'),
       });
       if (result?.error) {
-        toast.error(
-          result.error.message || m['common.sign.verify_email_send_failed']()
-        );
+        toast.error(getErrorMessage(result.error, 'EMAIL_SEND_FAILED'));
         return;
       }
       markSentNow(email);
       setCooldownSeconds(getCooldownRemainingSeconds(email));
     } catch (e: any) {
-      toast.error(e?.message || m['common.sign.verify_email_send_failed']());
+      toast.error(getErrorMessage(e, 'EMAIL_SEND_FAILED'));
     } finally {
       setLoading(false);
     }

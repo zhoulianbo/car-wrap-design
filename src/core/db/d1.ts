@@ -18,7 +18,7 @@ let d1DbInstance: ReturnType<typeof drizzle> | null = null;
  * by the server entry (src/server.ts, via `cloudflare:workers`). Nitro's
  * cloudflare presets also expose it as `globalThis.__env__` — check both.
  */
-function getD1Binding(): D1Database {
+export function getD1Binding(): D1Database {
   const g = globalThis as any;
   const env = g.__CF_ENV__ ?? g.__env__;
   const binding = env?.DB;

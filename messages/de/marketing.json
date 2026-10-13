@@ -1,0 +1,425 @@
+{
+  "landing": {
+    "nav": {
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "home": "Startseite",
+      "cars": "Fahrzeuge",
+      "tesla_model_y_wrap": "Model Y Folierung",
+      "tesla_model_3_wrap": "Model 3 Folierung",
+      "blog": "Blog",
+      "tesla_wrap": "Tesla Folierung",
+      "ai_generator": "KI-Folierungsdesign",
+      "gallery": "Galerie"
+    },
+    "hero": {
+      "headline": "Autofolierung selbst gestalten – direkt online",
+      "subheadline": "Entwirf deinen eigenen Look und prüfe ihn am 3D-Fahrzeug. Wähle ein Modell, gestalte im kostenlosen Browser-Editor oder entdecke mit KI-Credits neue Farben und Muster.",
+      "cta": "Mit KI gestalten",
+      "secondary": "Designs entdecken",
+      "badge": "Dein Folierungsdesigner",
+      "variants": "12 Fahrzeugvarianten",
+      "templates": "Offizielle UV-Vorlagen",
+      "chassis": "Karosserie",
+      "webgl_live": "WebGL-3D-Studio live",
+      "highlight_gallery": "Kreative Designs",
+      "highlight_models": "Verfügbare Modelle",
+      "highlight_preview": "Live-Vorschau",
+      "wraps_title": "Design auswählen",
+      "wraps_empty": "Für dieses Modell gibt es noch keine empfohlenen Designs. Starte mit deiner eigenen Idee.",
+      "wraps_error": "Designs konnten nicht geladen werden.",
+      "texture_loading": "Design wird geladen…",
+      "texture_error": "Dieses Design konnte nicht geladen werden.",
+      "viewer_error": "Die 3D-Vorschau konnte nicht geladen werden. Prüfe deine Verbindung und die WebGL-Unterstützung.",
+      "retry": "Erneut versuchen",
+      "rotate_hint": "Ziehen und entdecken",
+      "highlight_gallery_value": "100+"
+    },
+    "chips": {
+      "auth": "Authentifizierung",
+      "payment": "Zahlungen",
+      "subscription": "Abonnements",
+      "credits": "Credits",
+      "rbac": "Rollenbasierter Zugriff",
+      "i18n": "Mehrsprachigkeit",
+      "cms": "Inhaltsverwaltung",
+      "apikeys": "API-Schlüssel"
+    },
+    "features": {
+      "eyebrow": "Alles für deinen Entwurf",
+      "title": "Alles, um deine Autofolierung selbst zu gestalten",
+      "description": "Sammle Ideen und wechsle zwischen Zeichenfläche und 3D-Fahrzeug, ohne eine Desktop-App zu installieren. Im Editor bearbeitest du eigene Ebenen gezielt; die KI hilft dir, neue Stilrichtungen zu erkunden. So vergleichst du Entwürfe, bevor du dich auf eine Komposition festlegst.",
+      "viewer": {
+        "title": "Den Entwurf am Fahrzeug prüfen",
+        "description": "Drehe das 3D-Fahrzeug und prüfe, wie die Vorlage deine Grafik auf die Karosserie überträgt. Achte besonders auf Übergänge an Paneelkanten. Die Vorschau hilft dir bei der Gestaltung; sie bestätigt weder automatisch die Passform noch die Eignung für eine Montage."
+      },
+      "ai": {
+        "title": "Mit KI neue Ideen entdecken",
+        "description": "Beschreibe Farben, Illustrationsstil oder die gewünschte Wirkung und ergänze bei Bedarf ein Referenzbild. Die KI nutzt Credits und liefert ein einzelnes Bild. Details innerhalb dieser Grafik änderst du durch eine neue Generierung oder mit einem externen Bildbearbeitungsprogramm."
+      },
+      "editor": {
+        "title": "Eigene Ebenen gezielt bearbeiten",
+        "description": "Ergänze Texte, Bilder und Formen und passe jede manuell erstellte Ebene einzeln an. Die Vorschau hilft dir beim Positionieren und Skalieren. Ein hochgeladenes Logo bleibt eine Bildebene: Du bearbeitest seine Gesamtgröße und Position, nicht die einzelnen Bestandteile darin."
+      },
+      "materials": {
+        "title": "Fünf Oberflächen vergleichen",
+        "description": "Vergleiche denselben Entwurf in Glanz, Seidenmatt, Matt, Metallic und Perlmutt. Reflexionen verändern die Wirkung heller und dunkler Flächen. Die Vorschau zeigt diesen Effekt, steht aber nicht für ein bestimmtes Folienprodukt und garantiert keine Druckfarbe."
+      },
+      "remix": {
+        "title": "Ideen aus der Community aufgreifen",
+        "description": "Öffne ein Galeriedesign und betrachte Textur und Fahrzeugvorschau. Nutze ein geeignetes Beispiel als Ausgangspunkt und ergänze eigene Ebenen. Bereits zusammengefügte Grafiken bleiben ein Bild. Prüfe vor der Wiederverwendung die Bedingungen des Urhebers, besonders für geschäftliche Zwecke."
+      },
+      "export": {
+        "title": "Deine Idee als Bild festhalten",
+        "description": "Lade die Grafik als quadratische PNG-Textur herunter und speichere ein Bild aus der Fahrzeugvorschau. Damit vergleichst du Entwürfe oder erklärst einem Folierungsbetrieb deine Idee. Du erhältst kein vermessenes Schnittmuster und keinen vollständigen Druckdatensatz."
+      },
+      "auth": {
+        "title": "Authentifizierung",
+        "description": "Anmeldung per E-Mail und Passwort, Google oder GitHub OAuth mit Sitzungsverwaltung und Kontoverknüpfung."
+      },
+      "payment": {
+        "title": "Zahlungen",
+        "description": "Zahlungen, Abonnements, Webhooks und Bestellverwaltung mit Stripe, PayPal, Alipay und WeChat Pay."
+      },
+      "rbac": {
+        "title": "Rollen und Berechtigungen",
+        "description": "Fein abgestufte Rollenrechte mit Platzhalterabgleich und Verwaltung von Nutzern, Rollen und Berechtigungen."
+      },
+      "i18n": {
+        "title": "Mehrsprachigkeit",
+        "description": "Englisch und Chinesisch sind integriert, mit sprachabhängigen URLs und einfacher Erweiterung um weitere Sprachen."
+      },
+      "cms": {
+        "title": "Inhaltsverwaltung",
+        "description": "Kategorien und Beiträge erstellen, anzeigen, bearbeiten und löschen sowie ihren Status verwalten – für Blog und Dokumentation."
+      },
+      "credits": {
+        "title": "Credit-System",
+        "description": "Verbrauch nach Eingangsreihenfolge, Ablauf, automatische Gutschrift bei Registrierung und Rückbuchung für nutzungsbasierte Abrechnung."
+      }
+    },
+    "pricing": {
+      "title": "Credits für KI-Folierungsdesign",
+      "description": "Kaufe 100, 250 oder 1.000 Credits für deine KI-Entwürfe per Einmalzahlung. Sie verfallen nicht. Jedes Paket enthält 50 MB Speicher und unbegrenzte Exporte.",
+      "monthly": "Monatlich",
+      "yearly": "Jährlich",
+      "lifetime": "Dauerhaft",
+      "popular": "Beliebt",
+      "best_value": "Bestes Preis-Leistungs-Verhältnis",
+      "buy_lifetime": "Einmal kaufen",
+      "starter": "Starter",
+      "starter_desc": "Für Einzelpersonen",
+      "pro": "Pro",
+      "pro_desc": "Für wachsende Teams",
+      "enterprise": "Enterprise",
+      "enterprise_desc": "Für große Unternehmen",
+      "feature_1_project": "1 Design",
+      "feature_5k_credits": "5.000 Credits",
+      "feature_email_support": "E-Mail-Support",
+      "feature_unlimited_projects": "Unbegrenzte Designs",
+      "feature_50k_credits": "50.000 Credits",
+      "feature_priority_support": "Bevorzugter Support",
+      "feature_api_access": "API-Zugriff",
+      "feature_everything_pro": "Alle Pro-Funktionen",
+      "feature_unlimited_credits": "Unbegrenzte Credits",
+      "feature_dedicated_support": "Persönlicher Support",
+      "feature_custom_integrations": "Individuelle Integrationen",
+      "eyebrow": "Einmal zahlen. Im eigenen Tempo gestalten.",
+      "intro": "Ein KI-Bild kostet 10 Credits. Wähle ein Paket und gestalte in deinem Tempo.",
+      "starter_pack": "Starter-Paket",
+      "creator_pack": "Creator-Paket",
+      "studio_pack": "Studio-Paket",
+      "trial_pack": "Testpaket",
+      "credits": "{credits} Credits",
+      "results": "{count} KI-Bilder",
+      "buy": "{credits} Credits kaufen",
+      "one_time": "Einmalzahlung, kein Abo",
+      "never_expires": "Credits verfallen nicht",
+      "storage": "50 MB Speicher",
+      "exports": "Unbegrenzte Exporte",
+      "footer": "Alle Preise sind in US-Dollar (USD). Deine Credits bleiben verfügbar, bis du sie verbrauchst.",
+      "checkout_error": "Die Zahlungsseite konnte nicht geöffnet werden. Bitte versuche es erneut.",
+      "paywall_title": "Mit neuen Credits weitergestalten",
+      "paywall_description": "Diese Generierung benötigt {cost} Credits. Wähle ein Paket mit Einmalzahlung, um fortzufahren.",
+      "trial_title": "Mit einem kleinen Paket starten",
+      "trial_description": "Teste 20 Credits für 2 USD. Einmalzahlung mit denselben Speicher- und Exportvorteilen.",
+      "offer_remaining": "Angebot endet in",
+      "offer_expired": "Dieses Angebot ist abgelaufen.",
+      "offer_unavailable": "Dieses Angebot ist nicht mehr verfügbar.",
+      "trial_dismiss": "Nein, danke",
+      "loading": "Credit-Pakete werden geladen…"
+    },
+    "faq": {
+      "title": "Fragen zur eigenen Autofolierung",
+      "description": "Antworten zum kostenlosen Einstieg, zum Gestalten im Browser, zu KI-Bildern und zur Abstimmung mit einem Folierungsbetrieb.",
+      "stack": {
+        "question": "Welche Fahrzeugmodelle sind verfügbar?",
+        "answer": "Verfügbar sind Tesla Model 3 Legacy sowie 2024 Base und Performance; Model Y Legacy, 2025 Base, Premium und Performance sowie Model Y L; Cybertruck; Model S 2021 und 2025 Plaid sowie Model X 2021. Jede Version hat eine eigene Karosserie- und Radkonfiguration. Weitere Marken sind geplant. Die Fahrzeugauswahl zeigt den aktuellen Stand."
+      },
+      "payment": {
+        "question": "Was kostet eine KI-Generierung?",
+        "answer": "Jedes erzeugte Kandidatenbild kostet 10 Credits. Vor dem Absenden wählst du ein bis vier Bilder und siehst die Gesamtkosten. Bei fehlgeschlagenen Kandidaten ist eine einmalige automatische Rückbuchung vorgesehen."
+      },
+      "database": {
+        "question": "Kann ich eigene Bilder verwenden?",
+        "answer": "Ja. Die bildgestützte Generierung akzeptiert JPEG, PNG und WebP bis 5 MB. Du kannst Grafiken auch direkt in den Editor laden, ohne sie an ein KI-Modell zu senden."
+      },
+      "customize": {
+        "question": "Bestätigt die 3D-Vorschau die Montagefähigkeit?",
+        "answer": "Nein. Sie visualisiert den Entwurf. Vor der Produktion muss ein Fachbetrieb Nähte, Beschnitt, Sicherheitsabstände, Druckfarben und reale Maße prüfen."
+      },
+      "license": {
+        "question": "Ist das heruntergeladene Design direkt für die Folierung geeignet?",
+        "answer": "Die Datei ist ein Entwurf, keine druckfertige Montagevorlage. Ein Fachbetrieb prüft Fahrzeugmaße, Paneelnähte, Beschnitt, Auflösung und Druckfarben. Zeige Grafik und 3D-Vorschau, um den gewünschten Look abzustimmen, und lasse Material und Produktionslayout bestätigen. Die Onlineansicht ersetzt keine Prüfung am echten Fahrzeug."
+      },
+      "free": {
+        "question": "Kann ich eine Autofolierung kostenlos selbst gestalten?",
+        "answer": "Ja. Browser-Editor und 3D-Vorschau sind kostenlos, wenn du mit eigenen Ebenen gestaltest. Die KI-Generierung nutzt separat Credits; kostenlos bedeutet also nicht unbegrenzt KI-Bilder. Probiere den Editor vor einem Kauf aus. Beim Hochladen, Speichern oder Veröffentlichen folgst du den Anmeldehinweisen."
+      },
+      "software": {
+        "question": "Welche Software brauche ich für Folierungsdesigns?",
+        "answer": "Für den Entwurf bietet das Studio Zeichenfläche, eigene bearbeitbare Ebenen und ein passendes 3D-Fahrzeug im Browser. Eine Desktop-Installation ist nicht nötig. Für echte Folien nutzt ein Betrieb eventuell weitere Grafik-, Layout- und Produktionsprogramme. Entscheidend ist, ob du Ideen vergleichen oder vermessene Produktionsdaten erstellen willst."
+      },
+      "how": {
+        "question": "Wie gestalte ich meine eigene Fahrzeugfolierung?",
+        "answer": "Wähle ein Fahrzeug und eine Farbpalette oder sammle Vorbilder in der Galerie. Gestalte mit eigenen Texten, Bildern und Formen oder erzeuge einen KI-Entwurf aus einer Beschreibung. Wichtige Schrift gehört auf eine eigene Textebene. Prüfe mehrere Ansichten und lade die Textur herunter. Für echte Folien lässt du Maße und Druckdaten fachlich prüfen."
+      },
+      "where": {
+        "question": "Wo kann ich meine Autofolierung entwerfen?",
+        "answer": "Öffne von hier aus den Designer im Browser. Die Galerie hilft bei der Stilwahl, der KI-Generator beim Ausprobieren einer beschriebenen Idee. Vorhandene Logos und Illustrationen lädst du als Bildebene hoch. Wähle ein verfügbares Fahrzeug und verwende im gesamten Projekt dessen Vorlage."
+      },
+      "editing": {
+        "question": "Kann ich Schrift und Logos innerhalb eines KI-Bildes bearbeiten?",
+        "answer": "Nein. Das KI-Ergebnis ist ein einzelnes Bild; enthaltene Schrift, Logos und Grafiken sind nicht getrennt bearbeitbar. Du kannst eine neue Variante generieren. Im Editor bleiben selbst erstellte Texte und separat hochgeladene Bilder bewegliche, skalierbare Ebenen. Neue Ebenen entfernen oder ersetzen keine bereits im KI-Bild enthaltenen Pixel."
+      }
+    },
+    "cta": {
+      "eyebrow": "Gestalten. Ansehen. Teilen.",
+      "headline": "Deine nächste Autofolierung beginnt mit einer Idee",
+      "subheadline": "Beschreibe deine Stilidee im KI-Generator und vergleiche das Ergebnis am Fahrzeug. Möchtest du jedes Element selbst platzieren, starte im kostenlosen Editor. KI-Bilder nutzen Credits; selbst hinzugefügte Texte und Bilder bleiben einzeln bearbeitbare Ebenen.",
+      "button": "Design erstellen",
+      "ai_button": "Mit KI generieren"
+    },
+    "footer": {
+      "tagline": "Autofolierungen mit KI gestalten und live in 3D ansehen.",
+      "feature": "Funktion",
+      "product": "Produkt",
+      "popular_vehicles": "Beliebte Fahrzeuge",
+      "wrap_editor": "Folierungseditor",
+      "model_y_designer": "Model Y Designer",
+      "model_3_designer": "Model 3 Designer",
+      "help": "Hilfe und Fragen",
+      "company_legal": "Unternehmen und Rechtliches",
+      "status": "WebGL-3D-Studio online",
+      "resources": "Ressourcen",
+      "legal": "Rechtliches",
+      "privacy": "Datenschutzerklärung",
+      "terms": "Nutzungsbedingungen",
+      "settings": "Meine Designs",
+      "admin": "Designgalerie",
+      "docs": "Dokumentation",
+      "github": "GitHub",
+      "copyright": "© {year} Car Wrap Design. Alle Rechte vorbehalten.",
+      "blog": "Blog",
+      "wraps": "Meine Designs"
+    },
+    "blog": {
+      "title": "Aus dem Blog",
+      "description": "Anleitungen zur Vorlagenwahl, Gestaltung und Prüfung deines Folierungsdesigns in 3D.",
+      "view_all": "Alle Beiträge ansehen"
+    },
+    "showcase": {
+      "eyebrow": "Dein Folierungsstudio",
+      "title": "Deine Autofolierung mit eigenen Motiven gestalten",
+      "description": "Beginne mit einer leeren Zeichenfläche und kombiniere Grundfarbe, Bilder, Texte und Formen. Jede selbst erstellte Ebene bleibt einzeln auswählbar, beweglich und skalierbar. Halte Firmennamen und Logos auf eigenen Ebenen, wenn die Position wichtig ist. Ein KI-Bild kann als Motiv dienen, seine enthaltenen Elemente werden dadurch jedoch nicht separat bearbeitbar.",
+      "editor_label": "Ebenen-Editor",
+      "preview_label": "3D-Materialvorschau",
+      "viewer_note": "Dies ist ein statisches Editorbeispiel. Öffne den Designer, um eigene Ebenen anzuordnen und das Fahrzeug zu drehen.",
+      "example_name": "Eiscreme-Palette",
+      "static_note": "Beispiel für die Editoransicht",
+      "texture_alt": "Quadratische Beispielgrafik einer Folierung im Eiscreme-Stil",
+      "preview_alt": "Dasselbe Eiscreme-Design auf einem Model 3",
+      "layer_artwork": "Grafik",
+      "layer_color": "Grundfarbe",
+      "layer_finish": "Glanzoberfläche",
+      "cta": "Folierungsdesigner öffnen"
+    },
+    "ai": {
+      "eyebrow": "KI-Folierungsgenerator",
+      "title": "Schnell zum Entwurf, eigene Ebenen danach",
+      "description": "Erzeuge einen Entwurf aus einer Beschreibung oder einem Referenzbild. Das Ergebnis ist ein einzelnes Bild; enthaltene Schrift und Grafik bleiben untrennbar. Ergänze im Editor eigene Texte, Bilder und Formen als separate Ebenen.",
+      "cta": "Entwurf generieren",
+      "prompt_label": "Beschreibung des Entwurfs",
+      "square_texture": "quadratische Textur",
+      "prompt_example": "Technisches Design nach orbitalen Flugbahnen: tiefe Graphitbasis, präzise smaragdgrüne Linien über die Paneele, dezente Nummerierung und edle Motorsportwirkung.",
+      "tag_technical": "Technisch",
+      "tag_minimal": "Minimalistisch",
+      "tag_graphite": "Graphit",
+      "tag_results": "2 Bilder · 20 Credits"
+    },
+    "workflow": {
+      "eyebrow": "So funktioniert es",
+      "title": "In drei Schritten zur eigenen Autofolierung",
+      "choose": {
+        "title": "1. Fahrzeug und Version auswählen",
+        "description": "Wähle Modell, Baujahr und Ausstattung vor der Gestaltung. Damit legst du Karosserie und flache Vorlage im Editor fest. Ähnliche Modellnamen bedeuten nicht dieselbe Paneelaufteilung. Fehlt dein Fahrzeug, kannst du an einem verfügbaren Modell Ideen testen; für die Übertragung auf dein Auto brauchst du die passende Vorlage."
+      },
+      "create": {
+        "title": "2. Farben und Komposition gestalten",
+        "description": "Gestalte mit Bildern, Texten und Formen oder erzeuge mit KI-Credits einen Entwurf aus Beschreibung und optionaler Referenz. Benenne Farben, Muster und Stimmung. Vergleiche Glanz, Seidenmatt, Matt, Metallic und Perlmutt in der Vorschau. Für genaue Schrift und Logopositionen ergänze eigene Text- oder Bildebenen im Editor."
+      },
+      "review": {
+        "title": "3. Aus allen Blickwinkeln prüfen",
+        "description": "Drehe das Fahrzeug und prüfe Front, Seiten und Heck. Verschwinden Linien am Radlauf, brechen Motive an Türen ab oder wird Schrift unleserlich? Passe eigene Ebenen an oder generiere mit einer neuen Beschreibung ein weiteres KI-Bild. Lade die fertige Textur herunter; zum Speichern und Veröffentlichen meldest du dich an."
+      }
+    },
+    "vehicles": {
+      "eyebrow": "Verfügbare Fahrzeuge",
+      "title": "Autofolierung kostenlos selbst gestalten",
+      "description": "Starte mit einem Fahrzeug, für das 3D-Modell und Vorlage bereitstehen. Aktuell gibt es Konfigurationen von Tesla Model 3, Model Y, Cybertruck, Model S und Model X. Weitere Marken sind geplant. Die Karten zeigen die derzeit verfügbaren Versionen; in den Modellseiten kannst du sie genauer vergleichen.",
+      "preview_ready": "3D-Vorschau verfügbar",
+      "model_3_link": "Tesla Model 3 Folierungen entdecken",
+      "model_y_link": "Tesla Model Y Folierungen entdecken"
+    },
+    "materials": {
+      "title": "Die Oberfläche verändert den Look",
+      "description": "Dieselbe Grafik kann je nach Lichtwirkung klar, weich, technisch oder edel erscheinen. Vergleiche fünf abgestimmte Oberflächen im Studio."
+    },
+    "gallery": {
+      "title": "Autofolierung: Ideen für deinen eigenen Look",
+      "description": "Vergleiche die vollständige Grafik mit ihrer Wirkung am Fahrzeug. Achte auf das Zusammenspiel von Farben, Mustern und freien Flächen. Jedes Community-Design gehört zu einer bestimmten Fahrzeugvorlage. Nutze es als Inspiration und prüfe die Anordnung auf deinem ausgewählten Modell.",
+      "empty": "Hier gibt es noch keine Designs. Wähle ein anderes Fahrzeug oder gestalte selbst.",
+      "cta": "Galerie öffnen",
+      "eyebrow": "Aus der Community",
+      "page_title": "Autofolierung Ideen: Entdecke deinen nächsten Look",
+      "page_description": "Entdecke dezente Farbkonzepte und auffällige Grafiken aus der Community. Filtere nach Fahrzeug, prüfe Designs in 3D und lade Motive für deine nächste Idee herunter.",
+      "showcase_label": "Studio-Beispiel",
+      "showcase_title": "Cyber-Smaragd-Performance-Design",
+      "showcase_description": "Fahrzeugrendering im aktuellen visuellen Stil von Car Wrap Design.",
+      "showcase_cta": "Dieses Fahrzeug gestalten",
+      "public_title": "Designs aus der Community",
+      "loading": "Galerie wird geladen…",
+      "empty_title": "Noch keine Folierungsdesigns vorhanden.",
+      "empty_description": "Entdecke Farben und Muster oder gestalte selbst und teile deine Ideen.",
+      "create_cta": "Design erstellen",
+      "remixes": "{count} Variationen",
+      "error": "Designs konnten nicht geladen werden. Bitte versuche es erneut.",
+      "download_error": "Download fehlgeschlagen. Bitte versuche es erneut.",
+      "texture_alt": "Vollständige Folierungsgrafik für {title}",
+      "download_label": "{title} herunterladen, {count} Downloads",
+      "meta_title": "Autofolierung Ideen | Designs und Farben in 3D entdecken",
+      "meta_description": "Finde Autofolierung Ideen aus der Community. Filtere nach Fahrzeug, vergleiche Farben und Muster in 3D und lade deine Lieblingsdesigns herunter.",
+      "search_label": "Designname",
+      "search_placeholder": "Folierungsdesigns suchen",
+      "search_button": "Designs suchen",
+      "vehicle_label": "Fahrzeug",
+      "all_vehicles": "Alle Fahrzeuge",
+      "sort_label": "Sortieren nach",
+      "sort_latest": "Neueste",
+      "sort_downloads": "Meiste Downloads",
+      "sort_likes": "Meiste Likes",
+      "result_count": "{count} Designs",
+      "no_results": "Keine passenden Designs. Versuche einen anderen Namen oder ein anderes Fahrzeug.",
+      "reset_filters": "Filter zurücksetzen",
+      "pagination": "Galerieseiten",
+      "previous": "Vorherige Seite",
+      "next": "Nächste Seite",
+      "page_label": "Seite {page}",
+      "page_summary": "Seite {page} von {pages}",
+      "like_label": "{title} gefällt mir ({count} Likes)",
+      "like_error": "Dein Like konnte nicht aktualisiert werden. Bitte versuche es erneut.",
+      "like_sign_in": "Melde dich an, um ein Design zu liken.",
+      "about_label": "Über die Community-Galerie",
+      "about_browse_title": "Folierungsdesigns der Community entdecken",
+      "about_browse_description": "Entdecke Werke für die unterstützten Vorlagen von Tesla Model 3, Model Y, Cybertruck, Model S und Model X. Filtere nach der genauen Fahrzeugkonfiguration und prüfe die vollständige Textur, bevor du sie herunterlädst.",
+      "about_edit_title": "Eine Idee im Editor weiterentwickeln",
+      "about_edit_description": "Öffne ein Design in 3D oder nutze es als Ausgangspunkt für eine eigene Variante. Ergänze Bilder, Texte und Farben im Editor oder probiere mit KI eine neue Richtung aus. Downloads enthalten die Textur im ursprünglichen Bildformat.",
+      "about_rights_title": "Die Rechte der Urheber respektieren",
+      "about_rights_description": "Würdige die Arbeit der Urheber. Veröffentlichung und Download übertragen weder Eigentum noch automatisch kommerzielle Nutzungsrechte. Lies die Beschreibung und hole vor der Wiederverwendung nötige Erlaubnisse ein. Vermutete Rechtsverletzungen kannst du auf der Designseite melden."
+    },
+    "vehicle": {
+      "open_designer": "Mit KI gestalten",
+      "see_ideas": "Designs ansehen",
+      "design_this": "Dieses Fahrzeug gestalten",
+      "questions": "Fragen zum Gestaltungsablauf",
+      "start": "Mit KI gestalten",
+      "loading": "3D-Fahrzeug wird geladen…",
+      "image_error": "Wähle ein gültiges JPEG-, PNG- oder WebP-Bild bis 5 MB.",
+      "image_loading": "Lokales Bild wird vorbereitet…",
+      "exit_fullscreen": "Vollbild beenden",
+      "fullscreen_error": "Vollbild ist in diesem Browser nicht verfügbar. Du kannst die Vorschau hier weiter nutzen.",
+      "custom_color": "Eigene Farbe",
+      "select_vehicle": "Fahrzeug für Vorschau",
+      "choose_image": "Lokales Design oder Bild ansehen",
+      "remove_image": "Vorschaubild entfernen"
+    },
+    "meta": {
+      "title": "Autofolierung selbst gestalten | Kostenloser 3D-Editor",
+      "description": "Autofolierung selbst gestalten: mit kostenlosem Editor, eigenen Motiven und 3D-Vorschau. Entdecke Ideen oder erstelle neue Entwürfe mit KI-Credits."
+    },
+    "vehicle_pages": {
+      "tesla": {
+        "title": "Tesla Folierung gestalten | Farben und Designs in 3D",
+        "description": "Gestalte deine Tesla Folierung online. Vergleiche Farben, Oberflächen und Motive am Model 3, Model Y und weiteren Modellen und entwirf deinen Look im kostenlosen Editor."
+      },
+      "modelY": {
+        "title": "Tesla Model Y Folierung | Selbst gestalten in 3D",
+        "description": "Entwirf deine Tesla Model Y Folierung mit Farben, Streifen und eigenen Motiven. Wähle Legacy, 2025 oder Model Y L und prüfe deinen Look rundum in 3D."
+      },
+      "model3": {
+        "title": "Tesla Model 3 Folierung | Online gestalten und ansehen",
+        "description": "Gestalte deine Tesla Model 3 Folierung mit dezenten Farben, Rennstreifen oder Illustrationen. Vergleiche Legacy und 2024 in 3D und entwickle dein eigenes Design."
+      }
+    }
+  },
+  "blog": {
+    "title": "Anleitungen zum Folierungsdesign",
+    "description": "Lerne, Fahrzeugvorlagen auszuwählen, Grafiken zu gestalten und dein Design in 3D zu prüfen.",
+    "no_posts": "Noch keine Beiträge. Schau bald wieder vorbei.",
+    "back_to_blog": "Zurück zum Blog",
+    "editorial_title": "Über diese Anleitung",
+    "editorial_description": "Das Team von {name} erstellt diese Anleitungen mit dem eigenen Editor und Produktaufnahmen. Sie erläutern digitale Designs und Vorschauen; echte Folien benötigen weiterhin die Vermessung und Prüfung eines Fachbetriebs.",
+    "editorial_contact": "Korrektur melden oder einen Schritt erfragen",
+    "read_more": "Weiterlesen"
+  },
+  "detail": {
+    "breadcrumb": "Brotkrümelnavigation",
+    "home": "Startseite",
+    "gallery": "Galerie",
+    "image": "Designbild",
+    "preview": "3D-Vorschau",
+    "created_by": "Erstellt von",
+    "published": "Veröffentlicht",
+    "views": "{count} Aufrufe",
+    "like": "Gefällt mir",
+    "unlike": "Like zurücknehmen",
+    "download": "Design herunterladen",
+    "reference": "Mit KI neu gestalten",
+    "edit": "Im Editor anpassen",
+    "prompt": "KI-Prompt für dieses Folierungsdesign",
+    "copy_prompt": "Prompt kopieren",
+    "prompt_copied": "Prompt kopiert",
+    "prompt_copy_failed": "Kopieren fehlgeschlagen. Markiere den Prompt und kopiere ihn manuell.",
+    "more": "Weitere Designs für {model}",
+    "more_description": "Die neuesten öffentlichen Designs für dasselbe Fahrzeug.",
+    "description": "{title} ist ein Folierungsdesign von {author} für {model} ({year}), veröffentlicht am {date}. Sieh dir Textur und 3D-Vorschau an, lade die Grafik herunter oder entwickle daraus eigene Farben und Motive.",
+    "loading": "Design wird geladen…",
+    "missing": "Design nicht gefunden",
+    "error": "Dieses Design konnte nicht geladen werden. Bitte versuche es erneut.",
+    "image_error": "Das Bild konnte nicht geladen werden. Bitte versuche es erneut.",
+    "reference_loading": "Referenzbild wird geladen…",
+    "reference_error": "Das Referenzbild konnte nicht geladen werden. Bitte versuche es erneut.",
+    "tesla_title": "Dieses Design auf deinem Tesla-Bildschirm nutzen",
+    "tesla_intro": "Paint Shop verändert die Fahrzeugdarstellung auf dem Bildschirm, nicht die echte Lackierung. Prüfe Modell, Baujahr und Vorlage vor dem Import.",
+    "tesla_steps_title": "Design importieren",
+    "tesla_step1": "Lade die passende Textur herunter: PNG, 512 × 512 bis 1024 × 1024 Pixel und höchstens 1 MB. Andere Formate vorher konvertieren; die Dateiendung umzubenennen reicht nicht.",
+    "tesla_step2": "Erstelle im Hauptverzeichnis eines USB-Laufwerks den Ordner Wraps und kopiere die PNG hinein. Schließe es an einen datenfähigen USB-Anschluss im Fahrzeug an.",
+    "tesla_step3": "Öffne auf dem Fahrzeugbildschirm Toybox → Paint Shop → Wraps und wähle das Design. Verfügbare Bedienelemente hängen von der Fahrzeugsoftware ab.",
+    "tesla_usb_title": "USB- und Dateicheckliste",
+    "tesla_usb": "Verwende exFAT, FAT32 unter Windows, MS-DOS FAT auf dem Mac, ext3 oder ext4. NTFS wird nicht unterstützt. Sichere das Laufwerk vor dem Formatieren, da dabei alle Inhalte gelöscht werden.",
+    "tesla_files": "Dateinamen dürfen bis zu 30 Buchstaben, Zahlen, Leerzeichen, Unterstriche oder Bindestriche enthalten. Wraps muss im Hauptverzeichnis liegen. Keine Karten- oder Firmwareupdates auf demselben Laufwerk speichern.",
+    "tesla_mobile": "Alternativ: Creations → Wrap → Upload in der Tesla-App ab 4.59.0. App und USB-Laufwerk unterstützen jeweils bis zu 10 Designs.",
+    "tesla_source": "Tesla-Vorlagen und vollständige Anforderungen",
+    "tesla_check": "Prüfe die heruntergeladene Datei anhand dieser Vorgaben. Eine Website-Vorschau bestätigt nicht die Kompatibilität im Fahrzeug."
+  }
+}

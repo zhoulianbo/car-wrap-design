@@ -195,6 +195,7 @@ export interface PaymentSession {
 }
 
 export enum PaymentEventType {
+  EVENT_RECEIVED = 'event.received', // verified event that needs no state mutation
   CHECKOUT_SUCCESS = 'checkout.success', // checkout success
   PAYMENT_SUCCESS = 'payment.success', // payment success
   PAYMENT_FAILED = 'payment.failed', // payment failed

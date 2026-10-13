@@ -1,0 +1,248 @@
+{
+  "tesla": {
+    "eyebrow": "Dein Tesla. Deine Farben. Dein Stil.",
+    "title": "Deine Tesla Folierung online gestalten",
+    "introduction": "Finde einen Look, der zu deinem Tesla passt. Vergleiche satte Farben, dezente Oberflächen und markante Grafiken am 3D-Fahrzeug und entwickle deinen Favoriten im Editor weiter. Wähle Model 3, Model Y, Cybertruck, Model S oder Model X und entdecke, wie dein Entwurf der jeweiligen Karosserie folgt.",
+    "viewerCaption": "Teste Farben oder Bilder am Tesla. Im Editor gestaltest und speicherst du deinen Entwurf.",
+    "versionsTitle": "Tesla Folierung kostenlos selbst gestalten",
+    "versionsDescription": "Dieselbe Idee wirkt auf einer Limousine anders als auf einem SUV oder einem kantigen Pick-up. Wähle unten Modell und Version für die passende Vorlage. Prüfe zuerst Baujahr und Karosserie, damit du von Anfang an mit den richtigen Proportionen arbeitest.",
+    "galleryTitle": "Tesla Folierung: Ideen aus der Galerie",
+    "faqTitle": "Fragen zur Tesla Folierung",
+    "galleryDescription": "Entdecke Farbkombinationen, Grafikstile und neue Ideen für vertraute Karosserielinien. Öffne ein Design und vergleiche die Grafik mit der Fahrzeugvorschau. Achte darauf, was dich anspricht: die Hauptfarbe, die Größe eines Musters oder freie Flächen um ein starkes Detail.",
+    "howTitle": "Eine Tesla Folierung, die aus jedem Winkel überzeugt",
+    "sections": [
+      {
+        "title": "Mit Farbe und Oberfläche beginnen",
+        "paragraphs": [
+          "Beginne mit einer Farbe, die du jeden Tag gern sehen würdest. Tiefes Blau wirkt ruhig, ein warmer Neutralton zurückhaltend, ein heller Akzent lebendig. Stelle deine eigene Palette ein und drehe das Fahrzeug. Beobachte, wie derselbe Ton auf Haube, Türen und Heck wirkt: Die wechselnden Flächen und Reflexe gestalten den Look mit.",
+          "Halte die Farbe konstant und vergleiche Glanz, Seidenmatt, Matt, Metallic und Perlmutt. Glanz betont Reflexe, seidenmatte und matte Flächen wirken weicher. Metallic und Perlmutt zeigen weitere Lichtwirkungen. Grenze mit der digitalen Vorschau deine Auswahl ein und prüfe danach echte Folienmuster. Ein eigenständiger Look braucht kein kompliziertes Muster."
+        ]
+      },
+      {
+        "title": "Mehr als eine neue Farbe",
+        "paragraphs": [
+          "Rennstreifen führen den Blick entlang des Autos, geometrische Flächen setzen Kontraste. Fließende Illustrationen, Konturlinien oder abstrakte Texturen geben eine andere Richtung vor. Wähle einen Schwerpunkt und lasse ihm Raum. Wenn das Hauptmotiv von der Seite ebenso klar ist wie schräg von vorn, wird das gesamte Design leichter lesbar.",
+          "Lass die Karosserie die Komposition mitbestimmen. Die flache Silhouette des Model 3 bietet andere Flächen als das höhere Model Y; am Cybertruck lassen sich kantige Formen erproben. Model S und Model X bringen weitere Proportionen mit. Sammle Ideen in der Galerie und entwickle Farben und Anordnung auf der passenden Vorlage weiter."
+        ]
+      },
+      {
+        "title": "Mit eigenen Motiven oder KI gestalten",
+        "paragraphs": [
+          "Öffne den Browser-Editor für dein Fahrzeug. Füge eigene Bilder, Texte und Formen als getrennte Ebenen hinzu und passe Position und Größe mit Blick auf das 3D-Ergebnis an. Ein separat hochgeladenes Firmenlogo bleibt frei platzierbar. Halte wichtige Schrift kurz, damit sie in der Gesamtkomposition lesbar bleibt.",
+          "Für neue Stilideen beschreibst du Farben und Muster im KI-Generator und ergänzt optional eine Referenz. Das Ergebnis ist ein zusammengefügtes Bild: Enthaltene Texte, Logos und Grafiken werden nicht zu bearbeitbaren Objekten. Ergänze exakte Details separat im Editor. Für Änderungen innerhalb des KI-Bildes passt du die Beschreibung an und generierst erneut."
+        ]
+      },
+      {
+        "title": "Den Favoriten rundum prüfen",
+        "paragraphs": [
+          "Prüfe Front, beide Seiten und Heck. Wie treffen Streifen auf Türkanten, wie läuft eine Illustration über den Radlauf und passt das Heck zum Rest? Vergleiche auch eine ruhige mit einer auffälligeren Variante. Ein stimmiger Entwurf sollte nicht nur aus dem ersten Lieblingswinkel funktionieren.",
+          "Speichere den Entwurf im Editor, um später weiterzuarbeiten. Für eine echte Folierung zeigst du Grafik und Vorschau einem Fachbetrieb. Dort werden Fahrzeug, Folie und Produktionslayout geprüft. Der digitale Entwurf erleichtert das Gespräch; Vermessung, Druckvorbereitung und Montage bleiben eigene Schritte. Entscheide die Oberfläche anhand echter Materialmuster."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Kann ich meine Tesla Folierung kostenlos gestalten?",
+        "answer": "Ja. Farben, Oberflächen und der Browser-Editor mit eigenen Ebenen sind kostenlos nutzbar. Beachte beim Bearbeiten und Speichern die Anmeldehinweise. KI-Generierung ist optional und nutzt Credits. Finde zuerst in der Vorschau eine Richtung und öffne dann den Editor für deine Komposition."
+      },
+      {
+        "question": "Welche Tesla-Modelle und Versionen sind verfügbar?",
+        "answer": "Es gibt Model 3 Legacy, 2024 Base und Performance; Model Y Legacy, 2025 Base, Premium, Performance und Model Y L; Cybertruck; Model S 2021 und 2025 Plaid sowie Model X 2021. Karten und Fahrzeugauswahl öffnen die passende Vorschau. Gleiche die angebotene Konfiguration mit deinen Fahrzeugdaten ab."
+      },
+      {
+        "question": "Kann ich ein vorhandenes Bild ausprobieren?",
+        "answer": "Ja, mit lokalen JPEG-, PNG- oder WebP-Bildern bis 5 MB. Diese Vorschau liest sie nur im Browser; Entfernen oder Neuladen löscht die Auswahl. Eine passende Fahrzeugtextur zeigt die Paneelpositionen am besten. Das temporäre Bild wird nicht automatisch in den Editor übernommen. Füge es dort erneut hinzu."
+      },
+      {
+        "question": "Was unterscheidet Vorschau und Editor?",
+        "answer": "In der Vorschau vergleichst du Fahrzeug, Farbe, Oberfläche und vorhandene Bilder. Im Editor ordnest du eigene Texte, Bilder und Formen als Ebenen an und speicherst die Komposition. Ein fertiges Bild bleibt in beiden Ansichten ein Bild; darin enthaltene Buchstaben und Motive sind nicht einzeln beweglich."
+      },
+      {
+        "question": "Unifarbe oder Grafik: Wie entscheide ich mich?",
+        "answer": "Überlege, welche Wirkung du auf den ersten Blick möchtest. Eine Farbe lässt Formen und Reflexe wirken; Streifen, Illustrationen oder Geometrie setzen zusätzliche Akzente. Beginne mit einer kleinen Palette und einem Blickfang. Vergleiche auch Seiten und Heck, damit die Idee am ganzen Fahrzeug funktioniert."
+      },
+      {
+        "question": "Kann ich den Entwurf einem Folierungsbetrieb zeigen?",
+        "answer": "Ja. Der Entwurf zeigt Farben, Thema und gewünschte Platzierung. Vor dem Druck muss der Betrieb das echte Fahrzeug, Material und Produktionsanforderungen prüfen. Die Vorschau enthält kein vermessenes Schnittlayout und zertifiziert keine Montagevorlage, macht deine Gestaltungsvorgaben aber deutlich."
+      }
+    ],
+    "ctaTitle": "Deine nächste Tesla Folierung beginnt hier",
+    "ctaDescription": "Wähle eine Lieblingsfarbe, probiere ein neues Muster und sieh es auf deinem Modell. Entwickle die erste Idee im Editor zu deinem eigenen Design."
+  },
+  "modelY": {
+    "eyebrow": "Ein neuer Look für jeden Tag",
+    "title": "Tesla Model Y Folierung selbst gestalten",
+    "introduction": "Gib deinem Model Y einen persönlichen Look. Vergleiche ruhiges Seidenmatt, tiefen Glanz und auffällige Grafiken an der 3D-Karosserie. Wähle deine verfügbare Version, teste Farben und gestalte eine Tesla Model Y Folierung, deren Heck ebenso stimmig wirkt wie die Seiten.",
+    "viewerCaption": "Vergleiche Farben und Oberflächen. Im passenden Editor ordnest du Motive an und speicherst sie.",
+    "versionsTitle": "Model Y Folierung kostenlos entwerfen",
+    "versionsDescription": "Wähle Legacy, 2025 Base, Premium, Performance oder Model Y L. Jede Karte öffnet die zugehörige Vorlage. Mit der richtigen Version kannst du Farben und Grafiken sinnvoll beurteilen, statt dieselbe Textur ungeprüft auf jede Karosserie zu übertragen.",
+    "galleryTitle": "Tesla Model Y Folierung: Designgalerie",
+    "faqTitle": "Fragen zur Model Y Folierung",
+    "galleryDescription": "Entdecke Paletten, Streifen und Illustrationen aus der Community. Achte auf das Zusammenspiel von vorderen und hinteren Türen, Radläufen und Heckklappe. Öffne ein Design, prüfe Grafik und Vorschau und entwickle daraus deine eigene Richtung.",
+    "howTitle": "Deine Model Y Folierung Schritt für Schritt gestalten",
+    "sections": [
+      {
+        "title": "Farbe und Oberfläche bestimmen die Wirkung",
+        "paragraphs": [
+          "Die breite Seite des Model Y gibt Farben viel Raum. Probiere gedecktes Grün, warmes Grau oder tiefes Blau, für mehr Energie einen hellen Akzent. Beginne mit einer Hauptfarbe und drehe das Auto vor weiteren Ergänzungen. Besonders der Übergang von den Türen zum hinteren Seitenteil zeigt, wie anders ein Ton auf einer gewölbten Fläche wirken kann.",
+          "Vergleiche die fünf Oberflächen unter derselben Beleuchtung. Glanz betont Spiegelungen, Seidenmatt mildert sie und Matt wirkt ruhiger. Metallic und Perlmutt zeigen weitere Varianten. Lass die Farbe dabei gleich, um den Unterschied klar zu erkennen. Prüfe echte Muster im Fachbetrieb, bevor du dich auf eine Folie festlegst."
+        ]
+      },
+      {
+        "title": "Der Seitengrafik Raum lassen",
+        "paragraphs": [
+          "Die Türen bieten eine große Zeichenfläche, doch ein Motiv muss nicht jedes Paneel füllen. Teste einen langen Streifen, große geometrische Wiederholungen oder eine einzelne Illustration mit ruhigem Umfeld. Folge der Komposition vom vorderen Rad nach hinten. Achte darauf, wo Linien am Radlauf verschwinden oder an Türkanten ihre Richtung ändern.",
+          "Halte Logos und wichtige Texte von unruhigen Hintergründen frei. Als eigene Bild- und Textebenen kannst du sie gezielt positionieren und skalieren. Prüfe den Entwurf auch aus größerer Entfernung. Freiraum um wesentliche Details erhöht die Lesbarkeit, besonders wenn das Fahrzeug schräg betrachtet wird."
+        ]
+      },
+      {
+        "title": "Haube, Türen und Heckklappe verbinden",
+        "paragraphs": [
+          "Verbinde Front, Seiten und Heck durch eine gemeinsame Farbe oder wiederkehrende Formen. Eine lebhafte Seitengrafik kann mit einer ruhigen Haube harmonieren; ein kleiner Akzent auf der Heckklappe greift das Thema wieder auf. Prüfe beide Seiten und betrachte das Heck für sich. Es sollte auch ohne sichtbare Türen zum Entwurf gehören.",
+          "Im Editor ordnest du eigene Bilder, Texte und Formen als Ebenen an. Soll die KI den Hintergrund vorschlagen, beschreibe Farben und Muster und prüfe das Ergebnis am Fahrzeug. Enthaltene Schrift und Grafik bleiben Teil eines einzelnen Bildes. Ergänze exakte Texte separat; für Änderungen im Hintergrund generierst du eine neue Variante."
+        ]
+      },
+      {
+        "title": "Einen Entwurf zum Weiterarbeiten anlegen",
+        "paragraphs": [
+          "Vergleiche Front, Seiten und Heck mit derselben Oberfläche. Achte auf einen klaren Schwerpunkt, passende Abstände und eine durchgängige Farbwirkung. Du kannst ein vorhandenes Bild zuerst in der Vorschau testen und anschließend im Editor erneut hinzufügen. Speichere dort, um später weiter an der Komposition zu arbeiten.",
+          "Für eine echte Folierung zeigst du dem Betrieb, welche Farben, Formen und Positionen wichtig sind. Die Ausführenden müssen das Fahrzeug prüfen und vermessene Produktionsdaten anlegen. Die Vorschau hilft bei der Stilwahl; echte Folienmuster und fachliche Layoutarbeit übertragen die Idee in die Montage."
+        ]
+      }
+    ],
+    "comparisonTitle": "Die passende Vorlage für deine Model Y Version",
+    "comparisonDescription": "Diese Karosserien und Konfigurationen sind im Studio verfügbar. Gleiche deine Fahrzeugdaten ab und prüfe die Grafik auf der zugehörigen Vorlage. Die Hinweise beschreiben die Designvorschauen, keinen vollständigen Ausstattungsleitfaden für alle Märkte.",
+    "comparisons": [
+      {
+        "title": "Model Y Legacy",
+        "description": "Beginne mit der ursprünglichen Karosserievorlage und prüfe die Farbe an Front und Heck. Bei Streifen lohnt sich ein früher Blick auf die Stoßfängerecken. Ideen vom überarbeiteten Modell können inspirieren, benötigen hier aber eine neue Prüfung der Anordnung."
+      },
+      {
+        "title": "2025 Base und Premium",
+        "description": "Wähle die gewünschte Konfiguration und prüfe Front, untere Türen und Radbereiche. Das Studio zeigt separate Vorschauen mit unterschiedlichen Rädern. Mit gleichbleibender Palette erkennst du leichter, wie diese Details die Wirkung derselben Grafik verändern."
+      },
+      {
+        "title": "2025 Performance",
+        "description": "Beurteile Motive an Karosserie und Rädern in der eigenen Performance-Vorschau. Teste einen dunklen unteren Bereich oder einen kleinen hellen Akzent. Prüfe das Heck ebenso sorgfältig wie die Front, damit das sportliche Thema durchgängig bleibt."
+      },
+      {
+        "title": "Model Y L",
+        "description": "Die längere Seite braucht einen eigenen Rhythmus. Gib wiederholten Formen Platz und überdenke Anfang und Ende des Hauptmotivs. Beurteile die Proportionen auf der eigenen Vorlage; ein Entwurf für die kürzere Karosserie behält nicht automatisch seine Balance."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Kann ich ohne Designerfahrung starten?",
+        "answer": "Ja. Finde zunächst mit Farbe und Oberfläche eine Richtung und ergänze später Motive im Editor. Ein Bild, ein einfacher Streifen oder ein kleiner Farbakzent reicht für den ersten Entwurf. Prüfe mehrere Ansichten und ändere jeweils ein Element. Alternativ kann die KI ein erstes Muster vorschlagen."
+      },
+      {
+        "question": "Welche Model Y Versionen gibt es?",
+        "answer": "Verfügbar sind Legacy, 2025 Base, Premium, Performance und Model Y L, jeweils mit eigener Vorschau und Editorvorlage. Wähle die Version vor der Beurteilung deiner Grafik. Fehlt deine Konfiguration, nutze die Vorschau zur Stilfindung, ohne eine exakte Übereinstimmung mit deinem Fahrzeug anzunehmen."
+      },
+      {
+        "question": "Passt ein Legacy-Design auf ein neueres Model Y oder Model Y L?",
+        "answer": "Das Thema lässt sich aufgreifen, die Anordnung musst du auf der Zielvorlage prüfen. Andere Proportionen verändern Streifenenden und Übergänge von Illustrationen. Achte beim Model Y L besonders auf seitliche Abstände. Passe eigene Ebenen an und kontrolliere das ganze Auto vor dem Speichern."
+      },
+      {
+        "question": "Kann ich ein eigenes Bild vorab testen?",
+        "answer": "Ja, als lokales JPEG, PNG oder WebP bis 5 MB. Eine passende Textur ist am aussagekräftigsten; normale Fotos können auf mehrere Paneele verteilt erscheinen. Das Bild bleibt in dieser Vorschau lokal und wird beim Neuladen entfernt. Füge es für ein gespeichertes Projekt separat im Editor hinzu."
+      },
+      {
+        "question": "Kann ich Schrift oder Logos im KI-Design ändern?",
+        "answer": "Das KI-Ergebnis ist ein zusammengefügtes Bild, dessen Buchstaben, Logos und Illustrationen nicht einzeln wählbar sind. Ergänze für genaue Platzierung eigene Texte oder Logos als Ebenen. Diese kannst du verschieben und skalieren. Soll sich der Hintergrund ändern, generiere mit einer angepassten Beschreibung neu."
+      },
+      {
+        "question": "Ist die Vorschau kostenlos und kann ich den Entwurf drucken lassen?",
+        "answer": "Vorschau und manueller Editor sind kostenlos; die optionale KI nutzt Credits. Du kannst den Entwurf mit einem Folierungsbetrieb besprechen, er ist jedoch kein vermessenes Drucklayout. Fahrzeug, Material, Auflösung und Paneelaufteilung müssen fachlich geprüft werden. Bestätige die Oberfläche anhand echter Muster."
+      }
+    ],
+    "ctaTitle": "Mach deine Model Y Folierung zu deinem Design",
+    "ctaDescription": "Starte mit einer dezenten Farbe oder einem markanten Muster. Wähle deine Version und verbinde Türen, Haube und Heckklappe im Editor zu einem stimmigen Look."
+  },
+  "model3": {
+    "eyebrow": "Klare Linien. Dein eigener Look.",
+    "title": "Tesla Model 3 Folierung online gestalten",
+    "introduction": "Gib der vertrauten Silhouette einen neuen Ausdruck. Entwirf deine Tesla Model 3 Folierung mit einer dezenten seidenmatten Farbe, klaren Rennstreifen oder Illustrationen und prüfe sie in 3D. Wähle Legacy, 2024 Base oder Performance und entwickle einen Look, der vom Bug bis zum Heck zusammenpasst.",
+    "viewerCaption": "Teste die Palette am Fahrzeug und gestalte und speichere anschließend im Editor.",
+    "versionsTitle": "Model 3 Folierung kostenlos selbst gestalten",
+    "versionsDescription": "Wähle die Karosserie vor dem Platzieren der Grafik. Legacy, 2024 Base und Performance öffnen jeweils eine eigene Vorlage. Vergleiche Front und Heck in der Vorschau, damit dein Entwurf von Anfang an auf den richtigen Proportionen aufbaut.",
+    "galleryTitle": "Tesla Model 3 Folierung: Designgalerie",
+    "faqTitle": "Fragen zur Model 3 Folierung",
+    "galleryDescription": "Sieh dir an, wie eine schlichte Palette, ein Streifen oder eine Illustration den Charakter verändert. Öffne Community-Designs und vergleiche Grafik und Vorschau. Achte auf Haube, untere Türen und Heck und nutze diese Beobachtungen für deine eigene Idee.",
+    "howTitle": "Dein Design an den Linien des Model 3 ausrichten",
+    "sections": [
+      {
+        "title": "Mit wenigen Farben die Silhouette betonen",
+        "paragraphs": [
+          "Wähle eine Farbe passend zur gewünschten Wirkung: zurückhaltend, verspielt oder markant. Anthrazit, warmes Weiß oder gedecktes Blau lassen die Limousine ruhig wirken; helle Töne betonen die Karosserie. Passe die Farbe an und drehe das Fahrzeug. Vergleiche, wie Haube, Türen und hintere Seitenteile denselben Ton unterschiedlich reflektieren.",
+          "Vergleiche mit derselben Palette Glanz, Seidenmatt, Matt, Metallic und Perlmutt. Die Oberfläche verändert, wie Licht die Formen beschreibt. Vielleicht gefällt dir ein klarer Glanzreflex auf einem schlichten Design oder ein weicher Schimmer mit einem kleinen Akzent. Wähle in der Vorschau die Stimmung und prüfe danach reale Folienmuster."
+        ]
+      },
+      {
+        "title": "Streifen und Geometrie gezielt einsetzen",
+        "paragraphs": [
+          "Schon wenige bewusst gesetzte Linien können Dynamik schaffen. Probiere einen Mittelstreifen, einen versetzten Akzent oder eine geometrische Fläche entlang der Türen. Beginne mit einer Hauptform und einer Nebenfarbe. Folge dem Entwurf von schräg vorn über die Seite zum Heck und prüfe Stoßfängerkanten und Radläufe.",
+          "Für einen Rennsportlook ist das Verhältnis zwischen Haube und Seiten wichtig. Eine starke Front verträgt ruhige Türen; eine große Seitenillustration braucht Freiraum. Ergänze Nummern und Schrift als eigene Textebenen. Prüfe beide Seiten, besonders bei gerichteten Motiven, damit die Komposition rundum bewusst gestaltet wirkt."
+        ]
+      },
+      {
+        "title": "Illustrationen und Details ihren Platz geben",
+        "paragraphs": [
+          "Eine Illustration muss nicht jede Fläche gleich stark bedecken. Wähle einen Schwerpunkt und verbinde ihn durch wiederkehrende Farben oder kleine Details mit anderen Bereichen. Importiere eigene Motive und erstelle Texte separat. Ein eigenes Logobild bleibt gezielt platzierbar und skalierbar. Zoome regelmäßig heraus, um den Gesamteindruck zu beurteilen.",
+          "Fehlt dir ein Ausgangsmuster, beschreibe Palette und Thema im KI-Generator oder ergänze eine Referenz. Prüfe die Textur am ausgewählten Fahrzeug, bevor du weitere Elemente einfügst. Erzeugte Schrift, Logos und Illustrationen sind Pixel in einem Bild und nicht einzeln beweglich. Für genaue Details nutzt du eigene Ebenen, für eine neue KI-Komposition eine geänderte Beschreibung."
+        ]
+      },
+      {
+        "title": "Die Übergänge von vorn bis hinten prüfen",
+        "paragraphs": [
+          "Beurteile das Design nicht nur aus deinem Lieblingswinkel. Prüfe die Haube an den Leuchten, untere Türen, hintere Seitenteile und den Kofferraum. Halte wichtige Details von ungünstigen Paneelübergängen fern. Schon kleine Abstandsänderungen können ein Motiv klarer machen. Betrachte nach größeren Anpassungen wieder das ganze Auto.",
+          "Speichere die Komposition, wenn du sie später bearbeiten oder als Entwurf teilen möchtest. Für echte Folien zeigst du dem Betrieb Farben und Motivpositionen. Dort müssen Fahrzeug und Material geprüft und Produktionsdateien erstellt werden. Die Vorschau unterstützt die Stilwahl, ersetzt aber keine vermessenen Paneellayouts, Druckkontrollen oder Montageplanung."
+        ]
+      }
+    ],
+    "comparisonTitle": "Die passende Vorlage für jedes Model 3",
+    "comparisonDescription": "Diese Versionen sind im Studio vertreten. Gleiche sie mit deinen Fahrzeugdaten ab und prüfe die für dein Design wichtigen Bereiche. Die Hinweise helfen bei der Gestaltung und sind keine vollständige Spezifikationsliste für jeden Markt.",
+    "comparisons": [
+      {
+        "title": "Model 3 Legacy",
+        "description": "Arbeite mit der ursprünglichen Silhouette und ihrer Vorlage. Bei Streifen, Wiederholungen oder großen Frontmotiven solltest du Haube und Stoßfängerkanten früh prüfen. Richte die Platzierung an den Paneelgrenzen aus, damit das Thema natürlich in die Seiten übergeht."
+      },
+      {
+        "title": "2024 Base",
+        "description": "Nutze die passende Vorschau für die überarbeitete Karosserie. Achte besonders auf Motive an Leuchten sowie Front- und Heckkanten. Eine bewährte Palette kann bleiben, die für Legacy entworfene Anordnung sollte jedoch erneut geprüft werden."
+      },
+      {
+        "title": "2024 Performance",
+        "description": "Die Performance-Vorschau nutzt eine eigene Karosserie- und Radkonfiguration. Vergleiche dieselbe Palette und beobachte Kontraste an Rädern und Heck. Gestalte anhand der sichtbaren Details dieser Version, statt die Base-Komposition ungeprüft zu übernehmen."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wie beginne ich mein Model 3 Design?",
+        "answer": "Wähle Legacy, 2024 Base oder Performance und teste eine Farbe mit einer Oberfläche. Drehe das Fahrzeug vor weiteren Details. Für Bilder, Texte und Formen öffnest du den passenden Editor. Eine einfache Palette schafft die Grundlage für Streifen, Illustrationen oder persönliche Akzente."
+      },
+      {
+        "question": "Kann ich das überarbeitete Model 3 ansehen?",
+        "answer": "Ja. Neben Legacy gibt es 2024 Base und Performance mit eigener Vorschau und Vorlage. Prüfe deine Fahrzeugdaten bei der Auswahl. Die Modelle dienen als Designreferenz für die aufgeführten Konfigurationen und garantieren nicht identische Details aller regionalen Ausstattungen oder späteren Baujahre."
+      },
+      {
+        "question": "Welche Farben und Oberflächen kann ich testen?",
+        "answer": "Du kannst eigene Farben einstellen und Glanz, Seidenmatt, Matt, Metallic und Perlmutt vergleichen. Halte erst die Farbe, dann die Oberfläche konstant, um beide Wirkungen getrennt zu beurteilen. Die Darstellung ist eine visuelle Referenz; bestätige echte Folien mit Materialmustern."
+      },
+      {
+        "question": "Kann ich ein Foto oder ein Legacy-Design verwenden?",
+        "answer": "Die Vorschau liest lokale JPEG-, PNG- und WebP-Dateien bis 5 MB. Eine passende Textur ist hilfreicher als ein normales Foto. Ein Legacy-Bild kannst du auf einer anderen Version testen, musst aber besonders Leuchten und Stoßfänger auf der Zielvorlage prüfen. Für ein gespeichertes Projekt lädst du das Bild erneut in den Editor."
+      },
+      {
+        "question": "Kann ich Logos, Nummern oder eigene Texte ergänzen?",
+        "answer": "Ja. Erstelle Text oder lade ein Logo als eigene Bildebene hoch und passe Größe und Position an. Diese Elemente bleiben vom Hintergrund getrennt. Bereits im KI-Bild enthaltene Schrift und Grafik ist nicht einzeln bearbeitbar. Für genaue Texte lässt du einen Hintergrund ohne Schrift erzeugen und ergänzt sie selbst."
+      },
+      {
+        "question": "Ist das Tool kostenlos und das Ergebnis montagefertig?",
+        "answer": "3D-Vorschau und manueller Editor sind kostenlos, die optionale KI nutzt Credits. Dein Entwurf dient als visuelle Vorgabe für einen Betrieb. Vor der Produktion müssen Maße, Material, Auflösung und Drucklayout geprüft werden. Die Vorschau ist keine vermessene Schnittdatei; vereinbare die Vorbereitung separat."
+      }
+    ],
+    "ctaTitle": "Finde deinen Model 3 Look",
+    "ctaDescription": "Beginne mit einer Farbe, zu der du immer zurückkehrst. Ergänze eine Linie, eine Illustration oder ein persönliches Detail und gestalte einen Look, der von vorn bis hinten passt."
+  }
+}

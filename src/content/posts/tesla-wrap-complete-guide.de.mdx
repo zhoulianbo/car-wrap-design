@@ -1,0 +1,180 @@
+import { Link } from '@/core/i18n/navigation';
+import { envConfigs } from '@/config';
+
+export const meta = {
+  title: 'Tesla Wrap erstellen: vom 3D-Entwurf bis zum Fahrzeugdisplay',
+  description:
+    'Wähle die passende Vorlage, gestalte mit KI oder eigenen Ebenen und prüfe dein Tesla-Design in 3D. Mit Anleitung zum Speichern und Import per App oder USB.',
+  created_at: '2026-10-09',
+  author_name: envConfigs.app_name + ' Team',
+  author_type: 'Organization',
+  author_image: '/favicon-32x32.png?v=20261007-4',
+  image: '/imgs/blog/tesla-wrap-complete-guide.webp',
+};
+
+Du kannst deinen Tesla Wrap aus eigenen Motiven erstellen oder mit KI eine Idee ausprobieren. Beide Wege beginnen mit einer Fahrzeugvorlage und der 3D-Vorschau. Anschließend speicherst du das Projekt, lädst die Textur herunter und überträgst sie per Tesla-App oder USB auf die Fahrzeugdarstellung im Display.
+
+## Inspiration finden oder direkt gestalten
+
+- In der <Link href="/gallery">Designgalerie</Link> vergleichst du geteilte Werke und findest Farben oder Muster.
+- Im <Link href="/ai-car-wrap-generator">KI-Folierungsgenerator</Link> wählst du ein Fahrzeug und beschreibst den Look. Ein Referenzbild ist optional.
+- Im <Link href="/create/model-3-legacy">Editor für Model 3 Legacy</Link> ordnest du eigene Bilder, Texte und Formen an. Für eine andere Vorlage wechselst du das Fahrzeug im Editor.
+
+## Zuerst die passende Tesla-Version wählen
+
+Öffne die <Link href="/tesla-wrap">Tesla-Designseite</Link> und gleiche Modell, Baujahr und Karosserie mit deinem Auto ab. Das Studio bietet aktuell zwölf Konfigurationen in fünf Modellfamilien:
+
+- Model 3: Legacy, 2024 Base und 2024 Performance.
+- Model Y: Legacy, 2025 Base, 2025 Premium, 2025 Performance und Model Y L.
+- Cybertruck: die Konfiguration von 2023.
+- Model S: 2021 und 2025 Plaid.
+- Model X: die Konfiguration von 2021.
+
+Auf den Seiten für <Link href="/tesla-model-3-wrap">Model 3</Link> und <Link href="/tesla-model-y-wrap">Model Y</Link> kannst du Versionen vergleichen. Diese Bezeichnungen stehen für die Vorschauen im Studio; Namen und Ausstattung können je nach Markt abweichen.
+
+Drehe das Modell vor dem Einfügen von Grafiken. Prüfe Silhouette, Frontstoßfänger und Heck. Ein Streifen für Legacy kann auf einem neueren Stoßfänger anders liegen, eine längere Seitenfläche verändert Musterabstände. Die passende Vorlage erspart spätere Korrekturen.
+
+Noch keine konkrete Idee? Sieh dich in der <Link href="/gallery">Galerie</Link> um. Fahrzeugseiten zeigen bis zu zehn passende öffentliche Designs. Achte auf Motivgröße, Freiflächen und Linienenden. Prüfe die Bedingungen des Urhebers vor der Wiederverwendung, insbesondere für kommerzielle Zwecke.
+
+## Farben und Oberflächen in 3D testen
+
+Ziehe zum Drehen und zoome für einzelne Paneele heran. Vergleiche Glanz, Seidenmatt, Matt, Metallic und Perlmutt mit gleicher Farbe und gleichem Blickwinkel. Fehlt dein Wunschton, kannst du eine eigene Farbe eingeben.
+
+<figure className="my-6">
+  <img
+    src="/imgs/blog/tesla-wrap-guide/3d-preview.webp"
+    alt="Blaues Model 3 Performance in der 3D-Ansicht mit Fahrzeug-, Oberflächen- und Farbauswahl"
+    width="1512"
+    height="949"
+    loading="lazy"
+    className="border-border w-full rounded-xl border"
+  />
+  <figcaption className="text-muted-foreground mt-2 text-sm">
+    Vergleiche Farben und Oberflächen aus demselben Winkel, bevor du die Grafik
+    gestaltest.
+  </figcaption>
+</figure>
+
+Über die Bildschaltfläche kannst du vorhandene JPEG-, PNG- oder WebP-Dateien bis 5 MB testen. Der Browser liest das Bild lokal. Diese Vorschau lädt es nicht auf den Server und speichert kein Projekt. Entferne das Bild, um wieder Unifarben zu sehen; auch Neuladen setzt die Auswahl zurück.
+
+Ein normales Foto kann auf der Karosserie zerlegt erscheinen. Die UV-Vorlage ordnet verschiedene Bildbereiche verschiedenen Paneelen zu. Eine für das Fahrzeug angelegte Textur lässt sich deshalb besser beurteilen. Öffne den Designer, sobald die Richtung steht. Behalte die Originaldatei: Das temporäre Bild wird nicht in den Editor übernommen.
+
+## Mit KI gestalten
+
+Öffne den <Link href="/ai-car-wrap-generator">KI-Folierungsgenerator</Link> und wähle das Fahrzeug. Beschreibe Hauptfarbe, Größe und Richtung des Musters sowie freie Bereiche. Zum Beispiel:
+
+> Dunkelgrüne Grundfarbe, eine dünne warmweiße Diagonale über die Türen, viel Freiraum auf der Haube, ohne Schrift.
+
+Ein Referenzbild kann Palette oder Textur vermitteln. Verwende nur Material, das du hochladen darfst, und beschreibe, welche Eigenschaften übernommen werden sollen. Eine Referenz garantiert keine exakte Anpassung an alle Paneele.
+
+<figure className="my-6">
+  <img
+    src="/imgs/blog/tesla-wrap-guide/ai-design.webp"
+    alt="KI-Generator mit ausgewähltem Model 3, Designbeschreibung, optionalem Referenzbild und Generierungssteuerung"
+    width="1216"
+    height="668"
+    loading="lazy"
+    className="border-border w-full rounded-xl border"
+  />
+  <figcaption className="text-muted-foreground mt-2 text-sm">
+    Wähle Fahrzeug und Beschreibung und prüfe Kosten und Galeriefreigabe vor dem
+    Start.
+  </figcaption>
+</figure>
+
+Melde dich an, wenn du dazu aufgefordert wirst, und kontrolliere Credit-Kosten sowie „Für Galerie freigeben“. Wechsle beim fertigen Ergebnis zwischen flacher Grafik und 3D-Ansicht. Prüfe Schrift, Symmetrie und Übergänge zwischen Paneelen.
+
+Das KI-Ergebnis ist ein einzelnes Bild. Enthaltene Texte oder Logos lassen sich nicht separat auswählen und verschieben. Für Änderungen generierst du mit neuer Beschreibung erneut oder bearbeitest das Bild extern. Du kannst das Ergebnis auch im Editor öffnen und eigene Texte, Bilder und Formen als zusätzliche Ebenen ergänzen.
+
+## Im Editor mit eigenen Ebenen arbeiten
+
+Wenn Motive schon vorliegen oder du jedes Element selbst platzieren möchtest, starte im passenden Editor. Der <Link href="/create/model-3-legacy">Model 3 Legacy Editor</Link> öffnet beispielsweise dessen Vorlage. Andere Versionen erreichst du über die Fahrzeugauswahl. Beachte beim Hochladen und Speichern die Anmeldehinweise.
+
+Verwende eine klare Quelldatei mit genügend Details für den vorgesehenen Zweck. Transparente Bilder eignen sich für Logos oder Illustrationen auf einem Hintergrund. Prüfe deine Rechte an fremden Bildern, Schriften und Marken.
+
+Lege zuerst den Hintergrund fest und dann das Hauptmotiv. Beispielsweise eine anthrazitfarbene Basis mit einer hellen Diagonale; ein kleiner Akzent am hinteren Seitenteil kommt später. Verschiebe, skaliere, drehe oder spiegle nach Bedarf. Die Ebenenreihenfolge bestimmt Vorder- und Hintergrund, die Deckkraft die Stärke einer Überlagerung.
+
+<figure className="my-6">
+  <img
+    src="/imgs/blog/tesla-wrap-guide/editor.webp"
+    alt="Folierungseditor mit Fahrzeugvorlage, ausgewählter Textebene, Werkzeugen und 3D-Vorschau"
+    width="1280"
+    height="720"
+    loading="lazy"
+    className="border-border w-full rounded-xl border"
+  />
+  <figcaption className="text-muted-foreground mt-2 text-sm">
+    Eigene Texte und Motive bleiben auf separaten Ebenen einzeln anpassbar.
+  </figcaption>
+</figure>
+
+Schrift, die du später korrigieren willst, erstellst du mit dem Textwerkzeug. Formen und Zeichenwerkzeuge ergänzen eigene Elemente, ohne das Quellbild neu aufzubauen. Rückgängig und Wiederholen helfen beim Vergleich von Position und Größe. Zoome regelmäßig heraus: Geht der Schwerpunkt in der Größe einer Galeriekarte verloren, reduziere konkurrierende Details, bevor du weitere ergänzt.
+
+## Vor dem Download das gesamte Auto prüfen
+
+Wechsle während der Arbeit regelmäßig zur 3D-Vorschau. Eine gerade Linie kann am Stoßfänger gebogen wirken oder hinter einem Radlauf verschwinden. Kontrolliere nach größeren Änderungen dieselben Ansichten:
+
+- Vorn: Haube, Leuchtenkanten und Stoßfängerecken.
+- Beide Seiten: Türnähte, Griffe, Radläufe und Richtung wiederholter Elemente.
+- Hinten: Ende des Hauptmotivs und Übergänge über Kofferraum beziehungsweise Heckklappe und Stoßfänger.
+- Oben: Übergänge zwischen Dach und Karosserie sowie unerwartete Leerflächen.
+
+Prüfe auch die Oberfläche. Reflexe können die Lesbarkeit verändern. Bei einer unterbrochenen Linie verschiebst du die Ebene oder lässt sie an der Paneelkante enden. Bei gespiegelter Schrift kontrollierst du zuerst den zugeordneten UV-Bereich und seine Ausrichtung. Ist das Motiv stark beschnitten, prüfe Fahrzeugversion und Position auf der Vorlage.
+
+Vergleiche vorherige und überarbeitete Version aus denselben Winkeln und behalte die klarere Komposition.
+
+## Projekt speichern und Textur herunterladen
+
+Speichern legt ein bearbeitbares Projekt im Konto ab. Warte auf die Bestätigung, bevor du den Tab schließt. Behebe Speicherfehler oder Versionskonflikte zuerst. Mehrere offene Bearbeitungstabs können es erschweren, die neueste Version nachzuvollziehen.
+
+Der Download liefert die flache Textur für das Fahrzeugmodell. Öffne die Datei und kontrolliere ihren Inhalt; ein Fahrzeug-Screenshot erfüllt einen anderen Zweck. Behalte das bearbeitbare Projekt für spätere Paneelkorrekturen.
+
+Speichere vor dem Teilen oder Veröffentlichen und prüfe Titel und Grafik auf private Angaben. Ein Designlink eignet sich für Rückmeldungen von Freunden oder die Abstimmung mit einem Fachbetrieb.
+
+## Den Wrap auf das Tesla-Display übertragen
+
+Ein eigener Wrap verändert die Fahrzeugdarstellung auf dem Bildschirm. Prüfe, ob Fahrzeug und Software diese Funktion unterstützen. Das <a href="https://github.com/teslamotors/custom-wraps" target="_blank" rel="noreferrer">offizielle Tesla-Repository</a> enthält aktuelle Vorlagen und Übertragungsvorgaben.
+
+### Die Datei kontrollieren
+
+Verwende PNG mit 512 × 512 bis 1024 × 1024 Pixeln und höchstens 1 MB. Dateinamen dürfen bis zu 30 Buchstaben, Zahlen, Leerzeichen, Unterstriche oder Bindestriche enthalten. Konvertiere andere Formate richtig; eine neue Dateiendung reicht nicht. Prüfe den tatsächlichen Download, denn die Studio-Vorschau bestätigt nicht die Annahme durch das Fahrzeug.
+
+### Mit der Tesla-App übertragen
+
+Öffne in der Tesla-App ab Version 4.59.0 Creations → Wrap → Upload und wähle deine PNG.
+
+### Mit einem USB-Laufwerk übertragen
+
+Verwende exFAT, FAT32 (MS-DOS FAT auf dem Mac), ext3 oder ext4. NTFS wird nicht unterstützt. Sichere vor dem Formatieren alle Daten, da sie dabei gelöscht werden.
+
+Erstelle `Wraps` im Hauptverzeichnis, kopiere die PNG hinein und verbinde das Laufwerk mit einem datenfähigen USB-Anschluss im Fahrzeug. Speichere keine Karten- oder Firmwareupdates auf demselben Laufwerk.
+
+### Im Fahrzeug auswählen
+
+Öffne Toybox → Paint Shop → Wraps und wähle das Design. App und USB-Laufwerk unterstützen jeweils bis zu zehn Wraps. Menübezeichnungen können nach Sprache und Fahrzeugsoftware abweichen.
+
+## Wenn etwas nicht passt
+
+### Das Fahrzeug zeigt den Wrap nicht an
+
+Prüfe PNG-Format, Pixelmaße, Dateigröße und Namen. Bei USB müssen der Ordner `Wraps` im Hauptverzeichnis und ein unterstütztes Dateisystem vorhanden sein; Karten- oder Firmwareupdates dürfen nicht darauf liegen. Fehlt das Menü, lies die Tesla-Anleitung für dein Fahrzeug.
+
+### Das Bild erscheint aufgeteilt
+
+Prüfe Fahrzeugversion und UV-Anordnung. Ein Foto benötigt eine andere Platzierung als eine bereits passende Textur. Verschiebe das Motiv im Editor und beobachte das betroffene Paneel in 3D.
+
+### Die Fahrzeugfarbe verändert das Bild nicht
+
+Bei aktiver Textur liefert das Bild die Karosseriegrafik. Entferne es für den Vergleich von Unifarben. Oberflächenregler verändern weiterhin die Lichtwirkung auf der Textur.
+
+### Nach dem Neuladen ist die Vorschau weg
+
+Die Vorschau auf Fahrzeugseiten ist temporär. Behalte die Originaldatei auf deinem Gerät und speichere Projekte im Editor, wenn du später weiterarbeiten möchtest.
+
+### Auf einem anderen Bildschirm wirkt die Farbe anders
+
+Helligkeit, Kalibrierung und Raumlicht beeinflussen die Darstellung. Vergleiche mit der Vorschau Ideen und prüfe vor dem Kauf echter Folie Materialmuster.
+
+## Wenn du das echte Fahrzeug folieren möchtest
+
+Zeige einem qualifizierten Betrieb die Grafik und Referenzansichten. Fahrzeugmaße, Druckauflösung, Beschnitt, Paneelzugaben, Dehnung, Materialverhalten und Farbandrucke müssen geprüft werden. Die digitale Textur erklärt den Entwurf; das Produktionslayout für das reale Fahrzeug muss separat vorbereitet werden.

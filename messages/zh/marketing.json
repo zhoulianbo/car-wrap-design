@@ -1,0 +1,425 @@
+{
+  "landing": {
+    "nav": {
+      "features": "功能",
+      "pricing": "价格",
+      "home": "首页",
+      "cars": "车型",
+      "tesla_model_y_wrap": "Tesla Model Y 车衣",
+      "tesla_model_3_wrap": "Tesla Model 3 车衣",
+      "blog": "博客",
+      "tesla_wrap": "Tesla 车衣",
+      "ai_generator": "AI 车衣生成器",
+      "gallery": "作品库"
+    },
+    "hero": {
+      "headline": "在线设计你的专属汽车车衣",
+      "subheadline": "把汽车车衣设计灵感变成可预览的 3D 车身效果。选择车型，用免费在线编辑器自由创作，或使用积分让 AI 帮你探索新的风格。",
+      "cta": "开始AI设计",
+      "secondary": "浏览作品",
+      "badge": "汽车车衣设计工具",
+      "variants": "支持 12 种车型配置",
+      "templates": "官方 UV 模板基线",
+      "chassis": "车型",
+      "webgl_live": "WebGL 3D 工作室在线",
+      "highlight_gallery": "创意设计",
+      "highlight_models": "支持车型",
+      "highlight_preview": "实时预览",
+      "wraps_title": "挑选你的车衣",
+      "wraps_empty": "此车型暂无精选车衣，试试设计你的专属车衣。",
+      "wraps_error": "车衣加载失败。",
+      "texture_loading": "正在加载车衣…",
+      "texture_error": "这款车衣暂时无法加载。",
+      "viewer_error": "3D 预览加载失败，请检查网络及浏览器 WebGL 支持。",
+      "retry": "重试",
+      "rotate_hint": "拖动车辆，旋转查看",
+      "highlight_gallery_value": "100+"
+    },
+    "chips": {
+      "auth": "身份认证",
+      "payment": "支付系统",
+      "subscription": "订阅管理",
+      "credits": "积分系统",
+      "rbac": "权限管理",
+      "i18n": "国际化",
+      "cms": "内容管理",
+      "apikeys": "API 密钥"
+    },
+    "features": {
+      "eyebrow": "为什么选择我们",
+      "title": "把汽车车衣设计需要的工具放在一起",
+      "description": "在同一个浏览器工作室里寻找灵感、制作平面图案并查看 3D 车身效果，无需安装桌面设计软件。对自己添加的图层进行精细排版，或者用 AI 尝试不同视觉方向，再比较哪种构图更适合所选车辆。先把概念看清楚，再投入时间完善细节。",
+      "viewer": {
+        "title": "先看图案上车后的效果",
+        "description": "平面图片好看，并不一定代表放到车身上也协调。3D 预览可以帮助你观察图案如何映射到各个面板，从不同角度检查比例、留白以及边缘过渡。尤其要留意车门附近和车尾的衔接。它适合用来比较设计方向，不会自动完成适配检测，也不能代替施工方的专业确认。"
+      },
+      "ai": {
+        "title": "用 AI 探索创意方向",
+        "description": "描述你喜欢的配色、插画风格或想让车辆呈现的气质，必要时加入参考图帮助表达想法。AI 生成需要积分，得到的是一张完整图片。想更换图片内部的某个图形，需要调整描述重新生成，或使用外部图片工具处理；这里不会把生成结果自动拆分为独立元素。"
+      },
+      "editor": {
+        "title": "独立控制自己添加的图层",
+        "description": "把文字、图片和形状加入画布后，可以分别选中并调整位置、大小和排列顺序，同时观察车身预览。重要标志建议作为独立素材上传，方便随时调整。上传的标志仍是一张图片，编辑器可以整体移动或缩放它，但无法直接修改图片内部的某个笔画或字母。"
+      },
+      "materials": {
+        "title": "对比五种表面材质",
+        "description": "同一份图案可以分别预览亮光、缎面、哑光、金属和珠光效果。反射会改变明暗区域的视觉表现，因此可以先比较几种材质，再决定偏好的风格。这里展示的是数字表面效果，不对应某个具体车膜产品，也不能保证最终印刷颜色与屏幕完全一致。"
+      },
+      "remix": {
+        "title": "从社区作品中寻找灵感",
+        "description": "打开社区作品，查看完整图案和对应的车身预览，比较别人如何运用配色与构图。你可以把合适的作品作为起点，再加入自己的独立图层制作变化。已有的平面图片不会自动拆成可编辑素材。使用前请查看原作者的说明，商业用途尤其需要确认授权。"
+      },
+      "export": {
+        "title": "把概念带走，方便比较",
+        "description": "在编辑器中下载方形 PNG 图案，也可以使用车辆预览的截图功能记录效果。保存图片后，更容易比较不同方案，或向车衣门店说明自己的想法。下载内容是设计概念，不包含实车测量数据、施工裁切路径或完整印刷制版文件，后续制作仍需要专业确认。"
+      },
+      "auth": {
+        "title": "身份认证",
+        "description": "邮箱密码、Google、GitHub OAuth 登录，开箱即用，自带会话管理和账号关联。"
+      },
+      "payment": {
+        "title": "支付系统",
+        "description": "Stripe、PayPal、支付宝、微信支付 — 结账、订阅、Webhook 和订单管理。"
+      },
+      "rbac": {
+        "title": "角色与权限",
+        "description": "细粒度的 RBAC 权限控制，支持通配符匹配。完整的管理后台管理用户、角色和权限。"
+      },
+      "i18n": {
+        "title": "国际化",
+        "description": "内置中英文支持，路由感知语言切换，轻松扩展更多语言。"
+      },
+      "cms": {
+        "title": "内容管理",
+        "description": "分类和文章的完整 CRUD，支持状态管理和管理后台 — 快速搭建博客或文档。"
+      },
+      "credits": {
+        "title": "积分系统",
+        "description": "FIFO 消费、过期控制、注册自动发放和撤销 — 为按量计费做好准备。"
+      }
+    },
+    "pricing": {
+      "title": "为下一次灵感补充积分",
+      "description": "一次性购买 100、250 或 1000 积分，无需订阅。积分永不过期，所有套餐均享 50MB 存储和无限导出。",
+      "monthly": "月付",
+      "yearly": "年付",
+      "lifetime": "买断",
+      "popular": "热门",
+      "best_value": "超值",
+      "buy_lifetime": "一次买断",
+      "starter": "入门版",
+      "starter_desc": "适合个人用户",
+      "pro": "专业版",
+      "pro_desc": "适合成长型团队",
+      "enterprise": "企业版",
+      "enterprise_desc": "适合大型组织",
+      "feature_1_project": "1 个车衣",
+      "feature_5k_credits": "5,000 积分",
+      "feature_email_support": "邮件支持",
+      "feature_unlimited_projects": "无限车衣",
+      "feature_50k_credits": "50,000 积分",
+      "feature_priority_support": "优先支持",
+      "feature_api_access": "API 访问",
+      "feature_everything_pro": "包含专业版全部功能",
+      "feature_unlimited_credits": "无限积分",
+      "feature_dedicated_support": "专属支持",
+      "feature_custom_integrations": "定制集成",
+      "eyebrow": "一次付费，随时创作",
+      "intro": "每张 AI 生成结果消耗 10 积分。按需购买，按自己的节奏创作。",
+      "starter_pack": "入门包",
+      "creator_pack": "创作包",
+      "studio_pack": "工作室包",
+      "trial_pack": "体验包",
+      "credits": "{credits} 积分",
+      "results": "可生成 {count} 张 AI 作品",
+      "buy": "购买 {credits} 积分",
+      "one_time": "无需订阅，一次性付费",
+      "never_expires": "积分永不过期",
+      "storage": "50MB 存储",
+      "exports": "无限导出",
+      "footer": "价格均为美元。购买的积分可一直保留，直到使用完毕。",
+      "checkout_error": "暂时无法打开支付页面，请重试。",
+      "paywall_title": "补充积分，继续创作",
+      "paywall_description": "本次生成需要 {cost} 积分，选择适合你的积分包即可继续",
+      "trial_title": "先从小额体验开始",
+      "trial_description": "$2 即可获得 20 积分，一次性付费，同样享有存储和导出权益",
+      "offer_remaining": "体验优惠剩余",
+      "offer_expired": "本次体验优惠已结束。",
+      "offer_unavailable": "本次体验优惠已不可用。",
+      "trial_dismiss": "暂时不用",
+      "loading": "正在加载积分套餐…"
+    },
+    "faq": {
+      "title": "汽车车衣设计常见问题",
+      "description": "了解如何免费开始、选择合适的在线创作方式，以及 AI 图片、手动编辑和实车制作之间的区别。",
+      "stack": {
+        "question": "目前支持哪些车型？",
+        "answer": "目前支持特斯拉 Model 3 初代、2024 基础版与性能版；Model Y 初代、2025 基础版、高配版、性能版和 Model Y L；Cybertruck；Model S 2021 与 2025 Plaid；以及 Model X 2021。各版本使用对应车身和轮毂配置，后续计划加入更多品牌。具体可用车型请以当前车型选择器为准，不要仅凭相近的车型名称判断模板是否适用。"
+      },
+      "payment": {
+        "question": "一次 AI 生成需要多少积分？",
+        "answer": "AI 生成每个候选结果消耗 10 积分。提交前可选择生成 1 至 4 张，界面会提前显示总消耗；生成失败会按规则退回对应积分。"
+      },
+      "database": {
+        "question": "可以使用自己的图片吗？",
+        "answer": "可以。图生图支持 5MB 以内的 JPEG、PNG 和 WebP。也可以把图片直接加入编辑器，不必发送给 AI 模型。"
+      },
+      "customize": {
+        "question": "3D 预览可以当作施工证明吗？",
+        "answer": "不可以。它用于设计可视化。正式制作前仍需由专业施工方检查接缝、出血、安全区、印刷色彩和车辆实测尺寸。"
+      },
+      "license": {
+        "question": "下载的图案可以直接用于实车施工吗？",
+        "answer": "下载内容是设计概念，并非可以直接印刷的施工模板。专业门店需要根据实车尺寸检查面板接缝、出血、图片分辨率和印刷色彩，再准备生产文件。你可以用设计图案和 3D 预览说明期望效果，请施工方进一步确认最终布局与车膜材料。线上预览适合沟通与比较，无法替代对实际车辆的测量和检查。"
+      },
+      "free": {
+        "question": "可以免费在线设计自己的汽车车衣吗？",
+        "answer": "可以。在线编辑器与 3D 预览可免费使用，你可以通过自己创建的图层组合图案。AI 图片生成是单独使用积分的功能，“免费设计”不代表可以无限次免费生成 AI 图片。购买积分前可以先体验编辑器，确认操作是否适合自己。上传素材、保存项目或发布作品时，请按界面提示登录账户。"
+      },
+      "software": {
+        "question": "汽车车衣设计需要什么软件？",
+        "answer": "如果想先比较创意方案，这个在线工作室提供平面画布、可独立编辑的手动图层和匹配车型的 3D 预览，打开浏览器即可开始，无需先安装桌面设计软件。实车制作时，门店通常还需要使用专业绘图、排版和印刷制版工具。先明确你要的是视觉概念，还是按车辆实测尺寸准备的施工文件，再选择对应工作流程。"
+      },
+      "how": {
+        "question": "没有设计经验，怎样制作自己的车衣图案？",
+        "answer": "先选择支持的车型，从一组配色或几份社区参考作品开始。用自己的图片、文字和形状搭建构图，也可以通过提示词生成 AI 概念。需要准确表达的文字，建议使用独立文字图层输入。再从多个角度检查效果并下载图案。用于实车时，请把概念交给专业门店，由施工方确认测量尺寸并准备印刷文件。"
+      },
+      "where": {
+        "question": "在哪里可以在线设计车衣？",
+        "answer": "点击本页的设计入口，就能进入浏览器编辑器。还没确定风格时，可以先逛作品库；想把文字描述变成视觉参考时，可以使用 AI 生成器。已经有标志或插画素材，也可以直接上传到编辑器，作为独立图片图层排版。先选择当前可用车型，并在同一项目中始终使用与它匹配的模板。"
+      },
+      "editing": {
+        "question": "AI 生成图片里的文字和标志能单独修改吗？",
+        "answer": "不能。AI 生成的是一张完整图片，图片内部的文字、标志和图形无法单独选中、修改或重新摆放。可以调整提示词后重新生成。在手动编辑器中，通过文字工具创建的文字，以及单独上传的图片，可以作为独立图层移动、缩放和调整顺序。新增图层并不会自动替换或删除 AI 原图中已有的内容。"
+      }
+    },
+    "cta": {
+      "eyebrow": "创作、预览、分享",
+      "headline": "从一个想法开始，设计你的下一款车衣",
+      "subheadline": "已有喜欢的风格？用提示词让 AI 生成创意图案，再放到可用车型上比较效果。想亲手安排每个元素？从免费编辑器开始，逐层搭建自己的作品。AI 生成使用积分；手动添加的文字和图片可以独立编辑。",
+      "button": "创建车衣",
+      "ai_button": "AI生成车衣"
+    },
+    "footer": {
+      "tagline": "AI 辅助车衣设计与实时 3D 预览。",
+      "feature": "功能",
+      "product": "产品",
+      "popular_vehicles": "热门车型",
+      "wrap_editor": "车衣编辑器",
+      "model_y_designer": "Model Y 设计器",
+      "model_3_designer": "Model 3 设计器",
+      "help": "帮助与常见问题",
+      "company_legal": "公司与法律",
+      "status": "实时 WebGL 3D 工作室已在线",
+      "resources": "资源",
+      "legal": "法律信息",
+      "privacy": "隐私政策",
+      "terms": "服务条款",
+      "settings": "我的车衣",
+      "admin": "车衣作品库",
+      "docs": "文档",
+      "github": "GitHub",
+      "copyright": "© {year} Car Wrap Design。保留所有权利。",
+      "blog": "博客",
+      "wraps": "我的车衣"
+    },
+    "blog": {
+      "title": "最新博客",
+      "description": "汽车车衣设计指南：选择车型模板、创作图案，并通过 3D 预览检查设计效果。",
+      "view_all": "查看全部文章"
+    },
+    "showcase": {
+      "eyebrow": "车衣设计工作室",
+      "title": "用自己的素材完成汽车车衣设计",
+      "description": "从在线编辑器的空白画布开始，组合车身底色、上传图片、文字和形状。手动创建的图层可以分别选中、移动、缩放和调整顺序，方便你反复检查构图。如果企业名称或标志的位置很重要，建议单独添加图层。AI 生成图片也可以作为素材使用，但图片内部的文字和图案不会自动拆成可编辑对象；新增文字也不会自动清除原图中的字母。",
+      "editor_label": "图层编辑器",
+      "preview_label": "3D 材质预览",
+      "viewer_note": "这是静态编辑器示例。进入设计器即可组合自己的图层，并旋转查看车身效果。",
+      "example_name": "冰淇淋配色",
+      "static_note": "编辑器效果示例",
+      "texture_alt": "冰淇淋配色的方形车衣图案示例",
+      "preview_alt": "同款冰淇淋车衣贴在 Model 3 上的效果",
+      "layer_artwork": "图片图层",
+      "layer_color": "车身颜色",
+      "layer_finish": "亮光材质",
+      "cta": "进入车衣设计器"
+    },
+    "ai": {
+      "eyebrow": "AI 车衣生成器",
+      "title": "更快得到初稿，生成后仍然可以精细控制。",
+      "description": "用详细提示词或参考图生成视觉概念。每个结果都是一张完整图片，内部文字与图形无法单独编辑。需要准确排版时，可进入手动编辑器，另行添加独立的文字、图片和形状图层。",
+      "cta": "生成设计概念",
+      "prompt_label": "车衣概念提示词",
+      "square_texture": "方形纹理",
+      "prompt_example": "一套受轨道飞行路径启发的技术风格涂装：深石墨色底色，精准的翡翠绿线条连续跨越车身面板，搭配克制编号与高级赛车质感。",
+      "tag_technical": "技术风格",
+      "tag_minimal": "极简",
+      "tag_graphite": "石墨色",
+      "tag_results": "2 个结果 · 20 积分"
+    },
+    "workflow": {
+      "eyebrow": "使用流程",
+      "title": "三步完成在线汽车车衣设计",
+      "choose": {
+        "title": "1. 选择匹配的车型与版本",
+        "description": "先选择已上线的车型、年份和配置，再开始制作图案。车型会决定编辑器使用的车身模型和对应平面模板，名称相近不代表面板布局完全相同。如果暂时没有你的车型，可以用现有模型比较风格，但不要把这个布局直接当作自己车辆的适配结果。正式确定方案前，应使用匹配车型的模板重新检查。"
+      },
+      "create": {
+        "title": "2. 确定配色并安排图案",
+        "description": "你可以上传图片、添加文字和形状，手动组合图案；也可以通过提示词和可选参考图，使用积分生成 AI 创意方案。描述想要的主色、纹样与整体气质，再用亮光、缎面、哑光、金属或珠光材质比较预览。需要准确控制文字内容或标志位置时，请在编辑器里另行添加独立文字或图片图层。"
+      },
+      "review": {
+        "title": "3. 旋转预览，检查整体效果",
+        "description": "从车头、侧面和车尾查看构图，留意线条是否在轮拱处消失、图形是否被车门边界切开，以及重要文字是否容易辨认。发现问题后，可以调整自己创建的图层，或修改提示词重新生成 AI 图片。满意后下载图案；需要保存项目或把作品发布到社区时，按界面提示登录账户。"
+      }
+    },
+    "vehicles": {
+      "eyebrow": "首发车型",
+      "title": "免费自定义汽车车衣设计",
+      "description": "选择有对应 3D 模型和平面模板的车型，再开始创作。目前车型库已上线特斯拉 Model 3、Model Y、Cybertruck、Model S 和 Model X 的多个版本，后续计划加入更多品牌。下方卡片展示当前可用车型，请选择与车辆年份、配置匹配的版本；也可以先查看车型指南，了解不同版本的支持情况。",
+      "preview_ready": "3D 预览已就绪",
+      "model_3_link": "查看特斯拉 Model 3 车衣设计",
+      "model_y_link": "查看特斯拉 Model Y 车衣设计"
+    },
+    "materials": {
+      "title": "材质会改变设计气质",
+      "description": "同一套图案会因表面反射不同而显得锐利、柔和、科技或奢华。正式选择膜材前，可在工作室比较五种校准预设。"
+    },
+    "gallery": {
+      "title": "汽车车衣设计灵感与风格参考",
+      "description": "浏览社区创作者分享的真实设计作品，对比完整图案与车身预览，看看配色、线条和留白如何组合，再决定自己的创作方向。每份作品都对应具体车型模板，借鉴风格时也要检查它是否适合所选车身。这里展示的是设计图案与数字预览，并非实车施工照片。",
+      "empty": "这里暂时还没有车衣作品，试试其他车型，或开始设计自己的车衣。",
+      "cta": "打开作品库",
+      "eyebrow": "来自社区的车衣创意",
+      "page_title": "汽车车衣作品库",
+      "page_description": "从简洁耐看的配色，到个性鲜明的图案，在汽车车衣作品库找到打动你的设计。按车型筛选社区作品，打开查看三维车身效果，下载喜欢的图案，为爱车的新造型寻找灵感。",
+      "showcase_label": "工作室示例",
+      "showcase_title": "赛博翡翠性能车衣",
+      "showcase_description": "基于当前 Car Wrap Design 视觉系统制作的车辆展示效果图。",
+      "showcase_cta": "设计这款车型",
+      "public_title": "社区车衣作品",
+      "loading": "正在加载作品库…",
+      "empty_title": "这里还没有车衣作品",
+      "empty_description": "探索不同的配色和图案，也可以开始设计，分享你的创意。",
+      "create_cta": "创建车衣",
+      "remixes": "{count} 次复制创作",
+      "error": "作品加载失败，请重试。",
+      "download_error": "下载失败，请稍后重试。",
+      "texture_alt": "{title} 的完整车衣图案",
+      "download_label": "下载 {title}，已下载 {count} 次",
+      "meta_title": "汽车车衣作品库 | 发现改色配色与个性图案灵感",
+      "meta_description": "浏览汽车车衣作品库，发现社区创作者分享的改色配色与个性图案。按车型筛选喜欢的设计，查看完整图案和三维车身预览，下载心仪作品，为下一款车衣寻找灵感。",
+      "search_label": "作品名称",
+      "search_placeholder": "搜索车衣名称",
+      "search_button": "搜索作品",
+      "vehicle_label": "车型",
+      "all_vehicles": "全部车型",
+      "sort_label": "排序方式",
+      "sort_latest": "最新发布",
+      "sort_downloads": "最多下载",
+      "sort_likes": "最多点赞",
+      "result_count": "共 {count} 个作品",
+      "no_results": "没有找到符合条件的车衣，试试其他名称或车型。",
+      "reset_filters": "清空筛选",
+      "pagination": "作品库分页",
+      "previous": "上一页",
+      "next": "下一页",
+      "page_label": "第 {page} 页",
+      "page_summary": "第 {page} / {pages} 页",
+      "like_label": "点赞 {title}（{count} 个赞）",
+      "like_error": "点赞更新失败，请重试。",
+      "like_sign_in": "登录后即可为作品点赞。",
+      "about_label": "关于社区作品库",
+      "about_browse_title": "发现社区车衣创意",
+      "about_browse_description": "浏览创作者基于受支持的 Tesla Model 3、Model Y、Cybertruck、Model S 和 Model X 模板分享的车衣。按具体车型与配置筛选，找到合适的车身布局，并在下载前查看完整车衣贴图。",
+      "about_edit_title": "把灵感带入编辑器",
+      "about_edit_description": "打开作品可查看 3D 效果，也可以作为起点制作自己的版本。在编辑器中添加图片、文字与颜色，或借助 AI 探索新的方向。下载文件为车衣贴图，保留原始图片格式。",
+      "about_rights_title": "尊重每一位原创作者",
+      "about_rights_description": "请尊重并注明设计来源。公开展示或可供下载不代表版权转让，也不自动授予商业使用许可。再次使用前请查看作者说明并取得所需授权；如发现疑似侵权内容，可在作品详情页举报。"
+    },
+    "vehicle": {
+      "open_designer": "开始AI设计",
+      "see_ideas": "浏览作品",
+      "design_this": "设计这款车型",
+      "questions": "关于车衣设计流程的常见问题",
+      "start": "开始AI设计",
+      "loading": "正在加载 3D 车辆…",
+      "image_error": "请选择不超过 5 MB 的有效 JPEG、PNG 或 WebP 图片。",
+      "image_loading": "正在处理本地图片…",
+      "exit_fullscreen": "退出全屏",
+      "fullscreen_error": "当前浏览器无法使用全屏，你可以继续在此预览。",
+      "custom_color": "自定义颜色",
+      "select_vehicle": "预览车型",
+      "choose_image": "选择本地车衣或图片预览",
+      "remove_image": "删除预览图片"
+    },
+    "meta": {
+      "title": "在线汽车车衣设计 | 免费设计你的专属车衣",
+      "description": "使用免费在线编辑器进行汽车车衣设计，上传图片、添加文字，搭配不同颜色和材质，实时查看 3D 车身效果。浏览社区作品寻找灵感，也可使用积分生成 AI 创意图案。"
+    },
+    "vehicle_pages": {
+      "tesla": {
+        "title": "特斯拉车衣设计 | 在线探索配色、图案与 3D 效果",
+        "description": "为爱车寻找新风格。在线探索特斯拉车衣配色、材质与图案，在 Model 3、Model Y 等车型上查看 3D 效果。浏览设计灵感，添加自己的文字和图片，创作专属车衣。"
+      },
+      "modelY": {
+        "title": "特斯拉 Model Y 车衣设计 | 在线配色与 3D 预览",
+        "description": "为日常座驾换个新模样。探索特斯拉 Model Y 车衣配色、条纹和个性图案，选择对应版本，在 3D 中比较整车效果，再用自己的素材创作从车头到尾门都呼应的设计。"
+      },
+      "model3": {
+        "title": "特斯拉 Model 3 车衣设计 | 在线创作与 3D 预览",
+        "description": "让简洁车身更有个性。在线探索特斯拉 Model 3 车衣配色、赛车条纹与插画风格，在初代或 2024 款车身上预览 3D 效果，再添加自己的图片和文字，完成专属设计。"
+      }
+    }
+  },
+  "blog": {
+    "title": "博客",
+    "description": "汽车车衣设计指南：选择车型模板、创作图案，并通过 3D 预览检查设计效果。",
+    "no_posts": "暂无文章,敬请期待。",
+    "back_to_blog": "返回博客",
+    "editorial_title": "关于本指南",
+    "editorial_description": "本指南由 {name} 团队结合编辑器操作与站内实际界面截图整理，说明数字车衣的设计和预览流程。实体车膜的制作仍需要专业施工方核对实车尺寸与生产要求。",
+    "editorial_contact": "反馈内容错误或操作问题",
+    "read_more": "阅读全文"
+  },
+  "detail": {
+    "breadcrumb": "面包屑导航",
+    "home": "首页",
+    "gallery": "作品库",
+    "image": "车衣图片",
+    "preview": "3D 预览",
+    "created_by": "作者",
+    "published": "发布时间",
+    "views": "{count} 次查看",
+    "like": "点赞",
+    "unlike": "取消本次点赞",
+    "download": "下载车衣",
+    "reference": "用 AI 二次创作",
+    "edit": "自定义编辑",
+    "prompt": "这款车衣使用的 AI 提示词",
+    "copy_prompt": "复制提示词",
+    "prompt_copied": "提示词已复制",
+    "prompt_copy_failed": "复制失败，请选中提示词后手动复制。",
+    "more": "更多 {model} 车衣",
+    "more_description": "为同一车型挑选的最新公开设计。",
+    "description": "《{title}》是由 {author} 创作的 {model}（{year}）车衣设计，发布于 {date}。查看车衣纹理和 3D 效果，下载图片，或以此为参考创作自己的配色与图案。",
+    "loading": "正在加载车衣…",
+    "missing": "未找到这款车衣",
+    "error": "暂时无法加载车衣，请重试。",
+    "image_error": "图片暂时无法加载，请重试。",
+    "reference_loading": "正在载入参考图…",
+    "reference_error": "参考图加载失败，请重试。",
+    "tesla_title": "如何在 Tesla 中使用这款车衣",
+    "tesla_intro": "Paint Shop 可更改车机中的车辆外观；它是数字预览，不会改变实车漆面。请确认车型、年款及模板匹配。",
+    "tesla_steps_title": "导入与使用",
+    "tesla_step1": "下载对应车型的纹理，确认文件为 PNG、分辨率为 512 × 512 至 1024 × 1024 像素，且大小不超过 1 MB。其他格式需先转换，不能只修改扩展名。",
+    "tesla_step2": "在 USB 根目录创建名为 Wraps 的文件夹，将 PNG 放入其中。插入车辆可传输数据的 USB 接口。",
+    "tesla_step3": "在车机中打开 玩具箱 → 喷漆车间（Paint Shop）→ 车衣（Wraps），选择设计。具体入口以车辆软件为准。",
+    "tesla_usb_title": "USB 与文件检查",
+    "tesla_usb": "USB 支持 exFAT、FAT32（Windows）、MS-DOS FAT（Mac）、ext3 或 ext4，不支持 NTFS。格式化会清空 USB，请先备份。",
+    "tesla_files": "文件名最多 30 个字符，只用英文字母、数字、空格、下划线与连字符。Wraps 文件夹必须位于根目录；USB 中不要同时存放地图或固件更新文件。",
+    "tesla_mobile": "也可通过 Tesla App 4.59.0 或更新版本的 Creations → Wrap → Upload 上传。App 与 USB 各最多保存 10 款车衣。",
+    "tesla_source": "查看 Tesla 官方模板与完整要求",
+    "tesla_check": "下载后请检查实际文件是否满足上述要求；站内预览不代表已通过车机兼容验证。"
+  }
+}

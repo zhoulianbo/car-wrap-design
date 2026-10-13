@@ -1,0 +1,248 @@
+{
+  "tesla": {
+    "eyebrow": "La tua Tesla, i tuoi colori, il tuo stile.",
+    "title": "Wrapping Tesla: progetta il tuo stile online",
+    "introduction": "Trova un wrapping Tesla che ti rappresenti. Confronta colori profondi, finiture discrete e grafiche decise sulla carrozzeria 3D, poi sviluppa l'idea nell'editor. Parti da Model 3, Model Y, Cybertruck, Model S o Model X e guarda come il nuovo stile segue le forme della tua auto.",
+    "viewerCaption": "Prova colori o immagini sulla Tesla, poi crea e salva il design nell'editor.",
+    "versionsTitle": "Personalizza il wrapping Tesla gratis",
+    "versionsDescription": "La stessa idea cambia su una berlina, un SUV o un pick-up dalle forme squadrate. Scegli modello e versione per aprire la sagoma corrispondente. Controllare prima anno e carrozzeria ti aiuta a lavorare sulle proporzioni giuste.",
+    "galleryTitle": "Galleria wrapping Tesla",
+    "faqTitle": "Domande sul wrapping Tesla",
+    "galleryDescription": "Scopri abbinamenti di colore, stili grafici e modi diversi di valorizzare le linee della Tesla. Apri un progetto e confronta grafica e anteprima. Osserva cosa ti colpisce: il colore dominante, la scala del motivo o lo spazio lasciato intorno a un dettaglio.",
+    "howTitle": "Un wrapping Tesla curato da ogni angolazione",
+    "sections": [
+      {
+        "title": "Parti da colore e finitura",
+        "paragraphs": [
+          "Scegli un colore che ti piacerebbe vedere ogni giorno. Un blu profondo può dare calma, un neutro caldo discrezione, un accento chiaro energia. Regola la palette e ruota l'auto: osserva come la stessa tinta cambia su cofano, portiere e posteriore. Le curve e i riflessi fanno parte del design.",
+          "Mantieni il colore e confronta lucido, satinato, opaco, metallizzato e perlato. Il lucido evidenzia i riflessi; satinato e opaco li rendono più morbidi. Le altre finiture offrono effetti diversi della luce. Restringi la scelta in anteprima e poi confronta campioni reali. Anche senza un motivo complesso puoi ottenere un risultato personale."
+        ]
+      },
+      {
+        "title": "Oltre il semplice cambio colore",
+        "paragraphs": [
+          "Le strisce racing accompagnano lo sguardo lungo l'auto; i blocchi geometrici creano contrasto. Illustrazioni fluide, curve di livello e texture astratte offrono altre possibilità. Scegli un'idea principale e lasciale spazio: una forma leggibile sia di lato sia di tre quarti rende il progetto più chiaro.",
+          "Lascia che sia la carrozzeria a guidare la composizione. La berlina Model 3 offre superfici diverse dalle fiancate più alte di Model Y; Cybertruck invita a sperimentare forme angolari. Model S e Model X hanno altre proporzioni ancora. Prendi spunto dalla galleria e sviluppa palette e disposizione sul modello corretto."
+        ]
+      },
+      {
+        "title": "Crea con la tua grafica o parti dall'IA",
+        "paragraphs": [
+          "Apri l'editor del veicolo scelto e aggiungi immagini, testi e forme su livelli separati. Regola posizione e dimensione controllando il risultato in 3D. Per un progetto aziendale, carica il logo come immagine autonoma. Mantieni brevi le scritte importanti perché restino leggibili nell'insieme.",
+          "Per esplorare uno stile nuovo, descrivi colori e motivi al generatore IA e aggiungi eventualmente un riferimento. Il risultato è un'immagine unica: testi, loghi e disegni interni non diventano oggetti modificabili. Aggiungi i dettagli precisi nell'editor; per cambiare la grafica IA, modifica la descrizione e rigenera."
+        ]
+      },
+      {
+        "title": "Controlla il progetto sull'intera auto",
+        "paragraphs": [
+          "Osserva frontale, entrambi i lati e posteriore. Controlla dove le strisce incontrano le portiere, come l'illustrazione attraversa i passaruota e se il retro richiama il resto. Confronta una versione discreta con una più audace. Il progetto deve restare equilibrato anche fuori dall'angolazione che ti ha colpito per prima.",
+          "Salva nell'editor per riprendere il lavoro in seguito. Per realizzare il wrapping, mostra grafica e anteprima a un centro e confrontati su veicolo, pellicola e layout di produzione. Il progetto digitale chiarisce l'idea; misurazione, preparazione stampa e posa restano passaggi separati. Conferma la finitura con campioni reali."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Posso progettare il wrapping Tesla gratis?",
+        "answer": "Sì. Puoi provare colori e finiture e creare con i tuoi livelli nell'editor gratuito. Segui le indicazioni di accesso per modificare e salvare. L'IA è facoltativa e usa crediti. Trova prima lo stile in anteprima, poi apri l'editor per comporre la grafica."
+      },
+      {
+        "question": "Quali modelli e versioni Tesla sono disponibili?",
+        "answer": "Trovi Model 3 Legacy, 2024 Base e Performance; Model Y Legacy, 2025 Base, Premium, Performance e Model Y L; Cybertruck; Model S 2021 e 2025 Plaid; Model X 2021. Apri l'anteprima dalle schede o dal selettore e confronta la configurazione disponibile con i dati della tua auto."
+      },
+      {
+        "question": "Posso provare un'immagine che ho già?",
+        "answer": "Sì, scegli dal dispositivo un JPEG, PNG o WebP fino a 5 MB. L'anteprima lo legge localmente nel browser e lo rimuove quando lo elimini o ricarichi la pagina. Una texture del veicolo corretto mostra meglio i pannelli. L'immagine temporanea non passa automaticamente all'editor: aggiungila lì quando inizi il progetto."
+      },
+      {
+        "question": "Che differenza c'è tra anteprima ed editor?",
+        "answer": "Nell'anteprima confronti veicolo, colori, finiture e immagini esistenti. Nell'editor disponi testi, immagini e forme su livelli indipendenti e salvi il progetto. Un'immagine completa resta unica in entrambe le viste: lettere e disegni già incorporati non si spostano singolarmente."
+      },
+      {
+        "question": "Meglio tinta unita o grafica?",
+        "answer": "Pensa all'impressione che vuoi dare. Una tinta unita valorizza forme e riflessi; strisce, illustrazioni o geometrie aggiungono un punto focale. Parti da pochi colori e un accento. Confronta fiancate e posteriore oltre al frontale per valutare l'intera auto."
+      },
+      {
+        "question": "Posso portare il progetto a un installatore?",
+        "answer": "Sì, puoi usarlo per spiegare colori, tema e posizione della grafica. Prima della stampa, il centro deve verificare vettura, materiale e requisiti di produzione. L'anteprima non fornisce sagome misurate né certifica file di posa, ma rende più chiara la tua richiesta."
+      }
+    ],
+    "ctaTitle": "Il prossimo wrapping Tesla parte da un'idea",
+    "ctaDescription": "Scegli un colore, prova un motivo nuovo e guardalo sul tuo modello. Apri l'editor e trasforma la prima impressione nel tuo design."
+  },
+  "modelY": {
+    "eyebrow": "Un nuovo look per i tuoi viaggi quotidiani",
+    "title": "Wrapping Tesla Model Y: progetta in 3D",
+    "introduction": "Dai alla tua Model Y uno stile personale. Confronta satinati discreti, lucidi profondi e grafiche decise sulla carrozzeria 3D. Scegli la versione disponibile, prova una palette e crea un wrapping Tesla Model Y curato sul posteriore quanto sulle fiancate.",
+    "viewerCaption": "Confronta colori e finiture, poi componi e salva la grafica nell'editor dedicato.",
+    "versionsTitle": "Personalizza il wrapping Model Y gratis",
+    "versionsDescription": "Scegli Legacy, 2025 Base, Premium, Performance o Model Y L. Ogni scheda apre il modello grafico corrispondente. Partire dalla versione corretta permette di valutare colori e proporzioni meglio che applicare la stessa immagine a tutte le carrozzerie.",
+    "galleryTitle": "Galleria wrapping Tesla Model Y",
+    "faqTitle": "Domande sul wrapping Model Y",
+    "galleryDescription": "Cerca una palette, una striscia o un'illustrazione tra i progetti della community. Osserva il rapporto tra portiere anteriori e posteriori, passaruota e portellone. Apri la grafica e l'anteprima, poi sviluppa una tua interpretazione.",
+    "howTitle": "Dai forma al tuo wrapping Model Y",
+    "sections": [
+      {
+        "title": "Definisci l'atmosfera con colore e finitura",
+        "paragraphs": [
+          "La fiancata ampia di Model Y lascia spazio al colore. Prova verde tenue, grigio caldo o blu profondo, oppure un accento più vivace. Parti da una tinta e ruota l'auto prima di aggiungere dettagli. Nel passaggio dalle portiere al parafango posteriore, lo stesso colore può apparire diverso da un campione piatto.",
+          "Confronta le cinque finiture sotto la stessa luce. Il lucido accentua i riflessi, il satinato li attenua e l'opaco appare più sobrio. Metallizzato e perlato danno altre possibilità. Tieni fisso il colore per valutare la differenza, poi scegli la pellicola dopo aver visto campioni reali al centro wrapping."
+        ]
+      },
+      {
+        "title": "Lascia respirare la grafica laterale",
+        "paragraphs": [
+          "Le portiere sono un'ampia tela, ma il punto focale non deve riempire ogni pannello. Prova una striscia lunga, grandi geometrie ripetute o un'illustrazione circondata da aree tranquille. Segui la composizione dalla ruota anteriore al retro e controlla dove le linee spariscono nei passaruota o cambiano direzione sui bordi.",
+          "Se usi un logo o scritte essenziali, separali visivamente dallo sfondo più movimentato. Aggiungili come livelli autonomi per controllarne dimensione e posizione. Guarda il risultato anche da lontano: lo spazio libero attorno ai dettagli importanti migliora la leggibilità, soprattutto di tre quarti."
+        ]
+      },
+      {
+        "title": "Collega cofano, portiere e portellone",
+        "paragraphs": [
+          "Usa un colore comune o una forma ripetuta per collegare frontale, fiancate e retro. Un motivo laterale deciso può bilanciarsi con un cofano semplice; un accento sul portellone può richiamare il tema. Controlla entrambi i lati e osserva il posteriore da solo: deve sembrare parte del progetto anche senza vedere le portiere.",
+          "Nell'editor disponi immagini, testi e forme su livelli. Se vuoi uno sfondo IA, descrivi colori e motivi e controlla il risultato sul veicolo. Scritte e disegni generati restano dentro un'unica immagine. Aggiungi il testo preciso separatamente; rigenera lo sfondo per cambiare gli elementi incorporati."
+        ]
+      },
+      {
+        "title": "Salva un progetto da perfezionare",
+        "paragraphs": [
+          "Confronta frontale, lati e retro con la stessa finitura. Cerca un punto focale chiaro, spazi equilibrati e colori coerenti sull'intera auto. Puoi provare un'immagine in anteprima e aggiungerla di nuovo nell'editor per costruire il progetto. Salvalo lì per riprendere la composizione in seguito.",
+          "Per un wrapping reale, usa il progetto per spiegare colori, forme e posizioni importanti. L'installatore deve ancora verificare la vettura e preparare i file misurati. L'anteprima aiuta a scegliere la direzione; campioni di pellicola e impaginazione professionale la trasformano in un lavoro realizzabile."
+        ]
+      }
+    ],
+    "comparisonTitle": "Il punto di partenza per la tua versione Model Y",
+    "comparisonDescription": "Queste sono le carrozzerie e configurazioni presenti nello studio. Confrontale con i dati della tua auto e verifica la grafica sul modello corrispondente. Le note descrivono le anteprime disponibili, non tutte le specifiche di ogni mercato.",
+    "comparisons": [
+      {
+        "title": "Model Y Legacy",
+        "description": "Parti dal modello della carrozzeria originale e osserva il colore sulle forme anteriori e posteriori. Controlla le strisce agli angoli dei paraurti prima di completare la fiancata. Un'idea della versione aggiornata può ispirarti, ma la disposizione va rivista qui."
+      },
+      {
+        "title": "2025 Base e Premium",
+        "description": "Scegli la configurazione e osserva frontale, parte bassa delle portiere e zona ruote. Lo studio offre anteprime separate con cerchi diversi. Mantieni la stessa palette per capire come questi dettagli cambiano l'equilibrio della grafica."
+      },
+      {
+        "title": "2025 Performance",
+        "description": "Valuta la grafica nella vista Performance dedicata, attorno a carrozzeria e ruote. Prova una fascia inferiore scura o un piccolo accento chiaro. Cura il posteriore quanto il frontale perché il tema sportivo continui su tutta l'auto."
+      },
+      {
+        "title": "Model Y L",
+        "description": "La fiancata più lunga richiede un ritmo diverso. Lascia spazio alle forme ripetute e ripensa l'inizio e la fine del motivo principale. Usa il modello dedicato: una composizione per la carrozzeria corta non mantiene automaticamente lo stesso equilibrio."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Posso iniziare senza esperienza di design?",
+        "answer": "Sì. Parti da colore e finitura, poi apri l'editor quando vuoi aggiungere grafica. Un'immagine, una striscia o un piccolo accento possono bastare per la prima idea. Osserva più angolazioni e regola un elemento alla volta. Puoi anche usare l'IA per un motivo iniziale."
+      },
+      {
+        "question": "Quali versioni Model Y posso usare?",
+        "answer": "Sono disponibili Legacy, 2025 Base, Premium, Performance e Model Y L, ciascuna con anteprima e modello dedicati. Scegli la versione prima di valutare la posizione della grafica. Se la tua configurazione manca, usa le altre per esplorare lo stile senza considerarle una corrispondenza esatta."
+      },
+      {
+        "question": "Posso usare un design Legacy su una Model Y più recente o sulla Y L?",
+        "answer": "Puoi riprendere lo stesso tema, ma verifica la disposizione sul modello di destinazione. Forme e proporzioni diverse spostano estremità delle strisce e passaggi delle illustrazioni. Sulla Y L controlla soprattutto gli spazi laterali. Riposiziona i tuoi livelli e guarda tutta l'auto prima di salvare."
+      },
+      {
+        "question": "Posso provare una mia immagine prima dell'editor?",
+        "answer": "Sì, con JPEG, PNG o WebP locali fino a 5 MB. Una texture adatta mostra meglio i pannelli; una foto normale può apparire spezzata tra diverse superfici. L'immagine resta locale e sparisce ricaricando la pagina. Aggiungila separatamente nell'editor per un progetto salvato."
+      },
+      {
+        "question": "Posso cambiare scritte o loghi nel design IA?",
+        "answer": "Il risultato IA è un'immagine unica e gli elementi interni non sono selezionabili separatamente. Per controllare la posizione, aggiungi testo o logo come livelli autonomi nell'editor. Potrai spostarli e ridimensionarli. Per cambiare lo sfondo, modifica la descrizione e genera un'altra immagine."
+      },
+      {
+        "question": "L'anteprima è gratuita? Posso far stampare il design?",
+        "answer": "Anteprima ed editor manuale sono gratuiti; l'IA facoltativa usa crediti. Puoi mostrare il progetto a un centro, ma non è un layout di stampa misurato. Un professionista deve verificare auto, materiale, risoluzione e pannelli. Conferma la finitura con campioni reali."
+      }
+    ],
+    "ctaTitle": "Rendi tuo il wrapping della Model Y",
+    "ctaDescription": "Parti da un colore discreto o da un motivo deciso. Scegli la versione e unisci portiere, cofano e portellone in uno stile coerente nell'editor."
+  },
+  "model3": {
+    "eyebrow": "Linee pulite, uno stile tutto tuo",
+    "title": "Wrapping Tesla Model 3: crea il tuo design online",
+    "introduction": "Dai una nuova espressione a una sagoma familiare. Progetta un wrapping Tesla Model 3 con un satinato discreto, strisce racing nette o un tema illustrato e guardalo in 3D. Scegli Legacy, 2024 Base o Performance e crea uno stile continuo dal muso al posteriore.",
+    "viewerCaption": "Prova i colori sull'auto, poi componi e salva il progetto nell'editor.",
+    "versionsTitle": "Personalizza il wrapping Model 3 gratis",
+    "versionsDescription": "Scegli la carrozzeria prima di disporre la grafica. Legacy, 2024 Base e Performance aprono ciascuna un modello dedicato. Confronta frontale e posteriore in anteprima per partire dalle proporzioni corrette.",
+    "galleryTitle": "Galleria wrapping Tesla Model 3",
+    "faqTitle": "Domande sul wrapping Model 3",
+    "galleryDescription": "Scopri come una palette semplice, una striscia o un'illustrazione cambiano il carattere dell'auto. Apri i progetti e confronta immagine e anteprima. Osserva cofano, parte bassa delle portiere e posteriore, poi sviluppa la tua direzione.",
+    "howTitle": "Disegna il wrapping attorno alle forme della Model 3",
+    "sections": [
+      {
+        "title": "Valorizza la silhouette con pochi colori",
+        "paragraphs": [
+          "Scegli un colore per il carattere che vuoi: sobrio, giocoso o deciso. Antracite, bianco caldo e blu tenue danno alla berlina una presenza discreta; una tinta vivace porta l'attenzione sulla carrozzeria. Regola il colore e ruota l'auto, osservando come cofano, portiere e parafanghi posteriori lo riflettono diversamente.",
+          "Con la stessa palette prova lucido, satinato, opaco, metallizzato e perlato. La finitura cambia il modo in cui la luce descrive le superfici. Puoi preferire riflessi netti su un design semplice oppure un satinato morbido con un piccolo accento. Scegli l'atmosfera in anteprima e poi verifica campioni reali."
+        ]
+      },
+      {
+        "title": "Dai una direzione chiara a strisce e geometrie",
+        "paragraphs": [
+          "Bastano poche linee ben scelte per dare energia alla Model 3. Prova una striscia centrale, un accento decentrato o un blocco geometrico lungo le portiere. Parti da una forma e un colore di supporto. Segui il design dal frontale al fianco e al retro, controllando bordi dei paraurti e passaruota.",
+          "Per un tema da pista, bilancia cofano e fiancate. Un frontale deciso può accompagnarsi a portiere tranquille; una grande illustrazione laterale richiede spazio altrove. Aggiungi numeri e scritte su livelli di testo separati. Controlla entrambi i lati, soprattutto con motivi direzionali."
+        ]
+      },
+      {
+        "title": "Lascia spazio a illustrazioni e dettagli personali",
+        "paragraphs": [
+          "Un'illustrazione può esprimersi senza coprire ogni superficie. Scegli una zona principale e riprendi un colore o un dettaglio altrove. Importa la tua grafica e crea le scritte separatamente. Carica il logo come immagine autonoma per controllarne posizione e scala. Allontana ogni tanto la vista per valutare l'insieme.",
+          "Se cerchi un motivo iniziale, descrivi palette e tema all'IA o aggiungi un riferimento. Valuta la texture sul veicolo prima di decidere cosa aggiungere. Scritte, loghi e illustrazioni generati sono pixel di un'unica immagine e non si spostano singolarmente. Usa livelli tuoi per i dettagli precisi o rigenera per una composizione diversa."
+        ]
+      },
+      {
+        "title": "Controlla i dettagli tra frontale e posteriore",
+        "paragraphs": [
+          "Non fermarti all'angolazione più bella. Controlla il cofano vicino ai fari, la parte bassa delle portiere, i parafanghi posteriori e il bagagliaio. Tieni i dettagli importanti lontano dai passaggi più scomodi tra pannelli. Piccoli cambi di spazio possono rendere una striscia più leggibile. Dopo ogni modifica significativa, guarda di nuovo l'auto intera.",
+          "Salva la composizione per riprenderla o condividerla come proposta. Se vuoi un wrapping reale, usala per spiegare colori e posizioni al centro. Saranno necessari verifica dell'auto, scelta del materiale e file di produzione. L'anteprima aiuta a scegliere il look, ma non sostituisce misure, controlli di stampa o pianificazione della posa."
+        ]
+      }
+    ],
+    "comparisonTitle": "Un punto di partenza per ogni Model 3",
+    "comparisonDescription": "Queste sono le versioni presenti nello studio. Confrontale con i dati dell'auto e osserva le zone importanti per la grafica. Le note aiutano a comporre il design, senza sostituire una scheda completa per ogni mercato.",
+    "comparisons": [
+      {
+        "title": "Model 3 Legacy",
+        "description": "Lavora con la sagoma originale e il suo modello dedicato. Se usi strisce, forme ripetute o una grafica frontale grande, controlla subito cofano e bordi dei paraurti. Usa i confini dei pannelli per collegare naturalmente frontale e fiancate."
+      },
+      {
+        "title": "2024 Base",
+        "description": "Esplora la carrozzeria aggiornata con anteprima e modello corrispondenti. Osserva la grafica vicino ai fari e agli angoli anteriori e posteriori. La palette può restare, ma una disposizione creata per Legacy va controllata di nuovo."
+      },
+      {
+        "title": "2024 Performance",
+        "description": "L'anteprima Performance ha una configurazione propria di carrozzeria e ruote. Prova la stessa palette e osserva i contrasti attorno ai cerchi e sul retro. Adatta la grafica a questa versione, senza presumere che la composizione Base non richieda modifiche."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Come inizio il wrapping della Model 3?",
+        "answer": "Scegli Legacy, 2024 Base o Performance e prova un colore con una finitura. Ruota l'auto prima di aggiungere dettagli. Apri l'editor per disporre immagini, testi e forme. Una palette semplice è una base chiara per strisce, illustrazioni o accenti personali."
+      },
+      {
+        "question": "Posso vedere la Model 3 aggiornata?",
+        "answer": "Sì. Oltre a Legacy trovi 2024 Base e Performance con le rispettive anteprime e sagome. Controlla i dati dell'auto: sono riferimenti per le configurazioni indicate e non garantiscono gli stessi dettagli per ogni allestimento regionale o anno successivo."
+      },
+      {
+        "question": "Quali colori e finiture posso provare?",
+        "answer": "Puoi impostare la palette e confrontare lucido, satinato, opaco, metallizzato e perlato. Tieni prima fisso il colore e cambia finitura, poi fai il contrario per distinguere le preferenze. Il display è un riferimento visivo: verifica la pellicola con campioni fisici."
+      },
+      {
+        "question": "Posso usare una foto o un design Legacy?",
+        "answer": "L'anteprima legge localmente JPEG, PNG e WebP fino a 5 MB. Una texture corrispondente è più utile di una foto normale. Puoi provare un'immagine Legacy su un'altra versione, ma controlla la disposizione, soprattutto attorno a fari e paraurti. Aggiungila di nuovo nell'editor per creare un progetto salvato."
+      },
+      {
+        "question": "Posso aggiungere un logo, un numero o una scritta?",
+        "answer": "Sì. Crea testo o carica un logo come livello autonomo e regola dimensione e posizione. Restano separati dallo sfondo. Le scritte già nell'immagine IA non sono modificabili singolarmente. Per parole precise, chiedi uno sfondo senza testo e aggiungilo dopo."
+      },
+      {
+        "question": "Lo strumento è gratuito e il risultato è pronto per la posa?",
+        "answer": "Anteprima 3D ed editor manuale sono gratuiti; l'IA facoltativa usa crediti. Il design è una proposta visiva per un centro. Prima della produzione servono verifiche su misure, materiali, risoluzione e impaginazione. Non è un file di taglio misurato: concorda separatamente la preparazione tecnica."
+      }
+    ],
+    "ctaTitle": "Trova lo stile della tua Model 3",
+    "ctaDescription": "Parti dal colore che continui a scegliere. Aggiungi una linea, un'illustrazione o un dettaglio personale e crea un design coerente dal paraurti anteriore al retro."
+  }
+}

@@ -12,13 +12,17 @@ const procEnv: Record<string, string | undefined> =
   typeof process !== 'undefined' && process.env ? process.env : {};
 
 const publicEnv = (key: string) => metaEnv[key] ?? procEnv[key];
+const appLogo = publicEnv('VITE_APP_LOGO') ?? '/logo.png';
 
 export const envConfigs: Record<string, string> = {
   // App (public)
-  app_url: publicEnv('VITE_APP_URL') ?? 'http://localhost:3000',
-  app_name: publicEnv('VITE_APP_NAME') ?? 'ShipAny',
-  app_description: publicEnv('VITE_APP_DESCRIPTION') ?? 'Ship your SaaS faster',
-  app_logo: publicEnv('VITE_APP_LOGO') ?? '/logo.svg',
+  app_url: publicEnv('VITE_APP_URL') ?? 'https://carwrapdesign.app',
+  assets_url: publicEnv('VITE_ASSETS_URL') ?? '',
+  app_name: publicEnv('VITE_APP_NAME') ?? 'Car Wrap Design',
+  app_description:
+    publicEnv('VITE_APP_DESCRIPTION') ??
+    'Create AI car wrap concepts, refine them in a UV editor, and preview the result on realistic 3D Tesla models.',
+  app_logo: `${appLogo}${appLogo.includes('?') ? '&' : '?'}v=20261007-3`,
 
   // Database
   database_url: procEnv.DATABASE_URL ?? '',

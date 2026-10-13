@@ -1,6 +1,7 @@
 import handler from '@tanstack/react-start/server-entry';
 
 import { getCookieFromHeader } from './lib/cookie';
+import { noindexRobotsForPath } from './lib/seo-indexing';
 import { paraglideMiddleware } from './paraglide/server.js';
 
 // On Cloudflare Workers, stash the binding env (D1, ASSETS, …) on globalThis
@@ -29,8 +30,15 @@ function ensureCloudflareEnv(): Promise<void> {
 export default {
   async fetch(req: Request): Promise<Response> {
     await ensureCloudflareEnv();
-    const response = await paraglideMiddleware(req, () => handler.fetch(req));
-    const utmSource = new URL(req.url).searchParams.get('utm_source');
+    const url = new URL(req.url);
+    let response = await paraglideMiddleware(req, () => handler.fetch(req));
+    const robots = noindexRobotsForPath(url.pathname);
+    if (robots) {
+      // Redirect responses may have immutable headers; preserve their body/status.
+      response = new Response(response.body, response);
+      response.headers.set('X-Robots-Tag', robots);
+    }
+    const utmSource = url.searchParams.get('utm_source');
     const existing = getCookieFromHeader(
       req.headers.get('cookie'),
       'utm_source'

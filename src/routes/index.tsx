@@ -1,18 +1,23 @@
 import { createFileRoute } from '@tanstack/react-router';
+import { getPublicGalleryPreview } from '@/features/gallery/queries';
 
-import { envConfigs } from '@/config';
+import { marketingHead } from '@/lib/seo';
 import { m } from '@/paraglide/messages.js';
-import { getLocale, locales, localizeUrl } from '@/paraglide/runtime.js';
-import { Blog } from '@/blocks/blog';
+import { getLocale, locales } from '@/paraglide/runtime.js';
 import { CTA } from '@/blocks/cta';
 import { FAQ } from '@/blocks/faq';
 import { Features } from '@/blocks/features';
 import { Footer } from '@/blocks/footer';
+import { GalleryPreview } from '@/blocks/gallery-preview';
 import { Header } from '@/blocks/header';
 import { Hero } from '@/blocks/hero';
-import { Pricing } from '@/blocks/pricing';
+import {
+  VehicleShowcase,
+  WorkflowShowcase,
+  WrapEditorShowcase,
+} from '@/blocks/product-showcase';
 import { SupportWidget } from '@/blocks/support-widget';
-import { getBlogPostsFn } from '@/content/posts/server';
+import { StructuredData } from '@/components/seo/structured-data';
 
 /**
  * Default landing page — demo content. Rewrite this file (and the blocks in
@@ -20,21 +25,59 @@ import { getBlogPostsFn } from '@/content/posts/server';
  * See /quick-start or /clone-website to automate the rewrite.
  */
 function HomePage() {
-  const { posts } = Route.useLoaderData();
-
+  const { initialDesigns } = Route.useLoaderData();
   return (
     <div className="bg-background text-foreground flex min-h-screen flex-col">
       <Header />
       <main>
         <Hero />
+        <GalleryPreview limit={24} initialDesigns={initialDesigns} />
+        <WrapEditorShowcase />
+        <WorkflowShowcase />
         <Features />
-        <Pricing />
+        <VehicleShowcase />
         <FAQ />
-        <Blog posts={posts} />
         <CTA />
       </main>
       <Footer />
       <SupportWidget />
+      <StructuredData
+        data={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'Organization',
+              '@id': 'https://carwrapdesign.app/#organization',
+              name: 'Car Wrap Design',
+              url: 'https://carwrapdesign.app/',
+              logo: 'https://carwrapdesign.app/logo.png?v=20261007-3',
+              image: 'https://carwrapdesign.app/og-image.png?v=20261007-3',
+            },
+            {
+              '@type': 'WebSite',
+              '@id': 'https://carwrapdesign.app/#website',
+              name: 'Car Wrap Design',
+              url: 'https://carwrapdesign.app/',
+              publisher: { '@id': 'https://carwrapdesign.app/#organization' },
+              inLanguage: [...locales],
+            },
+            {
+              '@type': 'WebApplication',
+              name: 'Car Wrap Design',
+              applicationCategory: 'DesignApplication',
+              operatingSystem: 'Web',
+              url: 'https://carwrapdesign.app/create',
+              offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'USD',
+                description:
+                  'Free browser editor and 3D preview; AI generation uses credits.',
+              },
+            },
+          ],
+        }}
+      />
     </div>
   );
 }
@@ -42,30 +85,19 @@ function HomePage() {
 export const Route = createFileRoute('/')({
   loader: async () => {
     const locale = getLocale();
-    const posts = await getBlogPostsFn({ data: { locale, limit: 3 } });
-    return { locale, posts };
+    const initialDesigns = await getPublicGalleryPreview({
+      data: { limit: 24 },
+    });
+    return { locale, initialDesigns };
   },
   head: ({ loaderData }) => {
     const locale = loaderData?.locale ?? 'en';
-    const urlFor = (loc: string) =>
-      localizeUrl(`${envConfigs.app_url}/`, { locale: loc as any }).href;
-    return {
-      meta: [
-        {
-          name: 'description',
-          content: m['landing.hero.subheadline']({}, { locale: locale as any }),
-        },
-      ],
-      links: [
-        { rel: 'canonical', href: urlFor(locale) },
-        ...locales.map((loc) => ({
-          rel: 'alternate',
-          hrefLang: loc,
-          href: urlFor(loc),
-        })),
-        { rel: 'alternate', hrefLang: 'x-default', href: urlFor('en') },
-      ],
-    };
+    return marketingHead({
+      path: '/',
+      locale,
+      title: m['landing.meta.title']({}, { locale }),
+      description: m['landing.meta.description']({}, { locale }),
+    });
   },
   component: HomePage,
 });

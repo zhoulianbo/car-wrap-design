@@ -3,6 +3,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { getAuth } from '@/core/auth';
 import { getConfig } from '@/modules/config/service';
 import { getUserPlan } from '@/modules/invite-codes/service';
+import { hasUserPaid } from '@/modules/payment/service';
 import { hasPermission } from '@/modules/rbac/service';
 import { respData, respErr } from '@/lib/resp';
 
@@ -16,6 +17,7 @@ async function GET({ request }: { request: Request }) {
     }
 
     const { plan, trialEndsAt } = await getUserPlan(session.user.id);
+    const isPaid = await hasUserPaid(session.user.id);
 
     // When invite-only signup is on, a brand-new user (no invite redeemed, no
     // subscription) must redeem a code before using the app. Admins are exempt.
@@ -33,6 +35,7 @@ async function GET({ request }: { request: Request }) {
       email: session.user.email,
       image: session.user.image,
       plan,
+      isPaid,
       trialEndsAt: trialEndsAt?.toISOString() || null,
       authorized: plan === 'trial' || plan === 'member',
       needsInvite,

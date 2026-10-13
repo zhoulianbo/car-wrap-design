@@ -3,7 +3,7 @@ import { eq } from 'drizzle-orm';
 import { db } from '@/core/db';
 import { envConfigs } from '@/config';
 import { config } from '@/config/db/schema';
-import { decryptSecret, encryptSecret, isEncryptedSecret } from '@/lib/crypto';
+import { decryptSecret, encryptSecret } from '@/lib/crypto';
 
 import { getSettings } from './settings';
 
@@ -12,54 +12,124 @@ export type ConfigMap = Record<string, string>;
 // In-memory cache
 let cachedConfigs: ConfigMap | null = null;
 let cacheTime = 0;
-const CACHE_TTL = 3600_000; // 1 hour
+const CACHE_TTL = 86400_000; // 1 day
 
-/**
- * Get all configs from database.
- */
-export async function getDbConfigs(): Promise<ConfigMap> {
-  const now = Date.now();
-  if (cachedConfigs && now - cacheTime < CACHE_TTL) {
-    return cachedConfigs;
+export const CONFIG_KV_KEY = 'car-warp-design:settings:v1';
+
+type ConfigKv = {
+  get(
+    key: string,
+    options: { type: 'text'; cacheTtl: number }
+  ): Promise<string | null>;
+  put(key: string, value: string): Promise<void>;
+};
+
+function getConfigKv(): ConfigKv | undefined {
+  const globals = globalThis as typeof globalThis & {
+    __CF_ENV__?: { CONFIG_KV?: ConfigKv };
+    __env__?: { CONFIG_KV?: ConfigKv };
+  };
+  const binding = (globals.__CF_ENV__ ?? globals.__env__)?.CONFIG_KV;
+  if (!binding && envConfigs.database_provider === 'd1') {
+    throw new Error('Config KV binding "CONFIG_KV" not found.');
   }
+  if (binding && !process.env.CONFIG_ENCRYPTION_KEY) {
+    throw new Error('CONFIG_ENCRYPTION_KEY is required for config KV.');
+  }
+  return binding;
+}
 
+async function decodeConfigs(stored: ConfigMap): Promise<ConfigMap> {
+  const result: ConfigMap = {};
+  for (const [name, value] of Object.entries(stored)) {
+    if (PROTECTED_CONFIG_KEYS.has(name)) continue;
+    const plain = await decryptSecret(value);
+    if (plain === null) {
+      console.warn(`[config] failed to decrypt "${name}", skipping`);
+      continue;
+    }
+    result[name] = plain;
+  }
+  return result;
+}
+
+async function getStoredDbConfigs(): Promise<ConfigMap> {
+  const rows = await db().select().from(config);
+  return Object.fromEntries(
+    rows
+      .filter(
+        (row: { name: string; value: string | null }) =>
+          row.name && row.value != null && !PROTECTED_CONFIG_KEYS.has(row.name)
+      )
+      .map((row: { name: string; value: string }) => [row.name, row.value])
+  );
+}
+
+/** Publish the authoritative DB snapshot; never include environment secrets. */
+export async function syncConfigsToKv(): Promise<void> {
+  cachedConfigs = null;
+  cacheTime = 0;
+  const kv = getConfigKv();
+  if (!kv) return; // Local Node development keeps using the database.
+
+  const stored = await getStoredDbConfigs();
+  // Also encrypt legacy plaintext secrets before publishing them to KV.
+  for (const [name, value] of Object.entries(stored)) {
+    if (isSecretConfigKey(name)) stored[name] = await encryptSecret(value);
+  }
   try {
-    if (!envConfigs.database_url && envConfigs.database_provider !== 'd1') {
-      return {};
-    }
-
-    const rows = await db().select().from(config);
-    const result: ConfigMap = {};
-    for (const row of rows) {
-      if (!row.name || row.value === null || row.value === undefined) continue;
-
-      if (isEncryptedSecret(row.value)) {
-        const plain = await decryptSecret(row.value);
-        if (plain === null) {
-          // Wrong/rotated encryption key — skip so env value (if any) applies.
-          console.warn(`[config] failed to decrypt "${row.name}", skipping`);
-          continue;
-        }
-        result[row.name] = plain;
-      } else {
-        result[row.name] = row.value;
-      }
-    }
-
-    cachedConfigs = result;
-    cacheTime = now;
-    return result;
+    await kv.put(CONFIG_KV_KEY, JSON.stringify(stored));
   } catch {
-    return {};
+    throw new Error(
+      'Settings saved to database, but KV sync failed. Please save again.'
+    );
   }
 }
 
 /**
- * Get all configs merged: env + database (database overrides env).
+ * Read directly from the database for the admin UI, without the runtime cache.
+ */
+export async function getDbConfigs(): Promise<ConfigMap> {
+  if (!envConfigs.database_url && envConfigs.database_provider !== 'd1') {
+    return {};
+  }
+  return decodeConfigs(await getStoredDbConfigs());
+}
+
+/**
+ * Runtime config: KV on Workers, database cache in local Node development.
  */
 export async function getAllConfigs(): Promise<ConfigMap> {
-  const dbConfigs = await getDbConfigs();
-  return { ...envConfigs, ...dbConfigs };
+  const kv = getConfigKv();
+  if (kv) {
+    const snapshot = await kv.get(CONFIG_KV_KEY, {
+      type: 'text',
+      cacheTtl: 60,
+    });
+    if (snapshot === null) {
+      throw new Error(
+        'Config KV snapshot missing. Sync settings before deployment.'
+      );
+    }
+    const stored: unknown = JSON.parse(snapshot);
+    if (
+      !stored ||
+      Array.isArray(stored) ||
+      typeof stored !== 'object' ||
+      Object.values(stored).some((value) => typeof value !== 'string')
+    ) {
+      throw new Error(
+        'Invalid config KV snapshot. Please sync settings again.'
+      );
+    }
+    return { ...envConfigs, ...(await decodeConfigs(stored as ConfigMap)) };
+  }
+
+  if (!cachedConfigs || Date.now() - cacheTime >= CACHE_TTL) {
+    cachedConfigs = await getDbConfigs();
+    cacheTime = Date.now();
+  }
+  return { ...envConfigs, ...cachedConfigs };
 }
 
 /**
@@ -96,7 +166,7 @@ const SECRET_SETTING_NAMES: ReadonlySet<string> = new Set(
 );
 
 const SECRET_KEY_PATTERN =
-  /(_secret|_secret_key|_token|_password|_private_key|_api_key|_access_key|_api_v3_key)$/;
+  /(?:^|[_.:-])(secret|secret_key|token|password|private_key|api_key|access_key|api_v3_key)$/;
 
 export function isSecretConfigKey(name: string): boolean {
   return SECRET_SETTING_NAMES.has(name) || SECRET_KEY_PATTERN.test(name);
@@ -116,6 +186,43 @@ export function maskConfigValue(value: string): string {
 /** A masked value round-tripped from the admin UI means "unchanged". */
 export function isMaskedConfigValue(value: string): boolean {
   return value.startsWith(MASK_PREFIX);
+}
+
+function upsertConfig(
+  database: ReturnType<typeof db>,
+  name: string,
+  value: string
+) {
+  const insert = database.insert(config).values({ name, value });
+  return envConfigs.database_provider === 'mysql'
+    ? insert.onDuplicateKeyUpdate({ set: { value } })
+    : insert.onConflictDoUpdate({ target: config.name, set: { value } });
+}
+
+/** D1 uses atomic batch; other database drivers support interactive transactions. */
+async function writeConfigEntries(
+  entries: Array<[string, string]>,
+  toDelete: string[] = []
+) {
+  getConfigKv(); // Validate the binding/key before committing settings changes.
+  const database = db();
+  const statements = (target: ReturnType<typeof db>) => [
+    ...toDelete.map((name) =>
+      target.delete(config).where(eq(config.name, name))
+    ),
+    ...entries.map(([name, value]) => upsertConfig(target, name, value)),
+  ];
+  if (entries.length || toDelete.length) {
+    if (envConfigs.database_provider === 'd1') {
+      await database.batch(statements(database));
+    } else {
+      await database.transaction(async (tx: ReturnType<typeof db>) => {
+        for (const statement of statements(tx)) await statement;
+      });
+    }
+  }
+  // Publish even when all inputs were masked, so a failed publish can be retried.
+  await syncConfigsToKv();
 }
 
 /**
@@ -138,29 +245,7 @@ export async function saveConfigs(configs: ConfigMap) {
             : [name, value]
       )
   );
-  if (entries.length === 0) {
-    return;
-  }
-
-  await db().transaction(async (tx: any) => {
-    for (const [name, value] of entries) {
-      const [existing] = await tx
-        .select()
-        .from(config)
-        .where(eq(config.name, name))
-        .limit(1);
-
-      if (existing) {
-        await tx.update(config).set({ value }).where(eq(config.name, name));
-      } else {
-        await tx.insert(config).values({ name, value });
-      }
-    }
-  });
-
-  // Invalidate cache
-  cachedConfigs = null;
-  cacheTime = 0;
+  await writeConfigEntries(entries);
 }
 
 /**
@@ -177,7 +262,7 @@ export async function getConfig(name: string): Promise<string | undefined> {
  * contains every env secret in plaintext.
  */
 export async function getAdminConfigs(): Promise<ConfigMap> {
-  const configs = await getAllConfigs();
+  const configs = { ...envConfigs, ...(await getDbConfigs()) };
   const result: ConfigMap = {};
   for (const [name, value] of Object.entries(configs)) {
     if (PROTECTED_CONFIG_KEYS.has(name)) continue;
@@ -264,27 +349,7 @@ export async function replaceCustomConfigs(
       )
   );
 
-  await db().transaction(async (tx: any) => {
-    for (const name of toDelete) {
-      await tx.delete(config).where(eq(config.name, name));
-    }
-    for (const [name, value] of entries) {
-      const [existing] = await tx
-        .select()
-        .from(config)
-        .where(eq(config.name, name))
-        .limit(1);
-      if (existing) {
-        await tx.update(config).set({ value }).where(eq(config.name, name));
-      } else {
-        await tx.insert(config).values({ name, value });
-      }
-    }
-  });
-
-  // Invalidate cache
-  cachedConfigs = null;
-  cacheTime = 0;
+  await writeConfigEntries(entries, toDelete);
 }
 
 /**

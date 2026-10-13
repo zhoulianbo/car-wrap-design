@@ -1,0 +1,155 @@
+import { Link } from '@/core/i18n/navigation';
+import { envConfigs } from '@/config';
+
+export const meta = {
+  title: 'Nutzungsbedingungen',
+  description:
+    'Bedingungen für Editor, KI-Generierung, Credits, öffentliche Designs und zulässige Nutzung.',
+  updated_at: '2026-10-10',
+};
+
+## Vereinbarung und Dienst
+
+Diese Bedingungen gelten für deine Nutzung von {envConfigs.app_name} auf carwrapdesign.app. „Wir“ und „uns“ bezeichnen den Betreiber. Mit der Nutzung akzeptierst du diese Bedingungen. Wenn du nicht zustimmst, nutze den Dienst nicht. Unsere <Link href="/privacy-policy">Datenschutzerklärung</Link> erläutert die Verarbeitung personenbezogener Daten.
+
+Wir bieten einen Onlineeditor für Fahrzeugfolierungen, KI-Bildgenerierung, 3D-Vorschauen, gespeicherte Projekte und eine Designgalerie. Käufe betreffen digitale Leistungen und Credits. Folie, Druck, Lieferung, Montage und Fahrzeuge sind nicht enthalten.
+
+Vorschauen und exportierte Texturen sind Gestaltungshilfen. Sie garantieren weder reale Maßhaltigkeit, Farben, Paneelausrichtung, Druckfertigkeit noch Kompatibilität mit einem bestimmten Fahrzeug oder Softwarestand. Prüfe vor dem Import ins Fahrzeugdisplay die Herstellervorgaben und konsultiere vor einer echten Folierung einen qualifizierten Fachbetrieb. Fahrzeugnamen kennzeichnen passende Designvorlagen und bedeuten keine Partnerschaft oder Empfehlung durch den Hersteller.
+
+## Voraussetzungen und Konten
+
+Du musst mindestens 18 Jahre alt und rechtlich zum Abschluss dieser Vereinbarung befugt sein. Gib korrekte Konto- und Rechnungsdaten an, schütze deine Zugangsdaten und verwende nur Konten und Zahlungsmittel, zu deren Nutzung du berechtigt bist. Melde vermuteten unbefugten Zugriff umgehend. Du bist für eingereichte Inhalte und über dein Konto autorisierte Aktivitäten verantwortlich.
+
+<h2
+  id="ai-models"
+  className="text-foreground mt-6 mb-2 scroll-mt-28 text-lg font-semibold tracking-tight md:text-xl"
+>
+  KI-Modelle und API-Anbieter
+</h2>
+
+Zum oben genannten Gültigkeitsdatum verwendet die produktive KI-Generierung folgendes Modell und folgenden Anbieter:
+
+<div className="border-border my-4 overflow-x-auto rounded-lg border">
+  <table className="w-full text-left text-sm">
+    <thead className="bg-muted">
+      <tr>
+        <th scope="col" className="px-4 py-3">
+          Funktion
+        </th>
+        <th scope="col" className="px-4 py-3">
+          API-Anbieter
+        </th>
+        <th scope="col" className="px-4 py-3">
+          Modellkennung
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr className="border-border border-t">
+        <td className="px-4 py-3">
+          KI-Folierungsbilder aus Beschreibungen und optionalen Referenzbildern
+        </td>
+        <td className="px-4 py-3">OpenAI API</td>
+        <td className="px-4 py-3 whitespace-nowrap">
+          <code>gpt-image-2.5</code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+Bildanfragen verwenden die OpenAI API. Für Eingaben und Ergebnisse gelten auch die [Nutzungsrichtlinien von OpenAI](https://openai.com/policies/usage-policies/) und einschlägige Servicebedingungen. Die veröffentlichten Datenpraktiken findest du in den [API-Datenkontrollen von OpenAI](https://developers.openai.com/api/docs/guides/your-data).
+
+Bei der KI-Generierung werden Beschreibung, gewählte Einstellungen, Fahrzeugvorlage und Referenzbilder an einen externen Bildgenerierungsdienst gesendet. Modell und API-Anbieter werden mit der Aufgabe protokolliert. Die Nutzung des lokalen Editors oder einer 3D-Vorschau löst für sich genommen keine KI-Generierung aus.
+
+Aus Gründen der Qualität, Verfügbarkeit, Sicherheit, Kosten oder Regelkonformität können wir Modelle und Anbieter ergänzen, ersetzen oder einstellen. Ändert sich das zentrale Bildmodell oder der API-Anbieter für bezahlte KI-Funktionen wesentlich, aktualisieren wir diesen Abschnitt und das Gültigkeitsdatum, soweit vernünftigerweise möglich. Sicherheits- und Nutzungsregeln der Anbieter gelten ebenfalls für Eingaben und Ergebnisse.
+
+## Credits, Zahlungen und Erstattungsanfragen
+
+Aktuell bieten wir **Credit-Pakete mit Einmalzahlung ohne automatische Verlängerung** an. Preise, Währung, Credit-Menge und anfallende Gebühren werden vor der Zahlung auf den <Link href="/pricing">Preis- und Checkout-Seiten</Link> angezeigt. Gekaufte Credits haben derzeit kein Ablaufdatum. Für Aktionscredits können gesonderte, beim Angebot mitgeteilte Bedingungen gelten. Credits sind Leistungseinheiten, kein Geld. Sie sind nicht übertragbar oder gegen Bargeld einlösbar, außer bei gesetzlicher Verpflichtung oder genehmigter Erstattung.
+
+Eine KI-Generierung kostet derzeit **10 Credits**. Beim Start werden sie reserviert und nach erfolgreichem Speichern des Ergebnisses abgebucht. Wird eine Aufgabe als fehlgeschlagen markiert, werden reservierte Credits freigegeben. Bei offenen Aufgaben kann die Reservierung bis zur Statusklärung bestehen bleiben. Kontaktiere den Support bei fehlerhaft erscheinenden Ergebnissen oder Guthabenständen. Eine Credit-Freigabe macht die Generierungsbuchung rückgängig; sie ist keine Erstattung des Kaufpreises.
+
+KI-Ergebnisse variieren. Auch ein erfolgreich geliefertes Ergebnis kann Nacharbeit erfordern und garantiert weder ein bestimmtes künstlerisches Resultat noch Originalität oder geschäftliche Eignung.
+
+Bei Zahlungsfehlern, Doppelbelastungen, nicht gelieferten Käufen oder anderen Erstattungswünschen schreibe mit Konto-E-Mail, Bestellreferenz und Begründung an [support@carwrapdesign.app](mailto:support@carwrapdesign.app). Wir prüfen Zahlungsdaten, bereitgestellte und verbrauchte Credits, Umstände und anwendbares Verbraucherrecht. Sende keine Kartennummern oder Prüfcodes. Genehmigte Erstattungen erfolgen, soweit verfügbar, über das ursprüngliche Zahlungsmittel; die Dauer hängt vom Zahlungsanbieter ab. Zugehörige ungenutzte Credits können bei einer Erstattung entzogen werden.
+
+Inhaltsentfernung oder Kontoeinschränkung wegen Regelverstößen begründen allein keinen Anspruch auf Erstattung oder Wiederherstellung verbrauchter Credits. Für fehlgeschlagene Aufgaben gilt weiterhin die obige Freigaberegel. Zwingende gesetzliche Rechte auf Widerruf, Erstattung oder andere Rechtsbehelfe werden nicht eingeschränkt.
+
+## Deine Inhalte und öffentliche Designs
+
+Du behältst deine bestehenden Rechte an Uploads und Designs. Für eingereichte Bilder, Schriften, Logos, Personenabbildungen und anderes Material musst du die nötigen Nutzungsrechte besitzen. Wir garantieren nicht, dass KI-Ergebnisse exklusiv, urheberrechtlich schutzfähig oder frei von Rechten Dritter sind. Prüfe sie vor Veröffentlichung, Verkauf, Druck oder kommerzieller Nutzung.
+
+Du erlaubst uns, Inhalte zu speichern, zu verarbeiten, zu vervielfältigen und anzuzeigen, soweit dies für genutzte Funktionen, Support und Missbrauchsuntersuchungen erforderlich ist. Dazu gehört das Senden von Generierungseingaben an den KI-Anbieter. Software, Marken und bereitgestellte Materialien bleiben den Rechten ihrer jeweiligen Inhaber unterworfen.
+
+KI-Generierungen von Konten ohne Credit-Paketkauf werden zur Galerieprüfung freigegeben. Berechtigte zahlende Konten können dies vor der Generierung ausschalten. Eingereichte Designs werden vor Veröffentlichung geprüft. Mit der Galeriefreigabe erlaubst du, die genehmigte Version in Galerie und Website-Beispielen zu zeigen und über Vorschau-, Download- und Variationsfunktionen bereitzustellen. Veröffentliche nur Material, das du für diese Zwecke teilen darfst. Die Galerie überträgt kein Eigentum an fremden Marken oder geschütztem Material.
+
+Aktive Freigabelinks erlauben allen mit dem Link, die Vorschau anzusehen. Das Deaktivieren oder Entfernen kann bereits gespeicherte Kopien nicht zurückrufen. Einzelheiten zu Speicherung, Sichtbarkeit und Löschung stehen in der Datenschutzerklärung.
+
+## Richtlinie für zulässige KI-Inhalte
+
+Diese Richtlinie ist Teil der Bedingungen und gilt für Beschreibungen, Referenzbilder, Uploads, Projekte, Exporte, geteilte Designs und Ergebnisse, auch in privaten Projekten.
+
+### Verbotene Inhalte
+
+Du darfst folgende Inhalte weder erstellen noch hochladen, anfordern oder verbreiten:
+
+- **Sexuelle oder nicht jugendfreie Inhalte:** Pornografie, explizite sexuelle Bilder und sexuelle Ausbeutung.
+- **Gewalt und drastische Darstellungen:** grafische Verletzungen, Verstümmelung, Gewaltverherrlichung oder Drohungen.
+- **Hass:** Angriffe, Entmenschlichung oder Aufstachelung gegen Menschen aufgrund geschützter Merkmale.
+- **Kindesgefährdende Inhalte:** Darstellungen sexuellen Kindesmissbrauchs, Sexualisierung Minderjähriger, Grooming oder Ausbeutung.
+- **Täuschende Deepfakes und Identitätstäuschung:** erfundene Abbildungen oder Empfehlungen, die über reale Personen, Marken oder Institutionen täuschen. Nicht einvernehmliche intime Bilder sind verboten.
+- **Rechtsverletzende Inhalte:** Material, das Urheber-, Marken-, Datenschutz-, Persönlichkeits- oder andere Rechte verletzt.
+
+### Verstöße ohne Toleranz
+
+Wir handeln bei festgestellter sexueller Ausbeutung von Kindern oder jeglichen sexuellen Inhalten mit Minderjährigen; Förderung oder Unterstützung von Terrorismus, gewalttätigem Extremismus oder Massengewalt; technischen Anleitungen für Massenvernichtungswaffen; Aufstachelung zu Völkermord oder ethnischem Hass sowie nicht einvernehmlichen sexuellen Deepfakes realer Personen. Maßnahmen können Entfernung, sofortige Zugriffsbeschränkung, Sicherung relevanter Daten und gesetzlich erforderliche oder angemessene Meldungen an zuständige Behörden umfassen.
+
+### Der Kontext schafft keine Ausnahme
+
+Der Dienst ist für Fahrzeugdesign vorgesehen. Künstlerische, pädagogische, politische oder altersbeschränkte Kontexte heben Verbote nicht auf. Wir bieten keinen altersverifizierten Dienst für Erwachsenenmaterial. Nutze Ergebnisse nicht zur Täuschung über öffentliche Ereignisse, Wahlen, Berufsqualifikationen oder Empfehlungen. Der Dienst bietet keine medizinische, rechtliche oder finanzielle Beratung; stelle Ergebnisse nicht als qualifizierte Fachberatung dar.
+
+### Weitere unzulässige Nutzungen
+
+Verboten sind täuschende Informationen, Identitätstäuschung, Verletzung geistigen Eigentums oder der Privatsphäre, irreführende Darstellung von KI-Inhalten als menschliche Arbeit zur Kundentäuschung, Spam, Betrug und Jailbreak-Eingaben zur Umgehung von Sicherheitskontrollen.
+
+## Meldungen und Überprüfung
+
+Melde vermutete Verstöße an [support@carwrapdesign.app](mailto:support@carwrapdesign.app) oder über die verfügbare Meldefunktion eines öffentlichen Designs. Nenne möglichst:
+
+- deine Konto-E-Mail, sofern vorhanden;
+- Projektname, Generierungs-ID, URL oder ungefähren Zeitpunkt;
+- das Problem und gegebenenfalls betroffene Rechte;
+- rechtmäßige Bildschirmaufnahmen oder andere hilfreiche Belege.
+
+Füge kein rechtswidriges Material bei, wenn Beschreibung oder Fundstellen ausreichen. Wir können Rückfragen stellen. Hältst du eine Einschränkung für falsch, sende die Referenz und Begründung an dieselbe Adresse zur Überprüfung.
+
+## Inhaltsprüfung und Durchsetzung
+
+Unsere Schutzmaßnahmen umfassen Konto- und Eigentumsprüfungen, Credit-Kontrollen, Aufgabenprotokolle sowie Filter des gewählten KI-Anbieters. Für öffentliche Galeriedesigns gibt es eine administrative Prüfung. Wir können Meldungen und verdächtige Aktivitäten untersuchen, Veröffentlichungen ablehnen, Inhalte einschränken oder entfernen und bei berechtigtem Anlass Zugänge aussetzen oder beenden. Nicht jede private Eingabe oder Ausgabe wird manuell geprüft, und nicht jeder Verstoß wird erkannt.
+
+Eingaben oder Ergebnisse, die offenbar diese Bedingungen oder Anbieterregeln verletzen, können vor oder nach der Generierung blockiert oder entfernt werden. Prüfungen können fehlerhaft sein; du bleibst für deine Nutzung verantwortlich. Generierungs- und Sicherheitsdaten können gemäß <Link href="/privacy-policy">Datenschutzerklärung</Link> für Untersuchungen und Rechtskonformität aufbewahrt werden. Für Credits und Zahlungen gelten die Regeln oben.
+
+## Unzulässiges Verhalten
+
+Du darfst nicht:
+
+- Gesetze oder Rechte anderer verletzen;
+- Schadsoftware oder unbefugt rechtswidriges, vertrauliches oder personenbezogenes Material hochladen;
+- Credits, Zahlungen, Zugriffskontrollen, Limits oder Sicherheitsmechanismen umgehen;
+- missbräuchlich große Datenmengen auslesen, Angriffe ausführen, Reverse Engineering betreiben oder den Dienst stören, soweit nicht ausdrücklich gesetzlich erlaubt;
+- ohne Erlaubnis auf private Projekte, Konten oder nicht öffentliche Daten anderer zugreifen;
+- betrügerisch zahlen, Erstattungen missbrauchen, andere imitieren oder wiederholt Konten für unberechtigte Vorteile erstellen;
+- Inhalte entgegen dieser Richtlinie oder Anbieterbeschränkungen generieren, verbreiten oder verkaufen.
+
+## Verfügbarkeit und Kontoschließung
+
+Funktionen, Fahrzeuge und Verfügbarkeit können sich ändern. Bei Sicherheitsfragen, gesetzlichen Pflichten oder Verstößen können wir den Zugang beschränken und gegebenenfalls eine Mitteilung sowie Gelegenheit zur Klärung geben. Kontaktiere den Support für Kontoschließung oder Datenlöschung. Lade gewünschte Dateien vorher herunter. Schließung, Credit-Abwicklung und aufbewahrte Daten unterliegen diesen Bedingungen, der Datenschutzerklärung und geltendem Recht.
+
+## Gewährleistung und Haftung
+
+Soweit gesetzlich zulässig, wird der Dienst nach Verfügbarkeit bereitgestellt, ohne Zusage ununterbrochenen Betriebs, fehlerfreier Ergebnisse oder Eignung für einen bestimmten Zweck. Prüfe Designs und Nutzungsrechte vor Gebrauch. Soweit rechtlich zulässig, haften wir nicht für mittelbare Schäden oder Folgeschäden aus der Nutzung. Nicht ausschließbare Haftung und Verbraucherrechte bleiben unberührt.
+
+## Änderungen und Kontakt
+
+Das Datum oben bezeichnet das Inkrafttreten dieser Fassung. Bei Änderungen aktualisieren wir es und informieren über wesentliche Änderungen zusätzlich, soweit angemessen oder erforderlich. Fragen zu Bedingungen, Zahlungen, Sicherheit oder Kontozugang richtest du an [support@carwrapdesign.app](mailto:support@carwrapdesign.app).

@@ -1,11 +1,14 @@
 import { and, desc, eq, isNull } from 'drizzle-orm';
 
 import { db } from '@/core/db';
+import { atomicOperation } from '@/core/db/atomic';
 import {
   AlipayProvider,
   CreemProvider,
   PaymentManager,
+  PayPalProvider,
   StripeProvider,
+  WaffoProvider,
   WechatPayProvider,
 } from '@/core/payment';
 import {
@@ -16,7 +19,7 @@ import {
   type PaymentEvent,
   type PaymentOrder,
 } from '@/core/payment/types';
-import { credit, order, subscription } from '@/config/db/schema';
+import { credit, order, subscription, user } from '@/config/db/schema';
 import { getAllConfigs } from '@/modules/config/service';
 import { calculateCreditExpirationTime } from '@/modules/credits/service';
 import {
@@ -28,6 +31,16 @@ import {
   type UpdateSubscription,
 } from '@/modules/subscriptions/service';
 import { getSnowId, getUniSeq, getUuid } from '@/lib/hash';
+
+/** Read current paid entitlement from the database, never a cached auth session. */
+export async function hasUserPaid(userId: string): Promise<boolean> {
+  const [row] = await db()
+    .select({ isPaid: user.isPaid })
+    .from(user)
+    .where(eq(user.id, userId))
+    .limit(1);
+  return row?.isPaid === true;
+}
 
 // --- Order types ---
 
@@ -52,6 +65,15 @@ async function getPaymentManager(): Promise<PaymentManager> {
     c('stripe_secret_key') || c('stripe_api_key'),
     c('creem_enabled'),
     c('creem_api_key'),
+    c('paypal_enabled'),
+    c('paypal_client_id'),
+    c('paypal_client_secret'),
+    c('paypal_webhook_id'),
+    c('paypal_environment'),
+    c('waffo_enabled'),
+    c('waffo_merchant_id'),
+    c('waffo_private_key'),
+    c('waffo_environment'),
     c('alipay_app_id'),
     c('wechat_mch_id'),
     c('default_payment_provider'),
@@ -87,6 +109,40 @@ async function getPaymentManager(): Promise<PaymentManager> {
         signingSecret: c('creem_signing_secret') || undefined,
         environment:
           c('creem_environment') === 'production' ? 'production' : 'sandbox',
+      }),
+      isDefault
+    );
+  }
+
+  if (
+    c('paypal_enabled') === 'true' &&
+    c('paypal_client_id') &&
+    c('paypal_client_secret')
+  ) {
+    const isDefault = c('default_payment_provider') === 'paypal';
+    manager.addProvider(
+      new PayPalProvider({
+        clientId: c('paypal_client_id'),
+        clientSecret: c('paypal_client_secret'),
+        webhookId: c('paypal_webhook_id') || undefined,
+        environment:
+          c('paypal_environment') === 'live' ? 'production' : 'sandbox',
+      }),
+      isDefault
+    );
+  }
+
+  if (
+    c('waffo_enabled') === 'true' &&
+    c('waffo_merchant_id') &&
+    c('waffo_private_key')
+  ) {
+    const isDefault = c('default_payment_provider') === 'waffo';
+    manager.addProvider(
+      new WaffoProvider({
+        merchantId: c('waffo_merchant_id'),
+        privateKey: c('waffo_private_key'),
+        environment: c('waffo_environment') === 'prod' ? 'prod' : 'test',
       }),
       isDefault
     );
@@ -154,8 +210,14 @@ export async function createCheckout(params: {
   // Resolve provider-specific product ID (e.g. Creem product_ids_mapping)
   const resolvedProvider = provider || pm.getDefaultProvider()?.name;
   let resolvedProductId = paymentOrder.productId;
-  if (resolvedProvider === 'creem' && paymentOrder.productId) {
-    const mapping = configs.creem_product_ids_mapping;
+  if (
+    (resolvedProvider === 'creem' || resolvedProvider === 'waffo') &&
+    paymentOrder.productId
+  ) {
+    const mapping =
+      resolvedProvider === 'waffo'
+        ? configs.waffo_product_ids_mapping
+        : configs.creem_product_ids_mapping;
     if (mapping) {
       try {
         const map = JSON.parse(mapping) as Record<string, string>;
@@ -169,7 +231,7 @@ export async function createCheckout(params: {
   }
 
   const finalSuccessUrl =
-    paymentOrder.successUrl || `${appUrl}/settings/billing?success=1`;
+    paymentOrder.successUrl || `${appUrl}/dashboard/billing?success=1`;
   const callbackSuccessUrl = `${appUrl}/api/payment/callback?order_no=${orderNo}&redirect=${encodeURIComponent(finalSuccessUrl)}`;
 
   const session = await pm.createPayment({
@@ -179,7 +241,7 @@ export async function createCheckout(params: {
       orderNo,
       successUrl: callbackSuccessUrl,
       cancelUrl:
-        paymentOrder.cancelUrl || `${appUrl}/settings/billing?canceled=1`,
+        paymentOrder.cancelUrl || `${appUrl}/dashboard/billing?canceled=1`,
     },
     provider,
   });
@@ -279,6 +341,7 @@ export async function handleWebhook(params: {
 // --- Checkout Success: update order + create subscription + grant credits ---
 
 async function handleCheckoutSuccess(session: any, provider: string) {
+  if (session.paymentStatus === PaymentStatus.PROCESSING) return;
   // Different providers expose the session identifier under different keys.
   // We try the common shapes; for Alipay the natural key is out_trade_no
   // (which equals our orderNo and the value we stored in paymentSessionId).
@@ -289,16 +352,37 @@ async function handleCheckoutSuccess(session: any, provider: string) {
     result.out_trade_no ||
     result.outTradeNo ||
     '';
-  if (!sessionId) return;
+  // Waffo webhooks carry our merchant order number, not the checkout session ID.
+  // Its adapter extracts this only after verifying the webhook signature.
+  const merchantOrderNo =
+    provider === 'waffo' && typeof session.metadata?.order_no === 'string'
+      ? session.metadata.order_no
+      : '';
+  if (!sessionId && !merchantOrderNo) {
+    if (provider === 'waffo')
+      throw new Error('Waffo webhook missing merchant order number');
+    return;
+  }
 
-  // Find order by session ID
+  // Scope the lookup to the provider that authenticated this event.
   const [existingOrder] = await db()
     .select()
     .from(order)
-    .where(and(eq(order.paymentSessionId, sessionId), isNull(order.deletedAt)))
+    .where(
+      and(
+        merchantOrderNo
+          ? eq(order.orderNo, merchantOrderNo)
+          : eq(order.paymentSessionId, sessionId),
+        eq(order.paymentProvider, provider),
+        isNull(order.deletedAt)
+      )
+    )
     .limit(1);
 
-  if (!existingOrder) return;
+  if (!existingOrder) {
+    if (provider === 'waffo') throw new Error('Waffo webhook order not found');
+    return;
+  }
 
   // Idempotency: skip if already paid
   if (existingOrder.status === OrderStatus.PAID) return;
@@ -330,7 +414,21 @@ async function handleCheckoutSuccess(session: any, provider: string) {
     };
 
     // Atomically update order + create subscription + grant credits
-    await db().transaction(async (tx: any) => {
+    await atomicOperation(async (tx, read, commit) => {
+      const [current] = await read(
+        tx
+          .select()
+          .from(order)
+          .where(eq(order.id, existingOrder.id))
+          .limit(1)
+          .for('update')
+      );
+      if (
+        !current ||
+        ![OrderStatus.CREATED, OrderStatus.PENDING].includes(current.status)
+      )
+        return;
+      const queries = [];
       // 1. Create subscription if applicable
       if (subscriptionInfo && session.subscriptionId) {
         const subNo = getSnowId();
@@ -361,7 +459,7 @@ async function handleCheckoutSuccess(session: any, provider: string) {
           paymentProductId: existingOrder.paymentProductId,
           paymentUserId: paymentInfo?.paymentUserId,
         };
-        await tx.insert(subscription).values(newSub);
+        queries.push(tx.insert(subscription).values(newSub));
         orderUpdate.subscriptionNo = subNo;
         orderUpdate.subscriptionId = session.subscriptionId;
         orderUpdate.subscriptionResult = JSON.stringify(
@@ -377,31 +475,43 @@ async function handleCheckoutSuccess(session: any, provider: string) {
           currentPeriodEnd: subscriptionInfo?.currentPeriodEnd,
         });
 
-        await tx.insert(credit).values({
-          id: getUuid(),
-          userId: existingOrder.userId,
-          userEmail: existingOrder.userEmail || '',
-          orderNo: existingOrder.orderNo,
-          subscriptionNo: orderUpdate.subscriptionNo || '',
-          transactionNo: getSnowId(),
-          transactionType: 'grant',
-          transactionScene:
-            existingOrder.paymentType === 'subscription'
-              ? 'subscription'
-              : 'payment',
-          credits,
-          remainingCredits: credits,
-          description: 'Grant credit',
-          expiresAt,
-          status: 'active',
-        });
+        queries.push(
+          tx.insert(credit).values({
+            id: getUuid(),
+            userId: existingOrder.userId,
+            userEmail: existingOrder.userEmail || '',
+            orderNo: existingOrder.orderNo,
+            subscriptionNo: orderUpdate.subscriptionNo || '',
+            transactionNo: getSnowId(),
+            transactionType: 'grant',
+            transactionScene:
+              existingOrder.paymentType === 'subscription'
+                ? 'subscription'
+                : 'payment',
+            credits,
+            remainingCredits: credits,
+            description: 'Grant credit',
+            expiresAt,
+            status: 'active',
+          })
+        );
+      }
+
+      // Credit-pack purchases permanently unlock paid storage, even after credits run out.
+      if (existingOrder.amount > 0) {
+        queries.push(
+          tx
+            .update(user)
+            .set({ isPaid: true })
+            .where(eq(user.id, existingOrder.userId))
+        );
       }
 
       // 3. Update order
-      await tx
-        .update(order)
-        .set(orderUpdate)
-        .where(eq(order.id, existingOrder.id));
+      queries.push(
+        tx.update(order).set(orderUpdate).where(eq(order.id, existingOrder.id))
+      );
+      await commit(queries);
     });
   } else if (
     session.paymentStatus === PaymentStatus.FAILED ||
@@ -413,7 +523,12 @@ async function handleCheckoutSuccess(session: any, provider: string) {
         status: OrderStatus.FAILED,
         paymentResult: JSON.stringify(session.paymentResult),
       })
-      .where(eq(order.id, existingOrder.id));
+      .where(
+        and(
+          eq(order.id, existingOrder.id),
+          eq(order.status, existingOrder.status)
+        )
+      );
   }
 }
 
@@ -459,49 +574,92 @@ export async function handleSubscriptionRenewal(
 
   const renewalOrderNo = getSnowId();
 
-  await db().transaction(async (tx: any) => {
+  await atomicOperation(async (tx, read, commit) => {
+    const [current] = await read(
+      tx
+        .select()
+        .from(subscription)
+        .where(eq(subscription.subscriptionNo, existingSub.subscriptionNo))
+        .limit(1)
+        .for('update')
+    );
+    if (!current) return;
+    if (paymentInfo?.transactionId) {
+      const duplicate = await read(
+        tx
+          .select({ id: order.id })
+          .from(order)
+          .where(
+            and(
+              eq(order.transactionId, paymentInfo.transactionId),
+              eq(order.paymentProvider, provider)
+            )
+          )
+          .limit(1)
+      );
+      if (duplicate.length) return;
+    } else if (
+      current.currentPeriodStart &&
+      current.currentPeriodStart.getTime() >=
+        new Date(subscriptionInfo.currentPeriodStart).getTime()
+    )
+      return;
+    const queries = [];
     // 1. Update subscription period
-    await tx
-      .update(subscription)
-      .set({
-        currentPeriodStart: subscriptionInfo.currentPeriodStart,
-        currentPeriodEnd: subscriptionInfo.currentPeriodEnd,
-      })
-      .where(eq(subscription.subscriptionNo, existingSub.subscriptionNo));
+    queries.push(
+      tx
+        .update(subscription)
+        .set({
+          currentPeriodStart: subscriptionInfo.currentPeriodStart,
+          currentPeriodEnd: subscriptionInfo.currentPeriodEnd,
+        })
+        .where(eq(subscription.subscriptionNo, existingSub.subscriptionNo))
+    );
 
     // 2. Create renewal order
-    await tx.insert(order).values({
-      id: getUuid(),
-      orderNo: renewalOrderNo,
-      userId: existingSub.userId,
-      userEmail: existingSub.userEmail || '',
-      status: OrderStatus.PAID,
-      amount: existingSub.amount,
-      currency: existingSub.currency,
-      productId: existingSub.productId || '',
-      paymentType: 'renew',
-      paymentInterval: existingSub.interval || '',
-      paymentProvider: provider,
-      checkoutInfo: '',
-      description: 'Subscription Renewal',
-      productName: existingSub.productName || '',
-      planName: existingSub.planName || '',
-      creditsAmount: existingSub.creditsAmount,
-      creditsValidDays: existingSub.creditsValidDays,
-      paymentProductId: existingSub.paymentProductId || '',
-      paymentResult: JSON.stringify(session.paymentResult),
-      paymentAmount: paymentInfo?.paymentAmount,
-      paymentCurrency: paymentInfo?.paymentCurrency,
-      paymentEmail: paymentInfo?.paymentEmail,
-      paidAt: paymentInfo?.paidAt || new Date(),
-      invoiceId: paymentInfo?.invoiceId,
-      invoiceUrl: paymentInfo?.invoiceUrl,
-      subscriptionNo: existingSub.subscriptionNo,
-      subscriptionId: session.subscriptionId,
-      transactionId: paymentInfo?.transactionId,
-      paymentUserName: paymentInfo?.paymentUserName,
-      paymentUserId: paymentInfo?.paymentUserId,
-    });
+    queries.push(
+      tx.insert(order).values({
+        id: getUuid(),
+        orderNo: renewalOrderNo,
+        userId: existingSub.userId,
+        userEmail: existingSub.userEmail || '',
+        status: OrderStatus.PAID,
+        amount: existingSub.amount,
+        currency: existingSub.currency,
+        productId: existingSub.productId || '',
+        paymentType: 'renew',
+        paymentInterval: existingSub.interval || '',
+        paymentProvider: provider,
+        checkoutInfo: '',
+        description: 'Subscription Renewal',
+        productName: existingSub.productName || '',
+        planName: existingSub.planName || '',
+        creditsAmount: existingSub.creditsAmount,
+        creditsValidDays: existingSub.creditsValidDays,
+        paymentProductId: existingSub.paymentProductId || '',
+        paymentResult: JSON.stringify(session.paymentResult),
+        paymentAmount: paymentInfo?.paymentAmount,
+        paymentCurrency: paymentInfo?.paymentCurrency,
+        paymentEmail: paymentInfo?.paymentEmail,
+        paidAt: paymentInfo?.paidAt || new Date(),
+        invoiceId: paymentInfo?.invoiceId,
+        invoiceUrl: paymentInfo?.invoiceUrl,
+        subscriptionNo: existingSub.subscriptionNo,
+        subscriptionId: session.subscriptionId,
+        transactionId: paymentInfo?.transactionId,
+        paymentUserName: paymentInfo?.paymentUserName,
+        paymentUserId: paymentInfo?.paymentUserId,
+      })
+    );
+
+    if (existingSub.amount > 0) {
+      queries.push(
+        tx
+          .update(user)
+          .set({ isPaid: true })
+          .where(eq(user.id, existingSub.userId))
+      );
+    }
 
     // 3. Grant credits for renewal
     if (existingSub.creditsAmount && existingSub.creditsAmount > 0) {
@@ -511,22 +669,25 @@ export async function handleSubscriptionRenewal(
         currentPeriodEnd: subscriptionInfo.currentPeriodEnd,
       });
 
-      await tx.insert(credit).values({
-        id: getUuid(),
-        userId: existingSub.userId,
-        userEmail: existingSub.userEmail || '',
-        orderNo: renewalOrderNo,
-        subscriptionNo: existingSub.subscriptionNo,
-        transactionNo: getSnowId(),
-        transactionType: 'grant',
-        transactionScene: 'renewal',
-        credits,
-        remainingCredits: credits,
-        description: 'Grant credit',
-        expiresAt,
-        status: 'active',
-      });
+      queries.push(
+        tx.insert(credit).values({
+          id: getUuid(),
+          userId: existingSub.userId,
+          userEmail: existingSub.userEmail || '',
+          orderNo: renewalOrderNo,
+          subscriptionNo: existingSub.subscriptionNo,
+          transactionNo: getSnowId(),
+          transactionType: 'grant',
+          transactionScene: 'renewal',
+          credits,
+          remainingCredits: credits,
+          description: 'Grant credit',
+          expiresAt,
+          status: 'active',
+        })
+      );
     }
+    await commit(queries);
   });
 }
 

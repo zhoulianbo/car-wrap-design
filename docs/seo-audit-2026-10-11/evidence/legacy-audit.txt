@@ -1,0 +1,12 @@
+/: PASS | words=1628 | "Car Wrap Design"=12 (2.21%) | h1=1
+/zh: PASS | words=1886 | "汽车车衣设计"=8 (1.70%) | h1=1
+/ai-car-wrap-generator: PASS | words=2018 | "ai car wrap generator"=10 (1.98%) | h1=1
+/zh/ai-car-wrap-generator: PASS | words=2117 | "AI 车衣生成器"=9 (2.13%) | h1=1
+/tesla-wrap: PASS | words=1339 | "tesla wrap"=16 (2.39%) | h1=1
+/zh/tesla-wrap: PASS | words=1452 | "特斯拉车衣"=11 (2.27%) | h1=1
+/tesla-model-y-wrap: PASS | words=1579 | "tesla model y wrap"=9 (2.28%) | h1=1
+/zh/tesla-model-y-wrap: PASS | words=1688 | "特斯拉 Model Y 车衣"=9 (2.67%) | h1=1
+/tesla-model-3-wrap: PASS | words=1510 | "tesla model 3 wrap"=9 (2.38%) | h1=1
+/zh/tesla-model-3-wrap: PASS | words=1597 | "特斯拉 Model 3 车衣"=9 (2.82%) | h1=1
+
+SEO audit passed for all 10 selected pages.

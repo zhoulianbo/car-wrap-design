@@ -7,10 +7,12 @@ import { authClient, signIn, signUp, useSession } from '@/core/auth/client';
 import { Link, useRouter } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
 import { apiPost } from '@/lib/api-client';
+import { getErrorMessage } from '@/lib/error-message';
 import { resolveAfterAuthUrl, safeInternalPath } from '@/lib/redirect';
 import { m } from '@/paraglide/messages.js';
 import { localizeHref } from '@/paraglide/runtime.js';
 import { usePublicConfig } from '@/hooks/use-public-config';
+import { AuthBackButton } from '@/components/auth/auth-back-button';
 import { TextField } from '@/components/form-field';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -66,7 +68,7 @@ function SignUpPage() {
   const afterLoginUrl = resolveAfterAuthUrl({
     redirect: redirectParam,
     callbackUrl,
-    fallback: '/settings',
+    fallback: '/dashboard',
   });
 
   // Carry callbackUrl/redirect across to sign-in so the destination survives the switch.
@@ -115,7 +117,7 @@ function SignUpPage() {
               code: trimmedInvite,
             });
           } catch (err: any) {
-            setError(err?.message || m['common.sign.invite_code_invalid']());
+            setError(getErrorMessage(err, 'INVITE_INVALID'));
             return;
           }
         }
@@ -126,7 +128,7 @@ function SignUpPage() {
           password: value.password,
         });
         if (result.error) {
-          setError(result.error.message || 'Sign up failed');
+          setError(getErrorMessage(result.error, 'SIGN_UP_FAILED'));
           return;
         }
 
@@ -157,7 +159,7 @@ function SignUpPage() {
           window.location.assign(localizeHref(afterLoginUrl));
         }
       } catch (err: any) {
-        setError(err.message || 'Sign up failed');
+        setError(getErrorMessage(err, 'SIGN_UP_FAILED'));
       }
     },
   });
@@ -167,7 +169,8 @@ function SignUpPage() {
   }
 
   return (
-    <div className="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
+    <div className="bg-muted relative flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
+      <AuthBackButton />
       <div className="flex w-full max-w-sm flex-col gap-6">
         <Link href="/" className="self-center font-serif text-lg italic">
           {configs.app_name || envConfigs.app_name}

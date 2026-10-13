@@ -34,7 +34,7 @@ export class R2Provider implements StorageProvider {
   }
 
   private getUploadPath() {
-    let uploadPath = this.configs.uploadPath || 'uploads';
+    let uploadPath = this.configs.uploadPath ?? 'uploads';
     if (uploadPath.startsWith('/')) {
       uploadPath = uploadPath.slice(1);
     }
@@ -42,6 +42,11 @@ export class R2Provider implements StorageProvider {
       uploadPath = uploadPath.slice(0, -1);
     }
     return uploadPath;
+  }
+
+  private objectUrl(key: string, bucket: string) {
+    const objectPath = [this.getUploadPath(), key].filter(Boolean).join('/');
+    return `${this.getEndpoint()}/${bucket}/${objectPath}`;
   }
 
   private getEndpoint() {
@@ -53,10 +58,12 @@ export class R2Provider implements StorageProvider {
 
   getPublicUrl = (options: { key: string; bucket?: string }) => {
     const uploadBucket = options.bucket || this.configs.bucket;
-    const uploadPath = this.getUploadPath();
-    const url = `${this.getEndpoint()}/${uploadBucket}/${uploadPath}/${options.key}`;
+    const objectPath = [this.getUploadPath(), options.key]
+      .filter(Boolean)
+      .join('/');
+    const url = `${this.getEndpoint()}/${uploadBucket}/${objectPath}`;
     return this.configs.publicDomain
-      ? `${this.configs.publicDomain}/${uploadPath}/${options.key}`
+      ? `${this.configs.publicDomain.replace(/\/$/, '')}/${objectPath}`
       : url;
   };
 
@@ -64,8 +71,7 @@ export class R2Provider implements StorageProvider {
     try {
       const uploadBucket = options.bucket || this.configs.bucket;
       if (!uploadBucket) return false;
-      const uploadPath = this.getUploadPath();
-      const url = `${this.getEndpoint()}/${uploadBucket}/${uploadPath}/${options.key}`;
+      const url = this.objectUrl(options.key, uploadBucket);
 
       const { AwsClient } = await import('aws4fetch');
       const client = new AwsClient({
@@ -85,6 +91,27 @@ export class R2Provider implements StorageProvider {
       return false;
     }
   };
+
+  async deleteFile(options: { key: string; bucket?: string }): Promise<void> {
+    const bucket = options.bucket || this.configs.bucket;
+    if (!bucket || !options.key)
+      throw new Error('Bucket and object key are required');
+    const { AwsClient } = await import('aws4fetch');
+    const client = new AwsClient({
+      accessKeyId: this.configs.accessKeyId,
+      secretAccessKey: this.configs.secretAccessKey,
+      region: this.configs.region || 'auto',
+    });
+    const response = await client.fetch(
+      new Request(this.objectUrl(options.key, bucket), {
+        method: 'DELETE',
+        signal: AbortSignal.timeout(15_000),
+      })
+    );
+    // Missing objects count as success so a database failure can be retried.
+    if (!response.ok && response.status !== 404)
+      throw new Error('Storage deletion failed');
+  }
 
   async uploadFile(
     options: StorageUploadOptions
@@ -108,7 +135,7 @@ export class R2Provider implements StorageProvider {
 
       // R2 endpoint format: https://<accountId>.r2.cloudflarestorage.com
       // Use custom endpoint if provided, otherwise use default
-      const url = `${this.getEndpoint()}/${uploadBucket}/${uploadPath}/${options.key}`;
+      const url = this.objectUrl(options.key, uploadBucket);
 
       const { AwsClient } = await import('aws4fetch');
 

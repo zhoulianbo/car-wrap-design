@@ -1,53 +1,84 @@
+import { Link } from '@/core/i18n/navigation';
+import { envConfigs } from '@/config';
+
 export const meta = {
   title: 'Privacy Policy',
-  description: 'How we collect, use, and protect your personal information.',
-  updated_at: '2026-05-21',
+  description:
+    'How account information, design files, AI inputs, payments, and shared projects are handled.',
+  updated_at: '2026-10-10',
 };
 
-## Introduction
+## Scope and Contact
 
-We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and safeguard your information when you use our service.
+This policy explains how the operator of {envConfigs.app_name} at carwrapdesign.app handles personal information when you browse, create an account, design a wrap, use AI generation, purchase credits, or share a design. Contact [support@carwrapdesign.app](mailto:support@carwrapdesign.app) about privacy or data requests. Our <Link href="/terms-of-service" className="text-primary font-medium underline underline-offset-4">Terms of Service</Link> describe the service and its acceptable-use rules.
 
-## Information We Collect
+## Information We Handle
 
-We collect the following types of information to provide and improve our service:
+- **Account information:** email address, display name, profile image where provided, authentication records, account preferences, and sign-in session information. If you use a supported third-party sign-in option, we receive the profile information needed to create and authenticate your account.
+- **Design content:** uploaded images, reference images, prompts, selected vehicle and design settings, editable project data, saved textures, previews, generated results, and publication or sharing settings.
+- **Generation and credit records:** task identifiers, AI provider and model, task status, timestamps, errors, credit reservations, charges, and releases.
+- **Transaction information:** order references, purchased products, amounts, currency, payment status, and billing or payer details returned by the payment provider. Payment credentials are processed by the checkout provider; our application does not store full card numbers or card security codes.
+- **Technical information:** IP addresses, browser and device information, request and session records, and error or security logs processed when the service is accessed. Analytics or support tools may collect additional usage information when enabled, as described below.
+- **Communications:** support requests, design reports, feedback, and information you provide while resolving a dispute or privacy request.
 
-1. **Account Information** — Your name, email address, and other details you provide when creating an account.
-2. **Usage Data** — Information about how you interact with the service, including features accessed, frequency of use, and interaction patterns.
-3. **Device Information** — Device type, operating system, and browser type, used to optimize compatibility and performance.
-4. **Cookies** — Small data files stored on your device to remember preferences and improve your experience.
-5. **Payment Information** — Billing details handled by trusted third-party payment processors. We do not store full card numbers on our servers.
+Do not upload identity documents, payment credentials, sensitive personal information, or confidential client material that is unnecessary for a wrap design. Obtain permission before uploading material about another person.
 
-## How We Use Your Information
+## Local Previews and Saved Files
 
-We use the data we collect to:
+An image selected only for the temporary preview on a vehicle page is processed in your browser. Selecting that preview alone does not save the image to your account or submit it for AI generation. Uploading an asset, saving an editor project, or submitting an AI reference image uses server storage and is a separate action.
 
-- Provide, maintain, and improve the service.
-- Process transactions and send related confirmations.
-- Send technical notices, security alerts, and support messages.
-- Respond to your questions, feedback, and support requests.
-- Detect, prevent, and address fraud and abuse.
+Saved projects and uploaded assets use our application database and Cloudflare R2 object storage. A project omitted from the gallery is not necessarily confidential: image files can be delivered through public storage URLs, and anyone who obtains a working URL may access the file. Do not treat unlisted projects or difficult-to-guess URLs as secure storage for sensitive information.
 
-## Data Sharing
+## How We Use Information
 
-We do not sell your personal information. We may share data only in these limited cases:
+We use information to authenticate accounts, save and render designs, run AI tasks, deliver downloads, manage credits, process purchases, provide support, investigate reports, prevent abuse, diagnose failures, and meet legal obligations. Sharing and publication settings determine how designs appear to other users.
 
-- With service providers who help us operate the service, under confidentiality agreements.
-- To comply with legal obligations or respond to lawful requests from public authorities.
-- To protect our rights, property, or safety, or that of our users.
+Where applicable data-protection law requires a legal basis, we process information as necessary to perform our agreement with you, comply with legal obligations, pursue legitimate interests such as service security and fraud prevention subject to your rights, or act on consent where required. Withdrawal of consent does not affect processing already lawfully carried out.
 
-## Data Security
+## AI Processing and Service Providers
 
-We implement industry-standard security measures including encryption in transit, access controls, and regular reviews. No method of transmission over the Internet is 100% secure, but we work continuously to protect your information.
+When you submit an AI task, the selected API provider receives the prompt, design instructions and settings, vehicle template, and any reference images or URLs needed to generate the result. We receive the output and task-status information and save records associated with your account. The current model and API source are described in the <Link href="/terms-of-service#ai-models" className="text-primary font-medium underline underline-offset-4">AI Models and API Providers section of our Terms</Link>.
 
-## Your Rights
+OpenAI's published API policy states that API data is not used to train its models by default, unless the API customer opts in to data sharing. It may retain content and related records for abuse monitoring, service operation, or legal obligations under its [API data controls](https://developers.openai.com/api/docs/guides/your-data). This policy does not promise zero retention. Avoid submitting material you are not authorized to send to an external provider.
 
-You have the right to access, update, export, or delete your personal information. You can do this through your account settings or by contacting us at the email address below.
+Other recipients may include Cloudflare for hosting, delivery, and file storage; the payment provider identified at checkout for transactions and fraud checks; enabled sign-in and email providers for account services; and enabled analytics or customer-support providers. We share information needed for the relevant service. We may also disclose relevant records to comply with lawful requests, investigate fraud or abuse, protect rights and safety, or support a business transfer subject to applicable privacy obligations. We do not sell your personal information.
 
-## Changes to This Policy
+## Public Gallery and Share Links
 
-We may update this Privacy Policy from time to time. We will notify you of any material changes by updating the date at the top of this page and, where appropriate, sending a notice through the service.
+For accounts that have not purchased a credit pack, AI generations are open to gallery review. Eligible paid accounts can turn off “Open to gallery” before generating. Approved public designs may appear in the gallery and site showcases, be indexed by search engines, and be previewed, downloaded, or remixed by other users. Public design details may include the title, vehicle, artwork, and other publication fields. Prompts are displayed only where the publication is configured to make them public.
 
-## Contact Us
+Enabling a share link makes its preview available to anyone with the link, without requiring access to your account. A shared preview does not expose the editable project document through the sharing page. You can disable or regenerate a share link using the available controls. Removing a design or disabling a link does not delete copies already downloaded by others, and does not necessarily immediately remove cached images or existing storage URLs.
 
-If you have questions about this Privacy Policy, please contact us at the email address provided on our website.
+## Cookies, Browser Storage, and Optional Tools
+
+We use cookies and browser storage for sign-in sessions, language and appearance preferences, gallery choices, and remembering credit-offer interactions. Blocking or clearing them can sign you out or reset preferences.
+
+The site can load Google Analytics or Plausible for usage measurement, advertising scripts, and Crisp or Tawk support widgets when configured. Enabled tools may receive page URLs, browser or device information, identifiers, interaction data, and information you enter into a support conversation, according to their functionality and policies. A chat message may include personal information you choose to provide. You can manage cookies and site storage through your browser; where a consent choice is offered, you can use it to manage optional processing. This policy does not imply that a consent control is available on every page or that every listed tool is enabled.
+
+## Retention and Deletion
+
+Account and saved-content records remain available while needed to operate your account and the features you use. Generation, credit, payment, support, and safety records may be retained to resolve failures or disputes, prevent abuse, and meet accounting or legal requirements. Retention depends on the record and purpose; we do not promise that all data is automatically erased after a fixed number of days.
+
+Deleting a project removes it from your active project list and withdraws linked gallery publications and its share page. Some project and generation records may remain in the database, and stored files may remain where other records still reference them. Uploaded source assets have separate deletion controls; removing a project does not necessarily remove those assets. Deletion can affect other designs that use the same asset.
+
+For account closure or a broader deletion request, email support. We may retain information required by law or necessary for fraud prevention, payment reconciliation, or legal claims, and will explain relevant limitations when responding. Provider-held records, cached copies, and copies already saved by other users are not all under our direct control.
+
+## Security and International Processing
+
+We use authentication, account ownership checks, restricted administrative access, and secure connections where supported by the services involved. No online system can guarantee absolute security. Public file URLs and enabled share links have the access characteristics explained above.
+
+Hosting, AI, payment, and other providers may process data outside your country, where privacy laws may differ. Where applicable law requires a transfer safeguard, we are responsible for using an appropriate lawful mechanism. Contact us for information about processing relevant to your account.
+
+## Your Choices and Rights
+
+You can update available account fields, manage designs and uploaded assets, and change sharing settings through the service. Depending on applicable law, you may also have rights to access, correct, delete, or obtain a copy of personal data; restrict or object to processing; withdraw consent; or complain to a competent data-protection authority.
+
+Send requests to [support@carwrapdesign.app](mailto:support@carwrapdesign.app), preferably from your account email, explaining what you need. We may verify account ownership and request only information needed to process the request. We will respond within the period required by applicable law. Not every request is available as a self-service account setting.
+
+## Children
+
+The service is intended for adults aged 18 or older. If you believe a child has submitted personal information, contact us so we can investigate and take appropriate action, including deletion where required.
+
+## Policy Changes
+
+The date above is the effective date of this version. We will update it when this policy changes and provide additional notice of material changes where appropriate or legally required. Contact [support@carwrapdesign.app](mailto:support@carwrapdesign.app) with questions about this policy.

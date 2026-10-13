@@ -1,0 +1,38 @@
+path,status,final_url,title,h1_count,lang,canonical,hreflang,robots,schema_blocks,images_missing_alt
+/,200,http://localhost:3000/,Car Wrap Design Online | Design Your Own Car Wrap Free,1,en,http://localhost:3100/,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/ai-car-wrap-generator,200,http://localhost:3000/ai-car-wrap-generator,AI Car Wrap Generator Online | Create & Preview Wraps,1,en,http://localhost:3100/ai-car-wrap-generator,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/blog,200,http://localhost:3000/blog,Blog | Car Wrap Design,1,en,http://localhost:3100/blog,en | zh,,0,0
+/blog/tesla-wrap-complete-guide,200,http://localhost:3000/blog/tesla-wrap-complete-guide,Tesla wrap design: from first preview to a finished project | Car Wrap Design,1,en,http://localhost:3100/blog/tesla-wrap-complete-guide,,,0,0
+/gallery,200,http://localhost:3000/gallery?search=&vehicle=&sort=latest&page=1,Car Wraps Gallery | Tesla Model 3 & Model Y Designs,1,en,http://localhost:3100/gallery,en | zh | x-default,"index,follow,max-image-preview:large",0,0
+/gallery/ani-07f0c209,200,http://localhost:3000/gallery/ani-07f0c209,Ani | Car Wrap Design,1,en,http://localhost:3100/gallery/ani-07f0c209,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/gallery/ice-cream-89aca79e,200,http://localhost:3000/gallery/ice-cream-89aca79e,Ice Cream | Car Wrap Design,1,en,http://localhost:3100/gallery/ice-cream-89aca79e,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/pricing,200,http://localhost:3000/pricing,Credits for your next idea | Car Wrap Design,1,en,http://localhost:3100/pricing,en | zh | x-default,"index,follow,max-image-preview:large",0,0
+/privacy-policy,200,http://localhost:3000/privacy-policy,Privacy Policy,1,en,http://localhost:3100/privacy-policy,,,0,0
+/terms-of-service,200,http://localhost:3000/terms-of-service,Terms of Service,1,en,http://localhost:3100/terms-of-service,,,0,0
+/tesla-model-3-wrap,200,http://localhost:3000/tesla-model-3-wrap,Tesla Model 3 Wrap Design | Create & Preview Online,1,en,http://localhost:3100/tesla-model-3-wrap,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/tesla-model-y-wrap,200,http://localhost:3000/tesla-model-y-wrap,Tesla Model Y Wrap Design | Try Colors & 3D Preview,1,en,http://localhost:3100/tesla-model-y-wrap,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/tesla-wrap,200,http://localhost:3000/tesla-wrap,Tesla Wrap Design Online | Explore Colors & Styles,1,en,http://localhost:3100/tesla-wrap,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/zh,200,http://localhost:3000/zh,在线汽车车衣设计 | 免费设计你的专属车衣,1,zh,http://localhost:3100/zh,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/zh/ai-car-wrap-generator,200,http://localhost:3000/zh/ai-car-wrap-generator,AI 车衣生成器 | 在线生成图案并预览车身效果,1,zh,http://localhost:3100/zh/ai-car-wrap-generator,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/zh/blog,200,http://localhost:3000/zh/blog,博客 | Car Wrap Design,1,zh,http://localhost:3100/zh/blog,en | zh,,0,0
+/zh/blog/tesla-wrap-complete-guide,200,http://localhost:3000/zh/blog/tesla-wrap-complete-guide,Tesla 车衣设计完整指南：从快速预览到保存作品 | Car Wrap Design,1,zh,http://localhost:3100/zh/blog/tesla-wrap-complete-guide,,,0,0
+/zh/gallery,200,http://localhost:3000/zh/gallery?search=&vehicle=&sort=latest&page=1,Car Wraps Gallery 车衣作品库 | Tesla Model 3 与 Model Y,1,zh,http://localhost:3100/zh/gallery,en | zh | x-default,"index,follow,max-image-preview:large",0,0
+/zh/gallery/ani-07f0c209,200,http://localhost:3000/zh/gallery/ani-07f0c209,Ani | Car Wrap Design,1,zh,http://localhost:3100/zh/gallery/ani-07f0c209,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/zh/gallery/ice-cream-89aca79e,200,http://localhost:3000/zh/gallery/ice-cream-89aca79e,Ice Cream | Car Wrap Design,1,zh,http://localhost:3100/zh/gallery/ice-cream-89aca79e,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/zh/pricing,200,http://localhost:3000/zh/pricing,为下一次灵感补充积分 | Car Wrap Design,1,zh,http://localhost:3100/zh/pricing,en | zh | x-default,"index,follow,max-image-preview:large",0,0
+/zh/privacy-policy,200,http://localhost:3000/zh/privacy-policy,隐私政策,1,zh,http://localhost:3100/zh/privacy-policy,,,0,0
+/zh/terms-of-service,200,http://localhost:3000/zh/terms-of-service,服务条款,1,zh,http://localhost:3100/zh/terms-of-service,,,0,0
+/zh/tesla-model-3-wrap,200,http://localhost:3000/zh/tesla-model-3-wrap,特斯拉 Model 3 车衣设计 | 在线创作与 3D 预览,1,zh,http://localhost:3100/zh/tesla-model-3-wrap,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/zh/tesla-model-y-wrap,200,http://localhost:3000/zh/tesla-model-y-wrap,特斯拉 Model Y 车衣设计 | 在线配色与 3D 预览,1,zh,http://localhost:3100/zh/tesla-model-y-wrap,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/zh/tesla-wrap,200,http://localhost:3000/zh/tesla-wrap,特斯拉车衣设计 | 在线探索配色、图案与 3D 效果,1,zh,http://localhost:3100/zh/tesla-wrap,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/sign-in,200,http://localhost:3000/sign-in,Car Wrap Design,0,en,,,,0,0
+/zh/sign-in,200,http://localhost:3000/zh/sign-in,Car Wrap Design,0,zh,,,,0,0
+/zh/admin,200,http://localhost:3000/zh/admin,Car Wrap Design,0,zh,,,,0,0
+/zh/dashboard,200,http://localhost:3000/zh/dashboard,Car Wrap Design,0,zh,,,,0,0
+/cover-preview,200,http://localhost:3000/cover-preview,Car Wrap Design,0,en,,,,0,0
+/ai-wrap-generator,200,http://localhost:3000/ai-car-wrap-generator,AI Car Wrap Generator Online | Create & Preview Wraps,1,en,http://localhost:3100/ai-car-wrap-generator,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/zh/ai-wrap-generator,200,http://localhost:3000/zh/ai-car-wrap-generator,AI 车衣生成器 | 在线生成图案并预览车身效果,1,zh,http://localhost:3100/zh/ai-car-wrap-generator,en | zh | x-default,"index,follow,max-image-preview:large",1,0
+/seo-audit-nonexistent,404,http://localhost:3000/seo-audit-nonexistent,Car Wrap Design,1,en,,,,0,0
+/zh/seo-audit-nonexistent,404,http://localhost:3000/zh/seo-audit-nonexistent,Car Wrap Design,1,zh,,,,0,0
+/blog/seo-audit-nonexistent,404,http://localhost:3000/blog/seo-audit-nonexistent,Car Wrap Design,1,en,,,,0,0
+/gallery/seo-audit-nonexistent,404,http://localhost:3000/gallery/seo-audit-nonexistent,Car Wrap Design,1,en,,,,0,0

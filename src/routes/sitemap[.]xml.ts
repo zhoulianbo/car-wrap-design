@@ -1,104 +1,97 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { envConfigs } from '@/config';
-import { baseLocale, locales, localizeUrl } from '@/paraglide/runtime.js';
-import { getLocalPosts, mergePosts } from '@/content/posts';
+import { locales, localizeUrl } from '@/paraglide/runtime.js';
+import { getBlogPostsFn } from '@/content/posts/server';
 
+// Only editorial/marketing entry points belong in the sitemap. Gallery search
+// URLs and community design detail pages are intentionally excluded.
 const STATIC_PATHS = [
-  '',
-  '/pricing',
+  '/',
+  '/tesla-wrap',
+  '/tesla-model-y-wrap',
+  '/tesla-model-3-wrap',
+  '/ai-car-wrap-generator',
+  '/gallery',
   '/blog',
+  '/pricing',
   '/privacy-policy',
   '/terms-of-service',
 ];
 
-type Entry = {
-  path: string;
-  lastModified?: string;
-  changeFrequency: string;
-  priority: number;
-};
-
-function urlFor(path: string, locale: string): string {
-  return localizeUrl(`${envConfigs.app_url}${path || '/'}`, {
-    locale: locale as (typeof locales)[number],
-  }).href;
+function escapeXml(value: string) {
+  return value.replace(
+    /[&<>"']/g,
+    (character) =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&apos;',
+      })[character]!
+  );
 }
 
-function entryXml(e: Entry): string {
-  const alternates = locales
-    .map(
-      (loc) =>
-        `    <xhtml:link rel="alternate" hreflang="${loc}" href="${urlFor(e.path, loc)}"/>`
-    )
-    .join('\n');
-  return [
-    '  <url>',
-    `    <loc>${urlFor(e.path, baseLocale)}</loc>`,
-    alternates,
-    e.lastModified ? `    <lastmod>${e.lastModified}</lastmod>` : null,
-    `    <changefreq>${e.changeFrequency}</changefreq>`,
-    `    <priority>${e.priority}</priority>`,
-    '  </url>',
-  ]
-    .filter(Boolean)
-    .join('\n');
+function urlFor(path: string, locale: (typeof locales)[number]) {
+  return localizeUrl(`${envConfigs.app_url.replace(/\/$/, '')}${path}`, {
+    locale,
+  }).href;
 }
 
 export const Route = createFileRoute('/sitemap.xml')({
   server: {
     handlers: {
       GET: async () => {
-        const entries: Entry[] = STATIC_PATHS.map((path) => ({
-          path,
-          changeFrequency: path === '/blog' ? 'daily' : 'weekly',
-          priority: path === '' ? 1 : 0.8,
-        }));
-
-        // Blog posts: db posts merged with local MDX posts.
-        try {
-          const { listPublishedArticles } =
-            await import('@/modules/posts/service');
-          const rows = await listPublishedArticles().catch(() => []);
-          const dbPosts = rows.map((row) => ({
-            slug: row.slug,
-            title: row.title || row.slug,
-            description: row.description || '',
-            createdAt: new Date(row.createdAt).toISOString(),
-            source: 'db' as const,
-          }));
-          const posts = mergePosts(dbPosts, getLocalPosts(baseLocale));
+        const paths = new Map<
+          string,
+          Map<(typeof locales)[number], string | undefined>
+        >();
+        for (const path of STATIC_PATHS) {
+          paths.set(
+            path,
+            new Map(locales.map((locale) => [locale, undefined]))
+          );
+        }
+        for (const locale of locales) {
+          const posts = await getBlogPostsFn({ data: { locale } });
           for (const post of posts) {
-            entries.push({
-              path: `/blog/${post.slug}`,
-              lastModified: post.createdAt,
-              changeFrequency: 'monthly',
-              priority: 0.6,
-            });
-          }
-        } catch {
-          // Database unreachable — static paths + local posts still listed.
-          for (const post of getLocalPosts(baseLocale)) {
-            entries.push({
-              path: `/blog/${post.slug}`,
-              lastModified: post.createdAt,
-              changeFrequency: 'monthly',
-              priority: 0.6,
-            });
+            const path = `/blog/${encodeURIComponent(post.slug)}`;
+            const versions = paths.get(path) ?? new Map();
+            versions.set(locale, post.updatedAt || post.createdAt);
+            paths.set(path, versions);
           }
         }
-
-        const xml = [
-          '<?xml version="1.0" encoding="UTF-8"?>',
-          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
-          ...entries.map(entryXml),
-          '</urlset>',
-          '',
-        ].join('\n');
-
-        return new Response(xml, {
-          headers: { 'Content-Type': 'application/xml' },
-        });
+        const entries: string[] = [];
+        for (const [path, versions] of paths) {
+          const alternates = [...versions.keys()].map(
+            (locale) =>
+              `    <xhtml:link rel="alternate" hreflang="${locale}" href="${escapeXml(urlFor(path, locale))}"/>`
+          );
+          for (const [locale, lastmod] of versions) {
+            entries.push(
+              [
+                '  <url>',
+                `    <loc>${escapeXml(urlFor(path, locale))}</loc>`,
+                ...alternates,
+                ...(lastmod
+                  ? [`    <lastmod>${escapeXml(lastmod)}</lastmod>`]
+                  : []),
+                '  </url>',
+              ].join('\n')
+            );
+          }
+        }
+        return new Response(
+          [
+            '<?xml version="1.0" encoding="UTF-8"?>',
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
+            ...entries,
+            '</urlset>',
+            '',
+          ].join('\n'),
+          { headers: { 'Content-Type': 'application/xml' } }
+        );
       },
     },
   },

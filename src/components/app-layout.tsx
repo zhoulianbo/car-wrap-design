@@ -1,11 +1,11 @@
-'use client';
-
 import { useEffect, useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 import { useSession } from '@/core/auth/client';
 import { usePathname, useRouter } from '@/core/i18n/navigation';
+import { envConfigs } from '@/config';
 import { apiGet } from '@/lib/api-client';
+import { m } from '@/paraglide/messages.js';
 import { useUserPermissions } from '@/hooks/use-user-permissions';
 import { AppSidebar, type NavItem } from '@/components/app-sidebar';
 import { Separator } from '@/components/ui/separator';
@@ -26,7 +26,7 @@ export function AppLayout({
   headerExtra,
   profileHref,
   requirePermission,
-  unauthorizedRedirect = '/settings',
+  unauthorizedRedirect = '/dashboard',
 }: {
   children: React.ReactNode;
   navItems: NavItem[];
@@ -126,7 +126,9 @@ export function AppLayout({
       <div className="bg-background flex min-h-screen items-center justify-center">
         <div className="flex flex-col items-center gap-3">
           <div className="border-primary size-6 animate-spin rounded-full border-2 border-t-transparent" />
-          <span className="text-muted-foreground text-sm">Loading...</span>
+          <span className="text-muted-foreground text-sm">
+            {m['common.state.loading']()}
+          </span>
         </div>
       </div>
     );
@@ -136,12 +138,13 @@ export function AppLayout({
     <SidebarProvider>
       <AppSidebar
         brand={brand}
+        brandLogo={envConfigs.app_logo}
         brandHref={brandHref}
         navItems={navItems}
         footerNavItems={footerNavItems}
         footer={
           <UserMenu
-            name={session.user.name || 'User'}
+            name={session.user.name || m['common.user.fallback_name']()}
             email={session.user.email}
             image={session.user.image}
             profileHref={profileHref}

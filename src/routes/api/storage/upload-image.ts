@@ -5,6 +5,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { getAuth } from '@/core/auth';
 import { envConfigs } from '@/config';
 import { getStorage } from '@/modules/storage/service';
+import { resolveErrorCode } from '@/lib/error-codes';
 import { md5 } from '@/lib/hash';
 import { enforceMinIntervalRateLimit } from '@/lib/rate-limit';
 import { respData, respErr } from '@/lib/resp';
@@ -54,7 +55,7 @@ async function POST({ request }: { request: Request }) {
 
     for (const file of files) {
       if (!file.type.startsWith('image/')) {
-        return respErr(`File ${file.name} is not an image`);
+        return respErr('INVALID_IMAGE');
       }
 
       const arrayBuffer = await file.arrayBuffer();
@@ -75,10 +76,7 @@ async function POST({ request }: { request: Request }) {
       // are varchar(255)). Configure R2 (admin → Storage) for production.
       if (!storage) {
         if (body.length > INLINE_MAX_BYTES) {
-          const limitKb = Math.round(INLINE_MAX_BYTES / 1024);
-          return respErr(
-            `Image too large (${(body.length / 1024).toFixed(0)}KB > ${limitKb}KB). Configure storage or use a smaller image.`
-          );
+          return respErr('FILE_TOO_LARGE');
         }
         const dir = path.join(process.cwd(), 'public', 'uploads');
         await mkdir(dir, { recursive: true });
@@ -114,7 +112,7 @@ async function POST({ request }: { request: Request }) {
       });
 
       if (!result.success || !result.url) {
-        return respErr(result.error || 'Upload failed');
+        return respErr('UPLOAD_FAILED');
       }
 
       uploadResults.push({
@@ -131,7 +129,7 @@ async function POST({ request }: { request: Request }) {
     });
   } catch (e: any) {
     console.error('upload image failed:', e);
-    return respErr(e?.message || 'upload image failed');
+    return respErr(resolveErrorCode(e, 'UPLOAD_FAILED'));
   }
 }
 

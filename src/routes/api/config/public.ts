@@ -26,6 +26,7 @@ const publicKeys = [
   'stripe_enabled',
   'creem_enabled',
   'paypal_enabled',
+  'waffo_enabled',
   'alipay_enabled',
   'wechat_enabled',
   'google_analytics_id',

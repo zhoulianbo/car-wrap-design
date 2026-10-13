@@ -1,55 +1,71 @@
 import {
-  Coins,
-  CreditCard,
-  FileText,
-  Globe,
-  ShieldCheck,
-  Users,
-  type LucideIcon,
+  Bot,
+  Boxes,
+  Download,
+  Layers3,
+  Palette,
+  WandSparkles,
 } from 'lucide-react';
 
-import { tDynamic } from '@/core/i18n/dynamic';
 import { m } from '@/paraglide/messages.js';
+import { SectionHeading } from '@/components/marketing/section-heading';
+
+const features = [
+  {
+    title: () => m['landing.features.viewer.title'](),
+    description: () => m['landing.features.viewer.description'](),
+    icon: Boxes,
+  },
+  {
+    title: () => m['landing.features.ai.title'](),
+    description: () => m['landing.features.ai.description'](),
+    icon: Bot,
+  },
+  {
+    title: () => m['landing.features.editor.title'](),
+    description: () => m['landing.features.editor.description'](),
+    icon: Layers3,
+  },
+  {
+    title: () => m['landing.features.materials.title'](),
+    description: () => m['landing.features.materials.description'](),
+    icon: Palette,
+  },
+  {
+    title: () => m['landing.features.remix.title'](),
+    description: () => m['landing.features.remix.description'](),
+    icon: WandSparkles,
+  },
+  {
+    title: () => m['landing.features.export.title'](),
+    description: () => m['landing.features.export.description'](),
+    icon: Download,
+  },
+];
 
 export function Features() {
-  const features: { key: string; icon: LucideIcon }[] = [
-    { key: 'auth', icon: ShieldCheck },
-    { key: 'payment', icon: CreditCard },
-    { key: 'rbac', icon: Users },
-    { key: 'i18n', icon: Globe },
-    { key: 'cms', icon: FileText },
-    { key: 'credits', icon: Coins },
-  ];
-
   return (
-    <section id="features" className="px-4 py-24 sm:py-32">
-      <div className="mx-auto max-w-5xl">
-        <div className="mb-20 text-center">
-          <h2 className="font-serif text-4xl font-normal tracking-tight sm:text-5xl">
-            {m['landing.features.title']()}
-          </h2>
-          <p className="text-muted-foreground mx-auto mt-5 max-w-lg">
-            {m['landing.features.description']()}
-          </p>
-        </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map(({ key, icon: Icon }) => (
-            <div
-              key={key}
-              className="group border-border bg-card hover:border-foreground/20 relative flex flex-col gap-4 rounded-2xl border p-6 transition-all hover:shadow-sm"
+    <section id="why-use-us" className="py-16">
+      <div className="page-container">
+        <SectionHeading
+          eyebrow={m['landing.features.eyebrow']()}
+          title={m['landing.features.title']()}
+          description={m['landing.features.description']()}
+        />
+        <div className="mt-12 grid gap-x-12 gap-y-8 md:grid-cols-2">
+          {features.map(({ title, description, icon: Icon }) => (
+            <article
+              key={title()}
+              className="relative border-t border-white/10 pt-6 pl-16"
             >
-              <div className="bg-muted text-foreground/80 group-hover:bg-foreground group-hover:text-background inline-flex size-10 items-center justify-center rounded-xl transition-colors">
-                <Icon className="size-5" strokeWidth={1.75} />
+              <div className="absolute top-6 left-0 flex size-10 items-center justify-center rounded-lg bg-emerald-300/10 text-emerald-300">
+                <Icon className="size-6" strokeWidth={1.6} />
               </div>
-              <div className="space-y-2">
-                <h3 className="font-medium">
-                  {tDynamic(`landing.features.${key}.title`)}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {tDynamic(`landing.features.${key}.description`)}
-                </p>
-              </div>
-            </div>
+              <h3 className="text-xl font-semibold text-white">{title()}</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-400">
+                {description()}
+              </p>
+            </article>
           ))}
         </div>
       </div>

@@ -1,5 +1,3 @@
-'use client';
-
 import { useEffect, useState } from 'react';
 import { ChevronRight, type LucideIcon } from 'lucide-react';
 
@@ -39,12 +37,14 @@ export interface NavItem {
 
 export function AppSidebar({
   brand,
+  brandLogo,
   brandHref = '/',
   navItems,
   footerNavItems,
   footer,
 }: {
   brand: React.ReactNode;
+  brandLogo: string;
   brandHref?: string;
   navItems: NavItem[];
   footerNavItems?: NavItem[];
@@ -127,15 +127,22 @@ export function AppSidebar({
   }
 
   return (
-    <Sidebar variant="inset">
+    <Sidebar variant="inset" collapsible="icon">
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
             <Link
               href={brandHref}
-              className="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground flex w-full items-center gap-2 rounded-md px-2 py-1.5 text-left text-sm"
+              className="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground flex h-10 w-full items-center gap-2 overflow-hidden rounded-md px-1.5 text-left text-sm group-data-[collapsible=icon]:justify-center group-data-[collapsible=icon]:px-0"
             >
-              <span className="flex-1 font-serif text-lg leading-none italic">
+              <img
+                src={brandLogo}
+                alt=""
+                width={32}
+                height={32}
+                className="size-8 shrink-0 object-contain"
+              />
+              <span className="font-headline min-w-0 flex-1 truncate text-base font-semibold tracking-tight group-data-[collapsible=icon]:hidden">
                 {brand}
               </span>
             </Link>

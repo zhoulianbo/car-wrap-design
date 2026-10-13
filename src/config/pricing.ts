@@ -5,10 +5,16 @@
  * Any price, credits, or plan info sent by the client is IGNORED — only the
  * product_id is honored, and everything else is looked up here.
  *
- * To change pricing, edit this file and redeploy. Admin UI cannot alter prices.
+ * These defaults are intentionally small one-time credit packs for the MVP.
  */
 
 import { PaymentInterval, PaymentType } from '@/core/payment/types';
+
+/** Either threshold qualifies an unpaid user when they close the paywall. */
+export const trialOfferConfig = {
+  closeThreshold: 3,
+  purchaseClickThreshold: 2,
+};
 
 export type PricingPlanInfo = {
   name: string;
@@ -26,121 +32,59 @@ export type PricingProduct = {
   currency: string;
   credits: number;
   creditsValidDays?: number;
+  paywallOnly?: boolean;
   plan?: PricingPlanInfo;
 };
 
 /**
- * Default demo catalog. Replace with your real products when launching.
+ * One-time credit catalog, shared by pricing and checkout.
  * Keys MUST match what the pricing UI sends as product_id.
  */
 export const pricingCatalog: Record<string, PricingProduct> = {
-  starter_monthly: {
-    productId: 'starter_monthly',
-    productName: 'Starter',
-    planName: 'Starter',
-    description: 'Starter Monthly',
-    type: PaymentType.SUBSCRIPTION,
-    priceInCents: 900,
-    currency: 'usd',
-    credits: 5000,
-    plan: {
-      name: 'Starter',
-      interval: PaymentInterval.MONTH,
-      intervalCount: 1,
-    },
-  },
-  pro_monthly: {
-    productId: 'pro_monthly',
-    productName: 'Pro',
-    planName: 'Pro',
-    description: 'Pro Monthly',
-    type: PaymentType.SUBSCRIPTION,
-    priceInCents: 2900,
-    currency: 'usd',
-    credits: 50000,
-    plan: { name: 'Pro', interval: PaymentInterval.MONTH, intervalCount: 1 },
-  },
-  enterprise_monthly: {
-    productId: 'enterprise_monthly',
-    productName: 'Enterprise',
-    planName: 'Enterprise',
-    description: 'Enterprise Monthly',
-    type: PaymentType.SUBSCRIPTION,
-    priceInCents: 9900,
-    currency: 'usd',
-    credits: 500000,
-    plan: {
-      name: 'Enterprise',
-      interval: PaymentInterval.MONTH,
-      intervalCount: 1,
-    },
-  },
-  starter_yearly: {
-    productId: 'starter_yearly',
-    productName: 'Starter',
-    planName: 'Starter',
-    description: 'Starter Yearly',
-    type: PaymentType.SUBSCRIPTION,
-    priceInCents: 8600,
-    currency: 'usd',
-    credits: 60000,
-    plan: { name: 'Starter', interval: PaymentInterval.YEAR, intervalCount: 1 },
-  },
-  pro_yearly: {
-    productId: 'pro_yearly',
-    productName: 'Pro',
-    planName: 'Pro',
-    description: 'Pro Yearly',
-    type: PaymentType.SUBSCRIPTION,
-    priceInCents: 27800,
-    currency: 'usd',
-    credits: 600000,
-    plan: { name: 'Pro', interval: PaymentInterval.YEAR, intervalCount: 1 },
-  },
-  enterprise_yearly: {
-    productId: 'enterprise_yearly',
-    productName: 'Enterprise',
-    planName: 'Enterprise',
-    description: 'Enterprise Yearly',
-    type: PaymentType.SUBSCRIPTION,
-    priceInCents: 95000,
-    currency: 'usd',
-    credits: 6000000,
-    plan: {
-      name: 'Enterprise',
-      interval: PaymentInterval.YEAR,
-      intervalCount: 1,
-    },
-  },
-  starter_lifetime: {
-    productId: 'starter_lifetime',
-    productName: 'Starter',
-    planName: 'Starter Lifetime',
-    description: 'Starter Lifetime',
+  credits_trial_20: {
+    productId: 'credits_trial_20',
+    productName: '20 Credits',
+    planName: 'Trial Pack',
+    description: '2 AI wrap results',
     type: PaymentType.ONE_TIME,
-    priceInCents: 14900,
+    priceInCents: 200,
     currency: 'usd',
-    credits: 100000,
+    credits: 20,
+    creditsValidDays: 0,
+    paywallOnly: true,
   },
-  pro_lifetime: {
-    productId: 'pro_lifetime',
-    productName: 'Pro',
-    planName: 'Pro Lifetime',
-    description: 'Pro Lifetime',
+  credits_100: {
+    productId: 'credits_100',
+    productName: '100 Credits',
+    planName: 'Starter Pack',
+    description: '10 AI wrap results',
     type: PaymentType.ONE_TIME,
-    priceInCents: 49900,
+    priceInCents: 499,
     currency: 'usd',
-    credits: 1000000,
+    credits: 100,
+    creditsValidDays: 0,
   },
-  enterprise_lifetime: {
-    productId: 'enterprise_lifetime',
-    productName: 'Enterprise',
-    planName: 'Enterprise Lifetime',
-    description: 'Enterprise Lifetime',
+  credits_250: {
+    productId: 'credits_250',
+    productName: '250 Credits',
+    planName: 'Creator Pack',
+    description: '25 AI wrap results',
     type: PaymentType.ONE_TIME,
-    priceInCents: 199900,
+    priceInCents: 999,
     currency: 'usd',
-    credits: 10000000,
+    credits: 250,
+    creditsValidDays: 0,
+  },
+  credits_1000: {
+    productId: 'credits_1000',
+    productName: '1000 Credits',
+    planName: 'Studio Pack',
+    description: '100 AI wrap results',
+    type: PaymentType.ONE_TIME,
+    priceInCents: 2999,
+    currency: 'usd',
+    credits: 1000,
+    creditsValidDays: 0,
   },
 };
 
@@ -150,5 +94,7 @@ export function getPricingProduct(productId: string): PricingProduct | null {
 }
 
 export function listPricingProducts(): PricingProduct[] {
-  return Object.values(pricingCatalog);
+  return Object.values(pricingCatalog).filter(
+    (product) => !product.paywallOnly
+  );
 }

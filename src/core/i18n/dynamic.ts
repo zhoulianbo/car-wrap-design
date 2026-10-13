@@ -7,3 +7,11 @@ export function tDynamic(key: string): string {
   const fn = (m as Record<string, unknown>)[key];
   return typeof fn === 'function' ? (fn as () => string)() : key;
 }
+
+export function tStatus(value?: string | null): string {
+  if (!value) return '—';
+  const normalized = value.toLowerCase().replaceAll('-', '_');
+  const key = `common.status.${normalized}`;
+  const translated = tDynamic(key);
+  return translated === key ? value : translated;
+}

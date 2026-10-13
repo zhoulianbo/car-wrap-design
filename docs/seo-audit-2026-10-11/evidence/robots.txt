@@ -1,0 +1,14 @@
+User-Agent: *
+Allow: /
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /settings
+Disallow: /create
+Disallow: /projects
+Disallow: /wraps
+Disallow: /sign-in
+Disallow: /sign-up
+Disallow: /api/
+Disallow: /*?*
+
+Sitemap: http://localhost:3100/sitemap.xml

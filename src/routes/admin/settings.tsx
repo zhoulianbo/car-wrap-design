@@ -331,6 +331,12 @@ function SettingField({
   value: string;
   onChange: (value: string) => void;
 }) {
+  function getOptionLabel(option: { label: string; value: string }) {
+    const key = `admin.settings.options.${setting.name}.${option.value}`;
+    const translated = tDynamic(key);
+    return translated === key ? option.label : translated;
+  }
+
   if (setting.type === 'switch') {
     return (
       <div className="space-y-2">
@@ -352,12 +358,14 @@ function SettingField({
         <Label htmlFor={setting.name}>{label}</Label>
         <Select value={value} onValueChange={(v) => onChange(v || '')}>
           <SelectTrigger>
-            <SelectValue placeholder={placeholder || 'Select...'} />
+            <SelectValue
+              placeholder={placeholder || m['common.state.select']()}
+            />
           </SelectTrigger>
           <SelectContent>
             {setting.options.map((opt) => (
               <SelectItem key={opt.value} value={opt.value}>
-                {opt.label}
+                {getOptionLabel(opt)}
               </SelectItem>
             ))}
           </SelectContent>

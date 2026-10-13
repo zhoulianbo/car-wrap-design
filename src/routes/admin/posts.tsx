@@ -11,7 +11,7 @@ import { Pencil, Plus, Trash2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
-import { tDynamic } from '@/core/i18n/dynamic';
+import { tDynamic, tStatus } from '@/core/i18n/dynamic';
 import {
   apiDelete,
   apiGet,
@@ -218,7 +218,9 @@ function PostsPage() {
     { header: m['admin.posts.author_col'](), cell: (p) => p.authorName || '—' },
     {
       header: m['admin.posts.status_col'](),
-      cell: (p) => <Badge variant={statusVariant(p.status)}>{p.status}</Badge>,
+      cell: (p) => (
+        <Badge variant={statusVariant(p.status)}>{tStatus(p.status)}</Badge>
+      ),
     },
     {
       header: m['admin.posts.created_at'](),
