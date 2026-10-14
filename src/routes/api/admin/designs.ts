@@ -233,7 +233,7 @@ async function readReviewTexture(url: string) {
   )
     throw new Error('Invalid texture source');
   const response = await fetch(source, {
-    redirect: 'error',
+    redirect: 'manual',
     signal: AbortSignal.timeout(15000),
   });
   const contentType = response.headers.get('content-type')?.split(';')[0];

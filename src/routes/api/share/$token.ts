@@ -42,7 +42,7 @@ async function GET({
     )
       return respErr('Preview unavailable', { status: 502, headers });
     const image = await fetch(source, {
-      redirect: 'error',
+      redirect: 'manual',
       signal: AbortSignal.timeout(15_000),
     });
     const type = image.headers.get('content-type')?.split(';')[0];

@@ -22,7 +22,7 @@ export async function normalizeGeneratedWrap(
   let mask = templates.get(url);
   if (!mask) {
     const response = await fetch(url, {
-      redirect: 'error',
+      redirect: 'manual',
       signal: AbortSignal.timeout(15_000),
     });
     if (!response.ok) throw new Error('Wrap template unavailable');

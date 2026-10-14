@@ -103,7 +103,7 @@ async function downloadGenerationPng(
     return respErr('Invalid texture source', { status: 502 });
   }
   const response = await fetch(source, {
-    redirect: 'error',
+    redirect: 'manual',
     signal: AbortSignal.timeout(15_000),
   });
   if (!response.ok) return respErr('Texture unavailable', { status: 502 });

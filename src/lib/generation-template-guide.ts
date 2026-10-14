@@ -24,7 +24,8 @@ export async function prepareGenerationTemplateGuide(
   onStage?.('guide_availability');
   const response = await fetch(url.href, {
     method: 'HEAD',
-    redirect: 'error',
+    // Workers does not support "error"; reject 3xx via response.ok below.
+    redirect: 'manual',
     signal: AbortSignal.timeout(15_000),
   });
   if (!response.ok)

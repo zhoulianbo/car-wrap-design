@@ -53,7 +53,7 @@ async function GET({
         return respErr('Invalid texture source', { status: 502 });
       }
       const response = await fetch(source, {
-        redirect: 'error',
+        redirect: 'manual',
         signal: AbortSignal.timeout(15_000),
       });
       const contentType = response.headers.get('content-type')?.split(';')[0];

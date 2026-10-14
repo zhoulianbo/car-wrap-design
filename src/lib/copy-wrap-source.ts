@@ -94,7 +94,7 @@ export async function copyWrapSource(input: {
     }
   }
   const response = await fetch(url, {
-    redirect: 'error',
+    redirect: 'manual',
     signal: AbortSignal.timeout(15000),
   });
   const contentType = response.headers.get('content-type')?.split(';')[0];

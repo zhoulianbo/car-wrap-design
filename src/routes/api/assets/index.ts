@@ -36,7 +36,7 @@ async function GET({ request }: { request: Request }) {
       )
         return respErr('Invalid image source', { status: 502 });
       const response = await fetch(source, {
-        redirect: 'error',
+        redirect: 'manual',
         signal: AbortSignal.timeout(15_000),
       });
       const type = response.headers.get('content-type')?.split(';')[0];

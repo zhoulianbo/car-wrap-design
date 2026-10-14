@@ -55,7 +55,7 @@ for (const vehicle of VEHICLE_ASSET_MANIFEST) {
 }
 
 const originalFetch = globalThis.fetch;
-let available = true;
+let responseStatus = 200;
 let contentType = 'image/png';
 let stage = '';
 const onStage = (value: string) => {
@@ -75,10 +75,10 @@ storage.addProvider({
 });
 globalThis.fetch = async (url, init) => {
   assert.equal(init?.method, 'HEAD');
-  assert.equal(init?.redirect, 'error');
+  assert.equal(init?.redirect, 'manual');
   assert.match(String(url), /\/templates\/ai-guides\/[a-z0-9-]+\.png$/);
   return new Response(null, {
-    status: available ? 200 : 404,
+    status: responseStatus,
     headers: { 'content-type': contentType },
   });
 };
@@ -89,13 +89,21 @@ try {
       `https://fixture.invalid/templates/ai-guides/${vehicle.slug}.png`
     );
   }
-  available = false;
-  await assert.rejects(
-    () => prepareGenerationTemplateGuide('model-3-legacy', storage, onStage),
-    /Image unavailable/
-  );
-  assert.equal(stage, 'guide_availability');
-  available = true;
+  for (const status of [301, 302, 303, 307, 308, 404, 403, 500]) {
+    responseStatus = status;
+    await assert.rejects(
+      () => prepareGenerationTemplateGuide('model-3-legacy', storage, onStage),
+      (error: unknown) => {
+        assert(error instanceof Error);
+        assert.equal(error.message, 'Image unavailable');
+        assert(error.cause instanceof Error);
+        assert.match(error.cause.message, new RegExp(`HTTP ${status}`));
+        return true;
+      }
+    );
+    assert.equal(stage, 'guide_availability');
+  }
+  responseStatus = 200;
   contentType = 'text/html';
   await assert.rejects(
     () => prepareGenerationTemplateGuide('model-3-legacy', storage, onStage),
