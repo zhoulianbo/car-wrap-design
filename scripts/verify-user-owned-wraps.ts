@@ -386,6 +386,7 @@ try {
   storage.addProvider({
     name: 'fixture',
     configs: {},
+    getPublicUrl: ({ key }) => `https://fixture.invalid/${key}`,
     deleteFile: async ({ key }) => {
       if (failDeletion) throw new Error('Storage deletion failed');
       deletedKeys.push(key);
@@ -432,8 +433,6 @@ try {
     mode: 'image-to-image' as const,
     prompt: 'Mint geometric wrap',
     inputAssetIds: ['upload-a'],
-    guideImageUrl:
-      'https://fixture.invalid/templates/tesla/model-3-2024-base.png',
     storage,
     idempotencyKey: 'generation-once',
     provider,

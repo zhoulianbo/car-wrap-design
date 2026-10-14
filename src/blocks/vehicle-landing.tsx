@@ -35,6 +35,8 @@ export function VehicleLanding({
       vehicles={vehicles}
       labels={{
         home: m['common.systems.home'](),
+        heroPrimary: m['landing.hero.cta'](),
+        heroSecondary: m['landing.hero.secondary'](),
         openDesigner: m['landing.vehicle.open_designer'](),
         seeIdeas: m['landing.vehicle.see_ideas'](),
         designThis: m['landing.vehicle.design_this'](),

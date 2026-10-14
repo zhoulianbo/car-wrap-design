@@ -1,7 +1,6 @@
 /** Local fixtures only: no paid AI requests, real user changes, or R2 uploads. */
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { createHash } from 'node:crypto';
 import { mkdtempSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -18,11 +17,7 @@ import {
   segmentWrapPanels,
 } from '../src/lib/wrap-editor-geometry';
 import { aiWrapName } from '../src/lib/wrap-naming';
-import {
-  fitWrapTexture,
-  wrapGenerationGuide,
-  wrapTextureMask,
-} from '../src/lib/wrap-texture';
+import { fitWrapTexture, wrapTextureMask } from '../src/lib/wrap-texture';
 
 assert.equal(
   generationTemplateUrl(
@@ -37,12 +32,7 @@ assert.throws(
   /VITE_ASSETS_URL/
 );
 function expectedGuideUrl(slug: string) {
-  const vehicle = VEHICLE_ASSET_MANIFEST.find((item) => item.slug === slug)!;
-  const body = wrapGenerationGuide(
-    readFileSync(`public${vehicle.templatePath}`)
-  );
-  const hash = createHash('sha256').update(body).digest('hex');
-  return `https://fixture.invalid/templates/ai-guides/${hash}.png`;
+  return `https://fixture.invalid/templates/ai-guides/${slug}.png`;
 }
 assert.equal(aiWrapName('  Bright ocean racing stripes  '), 'Bright ocean');
 assert.equal(aiWrapName('Éclat doré métallique'), 'Éclat doré');
@@ -256,6 +246,13 @@ globalThis.fetch = async (url, init) => {
       },
     });
   }
+  if (String(url).includes('/templates/ai-guides/')) {
+    assert.equal(init?.method, 'HEAD');
+    return new Response(null, {
+      status: guideAvailable ? 200 : 404,
+      headers: { 'content-type': 'image/png' },
+    });
+  }
   const template = VEHICLE_ASSET_MANIFEST.find((vehicle) =>
     String(url).endsWith(vehicle.templatePath.replace('/imgs', ''))
   );
@@ -275,18 +272,16 @@ const grsai = new GrsaiProvider({
 const storage = new StorageManager();
 let uploads = 0;
 let guideUploads = 0;
-const guideKeys = new Set<string>();
+let guideAvailable = true;
 storage.addProvider({
   name: 'fixture',
   configs: {},
   getPublicUrl: ({ key }) => `https://fixture.invalid/${key}`,
-  exists: async ({ key }) => guideKeys.has(key),
   uploadFile: async ({ key, body, contentType }) => {
     if (key.startsWith('templates/ai-guides/')) {
       assert.equal(contentType, 'image/png');
       assert.equal((await sharp(body).metadata()).hasAlpha, false);
       guideUploads++;
-      guideKeys.add(key);
       return {
         success: true,
         key,
@@ -362,11 +357,6 @@ try {
       prompt: 'Iron Man',
       preferredColors: id === 'free' ? [] : ['#ff0000', '#00ff00'],
       openToGallery,
-      guideImageUrl: generationTemplateUrl(
-        'model-3-2024-base',
-        'https://fixture.invalid',
-        ''
-      ),
       storage,
       idempotencyKey: `generation-${id}`,
       providerModel: 'gpt-image-2.5',
@@ -603,6 +593,7 @@ try {
     'One provider request per generation'
   );
 
+  guideAvailable = false;
   await assert.rejects(
     () =>
       createWrapGeneration({
@@ -610,14 +601,14 @@ try {
         vehicleSlug: 'cybertruck',
         mode: 'text-to-image',
         prompt: 'Blue',
-        guideImageUrl: 'https://fixture.invalid/unavailable-template.png',
         storage,
         idempotencyKey: 'unavailable-guide',
         provider: grsai,
         providerModel: 'gpt-image-2.5-sunburst',
       }),
-    /Wrap template unavailable/
+    /Image unavailable/
   );
+  guideAvailable = true;
   assert.equal(await getBalance('paid-private'), 10);
   assert.equal(await getFrozenBalance('paid-private'), 0);
   assert.equal(
@@ -656,11 +647,6 @@ try {
       mode: 'text-to-image',
       prompt: 'Blue',
       openToGallery: false,
-      guideImageUrl: generationTemplateUrl(
-        'cybertruck',
-        'https://fixture.invalid',
-        ''
-      ),
       storage,
       idempotencyKey: owner,
       providerModel: 'fixture',
@@ -775,11 +761,6 @@ try {
         vehicleSlug,
         mode: 'text-to-image',
         prompt: 'Blue',
-        guideImageUrl: generationTemplateUrl(
-          vehicleSlug,
-          'https://fixture.invalid',
-          ''
-        ),
         storage,
         idempotencyKey: owner,
         provider: grsai,
@@ -854,11 +835,6 @@ try {
     mode: 'text-to-image',
     prompt: 'Blue',
     openToGallery: false,
-    guideImageUrl: generationTemplateUrl(
-      'model-3-2024-base',
-      'https://fixture.invalid',
-      ''
-    ),
     storage,
     idempotencyKey: 'kie-private',
     provider: kie,
@@ -879,8 +855,8 @@ try {
   assert.equal(uploads, 4, 'Kie uses the shared normalized PNG storage path');
   assert.equal(
     guideUploads,
-    3,
-    'Repeated generations reuse each content-addressed guide'
+    0,
+    'Generation requests only use pre-generated named guides'
   );
   const { reserve } = await import('../src/modules/credits/service');
   await db().insert(user).values({

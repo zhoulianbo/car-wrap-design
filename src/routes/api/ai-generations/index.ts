@@ -14,7 +14,7 @@ import { createWrapProvider } from '@/modules/ai-tasks/wrap-provider';
 import { getAllConfigs } from '@/modules/config/service';
 import { getStorage } from '@/modules/storage/service';
 import { createAiWebhookToken } from '@/lib/ai-webhook';
-import { generationTemplateUrl } from '@/lib/generation-template-url';
+import { generationErrorDetails } from '@/lib/generation-error-log';
 import { respData, respErr } from '@/lib/resp';
 import { isVehicleSlug } from '@/lib/vehicle-catalog';
 import { getLocale, locales } from '@/paraglide/runtime.js';
@@ -46,6 +46,7 @@ async function GET({ request }: { request: Request }) {
     if (!session?.user) return respErr('Unauthorized', { status: 401 });
     return respData(await listUserGenerations(session.user.id));
   } catch (error) {
+    console.error('[ai-generations] GET failed', generationErrorDetails(error));
     return respErr(
       error instanceof Error ? error.message : 'Failed to list generated images'
     );
@@ -53,39 +54,59 @@ async function GET({ request }: { request: Request }) {
 }
 
 async function POST({ request }: { request: Request }) {
+  const requestId = crypto.randomUUID();
+  const startedAt = Date.now();
+  let stage = 'session';
+  let vehicleSlug: string | undefined;
+  let provider: string | undefined;
+  const sensitiveValues: string[] = [];
   let locale = getLocale();
   try {
     const session = await getAuth().api.getSession({
       headers: request.headers,
     });
     if (!session?.user) return respErr('Unauthorized', { status: 401 });
+    stage = 'parse_request';
     const parsed = schema.safeParse(await request.json());
     if (!parsed.success || !isVehicleSlug(parsed.data.vehicleSlug)) {
       return respErr('Invalid generation request', { status: 400 });
     }
     locale = parsed.data.locale ?? locale;
+    vehicleSlug = parsed.data.vehicleSlug;
+    sensitiveValues.push(
+      parsed.data.prompt,
+      parsed.data.style ?? '',
+      parsed.data.idempotencyKey
+    );
+    stage = 'configuration';
     const configs = await getAllConfigs();
+    sensitiveValues.push(
+      ...Object.entries(configs)
+        .filter(([key]) => /key|secret|token|password/i.test(key))
+        .map(([, value]) => value)
+    );
+    stage = 'provider';
     const resolved = createWrapProvider(configs);
     if (!resolved)
       return respErr('The selected AI provider is not configured', {
         status: 503,
       });
+    provider = resolved.provider.name;
+    stage = 'storage_configuration';
     const storage = await getStorage({ root: true });
     if (!storage)
       return respErr('R2 storage is not configured', { status: 503 });
     const appUrl = configs.app_url || new URL(request.url).origin;
-    const guideImageUrl = generationTemplateUrl(
-      parsed.data.vehicleSlug,
-      configs.assets_url,
-      appUrl
-    );
+    stage = 'webhook_token';
     const token = await createAiWebhookToken(resolved.provider.name);
+    if (token) sensitiveValues.push(token);
     const callbackUrl =
       token && !appUrl.includes('localhost') && !appUrl.includes('127.0.0.1')
         ? `${appUrl.replace(/\/$/, '')}/api/ai-generations/notify/${resolved.provider.name}?token=${token}`
         : undefined;
     // Both the standalone generator and editor use this endpoint. Check all
     // user-supplied text before creating a task or reserving any credits.
+    stage = 'prompt_safety';
     await assertPromptAllowed({
       prompt: parsed.data.prompt,
       style: parsed.data.style,
@@ -104,12 +125,14 @@ async function POST({ request }: { request: Request }) {
         preferredColors: parsed.data.preferredColors,
         openToGallery: parsed.data.openToGallery,
         inputAssetIds: parsed.data.inputAssetIds,
-        guideImageUrl,
         storage,
         idempotencyKey: parsed.data.idempotencyKey,
         provider: resolved.provider,
         providerModel: resolved.model,
         callbackUrl,
+        onStage: (nextStage) => {
+          stage = nextStage;
+        },
       }),
       { status: 202 }
     );
@@ -119,6 +142,14 @@ async function POST({ request }: { request: Request }) {
         status: 422,
       });
     }
+    console.error('[ai-generations] POST failed', {
+      requestId,
+      stage,
+      vehicleSlug,
+      provider,
+      elapsedMs: Date.now() - startedAt,
+      error: generationErrorDetails(error, sensitiveValues),
+    });
     return respErr(
       error instanceof Error ? error.message : 'Failed to create generation'
     );

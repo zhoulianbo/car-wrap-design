@@ -15,8 +15,9 @@
     "hero": {
       "headline": "Design Your Own Car Wrap Online",
       "subheadline": "Turn your car wrap design ideas into a look you can preview in 3D. Choose a vehicle, create with the free browser editor, or explore a new direction with AI credits.",
-      "cta": "Start AI Design",
-      "secondary": "Explore wraps",
+      "cta": "Start Free Designer",
+      "secondary": "Generate with AI",
+      "explore_wraps": "Explore wraps",
       "badge": "Vehicle Wrap Designer",
       "variants": "12 supported variants",
       "templates": "Official UV baselines",

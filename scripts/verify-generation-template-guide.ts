@@ -5,7 +5,10 @@ import { decode } from 'fast-png';
 import sharp from 'sharp';
 
 import { StorageManager } from '../src/core/storage';
-import { prepareGenerationTemplateGuide } from '../src/lib/generation-template-guide';
+import {
+  generationTemplateGuideKey,
+  prepareGenerationTemplateGuide,
+} from '../src/lib/generation-template-guide';
 import { VEHICLE_ASSET_MANIFEST } from '../src/lib/vehicle-catalog';
 import { wrapGenerationGuide, wrapTextureMask } from '../src/lib/wrap-texture';
 
@@ -13,6 +16,11 @@ for (const vehicle of VEHICLE_ASSET_MANIFEST) {
   const original = readFileSync(`public${vehicle.templatePath}`);
   const mask = wrapTextureMask(original);
   const guide = wrapGenerationGuide(original);
+  assert.deepEqual(
+    readFileSync(`public/imgs/${generationTemplateGuideKey(vehicle.slug)}`),
+    Buffer.from(guide),
+    `${vehicle.slug}: published file must match current template geometry`
+  );
   const image = decode(guide);
   assert.deepEqual(
     [image.width, image.height, image.channels],
@@ -47,87 +55,63 @@ for (const vehicle of VEHICLE_ASSET_MANIFEST) {
 }
 
 const originalFetch = globalThis.fetch;
-let source = readFileSync('public/imgs/templates/tesla/cybertruck.png');
 let available = true;
-let uploadFails = false;
-let uploads = 0;
-const stored = new Set<string>();
+let contentType = 'image/png';
+let stage = '';
+const onStage = (value: string) => {
+  stage = value;
+};
 const storage = new StorageManager();
 storage.addProvider({
   name: 'fixture',
   configs: {},
-  exists: async ({ key }) => stored.has(key),
   getPublicUrl: ({ key }) => `https://fixture.invalid/${key}`,
-  uploadFile: async ({ key, body, contentType }) => {
-    if (uploadFails)
-      return {
-        success: false,
-        error: 'Fixture upload failure',
-        provider: 'fixture',
-      };
-    assert.equal(contentType, 'image/png');
-    assert.equal((await sharp(body).metadata()).hasAlpha, false);
-    uploads++;
-    stored.add(key);
-    return {
-      success: true,
-      key,
-      url: `https://fixture.invalid/${key}`,
-      provider: 'fixture',
-    };
+  uploadFile: async () => {
+    throw new Error('Generation requests must never upload guides');
   },
   downloadAndUpload: async () => {
     throw new Error('Unexpected download');
   },
 });
-globalThis.fetch = async () =>
-  new Response(source, { status: available ? 200 : 404 });
+globalThis.fetch = async (url, init) => {
+  assert.equal(init?.method, 'HEAD');
+  assert.equal(init?.redirect, 'error');
+  assert.match(String(url), /\/templates\/ai-guides\/[a-z0-9-]+\.png$/);
+  return new Response(null, {
+    status: available ? 200 : 404,
+    headers: { 'content-type': contentType },
+  });
+};
 try {
-  const url = await prepareGenerationTemplateGuide(
-    'https://fixture.invalid/template.png',
-    storage
-  );
-  assert.match(url, /\/templates\/ai-guides\/[a-f0-9]{64}\.png$/);
-  assert.equal(
-    await prepareGenerationTemplateGuide(
-      'https://fixture.invalid/template.png',
-      storage
-    ),
-    url
-  );
-  assert.equal(uploads, 1, 'Unchanged guides are uploaded once');
-  source = readFileSync('public/imgs/templates/tesla/model-3-legacy.png');
-  assert.notEqual(
-    await prepareGenerationTemplateGuide(
-      'https://fixture.invalid/template.png',
-      storage
-    ),
-    url
-  );
-  assert.equal(uploads, 2, 'New geometry has a new object key');
+  for (const vehicle of VEHICLE_ASSET_MANIFEST) {
+    assert.equal(
+      await prepareGenerationTemplateGuide(vehicle.slug, storage),
+      `https://fixture.invalid/templates/ai-guides/${vehicle.slug}.png`
+    );
+  }
   available = false;
   await assert.rejects(
-    () =>
-      prepareGenerationTemplateGuide(
-        'https://fixture.invalid/template.png',
-        storage
-      ),
-    /template unavailable/
+    () => prepareGenerationTemplateGuide('model-3-legacy', storage, onStage),
+    /Image unavailable/
   );
+  assert.equal(stage, 'guide_availability');
   available = true;
-  source = readFileSync('public/imgs/templates/tesla/model-3-2024-base.png');
-  uploadFails = true;
+  contentType = 'text/html';
   await assert.rejects(
-    () =>
-      prepareGenerationTemplateGuide(
-        'https://fixture.invalid/template.png',
-        storage
-      ),
-    /Fixture upload failure/
+    () => prepareGenerationTemplateGuide('model-3-legacy', storage, onStage),
+    /Invalid image source/
   );
+  assert.equal(stage, 'guide_availability');
+  globalThis.fetch = async () => {
+    throw new Error('fetch failed');
+  };
+  await assert.rejects(() =>
+    prepareGenerationTemplateGuide('model-3-legacy', storage, onStage)
+  );
+  assert.equal(stage, 'guide_availability');
 } finally {
   globalThis.fetch = originalFetch;
 }
 console.log(
-  'PASS: all template geometry, alpha-independent guide, reuse, versioning, and preparation failures. No external requests.'
+  'PASS: all named guide files match template geometry; missing/invalid/unreachable guides fail without uploads. No external requests.'
 );

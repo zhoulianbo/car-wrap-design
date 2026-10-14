@@ -552,43 +552,40 @@ function AiCarWrapGeneratorPage() {
 
           <div className="rounded-2xl border border-white/10 bg-white/3 p-4 sm:p-5">
             <div className="flex items-center justify-between gap-3">
-              <h2 className="text-sm font-semibold text-white">
-                {m['generator.your_image']()}
-              </h2>
-              <p className="text-xs text-slate-500">
+              <div
+                role="tablist"
+                aria-label={m['generator.your_image']()}
+                className="inline-flex shrink-0 rounded-xl bg-black/30 p-1"
+              >
+                {(
+                  [
+                    ['image', m['generator.tab_image']()],
+                    ['3d', m['generator.tab_3d']()],
+                  ] as const
+                ).map(([value, label]) => (
+                  <button
+                    key={value}
+                    type="button"
+                    role="tab"
+                    aria-selected={resultTab === value}
+                    onClick={() => {
+                      if (value === '3d') setHasOpened3d(true);
+                      setResultTab(value);
+                    }}
+                    className={cn(
+                      'rounded-lg px-3 py-1.5 text-xs font-semibold transition',
+                      resultTab === value
+                        ? 'bg-white/10 text-white'
+                        : 'text-slate-400 hover:text-white'
+                    )}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+              <p className="min-w-0 text-right text-xs text-slate-500">
                 {m['generator.format_label']({ vehicle: vehicle.trim })}
               </p>
-            </div>
-            <div
-              role="tablist"
-              aria-label={m['generator.your_image']()}
-              className="mt-4 inline-flex rounded-xl bg-black/30 p-1"
-            >
-              {(
-                [
-                  ['image', m['generator.tab_image']()],
-                  ['3d', m['generator.tab_3d']()],
-                ] as const
-              ).map(([value, label]) => (
-                <button
-                  key={value}
-                  type="button"
-                  role="tab"
-                  aria-selected={resultTab === value}
-                  onClick={() => {
-                    if (value === '3d') setHasOpened3d(true);
-                    setResultTab(value);
-                  }}
-                  className={cn(
-                    'rounded-lg px-3 py-1.5 text-xs font-semibold transition',
-                    resultTab === value
-                      ? 'bg-white/10 text-white'
-                      : 'text-slate-400 hover:text-white'
-                  )}
-                >
-                  {label}
-                </button>
-              ))}
             </div>
 
             <div className="mt-4 overflow-hidden rounded-2xl border border-white/10 bg-[#080c13]">

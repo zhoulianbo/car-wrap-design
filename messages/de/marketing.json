@@ -15,8 +15,9 @@
     "hero": {
       "headline": "Autofolierung selbst gestalten – direkt online",
       "subheadline": "Entwirf deinen eigenen Look und prüfe ihn am 3D-Fahrzeug. Wähle ein Modell, gestalte im kostenlosen Browser-Editor oder entdecke mit KI-Credits neue Farben und Muster.",
-      "cta": "Mit KI gestalten",
-      "secondary": "Designs entdecken",
+      "cta": "Kostenlosen Designer starten",
+      "secondary": "Mit KI generieren",
+      "explore_wraps": "Designs entdecken",
       "badge": "Dein Folierungsdesigner",
       "variants": "12 Fahrzeugvarianten",
       "templates": "Offizielle UV-Vorlagen",

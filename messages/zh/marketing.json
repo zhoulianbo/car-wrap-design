@@ -15,8 +15,9 @@
     "hero": {
       "headline": "在线设计你的专属汽车车衣",
       "subheadline": "把汽车车衣设计灵感变成可预览的 3D 车身效果。选择车型，用免费在线编辑器自由创作，或使用积分让 AI 帮你探索新的风格。",
-      "cta": "开始AI设计",
-      "secondary": "浏览作品",
+      "cta": "开始免费设计",
+      "secondary": "使用 AI 生成",
+      "explore_wraps": "浏览作品",
       "badge": "汽车车衣设计工具",
       "variants": "支持 12 种车型配置",
       "templates": "官方 UV 模板基线",

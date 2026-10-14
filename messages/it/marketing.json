@@ -15,8 +15,9 @@
     "hero": {
       "headline": "Configuratore wrapping auto: crea il tuo stile",
       "subheadline": "Dai forma alle tue idee e guardale sull'auto in 3D. Scegli un veicolo, crea con l'editor gratuito nel browser oppure esplora nuovi stili usando i crediti IA.",
-      "cta": "Crea con l'IA",
-      "secondary": "Esplora i design",
+      "cta": "Inizia a progettare gratis",
+      "secondary": "Genera con l'IA",
+      "explore_wraps": "Esplora i design",
       "badge": "Progetta il tuo wrapping",
       "variants": "12 versioni disponibili",
       "templates": "Modelli UV ufficiali",

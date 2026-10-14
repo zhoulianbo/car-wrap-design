@@ -145,13 +145,14 @@ export async function createWrapGeneration(params: {
   preferredColors?: string[];
   openToGallery?: boolean;
   inputAssetIds?: string[];
-  guideImageUrl: string;
   storage: StorageManager;
   idempotencyKey: string;
   provider: AIProvider;
   providerModel: string;
   callbackUrl?: string;
+  onStage?: (stage: string) => void;
 }) {
+  params.onStage?.('generation_preflight');
   const [duplicate] = await db()
     .select()
     .from(aiGeneration)
@@ -192,12 +193,14 @@ export async function createWrapGeneration(params: {
     throw new Error('Image-to-image generation needs a reference image');
   }
 
-  // Prepare a readable guide before reserving credits or calling a paid model.
+  // Verify the pre-generated public guide before reserving credits or calling a paid model.
   const guideImageUrl = await prepareGenerationTemplateGuide(
-    params.guideImageUrl,
-    params.storage
+    params.vehicleSlug,
+    params.storage,
+    params.onStage
   );
 
+  params.onStage?.('reserve_credits_and_create_task');
   const generationId = crypto.randomUUID();
   const taskId = crypto.randomUUID();
   let task: typeof aiTask.$inferSelect;
@@ -330,6 +333,7 @@ export async function createWrapGeneration(params: {
     ]
       .filter(Boolean)
       .join('\n\n');
+    params.onStage?.('provider_generate');
     const result = await params.provider.generate({
       params: {
         mediaType: AIMediaType.IMAGE,
@@ -349,6 +353,7 @@ export async function createWrapGeneration(params: {
         },
       },
     });
+    params.onStage?.('persist_provider_result');
     await db()
       .update(aiTask)
       .set({

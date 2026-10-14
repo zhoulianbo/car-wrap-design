@@ -15,6 +15,7 @@ import {
   MousePointer2,
   Paintbrush,
   Palette,
+  Sparkles,
 } from 'lucide-react';
 
 import { Link } from '@/core/i18n/navigation';
@@ -90,20 +91,20 @@ function HeroCopy() {
       <p className={styles.description}>{m['landing.hero.subheadline']()}</p>
       <div className={styles.actions}>
         <Link
-          href="/ai-car-wrap-generator"
+          href="/create"
           className={cn(buttonVariants({ size: 'lg' }), styles.primary)}
         >
           <Paintbrush className="size-4" />
           {m['landing.hero.cta']()}
         </Link>
         <Link
-          href="/gallery"
+          href="/ai-car-wrap-generator"
           className={cn(
             buttonVariants({ variant: 'outline', size: 'lg' }),
             styles.secondary
           )}
         >
-          <Images className="size-4" />
+          <Sparkles className="size-4" />
           {m['landing.hero.secondary']()}
         </Link>
       </div>
@@ -337,7 +338,7 @@ function HeroContent({
             <span>{m['landing.hero.wraps_title']()}</span>
             <Link href="/gallery">
               <Images className="size-4" />
-              {m['landing.hero.secondary']()}
+              {m['landing.hero.explore_wraps']()}
               <ArrowRight className="size-3.5" />
             </Link>
           </div>

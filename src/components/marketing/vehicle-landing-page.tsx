@@ -3,8 +3,8 @@ import {
   ArrowRight,
   BookOpen,
   CheckCircle2,
-  Images,
   Paintbrush,
+  Sparkles,
 } from 'lucide-react';
 
 import { Link } from '@/core/i18n/navigation';
@@ -53,6 +53,8 @@ export interface VehicleLandingContent {
 
 export interface VehicleLandingLabels {
   home: string;
+  heroPrimary: string;
+  heroSecondary: string;
   openDesigner: string;
   seeIdeas: string;
   designThis: string;
@@ -156,25 +158,29 @@ export function VehicleLandingPage({
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <Link
-                  href="/ai-car-wrap-generator"
+                  href={
+                    path === '/tesla-model-y-wrap'
+                      ? '/create/model-y-legacy'
+                      : '/create'
+                  }
                   className={cn(
                     buttonVariants({ size: 'lg' }),
                     heroStyles.primary
                   )}
                 >
                   <Paintbrush aria-hidden="true" className="size-4" />
-                  {labels.openDesigner}
+                  {labels.heroPrimary}
                 </Link>
-                <a
-                  href="#gallery"
+                <Link
+                  href="/ai-car-wrap-generator"
                   className={cn(
                     buttonVariants({ variant: 'outline', size: 'lg' }),
                     heroStyles.secondary
                   )}
                 >
-                  <Images aria-hidden="true" className="size-4" />
-                  {labels.seeIdeas}
-                </a>
+                  <Sparkles aria-hidden="true" className="size-4" />
+                  {labels.heroSecondary}
+                </Link>
               </div>
             </div>
             <div className="min-w-0">

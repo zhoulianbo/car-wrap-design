@@ -163,7 +163,7 @@ export class R2Provider implements StorageProvider {
       if (!response.ok) {
         return {
           success: false,
-          error: `Upload failed: ${response.statusText}`,
+          error: `Upload failed: HTTP ${response.status} ${response.statusText}`,
           provider: this.name,
         };
       }
