@@ -7,6 +7,10 @@
     "sign": {
       "sign_in_title": "Accedi",
       "sign_in_description": "Bentornato",
+      "bonus_title": "Registrati e ricevi",
+      "bonus_credits": "10 crediti",
+      "bonus_description": "Per generare un design per la tua auto con l’AI.",
+      "google_continue": "Continua con Google",
       "sign_up_title": "Registrati",
       "sign_up_description": "Inizia gratis",
       "email_title": "Email",

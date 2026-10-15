@@ -611,6 +611,9 @@ export async function listDesignsForModeration(params: {
       showInHero: design.showInHero,
       moderationStatus: state,
       usesAi: userWrap.usesAi,
+      prompt: sql<
+        string | null
+      >`case when ${userWrap.usesAi} = true then coalesce(${aiGeneration.prompt}, ${design.prompt}) else null end`,
       finish: userWrap.finish,
       ownerId: userWrap.userId,
       vehicleSlug: userWrap.vehicleSlug,
@@ -623,6 +626,14 @@ export async function listDesignsForModeration(params: {
     })
     .from(userWrap)
     .leftJoin(design, join)
+    .leftJoin(
+      aiGeneration,
+      and(
+        eq(aiGeneration.id, userWrap.generationId),
+        eq(aiGeneration.userId, userWrap.userId),
+        eq(aiGeneration.status, 'succeeded')
+      )
+    )
     .where(and(...conditions))
     .orderBy(desc(userWrap.updatedAt), desc(userWrap.id))
     .limit(params.pageSize)

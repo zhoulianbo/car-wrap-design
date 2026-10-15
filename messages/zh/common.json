@@ -7,6 +7,10 @@
     "sign": {
       "sign_in_title": "登录",
       "sign_in_description": "欢迎回来",
+      "bonus_title": "注册送",
+      "bonus_credits": "10 积分",
+      "bonus_description": "可 AI 生成车衣一次",
+      "google_continue": "使用 Google 继续",
       "sign_up_title": "注册",
       "sign_up_description": "免费开始使用",
       "email_title": "邮箱",

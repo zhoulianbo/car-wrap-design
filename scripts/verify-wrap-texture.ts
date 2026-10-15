@@ -10,6 +10,7 @@ import {
   WRAP_PNG_TARGET_BYTES,
 } from '../src/lib/compress-wrap-png';
 import { VEHICLE_ASSET_MANIFEST } from '../src/lib/vehicle-catalog';
+import { applyWrapPanelAlpha } from '../src/lib/wrap-editor-geometry';
 import { fitWrapTexture, wrapTextureMask } from '../src/lib/wrap-texture';
 
 const size = 1024;
@@ -23,6 +24,29 @@ const solid = (color: number[]) => {
 const white = pngOf(solid([255, 255, 255, 255]));
 for (const vehicle of VEHICLE_ASSET_MANIFEST) {
   const mask = wrapTextureMask(readFileSync(`public${vehicle.templatePath}`));
+  // Saving the opaque 3D preview must not bake its paint color into UV gaps.
+  const editorExport = new Uint8ClampedArray(solid([244, 245, 246, 255]));
+  applyWrapPanelAlpha(editorExport, mask.coverage);
+  const savedWebp = await sharp(editorExport, {
+    raw: { width: size, height: size, channels: 4 },
+  })
+    .webp({ lossless: true })
+    .toBuffer();
+  const savedPixels = await sharp(savedWebp).ensureAlpha().raw().toBuffer();
+  for (let i = 0; i < mask.coverage.length; i++) {
+    assert.equal(
+      savedPixels[i * 4 + 3],
+      mask.coverage[i],
+      'WebP saves keep template alpha'
+    );
+    if (mask.coverage[i] === 255) {
+      assert.deepEqual(
+        Array.from(savedPixels.subarray(i * 4, i * 4 + 4)),
+        [244, 245, 246, 255],
+        'Light artwork inside panels must stay opaque'
+      );
+    }
+  }
   const outlineWidth = vehicle.slug === 'cybertruck' ? 10 : 1.5;
   const reference = decode(fitWrapTexture(white, mask, { outlineWidth }));
   if (vehicle.slug === 'cybertruck') {

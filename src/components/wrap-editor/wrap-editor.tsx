@@ -81,12 +81,13 @@ import { sanitizeImageFile } from '@/lib/image-file';
 import { cn } from '@/lib/utils';
 import type { VehicleSlug } from '@/lib/vehicle-catalog';
 import {
+  applyWrapPanelAlpha,
   editorToolCursor,
   fitCanvasView,
   MAX_CANVAS_SCALE,
   MIN_CANVAS_SCALE,
   rotateAroundCenter,
-  segmentWrapPanels,
+  wrapPanelMask,
   zoomCanvasView,
   type CanvasView,
 } from '@/lib/wrap-editor-geometry';
@@ -979,11 +980,7 @@ export const WrapEditor = forwardRef<WrapEditorHandle, WrapEditorProps>(
       const ctx = canvas.getContext('2d');
       if (!ctx) return null;
       ctx.drawImage(templateImage, 0, 0, 1024, 1024);
-      return segmentWrapPanels(
-        ctx.getImageData(0, 0, 1024, 1024).data,
-        1024,
-        1024
-      );
+      return wrapPanelMask(ctx.getImageData(0, 0, 1024, 1024).data, 1024, 1024);
     }, [templateImage]);
     const panelCanvas = useMemo(() => {
       if (!panelMap) return undefined;
@@ -1057,49 +1054,56 @@ export const WrapEditor = forwardRef<WrapEditorHandle, WrapEditorProps>(
       };
     }, [templatePath]);
 
-    const renderCleanCanvas = useCallback(() => {
-      const stage = stageRef.current;
-      if (!stage) return null;
-      const view = {
-        x: stage.x(),
-        y: stage.y(),
-        scaleX: stage.scaleX(),
-        scaleY: stage.scaleY(),
-      };
-      guideLayerRef.current?.hide();
-      panelHighlightRef.current?.hide();
-      stage.find('Transformer').forEach((node) => node.hide());
-      let canvas: HTMLCanvasElement;
-      try {
-        // Export in document coordinates, independent of viewport zoom/pan.
-        stage.position({ x: 0, y: 0 });
-        stage.scale({ x: 1, y: 1 });
-        canvas = stage.toCanvas({
-          x: 0,
-          y: 0,
-          width: 1024,
-          height: 1024,
-          pixelRatio: 1,
-        });
-      } finally {
-        stage.setAttrs(view);
-        guideLayerRef.current?.show();
-        panelHighlightRef.current?.show();
-        stage.find('Transformer').forEach((node) => node.show());
-        stage.draw();
-      }
-      // The editing surface remains transparent. Flatten paint only for the
-      // vehicle texture/export, so transparent pixels don't become black in 3D.
-      const output = window.document.createElement('canvas');
-      output.width = canvas.width;
-      output.height = canvas.height;
-      const context = output.getContext('2d');
-      if (!context) return null;
-      context.fillStyle = paintColor;
-      context.fillRect(0, 0, output.width, output.height);
-      context.drawImage(canvas, 0, 0);
-      return output;
-    }, [paintColor]);
+    const renderCleanCanvas = useCallback(
+      (forExport = false) => {
+        const stage = stageRef.current;
+        if (!stage || (forExport && !panelMap?.panels.length)) return null;
+        const view = {
+          x: stage.x(),
+          y: stage.y(),
+          scaleX: stage.scaleX(),
+          scaleY: stage.scaleY(),
+        };
+        guideLayerRef.current?.hide();
+        panelHighlightRef.current?.hide();
+        stage.find('Transformer').forEach((node) => node.hide());
+        let canvas: HTMLCanvasElement;
+        try {
+          // Export in document coordinates, independent of viewport zoom/pan.
+          stage.position({ x: 0, y: 0 });
+          stage.scale({ x: 1, y: 1 });
+          canvas = stage.toCanvas({
+            x: 0,
+            y: 0,
+            width: 1024,
+            height: 1024,
+            pixelRatio: 1,
+          });
+        } finally {
+          stage.setAttrs(view);
+          guideLayerRef.current?.show();
+          panelHighlightRef.current?.show();
+          stage.find('Transformer').forEach((node) => node.show());
+          stage.draw();
+        }
+        // Keep paint beneath artwork for 3D; exports retain only printable panels.
+        const output = window.document.createElement('canvas');
+        output.width = canvas.width;
+        output.height = canvas.height;
+        const context = output.getContext('2d');
+        if (!context) return null;
+        context.fillStyle = paintColor;
+        context.fillRect(0, 0, output.width, output.height);
+        context.drawImage(canvas, 0, 0);
+        if (forExport && panelMap) {
+          const image = context.getImageData(0, 0, output.width, output.height);
+          applyWrapPanelAlpha(image.data, panelMap.coverage);
+          context.putImageData(image, 0, 0);
+        }
+        return output;
+      },
+      [paintColor, panelMap]
+    );
 
     const refreshPreview = useCallback(() => {
       const stage = stageRef.current;
@@ -1451,7 +1455,7 @@ export const WrapEditor = forwardRef<WrapEditorHandle, WrapEditorProps>(
       }
       const stage = stageRef.current;
       if (!stage) return false;
-      const canvas = renderCleanCanvas();
+      const canvas = renderCleanCanvas(true);
       if (!canvas) return false;
       const link = window.document.createElement('a');
       link.download = 'car-wrap-texture.png';
@@ -1470,7 +1474,7 @@ export const WrapEditor = forwardRef<WrapEditorHandle, WrapEditorProps>(
             stage?.find('Image').some((node) => !(node as Konva.Image).image())
           )
             return null;
-          return stage ? renderCleanCanvas() : null;
+          return stage ? renderCleanCanvas(true) : null;
         },
       }),
       [downloadTexture, renderCleanCanvas]

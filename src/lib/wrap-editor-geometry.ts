@@ -1,4 +1,45 @@
 export type CanvasView = { x: number; y: number; scale: number };
+
+/** Paint is already flattened inside panels; clear only non-printable pixels. */
+export function applyWrapPanelAlpha(
+  pixels: Uint8ClampedArray,
+  coverage: Uint8Array
+) {
+  for (let i = 0; i < coverage.length; i++) {
+    pixels[i * 4 + 3] = coverage[i];
+    if (!coverage[i]) pixels.fill(0, i * 4, i * 4 + 3);
+  }
+}
+
+/** Shared template alpha for editor exports and generated textures. */
+export function wrapPanelMask(
+  pixels: Uint8ClampedArray,
+  width: number,
+  height: number
+) {
+  const mask = segmentWrapPanels(pixels, width, height);
+  const coverage = new Uint8Array(width * height);
+  for (let i = 0; i < coverage.length; i++) {
+    // Recover the template's soft edge without bringing back its outer frame.
+    let printable = mask.labels[i] > 0;
+    if (!printable && mask.labels[i] === 0) {
+      const x = i % width;
+      const y = Math.floor(i / width);
+      for (let dy = -2; dy <= 2 && !printable; dy++)
+        for (let dx = -2; dx <= 2 && !printable; dx++)
+          if (x + dx >= 0 && x + dx < width && y + dy >= 0 && y + dy < height)
+            printable = mask.labels[(y + dy) * width + x + dx] > 0;
+    }
+    if (printable)
+      coverage[i] = Math.round(
+        (Math.min(pixels[i * 4], pixels[i * 4 + 1], pixels[i * 4 + 2]) *
+          pixels[i * 4 + 3]) /
+          255
+      );
+  }
+  return { ...mask, coverage };
+}
+
 export const MIN_CANVAS_SCALE = 0.1;
 export const MAX_CANVAS_SCALE = 4;
 

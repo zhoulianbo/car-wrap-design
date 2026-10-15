@@ -7,6 +7,10 @@
     "sign": {
       "sign_in_title": "Anmelden",
       "sign_in_description": "Willkommen zurück",
+      "bonus_title": "Zur Registrierung:",
+      "bonus_credits": "10 Credits",
+      "bonus_description": "Für ein KI-generiertes Autofolien-Design.",
+      "google_continue": "Mit Google fortfahren",
       "sign_up_title": "Registrieren",
       "sign_up_description": "Kostenlos starten",
       "email_title": "E-Mail",

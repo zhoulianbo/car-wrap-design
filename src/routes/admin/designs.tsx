@@ -67,6 +67,7 @@ interface ModeratedDesign {
   showInHero: boolean;
   moderationStatus: ModerationStatus;
   usesAi: boolean;
+  prompt: string | null;
   finish: PaintFinishKey;
   ownerId: string;
   vehicleSlug: string;
@@ -139,6 +140,10 @@ function DesignsPage() {
     null
   );
   const [editedTitle, setEditedTitle] = useState('');
+  const [previewPrompt, setPreviewPrompt] = useState<{
+    title: string;
+    prompt: string;
+  } | null>(null);
   const [dialogMode, setDialogMode] = useState<'edit' | 'approve'>('approve');
   const [previewImage, setPreviewImage] = useState<{
     url: string;
@@ -336,6 +341,24 @@ function DesignsPage() {
     {
       header: m['admin.designs.vehicle'](),
       cell: (item) => item.vehicleSlug,
+    },
+    {
+      header: m['admin.designs.prompt'](),
+      cell: (item) =>
+        item.prompt ? (
+          <Button
+            size="sm"
+            variant="ghost"
+            aria-label={`${m['admin.designs.view_prompt']()} · ${item.title}`}
+            onClick={() =>
+              setPreviewPrompt({ title: item.title, prompt: item.prompt! })
+            }
+          >
+            {m['admin.designs.view_prompt']()}
+          </Button>
+        ) : (
+          <span className="text-muted-foreground">—</span>
+        ),
     },
     {
       header: m['admin.designs.status'](),
@@ -539,6 +562,24 @@ function DesignsPage() {
 
   return (
     <div className="space-y-6 p-6">
+      <Dialog
+        open={Boolean(previewPrompt)}
+        onOpenChange={(open) => {
+          if (!open) setPreviewPrompt(null);
+        }}
+      >
+        <DialogContent className="sm:max-w-2xl">
+          <DialogHeader>
+            <DialogTitle>{m['admin.designs.prompt_title']()}</DialogTitle>
+            <DialogDescription className="[overflow-wrap:anywhere]">
+              {previewPrompt?.title}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="max-h-[60vh] overflow-y-auto text-sm [overflow-wrap:anywhere] whitespace-pre-wrap">
+            {previewPrompt?.prompt}
+          </div>
+        </DialogContent>
+      </Dialog>
       <Dialog
         open={Boolean(previewImage)}
         onOpenChange={(open) => {

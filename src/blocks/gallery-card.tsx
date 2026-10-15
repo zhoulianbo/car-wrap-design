@@ -55,7 +55,7 @@ export function GalleryCard({
               loading="lazy"
               width={400}
               height={400}
-              className="size-full object-contain p-4"
+              className="size-full translate-y-[9%] object-contain p-4"
             />
           ) : (
             <Images className="absolute top-1/2 left-1/2 size-8 -translate-1/2 text-slate-500" />

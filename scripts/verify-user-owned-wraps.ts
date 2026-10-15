@@ -319,6 +319,11 @@ try {
     search: 'Renamed while hidden',
   });
   assert.equal(renamed.items[0].title, 'Renamed while hidden');
+  assert.equal(
+    renamed.items[0].prompt,
+    null,
+    'Manual wraps must not display generation prompts'
+  );
   await updateWrapModeration({
     wrapId: wrap.id,
     version: 2,
@@ -431,7 +436,7 @@ try {
     userId: 'owner-a',
     vehicleSlug: 'model-3-2024-base' as const,
     mode: 'image-to-image' as const,
-    prompt: 'Mint geometric wrap',
+    prompt: 'Mint geometric wrap\nKeep clean areas. No text or logos.',
     inputAssetIds: ['upload-a'],
     storage,
     idempotencyKey: 'generation-once',
@@ -506,6 +511,22 @@ try {
   });
   assert.equal(aiDesign.status, 'pending');
   assert.ok(aiDesign.id);
+  const moderationRows = await listDesignsForModeration({
+    page: 1,
+    pageSize: 20,
+    status: 'all',
+  });
+  const [generatedWrap] = await db()
+    .select()
+    .from(userWrap)
+    .where(eq(userWrap.generationId, generation.id));
+  assert.equal(
+    moderationRows.items.find(
+      (item: { id: string }) => item.id === generatedWrap.id
+    )?.prompt,
+    generationInput.prompt,
+    'Admin review must include the full original prompt before approval'
+  );
   const failed = await createWrapGeneration({
     ...generationInput,
     idempotencyKey: 'generation-failure',

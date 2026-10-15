@@ -1,7 +1,7 @@
 import { convertIndexedToRgb, decode, encode } from 'fast-png';
 
 import { isPng } from './png-bytes';
-import { segmentWrapPanels } from './wrap-editor-geometry';
+import { wrapPanelMask } from './wrap-editor-geometry';
 
 export class WrapTextureFitError extends Error {}
 
@@ -103,28 +103,7 @@ function resample(bytes: Uint8Array) {
 }
 
 export function wrapTextureMask(template: Uint8Array) {
-  const pixels = resample(template);
-  const mask = segmentWrapPanels(pixels, SIZE, SIZE);
-  const coverage = new Uint8Array(SIZE * SIZE);
-  for (let i = 0; i < coverage.length; i++) {
-    // Recover the template's soft edge without bringing back its outer frame.
-    let printable = mask.labels[i] > 0;
-    if (!printable && mask.labels[i] === 0) {
-      const x = i % SIZE;
-      const y = Math.floor(i / SIZE);
-      for (let dy = -2; dy <= 2 && !printable; dy++)
-        for (let dx = -2; dx <= 2 && !printable; dx++)
-          if (x + dx >= 0 && x + dx < SIZE && y + dy >= 0 && y + dy < SIZE)
-            printable = mask.labels[(y + dy) * SIZE + x + dx] > 0;
-    }
-    if (printable)
-      coverage[i] = Math.round(
-        (Math.min(pixels[i * 4], pixels[i * 4 + 1], pixels[i * 4 + 2]) *
-          pixels[i * 4 + 3]) /
-          255
-      );
-  }
-  return { ...mask, coverage };
+  return wrapPanelMask(resample(template), SIZE, SIZE);
 }
 
 /** Make the UV layout visible even when a provider discards input alpha. */

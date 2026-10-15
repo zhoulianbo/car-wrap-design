@@ -7,6 +7,10 @@
     "sign": {
       "sign_in_title": "Sign In",
       "sign_in_description": "Welcome back",
+      "bonus_title": "Sign up & get",
+      "bonus_credits": "10 credits",
+      "bonus_description": "Create one car wrap with AI.",
+      "google_continue": "Continue with Google",
       "sign_up_title": "Sign Up",
       "sign_up_description": "Get started for free",
       "email_title": "Email",

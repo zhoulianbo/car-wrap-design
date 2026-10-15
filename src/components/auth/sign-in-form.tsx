@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useForm } from '@tanstack/react-form';
+import { LoaderCircle } from 'lucide-react';
 import { z } from 'zod';
 
 import { authClient, signIn } from '@/core/auth/client';
@@ -38,6 +39,7 @@ export function SignInForm({
 }) {
   const router = useRouter();
   const [error, setError] = useState('');
+  const [pendingProvider, setPendingProvider] = useState<string | null>(null);
   const configQuery = usePublicConfig();
   const configs = configQuery.data ?? {};
 
@@ -92,7 +94,47 @@ export function SignInForm({
   });
 
   async function handleSocial(provider: 'google' | 'github') {
-    await signIn.social({ provider, callbackURL: afterLoginUrl });
+    setError('');
+    setPendingProvider(provider);
+    try {
+      const result = await signIn.social({
+        provider,
+        callbackURL: afterLoginUrl,
+      });
+      if (result.error)
+        setError(getErrorMessage(result.error, 'SIGN_IN_FAILED'));
+    } catch (error) {
+      setError(getErrorMessage(error, 'SIGN_IN_FAILED'));
+    } finally {
+      setPendingProvider(null);
+    }
+  }
+
+  if (!configsLoaded && configQuery.isPending) {
+    return (
+      <div
+        className="bg-muted h-12 animate-pulse rounded-xl"
+        role="status"
+        aria-label={m['common.state.loading']()}
+      />
+    );
+  }
+
+  if (configQuery.isError) {
+    return (
+      <div className="space-y-3 text-center" role="alert">
+        <p className="text-muted-foreground text-sm">
+          {m['common.state.failed']()}
+        </p>
+        <Button
+          type="button"
+          variant="outline"
+          onClick={() => void configQuery.refetch()}
+        >
+          {m['common.error.retry']()}
+        </Button>
+      </div>
+    );
   }
 
   if (configsLoaded && !hasAnyMethod) {
@@ -128,25 +170,51 @@ export function SignInForm({
               <Button
                 variant="outline"
                 type="button"
+                disabled={Boolean(pendingProvider)}
+                aria-busy={pendingProvider === 'google'}
+                className={cn(
+                  surface === 'popover' &&
+                    'h-12 w-full gap-3 rounded-xl border-0 bg-slate-50 text-base font-medium text-slate-900 hover:bg-white hover:text-slate-950 focus-visible:ring-[#ff987b]/60 dark:border-0 dark:bg-slate-50 dark:hover:bg-white'
+                )}
                 onClick={() => handleSocial('google')}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  className="size-4"
-                >
-                  <path
-                    d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"
-                    fill="currentColor"
-                  />
-                </svg>
-                {m['common.sign.google_sign_in']()}
+                {pendingProvider === 'google' ? (
+                  <LoaderCircle className="size-5 animate-spin" />
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 48 48"
+                    className="size-5"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="#4285F4"
+                      d="M43.61 24.46c0-1.36-.12-2.66-.35-3.92H24v7.42h11a9.4 9.4 0 0 1-4.08 6.18v5.14h6.61c3.87-3.56 6.08-8.8 6.08-14.82Z"
+                    />
+                    <path
+                      fill="#34A853"
+                      d="M24 44c5.51 0 10.13-1.83 13.51-4.72l-6.61-5.14c-1.83 1.23-4.17 1.97-6.9 1.97-5.32 0-9.82-3.59-11.43-8.42H5.74v5.3A20.4 20.4 0 0 0 24 44Z"
+                    />
+                    <path
+                      fill="#FBBC05"
+                      d="M12.57 27.69a12.26 12.26 0 0 1 0-7.38v-5.3H5.74a20 20 0 0 0 0 17.98l6.83-5.3Z"
+                    />
+                    <path
+                      fill="#EA4335"
+                      d="M24 11.89c3 0 5.69 1.03 7.81 3.05l5.86-5.86A19.6 19.6 0 0 0 24 4 20.4 20.4 0 0 0 5.74 15.01l6.83 5.3C14.18 15.48 18.68 11.89 24 11.89Z"
+                    />
+                  </svg>
+                )}
+                {surface === 'popover'
+                  ? m['common.sign.google_continue']()
+                  : m['common.sign.google_sign_in']()}
               </Button>
             )}
             {githubEnabled && (
               <Button
                 variant="outline"
                 type="button"
+                disabled={Boolean(pendingProvider)}
                 onClick={() => handleSocial('github')}
               >
                 <svg
