@@ -3,7 +3,6 @@ import {
   lazy,
   Suspense,
   useEffect,
-  useRef,
   useState,
   type ReactNode,
 } from 'react';
@@ -62,6 +61,33 @@ class ViewerBoundary extends Component<
 
 export function Hero() {
   const [vehicleSlug, setVehicleSlug] = useState(HERO_VEHICLES[0]?.slug);
+  const [viewerEnabled, setViewerEnabled] = useState(false);
+  useEffect(() => {
+    let idleId: number | undefined;
+    let fallbackId: number | undefined;
+    let enabled = false;
+
+    const enableViewer = () => {
+      if (enabled) return;
+      enabled = true;
+      if (fallbackId !== undefined) window.clearTimeout(fallbackId);
+      setViewerEnabled(true);
+    };
+    const delayId = window.setTimeout(() => {
+      if ('requestIdleCallback' in window) {
+        idleId = window.requestIdleCallback(enableViewer, { timeout: 1_500 });
+        fallbackId = window.setTimeout(enableViewer, 1_500);
+      } else {
+        enableViewer();
+      }
+    }, 3_000);
+
+    return () => {
+      window.clearTimeout(delayId);
+      if (idleId !== undefined) window.cancelIdleCallback(idleId);
+      if (fallbackId !== undefined) window.clearTimeout(fallbackId);
+    };
+  }, []);
   const vehicle =
     HERO_VEHICLES.find((item) => item.slug === vehicleSlug) ?? HERO_VEHICLES[0];
   return (
@@ -71,6 +97,7 @@ export function Hero() {
           key={vehicle.slug}
           vehicle={vehicle}
           onVehicleChange={setVehicleSlug}
+          viewerEnabled={viewerEnabled}
         />
       ) : (
         <div className="page-container py-16">
@@ -144,31 +171,14 @@ function HeroCopy() {
 function HeroContent({
   vehicle,
   onVehicleChange,
+  viewerEnabled,
 }: {
   vehicle: VehicleAssetConfig;
   onVehicleChange: (slug: VehicleSlug) => void;
+  viewerEnabled: boolean;
 }) {
   const [selectedId, setSelectedId] = useState<string>();
   const [viewerAttempt, setViewerAttempt] = useState(0);
-  const stageRef = useRef<HTMLDivElement>(null);
-  const [viewerVisible, setViewerVisible] = useState(false);
-  useEffect(() => {
-    if (!stageRef.current) return;
-    if (!('IntersectionObserver' in window)) {
-      setViewerVisible(true);
-      return;
-    }
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-        setViewerVisible(true);
-        observer.disconnect();
-      },
-      { threshold: 0 }
-    );
-    observer.observe(stageRef.current);
-    return () => observer.disconnect();
-  }, []);
   const designsQuery = useQuery({
     queryKey: ['hero-designs', vehicle.slug],
     queryFn: () =>
@@ -201,7 +211,7 @@ function HeroContent({
         bitmap.close();
       }
     },
-    enabled: viewerVisible && Boolean(selected),
+    enabled: viewerEnabled && Boolean(selected),
     staleTime: Infinity,
     gcTime: 60_000,
     retry: 1,
@@ -275,8 +285,8 @@ function HeroContent({
               ))}
             </div>
           </nav>
-          <div ref={stageRef} className={styles.stage} data-hero-viewer>
-            {viewerVisible ? (
+          <div className={styles.stage} data-hero-viewer>
+            {viewerEnabled ? (
               <ViewerBoundary key={viewerAttempt} fallback={retryViewer}>
                 <Suspense
                   fallback={
@@ -309,7 +319,7 @@ function HeroContent({
                 decoding="async"
               />
             ) : null}
-            {viewerVisible && selected && textureQuery.isPending && (
+            {viewerEnabled && selected && textureQuery.isPending && (
               <p role="status" className={styles.textureStatus}>
                 {m['landing.hero.texture_loading']()}
               </p>
@@ -325,10 +335,12 @@ function HeroContent({
                 </button>
               </div>
             )}
-            <p className={styles.orbitHint}>
-              <MousePointer2 className="size-3.5" />
-              {m['landing.hero.rotate_hint']()}
-            </p>
+            {viewerEnabled ? (
+              <p className={styles.orbitHint}>
+                <MousePointer2 className="size-3.5" />
+                {m['landing.hero.rotate_hint']()}
+              </p>
+            ) : null}
           </div>
         </div>
       </div>
@@ -381,6 +393,8 @@ function HeroContent({
                   <img
                     src={design.coverUrl}
                     alt={design.title}
+                    loading="lazy"
+                    decoding="async"
                     width={160}
                     height={100}
                   />

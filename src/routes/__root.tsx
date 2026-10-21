@@ -1,5 +1,5 @@
 /// <reference types="vite/client" />
-import type { ReactNode } from 'react';
+import { lazy, Suspense, useEffect, useState, type ReactNode } from 'react';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import {
@@ -20,7 +20,6 @@ import { Ads } from '@/components/analytics/ads';
 import { GoogleAnalytics } from '@/components/analytics/google-analytics';
 import { Plausible } from '@/components/analytics/plausible';
 import { CustomerService } from '@/components/customer-service';
-import { GoogleOneTap } from '@/components/google-one-tap';
 import { SandboxPreviewBridge } from '@/components/sandbox-preview-bridge';
 import { Toaster } from '@/components/ui/sonner';
 
@@ -29,6 +28,12 @@ import '@fontsource/space-grotesk/500.css';
 import '@fontsource/space-grotesk/600.css';
 import '@fontsource/space-grotesk/700.css';
 import '@/styles/globals.css';
+
+const GoogleOneTap = lazy(() =>
+  import('@/components/google-one-tap').then((module) => ({
+    default: module.GoogleOneTap,
+  }))
+);
 
 // Analytics IDs live in the DB config (1h-cached service). Fetched via a
 // server function so drizzle/db code never reaches the client bundle.
@@ -68,6 +73,15 @@ export const Route = createRootRoute({
         ...(robots ? [{ name: 'robots', content: robots }] : []),
       ],
       links: [
+        ...(envConfigs.assets_url
+          ? [
+              {
+                rel: 'preconnect',
+                href: envConfigs.assets_url,
+                crossOrigin: 'anonymous' as const,
+              },
+            ]
+          : []),
         {
           rel: 'icon',
           href: '/favicon-32x32.png?v=20261007-4',
@@ -107,7 +121,7 @@ function RootComponent() {
         <Outlet />
         <SandboxPreviewBridge />
         <Toaster position="top-center" richColors />
-        <GoogleOneTap />
+        <DeferredGoogleOneTap />
         {analytics?.gaId ? (
           <GoogleAnalytics measurementId={analytics.gaId} />
         ) : null}
@@ -127,6 +141,31 @@ function RootComponent() {
       {import.meta.env.DEV && <ReactQueryDevtools initialIsOpen={false} />}
     </QueryClientProvider>
   );
+}
+
+function DeferredGoogleOneTap() {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const enable = () => setReady(true);
+    const timeout = window.setTimeout(enable, 15_000);
+    window.addEventListener('pointerdown', enable, {
+      once: true,
+      passive: true,
+    });
+    window.addEventListener('keydown', enable, { once: true });
+    return () => {
+      window.clearTimeout(timeout);
+      window.removeEventListener('pointerdown', enable);
+      window.removeEventListener('keydown', enable);
+    };
+  }, []);
+
+  return ready ? (
+    <Suspense fallback={null}>
+      <GoogleOneTap />
+    </Suspense>
+  ) : null;
 }
 
 function RootDocument({ children }: { children: ReactNode }) {

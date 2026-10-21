@@ -12,6 +12,37 @@ import { paraglideMiddleware } from './paraglide/server.js';
 const CF_WORKERS_MODULE = 'cloudflare:workers';
 let cfEnvPromise: Promise<void> | null = null;
 
+const CONTENT_SECURITY_POLICY = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "frame-ancestors 'none'",
+  "form-action 'self'",
+  "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https:",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https:",
+  "font-src 'self' data:",
+  "connect-src 'self' https: wss:",
+  'frame-src https:',
+  "worker-src 'self' blob:",
+  'upgrade-insecure-requests',
+].join('; ');
+
+function applySecurityHeaders(response: Response, url: URL): Response {
+  const secured = new Response(response.body, response);
+  secured.headers.set('Content-Security-Policy', CONTENT_SECURITY_POLICY);
+  secured.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
+  secured.headers.set('X-Content-Type-Options', 'nosniff');
+  secured.headers.set('X-Frame-Options', 'DENY');
+  if (url.protocol === 'https:') {
+    secured.headers.set(
+      'Strict-Transport-Security',
+      'max-age=31536000; includeSubDomains'
+    );
+  }
+  return secured;
+}
+
 function ensureCloudflareEnv(): Promise<void> {
   if (!cfEnvPromise) {
     cfEnvPromise = import(/* @vite-ignore */ CF_WORKERS_MODULE)
@@ -32,10 +63,9 @@ export default {
     await ensureCloudflareEnv();
     const url = new URL(req.url);
     let response = await paraglideMiddleware(req, () => handler.fetch(req));
+    response = applySecurityHeaders(response, url);
     const robots = noindexRobotsForPath(url.pathname);
     if (robots) {
-      // Redirect responses may have immutable headers; preserve their body/status.
-      response = new Response(response.body, response);
       response.headers.set('X-Robots-Tag', robots);
     }
     const utmSource = url.searchParams.get('utm_source');

@@ -15,7 +15,6 @@ import {
 import type { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 
-import { envConfigs } from '@/config';
 import { EncryptedModelLoader } from '@/lib/encrypted-model-loader';
 import { encryptedModelUrl } from '@/lib/model-assets';
 import {
@@ -103,15 +102,11 @@ function projectVisibleMeshes(
 }
 
 function useDracoGltf(path: string) {
-  return useLoader(
-    EncryptedModelLoader,
-    encryptedModelUrl(path, envConfigs.assets_url),
-    (loader) => {
-      const draco = new DRACOLoader();
-      draco.setDecoderPath('/draco/');
-      loader.setDRACOLoader(draco);
-    }
-  );
+  return useLoader(EncryptedModelLoader, encryptedModelUrl(path), (loader) => {
+    const draco = new DRACOLoader();
+    draco.setDecoderPath('/draco/');
+    loader.setDRACOLoader(draco);
+  });
 }
 
 export function prepareScene(root: Object3D, vehicle: VehicleAssetConfig) {

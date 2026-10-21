@@ -5,10 +5,8 @@ import path from 'node:path';
 const INDEXNOW_ENDPOINT =
   process.env.INDEXNOW_ENDPOINT || 'https://api.indexnow.org/indexnow';
 const SITE_URL = 'https://carwrapdesign.app';
-const KEY_FILE =
-  process.env.INDEXNOW_KEY_FILE ||
-  'public/c8fc62fa5f104e34b6b439363c13aa1c.txt';
-const SITEMAP_FILE = process.env.INDEXNOW_SITEMAP_FILE || 'public/sitemap.xml';
+const KEY_FILE = 'public/ea5a2ee8eaa14d7daf7e4e1d2bb1efae.txt';
+const SITEMAP_URL = 'https://carwrapdesign.app/sitemap.xml';
 const MAX_URLS_PER_REQUEST = 10_000;
 const isDryRun = process.argv.includes('--dry-run');
 
@@ -190,20 +188,27 @@ async function main() {
   const siteUrl = new URL(SITE_URL);
   const siteOrigin = siteUrl.origin;
   const keyFilePath = path.resolve(projectRoot, KEY_FILE);
-  const sitemapFilePath = path.resolve(projectRoot, SITEMAP_FILE);
   const key = (await readFile(keyFilePath, 'utf8')).trim();
 
   if (!/^[a-fA-F0-9]{8,128}$/.test(key)) {
     throw new Error('IndexNow key must contain 8-128 hexadecimal characters.');
   }
 
-  const sitemapXml = await readFile(sitemapFilePath, 'utf8');
+  const sitemapResponse = await request(SITEMAP_URL, {
+    headers: { 'user-agent': 'PixelListing-IndexNow/1.0' },
+  });
+  if (!sitemapResponse.ok) {
+    throw new Error(
+      `Unable to fetch sitemap: ${SITEMAP_URL} (HTTP ${sitemapResponse.status})`
+    );
+  }
+  const sitemapXml = await sitemapResponse.text();
   const urls = getSitemapUrls(sitemapXml, siteOrigin);
   const keyLocation = new URL(path.basename(keyFilePath), `${siteOrigin}/`)
     .href;
 
   console.log(`Site: ${siteOrigin}`);
-  console.log(`Sitemap: ${SITEMAP_FILE}`);
+  console.log(`Sitemap: ${SITEMAP_URL}`);
   console.log(`Key location: ${keyLocation}`);
   console.log(`URLs found: ${urls.length}`);
 

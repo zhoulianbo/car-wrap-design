@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { ArrowRight, Images } from 'lucide-react';
 
@@ -16,19 +16,42 @@ export function GalleryPreview({
   description,
   limit = 10,
   initialDesigns,
+  deferUntilVisible = false,
 }: {
   family?: VehicleFamily;
   title?: string;
   description?: string;
   limit?: number;
   initialDesigns?: PublicDesignSummary[] | null;
+  deferUntilVisible?: boolean;
 } = {}) {
   const [retryRequested, setRetryRequested] = useState(false);
+  const [isVisible, setIsVisible] = useState(!deferUntilVisible);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (!deferUntilVisible || isVisible || !sectionRef.current) return;
+    if (!('IntersectionObserver' in window)) {
+      setIsVisible(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setIsVisible(true);
+        observer.disconnect();
+      },
+      { rootMargin: '300px 0px' }
+    );
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, [deferUntilVisible, isVisible]);
+
   const query = useQuery({
     queryKey: ['gallery-preview', family ?? 'all', limit],
     initialData: initialDesigns ?? undefined,
     staleTime: 30_000,
-    enabled: initialDesigns !== null || retryRequested,
+    enabled: isVisible && (initialDesigns !== null || retryRequested),
     queryFn: () =>
       apiGet<PublicDesignSummary[]>(
         `/api/gallery?limit=${limit}${family ? `&family=${family}` : ''}`
@@ -40,6 +63,7 @@ export function GalleryPreview({
     (initialDesigns === null && !query.data && !query.isFetching);
   return (
     <section
+      ref={sectionRef}
       id="gallery"
       className="border-y border-white/5 bg-[#0a0e16] py-16 sm:py-20"
     >
@@ -70,6 +94,7 @@ export function GalleryPreview({
             <button
               onClick={() => {
                 setRetryRequested(true);
+                setIsVisible(true);
                 void query.refetch();
               }}
               className="mt-3 text-emerald-300 underline"

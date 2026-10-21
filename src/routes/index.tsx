@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { getPublicGalleryPreview } from '@/features/gallery/queries';
 
 import { marketingHead } from '@/lib/seo';
 import { m } from '@/paraglide/messages.js';
@@ -25,13 +24,12 @@ import { StructuredData } from '@/components/seo/structured-data';
  * See /quick-start or /clone-website to automate the rewrite.
  */
 function HomePage() {
-  const { initialDesigns } = Route.useLoaderData();
   return (
     <div className="bg-background text-foreground flex min-h-screen flex-col">
       <Header />
       <main>
         <Hero />
-        <GalleryPreview limit={24} initialDesigns={initialDesigns} />
+        <GalleryPreview limit={24} deferUntilVisible />
         <WrapEditorShowcase />
         <WorkflowShowcase />
         <Features />
@@ -85,10 +83,7 @@ function HomePage() {
 export const Route = createFileRoute('/')({
   loader: async () => {
     const locale = getLocale();
-    const initialDesigns = await getPublicGalleryPreview({
-      data: { limit: 24 },
-    });
-    return { locale, initialDesigns };
+    return { locale };
   },
   head: ({ loaderData }) => {
     const locale = loaderData?.locale ?? 'en';
