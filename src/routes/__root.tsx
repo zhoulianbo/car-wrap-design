@@ -39,8 +39,14 @@ const GoogleOneTap = lazy(() =>
 // server function so drizzle/db code never reaches the client bundle.
 const getAnalyticsConfigs = createServerFn().handler(async () => {
   const { getAllConfigs } = await import('@/modules/config/service');
-  const configs = await getAllConfigs();
+  const { getPublicFooterLinks } =
+    await import('@/modules/footer-links/service');
+  const [configs, footerLinks] = await Promise.all([
+    getAllConfigs(),
+    getLocale() === 'en' ? getPublicFooterLinks() : Promise.resolve([]),
+  ]);
   return {
+    footerLinks,
     gaId: configs.google_analytics_id?.trim() || '',
     plausibleDomain: configs.plausible_domain?.trim() || '',
     plausibleSrc: configs.plausible_src?.trim() || '',

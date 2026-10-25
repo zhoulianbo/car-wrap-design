@@ -8,6 +8,13 @@
       "when": 1791857445453,
       "tag": "0000_perfect_mimic",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1792904958527,
+      "tag": "0001_abnormal_luckman",
+      "breakpoints": true
     }
   ]
 }

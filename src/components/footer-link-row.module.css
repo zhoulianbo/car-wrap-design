@@ -1,0 +1,48 @@
+.viewport {
+  --footer-link-gap: 1rem;
+  display: flex;
+  min-width: 0;
+  gap: var(--footer-link-gap);
+  overflow-x: auto;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--footer-link-gap);
+}
+
+.viewport[data-overflowing='true'] {
+  overflow-x: hidden;
+}
+
+.viewport[data-overflowing='true'] .track {
+  animation: scroll-left var(--footer-link-duration) linear infinite;
+}
+
+.viewport:hover .track,
+.viewport:focus-within .track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  to {
+    transform: translateX(calc(-100% - var(--footer-link-gap)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .viewport[data-overflowing='true'] {
+    overflow-x: auto;
+  }
+
+  .viewport[data-overflowing='true'] .track {
+    animation: none;
+  }
+
+  .clone {
+    display: none;
+  }
+}

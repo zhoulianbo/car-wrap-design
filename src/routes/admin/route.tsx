@@ -58,6 +58,7 @@ function AdminLayout() {
       items: [
         { href: '/admin/categories', label: m['admin.nav.categories']() },
         { href: '/admin/posts', label: m['admin.nav.posts']() },
+        { href: '/admin/footer-links', label: m['admin.nav.footer_links']() },
         {
           href: '/admin/designs',
           label: m['admin.nav.designs'](),

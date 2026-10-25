@@ -23,7 +23,7 @@
 - 保存时先写入 D1，再将完整配置快照写入 KV。D1 保存采用原子 `batch`，其他数据库沿用事务。
 - KV 写入失败时接口报错，数据库已保存的值仍可在后台查看，再次保存会重新发布快照，即使输入全是未修改的遮罩值。
 - 密钥在生产 D1、KV 中均以 AES-GCM 密文保存；基础设施密钥仅来自 Worker Secrets。
-- KV 是最终一致存储，其他区域可能需要约 60 秒或更久才能看到新值。相同键每秒最多写一次，连续保存失败时应稍后重试。参见 [Cloudflare KV 写入文档](https://developers.cloudflare.com/kv/api/write-key-value-pairs/)。
+- config 的 KV 读取缓存由 `src/modules/config/service.ts` 中的 `CONFIG_KV_CACHE_TTL_SECONDS` 控制，单位为秒，当前为 `24 * 60 * 60`（一天）。后台保存仍立即写入 KV，但已缓存旧值的其他区域可能在缓存到期后才看到更新，最长可能接近一天；这不是 KV 数据的过期删除时间。参见 [Cloudflare KV 读取文档](https://developers.cloudflare.com/kv/api/read-key-value-pairs/)。相同键每秒最多写一次，连续保存失败时应稍后重试。
 
 `AUTH_SECRET` 和 `CONFIG_ENCRYPTION_KEY` 已写入 Worker Secrets。加密密钥必须保持稳定；修改后，已同步的设置将无法解密。私有备份在 `.wrangler/production-secrets.json`，本地预览使用 `.dev.vars`，这些文件均被 Git 忽略。
 

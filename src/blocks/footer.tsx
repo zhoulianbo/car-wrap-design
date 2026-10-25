@@ -1,7 +1,11 @@
+import { useLoaderData } from '@tanstack/react-router';
+
 import { m } from '@/paraglide/messages.js';
+import { getLocale } from '@/paraglide/runtime.js';
 import { SiteFooter, type FooterColumn } from '@/components/site-footer';
 
 export function Footer() {
+  const shell = useLoaderData({ from: '__root__' });
   const columns: FooterColumn[] = [
     {
       title: m['landing.footer.product'](),
@@ -45,6 +49,7 @@ export function Footer() {
   return (
     <SiteFooter
       tagline={m['landing.footer.tagline']()}
+      footerLinks={getLocale() === 'en' ? shell?.footerLinks : []}
       brandLinks={[
         { label: 'llms.txt', href: '/llms.txt' },
         { label: 'llms-full.txt', href: '/llms-full.txt' },

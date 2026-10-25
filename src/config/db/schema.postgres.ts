@@ -594,6 +594,29 @@ export type TicketMessage = typeof ticketMessage.$inferSelect;
 export type NewTicketMessage = typeof ticketMessage.$inferInsert;
 
 // ─── Custom tables ───────────────────────────────────────────────────────────
+
+export const footerLink = table(
+  'footer_link',
+  {
+    id: text('id').primaryKey(),
+    group: text('group').notNull(),
+    title: text('title').notNull(),
+    url: text('url').notNull(),
+    imageUrl: text('image_url'),
+    altText: text('alt_text'),
+    rel: text('rel').notNull().default(''),
+    sort: integer('sort').notNull().default(0),
+    createdAt: timestamp('created_at').defaultNow().notNull(),
+    updatedAt: timestamp('updated_at')
+      .defaultNow()
+      .$onUpdate(() => new Date())
+      .notNull(),
+  },
+  (table) => [index('idx_footer_link_group_sort').on(table.group, table.sort)]
+);
+
+export type FooterLink = typeof footerLink.$inferSelect;
+export type NewFooterLink = typeof footerLink.$inferInsert;
 // Add your own tables below this line.
 
 // ─── Car wrap creator ────────────────────────────────────────────────────────

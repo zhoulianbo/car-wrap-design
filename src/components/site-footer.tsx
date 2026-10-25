@@ -3,7 +3,9 @@ import { Mail } from 'lucide-react';
 
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
+import type { FooterLinkItem } from '@/lib/footer-links';
 import { BuiltWithShipAny } from '@/components/built-with-shipany';
+import { FooterLinkRow } from '@/components/footer-link-row';
 
 export interface FooterColumn {
   title: string;
@@ -42,6 +44,7 @@ export interface FooterSocial {
 export function SiteFooter({
   tagline,
   brandLinks,
+  footerLinks,
   columns,
   socials,
   copyright,
@@ -51,6 +54,7 @@ export function SiteFooter({
   tagline?: string;
   /** Root-path links shown under the tagline. Rendered as plain anchors so they stay unlocalized. */
   brandLinks?: FooterBrandLink[];
+  footerLinks?: FooterLinkItem[];
   columns?: FooterColumn[];
   socials?: FooterSocial[];
   copyright?: string;
@@ -134,8 +138,21 @@ export function SiteFooter({
           ) : null}
         </div>
 
+        {footerLinks && footerLinks.length > 0 ? (
+          <div data-footer-links className="mt-8 space-y-4 pt-3">
+            <FooterLinkRow
+              links={footerLinks.filter((link) => link.group === 'friend')}
+              label="Friend links"
+            />
+            <FooterLinkRow
+              links={footerLinks.filter((link) => link.group === 'badge')}
+              label="Directory badges"
+            />
+          </div>
+        ) : null}
+
         {socials && socials.length > 0 ? (
-          <div className="mt-8 flex items-center gap-5">
+          <div className="mt-3 flex items-center gap-5">
             {socials.map((s) => (
               <a
                 key={s.label}
@@ -151,7 +168,7 @@ export function SiteFooter({
           </div>
         ) : null}
 
-        <div className="border-border/60 mt-8 flex items-center justify-between gap-4 border-t pt-5">
+        <div className="border-border/60 mt-3 flex items-center justify-between gap-4 border-t pt-5">
           <div className="flex min-w-0 flex-1 items-center gap-4">
             {showBuiltWith ? <BuiltWithShipAny /> : null}
             <span className="text-muted-foreground text-sm leading-5">

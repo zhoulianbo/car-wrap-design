@@ -3,6 +3,7 @@ import { eq } from 'drizzle-orm';
 import { db } from '@/core/db';
 import { envConfigs } from '@/config';
 import { config } from '@/config/db/schema';
+import { CONFIG_KV_PREFIX } from '@/config/kv';
 import { decryptSecret, encryptSecret } from '@/lib/crypto';
 
 import { getSettings } from './settings';
@@ -14,7 +15,8 @@ let cachedConfigs: ConfigMap | null = null;
 let cacheTime = 0;
 const CACHE_TTL = 86400_000; // 1 day
 
-export const CONFIG_KV_KEY = 'car-warp-design:settings:v1';
+export const CONFIG_KV_KEY = `${CONFIG_KV_PREFIX}settings:v1`;
+const CONFIG_KV_CACHE_TTL_SECONDS = 24 * 60 * 60; // 1 day; KV uses seconds.
 
 type ConfigKv = {
   get(
@@ -104,7 +106,7 @@ export async function getAllConfigs(): Promise<ConfigMap> {
   if (kv) {
     const snapshot = await kv.get(CONFIG_KV_KEY, {
       type: 'text',
-      cacheTtl: 60,
+      cacheTtl: CONFIG_KV_CACHE_TTL_SECONDS,
     });
     if (snapshot === null) {
       throw new Error(
