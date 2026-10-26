@@ -16,7 +16,6 @@ const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",
   "base-uri 'self'",
   "object-src 'none'",
-  "frame-ancestors 'none'",
   "form-action 'self'",
   "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https:",
   "style-src 'self' 'unsafe-inline'",
@@ -33,7 +32,6 @@ function applySecurityHeaders(response: Response, url: URL): Response {
   secured.headers.set('Content-Security-Policy', CONTENT_SECURITY_POLICY);
   secured.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   secured.headers.set('X-Content-Type-Options', 'nosniff');
-  secured.headers.set('X-Frame-Options', 'DENY');
   if (url.protocol === 'https:') {
     secured.headers.set(
       'Strict-Transport-Security',
