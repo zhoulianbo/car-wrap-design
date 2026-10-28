@@ -13,12 +13,12 @@
       "gallery": "Galerie"
     },
     "hero": {
-      "headline": "Autofolierung selbst gestalten – direkt online",
+      "headline": "Online-Designer für Autofolierung",
       "subheadline": "Entwirf deinen eigenen Look und prüfe ihn am 3D-Fahrzeug. Wähle ein Modell, gestalte im kostenlosen Browser-Editor oder entdecke mit KI-Credits neue Farben und Muster.",
       "cta": "Kostenlosen Designer starten",
       "secondary": "Mit KI generieren",
       "explore_wraps": "Designs entdecken",
-      "badge": "Dein Folierungsdesigner",
+      "badge": "Vorschau für Autofolierungen",
       "variants": "12 Fahrzeugvarianten",
       "templates": "Offizielle UV-Vorlagen",
       "chassis": "Karosserie",
@@ -355,8 +355,8 @@
       "remove_image": "Vorschaubild entfernen"
     },
     "meta": {
-      "title": "Autofolierung selbst gestalten | Kostenloser 3D-Editor",
-      "description": "Autofolierung selbst gestalten: mit kostenlosem Editor, eigenen Motiven und 3D-Vorschau. Entdecke Ideen oder erstelle neue Entwürfe mit KI-Credits."
+      "title": "Online-Designer für Autofolierung | Gratis-Editor & 3D",
+      "description": "Gestalte mit unserem kostenlosen Online-Designer für Autofolierung eigene Motive für unterstützte Tesla-Modelle. Füge Text, Bilder und Farben hinzu und sieh sie in 3D."
     },
     "vehicle_pages": {
       "tesla": {

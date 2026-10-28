@@ -29,7 +29,7 @@ function HomePage() {
       <Header />
       <main>
         <Hero />
-        <GalleryPreview limit={24} deferUntilVisible />
+        <GalleryPreview limit={10} deferUntilVisible />
         <WrapEditorShowcase />
         <WorkflowShowcase />
         <Features />

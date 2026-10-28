@@ -5,7 +5,7 @@ type PageSpec = {
   title?: string;
   h1?: string;
   words: readonly [number, number];
-  density: readonly [number, number];
+  density?: readonly [number, number];
 };
 
 export {};
@@ -17,20 +17,18 @@ const baseUrl = (
 const pages: PageSpec[] = [
   {
     path: '/',
-    keyword: 'Car Wrap Design',
-    title: 'Car Wrap Design Online | Design Your Own Car Wrap Free',
-    h1: 'Design Your Own Car Wrap Online',
+    keyword: 'car wrap designer online',
+    title: 'Car Wrap Designer Online | Free Editor & 3D Preview',
+    h1: 'Car Wrap Designer Online',
     words: [801, Infinity],
-    density: [1, 3],
   },
   {
     path: '/zh',
     locale: 'zh',
-    keyword: '汽车车衣设计',
-    title: '在线汽车车衣设计 | 免费设计你的专属车衣',
-    h1: '在线设计你的专属汽车车衣',
+    keyword: '在线汽车车衣设计工具',
+    title: '在线汽车车衣设计工具 | 免费编辑器与 3D 预览',
+    h1: '在线汽车车衣设计工具',
     words: [801, Infinity],
-    density: [1, 3],
   },
   {
     path: '/ai-car-wrap-generator',
@@ -209,6 +207,13 @@ for (const spec of selectedPages) {
     [!spec.title || title === spec.title, `unexpected title: ${title}`],
     [!spec.h1 || h1 === spec.h1, `unexpected H1: ${h1}`],
     [
+      (spec.path !== '/' && spec.path !== '/zh') ||
+        [title, description, h1].every((value) =>
+          value.toLowerCase().includes(spec.keyword.toLowerCase())
+        ),
+      'homepage primary keyword missing from title, description or H1',
+    ],
+    [
       description.length >= (locale === 'zh' ? 50 : 80) &&
         description.length <= 170,
       `description length ${description.length}`,
@@ -223,7 +228,8 @@ for (const spec of selectedPages) {
       `word count ${wordCount}`,
     ],
     [
-      density >= spec.density[0] && density <= spec.density[1],
+      !spec.density ||
+        (density >= spec.density[0] && density <= spec.density[1]),
       `keyword density ${density.toFixed(2)}%`,
     ],
   ] as const;

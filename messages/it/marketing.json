@@ -13,12 +13,12 @@
       "gallery": "Galleria"
     },
     "hero": {
-      "headline": "Configuratore wrapping auto: crea il tuo stile",
+      "headline": "Designer di wrapping auto online",
       "subheadline": "Dai forma alle tue idee e guardale sull'auto in 3D. Scegli un veicolo, crea con l'editor gratuito nel browser oppure esplora nuovi stili usando i crediti IA.",
       "cta": "Inizia a progettare gratis",
       "secondary": "Genera con l'IA",
       "explore_wraps": "Esplora i design",
-      "badge": "Progetta il tuo wrapping",
+      "badge": "Visualizzatore di wrapping auto",
       "variants": "12 versioni disponibili",
       "templates": "Modelli UV ufficiali",
       "chassis": "Carrozzeria",
@@ -355,8 +355,8 @@
       "remove_image": "Rimuovi immagine dall'anteprima"
     },
     "meta": {
-      "title": "Configuratore wrapping auto | Editor gratuito e anteprima 3D",
-      "description": "Progetta il tuo stile con il configuratore wrapping auto: editor gratuito, immagini personali e anteprima 3D. Per nuove idee, genera una grafica con crediti IA."
+      "title": "Designer di wrapping auto online | Editor gratis e 3D",
+      "description": "Usa il designer di wrapping auto online gratuito per i modelli Tesla supportati. Aggiungi testi, immagini e colori e guarda il tuo design in anteprima 3D."
     },
     "vehicle_pages": {
       "tesla": {

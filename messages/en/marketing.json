@@ -13,12 +13,12 @@
       "gallery": "Gallery"
     },
     "hero": {
-      "headline": "Design Your Own Car Wrap Online",
+      "headline": "Car Wrap Designer Online",
       "subheadline": "Turn your car wrap design ideas into a look you can preview in 3D. Choose a vehicle, create with the free browser editor, or explore a new direction with AI credits.",
       "cta": "Start Free Designer",
       "secondary": "Generate with AI",
       "explore_wraps": "Explore wraps",
-      "badge": "Vehicle Wrap Designer",
+      "badge": "Car Wrap Visualizer",
       "variants": "12 supported variants",
       "templates": "Official UV baselines",
       "chassis": "Chassis",
@@ -355,8 +355,8 @@
       "remove_image": "Remove preview image"
     },
     "meta": {
-      "title": "Car Wrap Design Online | Design Your Own Car Wrap Free",
-      "description": "Create your car wrap design online with a free editor and 3D preview. Explore wrap ideas, add your own artwork, or generate concepts with AI credits."
+      "title": "Car Wrap Designer Online | Free Editor & 3D Preview",
+      "description": "Use our free car wrap designer online to create custom artwork for supported Tesla models. Add text, images and colors, then preview your design in 3D."
     },
     "vehicle_pages": {
       "tesla": {
