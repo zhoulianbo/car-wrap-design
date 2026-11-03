@@ -4,6 +4,7 @@ import { AITaskStatus, type AITaskResult } from '@/core/ai';
 import { handleWrapGenerationWebhook } from '@/modules/ai-tasks/wrap-generations';
 import { getStorage } from '@/modules/storage/service';
 import { verifyAiWebhookToken } from '@/lib/ai-webhook';
+import { scheduleBackgroundTask } from '@/lib/background-task';
 import { respErr, respOk } from '@/lib/resp';
 
 function parseJson(value: unknown) {
@@ -100,12 +101,21 @@ async function POST({
     const result = parseCallback(provider, await request.json());
     if (!result.taskId)
       return respErr('Callback task id is missing', { status: 400 });
-    await handleWrapGenerationWebhook({
+    const processing = handleWrapGenerationWebhook({
       provider,
       providerPredictionId: result.taskId,
       result,
       storage: await getStorage({ root: true }),
     });
+    const background = scheduleBackgroundTask(processing, (error) => {
+      console.error('[ai-webhook] background processing failed', {
+        provider,
+        taskId: result.taskId,
+        error: error instanceof Error ? error.message : String(error),
+      });
+    });
+    if (background) return respOk();
+    await processing;
     return respOk();
   } catch (error) {
     return respErr(

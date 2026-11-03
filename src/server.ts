@@ -46,6 +46,12 @@ function ensureCloudflareEnv(): Promise<void> {
     cfEnvPromise = import(/* @vite-ignore */ CF_WORKERS_MODULE)
       .then((mod) => {
         (globalThis as any).__CF_ENV__ = mod.env;
+        // Route handlers do not receive the Workers execution context directly.
+        // Keep waitUntil available to webhook handlers so long-running work can
+        // continue after a provider receives its acknowledgement.
+        if (typeof mod.waitUntil === 'function') {
+          (globalThis as any).__CF_WAIT_UNTIL__ = mod.waitUntil;
+        }
       })
       .catch(() => {
         // Not running on Cloudflare Workers — nothing to stash.
